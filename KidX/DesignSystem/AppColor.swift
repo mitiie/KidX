@@ -19,7 +19,7 @@ enum AppColor: String {
         case .primary:
             return UIColor(hex: 0x0077FF)
         case .text:
-            return UIColor(hex: 0x111111)
+            return UIColor(hex: 0x445D7F)
         case .white:
             return UIColor.white
         case .error:

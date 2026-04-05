@@ -10,16 +10,19 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    private var coordinator: AuthCoordinator?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
-
-        let window = UIWindow(windowScene: windowScene)
-        let mainVC = SplashController()
-        let navVC = UINavigationController(rootViewController: mainVC)
+        
+        let navVC = UINavigationController()
         navVC.setNavigationBarHidden(true, animated: false)
         
+        let coordinator = AuthCoordinator(navigationController: navVC)
+        self.coordinator = coordinator
+        coordinator.start()
+        
+        let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navVC
         self.window = window
         window.makeKeyAndVisible()
