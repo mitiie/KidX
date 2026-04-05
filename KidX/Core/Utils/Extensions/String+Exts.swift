@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 
 extension String {
     var localized: String {
@@ -14,14 +13,6 @@ extension String {
     }
 }
 
-extension UITextField {
-    var textPublisher: AnyPublisher<String, Never> {
-        NotificationCenter.default
-            .publisher(for: UITextField.textDidChangeNotification, object: self)
-            .map { ($0.object as? UITextField)?.text ?? "" }
-            .eraseToAnyPublisher()
-    }
-}
 extension String {
     var isValidEmail: Bool {
         let email = self.trimmingCharacters(in: .whitespaces)

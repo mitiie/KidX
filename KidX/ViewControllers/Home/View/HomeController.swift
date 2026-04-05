@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: BaseController {
     private let viewModel: HomeViewModel
 
     init(viewModel: HomeViewModel) {

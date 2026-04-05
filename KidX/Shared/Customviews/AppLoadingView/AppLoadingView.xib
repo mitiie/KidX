@@ -23,10 +23,10 @@
                     <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dya-Sg-ju4">
-                    <rect key="frame" x="68.666666666666671" y="326" width="255.66666666666663" height="200"/>
+                    <rect key="frame" x="78.666666666666671" y="326" width="235.66666666666663" height="200"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Processing..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbd-ht-G6j" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                            <rect key="frame" x="78.999999999999986" y="24" width="98.000000000000014" height="20.333333333333329"/>
+                            <rect key="frame" x="68.999999999999986" y="24" width="98.000000000000014" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -38,14 +38,14 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8v-3o-HM8">
-                            <rect key="frame" x="24" y="55" width="207.66666666666666" height="90"/>
+                            <rect key="frame" x="16" y="55" width="203.66666666666666" height="90"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="90" id="jIi-XZ-Cl3"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait a moment." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25A-FC-1dQ" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                            <rect key="frame" x="42.666666666666657" y="155.66666666666669" width="170.66666666666666" height="20.333333333333343"/>
+                            <rect key="frame" x="32.666666666666657" y="155.66666666666669" width="170.66666666666666" height="20.333333333333343"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                         <constraint firstItem="S8v-3o-HM8" firstAttribute="centerY" secondItem="Dya-Sg-ju4" secondAttribute="centerY" id="hSx-9c-QcT"/>
                         <constraint firstAttribute="height" constant="200" id="mmX-3v-IPW"/>
                         <constraint firstItem="Lbd-ht-G6j" firstAttribute="centerX" secondItem="Dya-Sg-ju4" secondAttribute="centerX" id="sog-AY-EIj"/>
-                        <constraint firstItem="S8v-3o-HM8" firstAttribute="leading" secondItem="Dya-Sg-ju4" secondAttribute="leading" constant="24" id="t0x-AP-WrZ"/>
+                        <constraint firstItem="S8v-3o-HM8" firstAttribute="leading" secondItem="Dya-Sg-ju4" secondAttribute="leading" constant="16" id="t0x-AP-WrZ"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -82,7 +82,7 @@
                 <constraint firstItem="Dya-Sg-ju4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Be3-X1-LzF"/>
                 <constraint firstItem="EVn-Mn-XNm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Bf0-lp-uo0"/>
                 <constraint firstItem="EVn-Mn-XNm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="H6S-gs-fbC"/>
-                <constraint firstItem="Dya-Sg-ju4" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.65" id="Rgd-HT-Zsv"/>
+                <constraint firstItem="Dya-Sg-ju4" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="Rgd-HT-Zsv"/>
                 <constraint firstItem="Dya-Sg-ju4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="w2l-DY-k1e"/>
             </constraints>
             <point key="canvasLocation" x="49.618320610687022" y="112.67605633802818"/>
