@@ -5,9 +5,9 @@
 //  Created by 𝙢𝙩 on 6/4/26.
 //
 
-final class SettingCoordinator: NavigationStateDelegate {
+final class ProfileCoordinator: NavigationStateDelegate {
     
-    typealias Route = SettingRoute
+    typealias Route = ProfileRoute
     
     private let authNavigation: NavigationState<AuthRoute>
     
@@ -15,7 +15,7 @@ final class SettingCoordinator: NavigationStateDelegate {
         self.authNavigation = authNavigation
     }
     
-    func onPush(_ route: SettingRoute, isReplaceTop: Bool, animated: Bool) {
+    func onPush(_ route: ProfileRoute, isReplaceTop: Bool, animated: Bool) {
         switch route {
         case .logout:
             authNavigation.push(.login, isReplaceTop: true)
@@ -23,6 +23,6 @@ final class SettingCoordinator: NavigationStateDelegate {
     }
     
     func onPop(_ index: Int, animated: Bool) {}
-    func onPresent(_ route: SettingRoute, animated: Bool) {}
+    func onPresent(_ route: ProfileRoute, animated: Bool) {}
     func onDismiss(animated: Bool) {}
 }

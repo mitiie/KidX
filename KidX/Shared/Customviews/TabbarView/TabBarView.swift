@@ -13,7 +13,7 @@ protocol TabBarViewDelegate: AnyObject {
 
 class TabBarView: UIView {
     weak var delegate: TabBarViewDelegate?
-    private var selectedIndex = 0
+    private var selectedIndex = 2
     private let tabItems: [TabBarItem] = TabBarItem.allCases
     
     private var buttons: [UIButton] = []
@@ -243,7 +243,7 @@ class TabBarView: UIView {
 
     private func updateLabel(_ label: UILabel, isSelected: Bool) {
         label.font = UIFont.custom(.sm, isSelected ? .medium : .regular)
-        label.textColor = isSelected ? UIColor(hex: 0xFF56C7) : UIColor(hex: 0x424242)
+        label.textColor = isSelected ? UIColor(hex: 0x35ADFF) : UIColor(hex: 0x424242)
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

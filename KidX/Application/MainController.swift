@@ -28,7 +28,7 @@ class MainController: UIViewController {
         setupUI()
         setupConstraints()
         setupChildViewControllers()
-        displayChildViewController(at: 0)
+        displayChildViewController(at: 2)
     }
     
     private func setupUI() {
@@ -60,10 +60,12 @@ class MainController: UIViewController {
             return ListController()
         case .game:
             return GameController()
-        case .setting:
-            let settingNavigation = NavigationState<SettingRoute>(routes: [])
-            settingNavigation.delegate = SettingCoordinator(authNavigation: authNavigation)
-            return SettingController(viewModel: SettingViewModel(navigation: settingNavigation))
+        case .profile:
+            let profileNavigation = NavigationState<ProfileRoute>(routes: [])
+            profileNavigation.delegate = ProfileCoordinator(authNavigation: authNavigation)
+            return ProfileController(viewModel: ProfileViewModel(navigation: profileNavigation))
+        case .achieve:
+            return AchieveController()
         }
     }
     

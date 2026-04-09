@@ -8,11 +8,11 @@
 import FirebaseAuth
 import GoogleSignIn
 
-final class SettingViewModel {
+final class ProfileViewModel {
 
-    private let navigation: NavigationState<SettingRoute>
+    private let navigation: NavigationState<ProfileRoute>
 
-    init(navigation: NavigationState<SettingRoute>) {
+    init(navigation: NavigationState<ProfileRoute>) {
         self.navigation = navigation
     }
 

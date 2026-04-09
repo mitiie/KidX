@@ -18,6 +18,6 @@ enum HomeRoute: Hashable {
     case logout
 }
 
-enum SettingRoute: Hashable {
+enum ProfileRoute: Hashable {
     case logout
 }

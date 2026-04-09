@@ -7,11 +7,11 @@
 
 import UIKit
 
-class SettingController: BaseController {
+class ProfileController: BaseController {
 
-    private let viewModel: SettingViewModel
+    private let viewModel: ProfileViewModel
     
-    init(viewModel: SettingViewModel) {
+    init(viewModel: ProfileViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
