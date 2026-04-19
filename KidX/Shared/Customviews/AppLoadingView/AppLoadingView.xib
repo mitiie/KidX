@@ -31,10 +31,12 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="size" value="md"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="weight" value="medium"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Processing..."/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8v-3o-HM8">
@@ -50,10 +52,12 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="size" value="md"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Please wait a moment."/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="weight" value="medium"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
                     </subviews>

@@ -8,7 +8,7 @@
 import UIKit
 
 enum TabBarItem: String, CaseIterable {
-    case game, list, home, achieve, profile
+    case discovery, learn, home, achieve, profile
     
     var index: Int { Self.allCases.firstIndex(of: self) ?? 0 }
     

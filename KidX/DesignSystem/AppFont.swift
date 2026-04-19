@@ -70,24 +70,12 @@ enum FontWeight: String {
         case .regular:      return LexendFonts.regular.name
         }
     }
-}   
-
-enum FontSize: String, CaseIterable {
-    case sm, md, xl, xxl
-
-    var cgFloat: CGFloat {
-        switch self {
-        case .sm:   return 12
-        case .md:   return 16
-        case .xl:   return 20
-        case .xxl:  return 24
-        }
-    }
 }
 
 extension UIFont {
-    static func custom(_ size: FontSize, _ weight: FontWeight) -> UIFont {
+    static func custom(_ size: CGFloat, _ weight: FontWeight) -> UIFont {
         let scale: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 1.5 : 1.0
-        return UIFont(name: weight.fontName, size: size.cgFloat * scale)!
+        let pointSize = CGFloat(size) * scale
+        return UIFont(name: weight.fontName, size: pointSize) ?? UIFont.systemFont(ofSize: pointSize)
     }
 }

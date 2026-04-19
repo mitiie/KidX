@@ -242,7 +242,7 @@ class TabBarView: UIView {
     }
 
     private func updateLabel(_ label: UILabel, isSelected: Bool) {
-        label.font = UIFont.custom(.sm, isSelected ? .medium : .regular)
+        label.font = UIFont.custom(12, isSelected ? .medium : .regular)
         label.textColor = isSelected ? UIColor(hex: 0x35ADFF) : UIColor(hex: 0x424242)
     }
     

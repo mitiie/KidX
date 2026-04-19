@@ -39,9 +39,11 @@
                     <color key="textColor" name="DarkTeal"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="size" value="xl"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="weight" value="semiBold"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIi-B0-uia">
@@ -68,9 +70,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="size" value="md"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="weight" value="regular"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YyH-bw-XVr">
@@ -115,9 +119,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="size" value="md"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="weight" value="regular"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ic-passw" translatesAutoresizingMaskIntoConstraints="NO" id="S19-lz-Nc3">
@@ -143,9 +149,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="size" value="sm"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="weight" value="regular"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nuw-18-6HK">
@@ -215,9 +223,11 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="size" value="sm"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="weight" value="regular"/>
                                 <userDefinedRuntimeAttribute type="string" keyPath="color" value="grey"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df7-5K-UrX">

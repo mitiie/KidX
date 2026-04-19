@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 class CommonLabel: UILabel {
-    @IBInspectable var size: String = FontSize.sm.rawValue {
+    @IBInspectable var fontSize: CGFloat = 15.0 {
         didSet { updateStyle() }
     }
     
@@ -32,10 +32,9 @@ class CommonLabel: UILabel {
     }
     
     func updateStyle() {
-        let _size = FontSize(rawValue: size) ?? .sm
         let _weight = FontWeight(rawValue: weight) ?? .regular
-        let _color = AppColor(rawValue: color) ?? .text
-        self.font = UIFont.custom(_size, _weight)
+        let _color = AppColor(rawValue: color) ?? .primary
+        self.font = UIFont.custom(fontSize, _weight)
         self.textColor = _color.color
     }
 }

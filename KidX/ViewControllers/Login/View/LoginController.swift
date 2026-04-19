@@ -37,9 +37,9 @@ class LoginController: BaseController {
     
     private func setupUI() {
         [emailTF, passwordTF].forEach { $0?.setHorizontalPadding(16) }
-        btnLogin.titleLabel?.font = UIFont.custom(.xl, .medium)
-        btnForgotPW.titleLabel?.font = UIFont.custom(.md, .medium)
-        btnRegister.titleLabel?.font = UIFont.custom(.md, .semiBold)
+        btnLogin.titleLabel?.font = UIFont.custom(20, .medium)
+        btnForgotPW.titleLabel?.font = UIFont.custom(16, .medium)
+        btnRegister.titleLabel?.font = UIFont.custom(16, .semiBold)
         containerView.layer.applyShadow(
             color: UIColor(hex: 0x2766B6),
             alpha: 0.1,

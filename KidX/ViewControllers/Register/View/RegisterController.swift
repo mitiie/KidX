@@ -33,8 +33,8 @@ class RegisterController: BaseController {
     }
 
     private func setupUI() {
-        btnCreate.titleLabel?.font = UIFont.custom(.xl, .medium)
-        btnLogin.titleLabel?.font = UIFont.custom(.md, .semiBold)
+        btnCreate.titleLabel?.font = UIFont.custom(20, .medium)
+        btnLogin.titleLabel?.font = UIFont.custom(16, .semiBold)
         [emailTF, passwordTF, confirmPasswordTF].forEach {
             $0?.setHorizontalPadding(16)
         }

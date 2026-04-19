@@ -42,7 +42,7 @@ class MainController: UIViewController {
             tabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tabBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tabBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tabBar.heightAnchor.constraint(equalToConstant: 100)
+            tabBar.heightAnchor.constraint(equalToConstant: AppConfiguration.HEIGHT_TABBAR)
         ])
     }
 
@@ -56,10 +56,10 @@ class MainController: UIViewController {
             let homeNavigation = NavigationState<HomeRoute>(routes: [])
             homeNavigation.delegate = HomeCoordinator(authNavigation: authNavigation)
             return HomeController(viewModel: HomeViewModel(navigation: homeNavigation))
-        case .list:
-            return ListController()
-        case .game:
-            return GameController()
+        case .learn:
+            return LearnController()
+        case .discovery:
+            return DiscoveryController()
         case .profile:
             let profileNavigation = NavigationState<ProfileRoute>(routes: [])
             profileNavigation.delegate = ProfileCoordinator(authNavigation: authNavigation)

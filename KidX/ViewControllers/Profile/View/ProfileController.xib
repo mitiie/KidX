@@ -4,12 +4,12 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileController" customModule="KidX" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="MnN-7x-Qgk" id="QOD-gM-sXg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,19 +27,28 @@
                         <action selector="btnLogoutTapped:" destination="-1" eventType="touchUpInside" id="XXN-i3-V9s"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MnN-7x-Qgk">
+                    <rect key="frame" x="0.0" y="251" width="393" height="400"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="400" id="OG6-EL-mMh"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="i2Q-qG-BBC"/>
+                        <outlet property="delegate" destination="-1" id="5ZX-f3-6f9"/>
+                    </connections>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZAQ-W6-zAW" secondAttribute="trailing" constant="16" id="IZ5-J3-S38"/>
+                <constraint firstItem="MnN-7x-Qgk" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="X24-nB-IF0"/>
+                <constraint firstItem="MnN-7x-Qgk" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="fTH-zW-lty"/>
                 <constraint firstItem="ZAQ-W6-zAW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qde-yU-wT0"/>
+                <constraint firstItem="MnN-7x-Qgk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="stv-Ye-6X1"/>
             </constraints>
             <point key="canvasLocation" x="140" y="130"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
