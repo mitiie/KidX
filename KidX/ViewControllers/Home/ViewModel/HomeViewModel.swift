@@ -10,10 +10,15 @@ import GoogleSignIn
 
 final class HomeViewModel {
 
+    private(set) var popularCategories: [PopularFlashCardCategory] = []
     private let navigation: NavigationState<HomeRoute>
 
     init(navigation: NavigationState<HomeRoute>) {
         self.navigation = navigation
+    }
+
+    func loadData() {
+        popularCategories = PopularFlashCardService.loadCategories()
     }
 
     func logout(completion: @escaping (Error?) -> Void) {

@@ -18,11 +18,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-ma-6eA">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-ma-6eA" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
                     <rect key="frame" x="142.33333333333334" y="719.33333333333337" width="108.33333333333334" height="28.666666666666629"/>
                     <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                     <color key="textColor" red="1" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="17"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="weight" value="medium"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="color" value="primary"/>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-Ya-h5b" customClass="GradientProgressView" customModule="KidX" customModuleProvider="target">
                     <rect key="frame" x="78.666666666666671" y="764" width="235.66666666666663" height="20"/>

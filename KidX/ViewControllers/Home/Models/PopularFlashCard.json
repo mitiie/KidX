@@ -1,0 +1,236 @@
+[
+    {
+      "category": "School Supplies",
+      "imageName": "school",
+      "items": [
+        {
+          "title": "Classroom",
+          "imageName": "classroom",
+          "description": "A classroom is a designated space within a school or educational institution where students gather to receive instruction from a teacher. "
+        },
+        {
+          "title": "Scissors",
+          "imageName": "scissors",
+          "description": "A handheld tool with two sharp blades used for cutting paper, fabric, and other thin materials. Essential for everyday tasks at home, school, or the office."
+        },
+        {
+          "title": "Bookself",
+          "imageName": "bookself",
+          "description": "A bookshelf is a piece of furniture with horizontal shelves, used to store books and other items."
+        },
+        {
+          "title": "Notebook",
+          "imageName": "notebook",
+          "description": "A notebook is a portable collection of blank or lined pages bound together, used for writing, note-taking, journaling."
+        },
+        {
+          "title": "Pencil",
+          "imageName": "pencil",
+          "description": "A pencil is a common writing instrument made of a thin graphite core encased in wood or plastic"
+        },
+        {
+          "title": "Calipers",
+          "imageName": "calipers",
+          "description": "Calipers are precision measuring tools used to determine the distance between two opposite sides of an object."
+        },
+        {
+          "title": "Calligraphy ink",
+          "imageName": "calligraphyInk",
+          "description": "Calligraphy ink is a specialized liquid pigment used for the art of beautiful handwriting and decorative lettering, often applied with dip pens or brushes."
+        },
+        {
+          "title": "Acrylic Paint Set",
+          "imageName": "acrylicPaintSet",
+          "description": "Perfect for beginners and experienced artists alike, this kit encourages creativity and relaxation through art."
+        },
+        {
+          "title": "Sharpener",
+          "imageName": "sharpener",
+          "description": "A sharpener is a small tool used to restore the fine edge of pencils or other writing instruments, making them suitable for precise writing or drawing. "
+        },
+        {
+          "title": "Search Magnifier",
+          "imageName": "searchMagnifier",
+          "description": "A search magnifier is a common interface symbol representing the search function, typically depicted as a magnifying glass icon."
+        },
+        {
+          "title": "Lab",
+          "imageName": "lab",
+          "description": "A lab is a specialized facility equipped for scientific research, experiments, and analysis, often used in the fields of space."
+        },
+        {
+          "title": "Pen",
+          "imageName": "pen",
+          "description": "A pen is a common writing instrument used to apply ink to a surface, usually paper, for writing or drawingy."
+        }
+      ]
+    },
+  {
+    "category": "Plants",
+    "imageName": "plants",
+    "items": [
+      {
+        "title": "Mushroom",
+        "imageName": "mushroom",
+        "description": "A kit that allows you to grow a variety of gourmet mushrooms at home, perfect for food enthusiasts and home cooks seeking fresh, unique ingredients."
+      },
+      {
+        "title": "Orchid",
+        "imageName": "orchid",
+        "description": "A delicate and exotic flowering plant known for its vibrant colors and intricate blooms, often found in tropical regions and prized for its beauty in gardens and floral arrangements."
+      },
+      {
+        "title": "CloudBerry",
+        "imageName": "cloudberry",
+        "description": "Cloudberry is a rare, golden-orange fruit found in cool, northern regions. It grows in boggy, wild landscapes and is prized for its sweet-tart flavor and high vitamin content."
+      },
+      {
+        "title": "Sunflower",
+        "imageName": "sunflower",
+        "description": "A tall, bright yellow flowering plant known for its large, round blooms that follow the sun. Sunflowers are commonly found in fields and gardens, symbolizing warmth and positivity."
+      },
+      {
+        "title": "Flamboyant",
+        "imageName": "flamboyant",
+        "description": "The Flamboyant, also known as the Royal Poinciana, is a striking tropical tree renowned for its vivid red-orange blossoms and wide, umbrella-like canopy. "
+      },
+      {
+        "title": "Lettuce",
+        "imageName": "lettuce",
+        "description": "A leafy green vegetable commonly used in salads, sandwiches, and wraps. Lettuce is known for its crisp texture and mild flavor."
+      },
+      {
+        "title": "Watermelon",
+        "imageName": "watermelon",
+        "description": "A large, juicy fruit with a green rind and sweet, red flesh, commonly enjoyed fresh in summer or used in beverages and desserts."
+      },
+      {
+        "title": "Broccoli",
+        "imageName": "broccoli",
+        "description": "Broccoli is a green, edible vegetable from the cabbage family, known for its tree-like florets and high nutritional value.s."
+      },
+      {
+        "title": "Wild Berry",
+        "imageName": "wildberry",
+        "description": "A wild berry is a small, edible fruit that grows naturally in forests, fields, and other outdoor environments. "
+      },
+      {
+        "title": "Lemon",
+        "imageName": "lemon",
+        "description": "A lemon is a bright yellow citrus fruit known for its tart, tangy flavor and high vitamin C content."
+      }
+    ]
+  },
+  {
+    "category": "Countries on Earth",
+    "imageName": "earth",
+    "items": [
+      {
+        "title": "VietNam",
+        "imageName": "vietnam",
+        "description": "Vietnam is a Southeast Asian country known for its rich history, diverse culture, and scenic landscapes ranging from mountains to coastlines."
+      },
+      {
+        "title": "Ethiopia",
+        "imageName": "ethiopia",
+        "description": "Ethiopia is a landlocked country located in the Horn of Africa. Known for its rich history as one of the oldest nations in the world."
+      },
+      {
+        "title": "Pakistan",
+        "imageName": "pakistan",
+        "description": "Pakistan is a country in South Asia, known for its diverse landscapes, rich history, and cultural heritage."
+      },
+      {
+        "title": "Peru",
+        "imageName": "peru",
+        "description": "Peru is a country in western South America, known for its rich cultural heritage, the Andes mountains, and the ancient Incan city of Machu Picchu"
+      },
+      {
+        "title": "Bhutan",
+        "imageName": "bhutan",
+        "description": "Bhutan is a small, landlocked country in the Eastern Himalayas, known for its stunning mountain landscapes, rich Buddhist culture."
+      },
+      {
+        "title": "Saudi Arabia",
+        "imageName": "saudiArabia",
+        "description": "Saudi Arabia is a country located on the Arabian Peninsula in Western Asia. It is known for its vast deserts, rich oil reserves."
+      },
+      {
+        "title": "Ghana",
+        "imageName": "ghana",
+        "description": "Ghana is a country located along the Gulf of Guinea and the Atlantic Ocean, in West Africa. Known for its diverse wildlife, rich history, and vibrant culture."
+      },
+      {
+        "title": "Honduras",
+        "imageName": "honduras",
+        "description": "Honduras is a country in Central America known for its rich cultural heritage, diverse landscapes, and ancient Mayan ruins. It features tropical rainforests, beautiful beaches, and vibrant cities."
+      }
+    ]
+  },
+  {
+    "category": "Animals",
+    "imageName": "animals",
+    "items": [
+      {
+        "title": "Great Pyrenees",
+        "imageName": "greatPyrenees",
+        "description": "The Great Pyrenees is a large, majestic dog breed known for its thick white coat and gentle temperament."
+      },
+      {
+        "title": "Elephant",
+        "imageName": "elephant",
+        "description": "The elephant is the largest land animal on Earth, known for its intelligence, strong social bonds, and distinctive trunk."
+      },
+      {
+        "title": "Otter",
+        "imageName": "otter",
+        "description": "A small, playful aquatic mammal known for its sleek fur, webbed feet, and habit of sliding on mud or snow."
+      },
+      {
+        "title": "Triceratops",
+        "imageName": "triceratops",
+        "description": "Triceratops was a large, herbivorous dinosaur known for its three facial horns and large bony frill."
+      },
+      {
+        "title": "Rhinoceros",
+        "imageName": "rhinoceros",
+        "description": "A large, thick-skinned herbivorous mammal native to Africa and Asia, known for its distinctive horn(s) on the snout."
+      },
+      {
+        "title": "Fennec Fox",
+        "imageName": "fennecFox",
+        "description": "The Fennec Fox is a small nocturnal fox native to the Sahara Desert and other parts of North Africa"
+      },
+      {
+        "title": "Panda",
+        "imageName": "panda",
+        "description": "A panda or a giant panda is a large animal rather like a bear, which has black and white fur and lives in the bamboo forests of China."
+      },
+      {
+        "title": "Irrawaddy Dolphin",
+        "imageName": "irrawaddyDolphin",
+        "description": "The Irrawaddy Dolphin is a freshwater and coastal dolphin species native to Southeast Asia, known for its rounded forehead and unique appearance."
+      },
+      {
+        "title": "Crocodiles",
+        "imageName": "crocodile",
+        "description": "Crocodiles are known for their powerful jaws, armored skin, and stealthy hunting abilities in rivers and wetlands."
+      },
+      {
+        "title": "Orangutan",
+        "imageName": "orangutan",
+        "description": "The orangutan is a large, intelligent primate native to the rainforests of Borneo and Sumatra. "
+      },
+      {
+        "title": "Chicken",
+        "imageName": "chicken",
+        "description": "The domestic chicken is a common farm bird kept worldwide for its eggs and meat."
+      },
+      {
+        "title": "Saiga Antelope",
+        "imageName": "saigaAntelope",
+        "description": "The Saiga Antelope is a critically endangered antelope native to the steppes of Central Asia, known for its distinctive bulbous nose that helps filter dust and regulate temperature."
+      }
+    ]
+  }
+]

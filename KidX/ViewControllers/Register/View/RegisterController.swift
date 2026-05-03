@@ -29,10 +29,9 @@ class RegisterController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
     }
 
-    private func setupUI() {
+    override func setupUI() {
         btnCreate.titleLabel?.font = UIFont.custom(20, .medium)
         btnLogin.titleLabel?.font = UIFont.custom(16, .semiBold)
         [emailTF, passwordTF, confirmPasswordTF].forEach {

@@ -19,6 +19,7 @@ class BaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
+        setupUI()
     }
 
     private func setupBackground() {
@@ -32,4 +33,6 @@ class BaseController: UIViewController {
             backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
+    
+    func setupUI() { }
 }

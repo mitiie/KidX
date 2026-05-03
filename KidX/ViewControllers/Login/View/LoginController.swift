@@ -32,10 +32,9 @@ class LoginController: BaseController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
     }
     
-    private func setupUI() {
+    override func setupUI() {
         [emailTF, passwordTF].forEach { $0?.setHorizontalPadding(16) }
         btnLogin.titleLabel?.font = UIFont.custom(20, .medium)
         btnForgotPW.titleLabel?.font = UIFont.custom(16, .medium)

@@ -7,11 +7,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Raleway-Bold.ttf">
-            <string>Raleway-Bold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginController" customModule="KidX" customModuleProvider="target">
             <connections>
@@ -34,8 +29,8 @@
                     <rect key="frame" x="126.66666666666669" y="118" width="140" height="162"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lblWelcomeBack" text="Let's guide your little one's journey!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVp-hK-Tcd" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                    <rect key="frame" x="46" y="300" width="301.33333333333331" height="22.333333333333314"/>
-                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="19"/>
+                    <rect key="frame" x="47" y="300" width="299.33333333333331" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" name="DarkTeal"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
@@ -47,7 +42,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIi-B0-uia">
-                    <rect key="frame" x="20" y="342.33333333333326" width="353" height="441.66666666666674"/>
+                    <rect key="frame" x="20" y="343" width="353" height="441.66666666666674"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZR1-dR-axJ">
                             <rect key="frame" x="20" y="54" width="313" height="55"/>
@@ -87,7 +82,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9w-7B-0SP">
-                            <rect key="frame" x="298" y="175.33333333333331" width="19" height="22"/>
+                            <rect key="frame" x="298" y="175.33333333333337" width="19" height="22"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="ic-eye"/>
                             <connections>
@@ -95,7 +90,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fR-mK-MkT">
-                            <rect key="frame" x="20" y="245.66666666666669" width="313" height="56"/>
+                            <rect key="frame" x="20" y="245.66666666666663" width="313" height="56"/>
                             <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="56" id="bF9-Ji-1rS"/>
@@ -114,7 +109,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kZ-10-2MI" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                            <rect key="frame" x="49.333333333333336" y="131.33333333333337" width="73.333333333333314" height="21"/>
+                            <rect key="frame" x="49.333333333333336" y="131.33333333333331" width="73.333333333333314" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -140,10 +135,10 @@
                             </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="ic-line" translatesAutoresizingMaskIntoConstraints="NO" id="amr-F4-M32">
-                            <rect key="frame" x="20" y="325.66666666666669" width="313" height="20"/>
+                            <rect key="frame" x="20" y="325.66666666666663" width="313" height="20"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR CONTINUE WITH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUh-z0-R6g" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                            <rect key="frame" x="117.66666666666666" y="328.66666666666669" width="117.66666666666666" height="14.333333333333314"/>
+                            <rect key="frame" x="117.66666666666666" y="328.66666666666663" width="117.66666666666666" height="14.333333333333314"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <nil key="textColor"/>
@@ -157,7 +152,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nuw-18-6HK">
-                            <rect key="frame" x="116.66666666666666" y="361.66666666666669" width="120" height="48"/>
+                            <rect key="frame" x="116.66666666666666" y="361.66666666666663" width="120" height="48"/>
                             <color key="backgroundColor" red="0.82745099067687988" green="0.89019608497619629" blue="1" alpha="0.84705883260000003" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="120" id="8Gt-YS-cea"/>

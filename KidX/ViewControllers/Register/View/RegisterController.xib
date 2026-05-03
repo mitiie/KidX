@@ -8,11 +8,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Raleway-Bold.ttf">
-            <string>Raleway-Bold</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterController" customModule="KidX" customModuleProvider="target">
             <connections>
@@ -31,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLI-BK-0sM">
-                    <rect key="frame" x="20" y="313.66666666666674" width="353" height="446.33333333333326"/>
+                    <rect key="frame" x="20" y="315.33333333333337" width="353" height="446.33333333333337"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bod-yr-MSR">
                             <rect key="frame" x="20" y="54" width="313" height="55"/>
@@ -49,7 +44,7 @@
                             <rect key="frame" x="28" y="32" width="17" height="14"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHm-4a-Pmp" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                            <rect key="frame" x="53.000000000000007" y="28.666666666666629" width="107.66666666666669" height="21"/>
+                            <rect key="frame" x="53.000000000000007" y="28.666666666666686" width="107.66666666666669" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -62,7 +57,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="81Z-gN-eNv">
-                            <rect key="frame" x="20" y="158.66666666666663" width="313" height="55"/>
+                            <rect key="frame" x="20" y="158.66666666666669" width="313" height="55"/>
                             <color key="backgroundColor" red="0.82745099070000006" green="0.89019608500000003" blue="1" alpha="0.84705883260000003" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -71,7 +66,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5FJ-sG-Ijm">
-                            <rect key="frame" x="289" y="172.33333333333331" width="28" height="28"/>
+                            <rect key="frame" x="289" y="172.33333333333337" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="4c6-mC-OTl"/>
                                 <constraint firstAttribute="width" constant="28" id="wLw-20-wpp"/>
@@ -83,7 +78,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m63-FC-CFf" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                            <rect key="frame" x="49.333333333333336" y="131.33333333333331" width="73.333333333333314" height="21"/>
+                            <rect key="frame" x="49.333333333333336" y="131.33333333333337" width="73.333333333333314" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -127,7 +122,7 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jxm-rl-GMe" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                            <rect key="frame" x="49.333333333333329" y="243.99999999999994" width="138.66666666666669" height="21"/>
+                            <rect key="frame" x="49.333333333333329" y="244.00000000000006" width="138.66666666666669" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -140,7 +135,7 @@
                             </userDefinedRuntimeAttributes>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YO8-63-bcH">
-                            <rect key="frame" x="289" y="284.99999999999994" width="28" height="28"/>
+                            <rect key="frame" x="289" y="285.00000000000006" width="28" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="28" id="UFf-fe-l8K"/>
                                 <constraint firstAttribute="width" constant="28" id="uBY-0A-WN8"/>
@@ -257,11 +252,11 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="lblWelcomeBack" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ho6-Ja-8tW" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                    <rect key="frame" x="20" y="215" width="353" height="66.666666666666686"/>
+                    <rect key="frame" x="20" y="215" width="353" height="68.333333333333314"/>
                     <string key="text">Create a parent account to unlock a
 world of learning and discovery for your
 child.</string>
-                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="19"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" name="DarkTeal"/>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>

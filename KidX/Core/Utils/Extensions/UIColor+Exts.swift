@@ -16,8 +16,8 @@ extension UIColor {
     }
     
     static let progressGradientColors: [UIColor] = [
-        UIColor(hex: 0xFFEC1F),
-        UIColor(hex: 0xFF4DB4)
+        UIColor(hex: 0x0077FF),
+        UIColor.cyan
     ]
 }
 
