@@ -53,6 +53,15 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PopularTableCell = tableView.dequeueReusableCell(for: indexPath)
         cell.configure(with: viewModel.popularCategories)
+        cell.delegate = self
         return cell
+    }
+}
+
+extension HomeController: PopularTableCellDelegate {
+    func popularTableCell(_ cell: PopularTableCell, didSelectCategory category: PopularFlashCardCategory) {
+        let vc = ListFlashCardVC()
+        vc.configureData(popularCategory: category, title: category.category)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
