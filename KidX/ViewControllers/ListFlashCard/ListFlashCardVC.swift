@@ -14,9 +14,16 @@ class ListFlashCardVC: BaseController {
     @IBOutlet weak var letReviewLabel: UILabel!
     @IBOutlet weak var letReviewContainer: UIView!
     
-    private var itemList: [FlashCardItem] = []
-    private var titleText: String = ""
-    private var isUserCategory = false
+    private let viewModel: HomeViewModel
+
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +32,7 @@ class ListFlashCardVC: BaseController {
     }
 
     func configureData(popularCategory: PopularFlashCardCategory, title: String) {
-        self.itemList = popularCategory.items
-        self.titleText = title
-        self.isUserCategory = false
+        viewModel.selectCategory(popularCategory)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,7 +41,7 @@ class ListFlashCardVC: BaseController {
     }
 
     override func setupUI() {
-        label.text = titleText
+        label.text = viewModel.titleText
         let tap = UITapGestureRecognizer(target: self, action: #selector(letReviewTapped))
         letReviewContainer.addGestureRecognizer(tap)
     }
@@ -61,27 +66,26 @@ class ListFlashCardVC: BaseController {
             guard let self = self else { return }
             optionView.removeFromSuperview()
 
-            let unremembered = self.itemList.filter { !$0.isRemembered }
+            let unremembered = self.viewModel.getUnrememberedItems()
             guard !unremembered.isEmpty else {
                 self.presentAlert(message: "All cards are remembered!")
                 return
             }
 
-//            let detailVC = FlashCardDetailVC()
-//            detailVC.configure(items: unremembered, category: "Unremembered")
-//            self.navigationController?.pushViewController(detailVC, animated: true)
+            let detailVM = FlashCardDetailViewModel(items: unremembered, category: "Unremembered")
+            let detailVC = FlashCardDetailVC(viewModel: detailVM)
+            self.navigationController?.pushViewController(detailVC, animated: true)
         }
 
         optionView.onRandomTapped = { [weak self] in
             guard let self = self else { return }
             optionView.removeFromSuperview()
 
-            var items = self.itemList
-            items.shuffle()
+            let items = self.viewModel.getRandomizedItems()
 
-//            let detailVC = FlashCardDetailVC()
-//            detailVC.configure(items: items, category: "Random Learning")
-//            self.navigationController?.pushViewController(detailVC, animated: true)
+            let detailVM = FlashCardDetailViewModel(items: items, category: "Random Learning")
+            let detailVC = FlashCardDetailVC(viewModel: detailVM)
+            self.navigationController?.pushViewController(detailVC, animated: true)
         }
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissOptionView(_:)))
@@ -113,34 +117,29 @@ class ListFlashCardVC: BaseController {
 
 extension ListFlashCardVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemList.count
+        return viewModel.itemList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: FlashCardCell = collectionView.dequeueReusableCell(for: indexPath)
-        let item = itemList[indexPath.item]
+        let item = viewModel.itemList[indexPath.item]
         cell.configure(with: item)
 
-        if isUserCategory && indexPath.item == itemList.count - 1 {
-            cell.btnAdd.isHidden = false
+        if indexPath.item == viewModel.itemList.count - 1 {
             cell.onAddTapped = { [weak self] in
                 self?.presentCreateFlashCardScreen()
             }
-        } else {
-            cell.btnAdd.isHidden = true
         }
 
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var reordered = itemList
-        let selected = reordered.remove(at: indexPath.item)
-        reordered.insert(selected, at: 0)
+        let reordered = viewModel.reorderItems(at: indexPath.item)
 
-//        let detailVC = FlashCardDetailVC()
-//        detailVC.configure(items: reordered, category: titleText)
-//        navigationController?.pushViewController(detailVC, animated: true)
+        let detailVM = FlashCardDetailViewModel(items: reordered, category: viewModel.titleText)
+        let detailVC = FlashCardDetailVC(viewModel: detailVM)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 
     private func presentCreateFlashCardScreen() {

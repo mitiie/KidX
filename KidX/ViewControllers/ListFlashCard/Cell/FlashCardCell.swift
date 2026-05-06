@@ -11,7 +11,6 @@ class FlashCardCell: UICollectionViewCell {
     @IBOutlet weak var noteTitle: UILabel!
     @IBOutlet weak var noteIMG: UIImageView!
     @IBOutlet weak var markIMG: UIImageView!
-    @IBOutlet weak var btnAdd: UIButton!
     
     var onAddTapped: (() -> Void)?
     
@@ -23,7 +22,6 @@ class FlashCardCell: UICollectionViewCell {
     private func setupUI() {
         noteIMG.layer.cornerRadius = 36
         noteIMG.backgroundColor = UIColor(hex: 0xFCB8B4, alpha: 0.5)
-        btnAdd.isHidden = true
     }
 
     func configure(with item: FlashCardItem) {
@@ -35,10 +33,6 @@ class FlashCardCell: UICollectionViewCell {
         }
 
         markIMG.image = item.isRemembered ? UIImage(resource: .starSelected) : UIImage(resource: .starUnselected)
-    }
-
-    @IBAction func btnAddTapped(_ sender: UIButton) {
-        onAddTapped?()
     }
 
     private func imagePath(_ filename: String) -> String {

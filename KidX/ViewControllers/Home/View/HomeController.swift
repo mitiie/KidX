@@ -10,7 +10,6 @@ import UIKit
 class HomeController: BaseController {
     @IBOutlet weak var tableView: UITableView!
     private let viewModel: HomeViewModel
-
     
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -60,7 +59,7 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeController: PopularTableCellDelegate {
     func popularTableCell(_ cell: PopularTableCell, didSelectCategory category: PopularFlashCardCategory) {
-        let vc = ListFlashCardVC()
+        let vc = ListFlashCardVC(viewModel: viewModel)
         vc.configureData(popularCategory: category, title: category.category)
         navigationController?.pushViewController(vc, animated: true)
     }

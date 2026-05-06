@@ -43,34 +43,20 @@
                             <constraint firstAttribute="height" constant="25" id="w52-YV-YFf"/>
                         </constraints>
                     </imageView>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4N2-iI-eRc" userLabel="btnAdd">
-                        <rect key="frame" x="143.33333333333334" y="0.0" width="48.666666666666657" height="88"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="88" id="EEj-Dv-A81"/>
-                        </constraints>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" image="addNew"/>
-                        <connections>
-                            <action selector="btnAddTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="VDG-qM-x6h"/>
-                        </connections>
-                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="D87-vM-4l7" firstAttribute="bottom" secondItem="wt8-nO-5Qt" secondAttribute="bottom" id="0Xa-8d-V1o"/>
                 <constraint firstItem="rpw-hn-glp" firstAttribute="top" secondItem="wt8-nO-5Qt" secondAttribute="bottom" constant="16" id="4pe-oi-yvr"/>
-                <constraint firstItem="4N2-iI-eRc" firstAttribute="trailing" secondItem="wt8-nO-5Qt" secondAttribute="trailing" id="9cF-Da-fac"/>
                 <constraint firstItem="wt8-nO-5Qt" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="AI4-RQ-eCc"/>
                 <constraint firstAttribute="trailing" secondItem="rpw-hn-glp" secondAttribute="trailing" constant="8" id="BNh-KF-75U"/>
                 <constraint firstItem="wt8-nO-5Qt" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.56" id="CuF-RU-tcg"/>
                 <constraint firstItem="rpw-hn-glp" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="G1P-Ql-iz1"/>
                 <constraint firstItem="qOP-eV-uJG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HtL-eA-tMS"/>
                 <constraint firstItem="rpw-hn-glp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="PHa-dC-8En"/>
-                <constraint firstItem="4N2-iI-eRc" firstAttribute="width" secondItem="wt8-nO-5Qt" secondAttribute="width" multiplier="0.3" id="PsD-Xy-Ffd"/>
                 <constraint firstItem="D87-vM-4l7" firstAttribute="trailing" secondItem="wt8-nO-5Qt" secondAttribute="trailing" id="Rsb-jK-XbE"/>
                 <constraint firstAttribute="bottom" secondItem="qOP-eV-uJG" secondAttribute="bottom" id="XCc-UE-394"/>
-                <constraint firstItem="4N2-iI-eRc" firstAttribute="centerY" secondItem="wt8-nO-5Qt" secondAttribute="top" id="ZWv-r6-ORO"/>
                 <constraint firstItem="wt8-nO-5Qt" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-16" id="jpf-Sz-JEe"/>
                 <constraint firstItem="wt8-nO-5Qt" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.73" id="qRX-1V-YMV"/>
                 <constraint firstItem="qOP-eV-uJG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qy4-vK-lCn"/>
@@ -78,7 +64,6 @@
             </constraints>
             <size key="customSize" width="222" height="272"/>
             <connections>
-                <outlet property="btnAdd" destination="4N2-iI-eRc" id="gz0-qk-eFV"/>
                 <outlet property="markIMG" destination="D87-vM-4l7" id="cgf-fd-XE4"/>
                 <outlet property="noteIMG" destination="wt8-nO-5Qt" id="X5Q-M7-QSP"/>
                 <outlet property="noteTitle" destination="rpw-hn-glp" id="cBJ-uZ-MiP"/>
@@ -87,7 +72,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="addNew" width="91" height="70.666664123535156"/>
         <image name="cardBG" width="175" height="257"/>
         <image name="star_selected" width="22" height="22.666666030883789"/>
     </resources>

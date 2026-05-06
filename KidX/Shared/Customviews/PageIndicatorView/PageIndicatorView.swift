@@ -7,46 +7,54 @@
 
 import UIKit
 
-class PageIndicatorView: UIView {
+class PageIndicatorView: UIView, XibLoadable {
     @IBOutlet weak var stackView: UIStackView!
 
     var activeColor: UIColor = AppColor.primary.color
-    var inactiveColor: UIColor = UIColor.white
-    var activeWidth: CGFloat = 32
-    var inactiveWidth: CGFloat = 8
-    var dotHeight: CGFloat = 8
+    var inactiveColor: UIColor = AppColor.white.color
+    var activeWidth: CGFloat = 24
+    var inactiveWidth: CGFloat = 6
+    var dotHeight: CGFloat = 6
 
     private var dots: [UIView] = []
     private var widthConstraints: [NSLayoutConstraint] = []
-    private var currentPage: Int = 0
-    private var totalPages: Int = 2
+    
+    var numberOfPages: Int = 0 {
+        didSet {
+            if oldValue != numberOfPages {
+                buildDots()
+            }
+        }
+    }
+
+    var currentPage: Int = 0 {
+        didSet {
+            updateDots(animated: true)
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        loadNibContent()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
+        loadNibContent()
     }
-
-    private func commonInit() {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "PageIndicatorView", bundle: bundle)
-        guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
-        view.frame = bounds
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(view)
-        
-        stackView.spacing = 6
-        stackView.alignment = .center
-        stackView.distribution = .fill
-        buildDots()
-    }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        stackView.spacing = 4
+        stackView.alignment = .center
+        stackView.distribution = .fill
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        let spacing = stackView.spacing
+        let dotsWidth = CGFloat(max(0, numberOfPages - 1)) * inactiveWidth + (numberOfPages > 0 ? activeWidth : 0)
+        let totalSpacing = CGFloat(max(0, numberOfPages - 1)) * spacing
+        return CGSize(width: dotsWidth + totalSpacing, height: dotHeight)
     }
 
     private func buildDots() {
@@ -54,7 +62,7 @@ class PageIndicatorView: UIView {
         dots.removeAll()
         widthConstraints.removeAll()
 
-        for i in 0..<totalPages {
+        for i in 0..<numberOfPages {
             let dot = UIView()
             dot.translatesAutoresizingMaskIntoConstraints = false
             dot.layer.cornerRadius = dotHeight / 2
@@ -69,26 +77,25 @@ class PageIndicatorView: UIView {
             stackView.addArrangedSubview(dot)
             dots.append(dot)
         }
+        invalidateIntrinsicContentSize()
     }
 
     // MARK: - Public
-    func setPage(_ page: Int, totalPages: Int = 2, animated: Bool = true) {
-        if self.totalPages != totalPages {
-            self.totalPages = totalPages
-            buildDots()
+    func setPage(_ page: Int, totalPages: Int = 3, animated: Bool = true) {
+        if self.numberOfPages != totalPages {
+            self.numberOfPages = totalPages
         }
-        currentPage = page
-        updateDots(animated: animated)
+        self.currentPage = page
     }
 
     private func updateDots(animated: Bool) {
-        UIView.animate(withDuration: animated ? 0.2 : 0) {
+        UIView.animate(withDuration: animated ? 0.25 : 0, delay: 0, options: .curveEaseOut, animations: {
             for (i, dot) in self.dots.enumerated() {
                 let isActive = i == self.currentPage
                 dot.backgroundColor = isActive ? self.activeColor : self.inactiveColor
                 self.widthConstraints[i].constant = isActive ? self.activeWidth : self.inactiveWidth
             }
             self.stackView.layoutIfNeeded()
-        }
+        }, completion: nil)
     }
 }

@@ -91,11 +91,14 @@ extension PopularTableCell: UICollectionViewDelegate, UICollectionViewDataSource
 }
 
 extension PopularTableCell: UIScrollViewDelegate {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let layout = popularCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         let step = layout.itemSize.width + layout.minimumLineSpacing
         let offsetX = scrollView.contentOffset.x
         let currentPage = Int(round(offsetX / step))
-        pageIndicator.setPage(currentPage, totalPages: categories.count)
+        
+        if pageIndicator.currentPage != currentPage {
+            pageIndicator.currentPage = currentPage
+        }
     }
 }

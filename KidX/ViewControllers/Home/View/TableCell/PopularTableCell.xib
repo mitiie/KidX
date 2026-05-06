@@ -38,12 +38,11 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ynr-Wo-1x9" customClass="PageIndicatorView" customModule="FingerSpinner" customModuleProvider="target">
+                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="74" placeholderIntrinsicHeight="8" translatesAutoresizingMaskIntoConstraints="NO" id="ynr-Wo-1x9" customClass="PageIndicatorView" customModule="KidX" customModuleProvider="target">
                         <rect key="frame" x="234" y="317" width="74" height="8"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="8" id="RpJ-c2-vgp"/>
-                            <constraint firstAttribute="width" constant="74" id="quZ-rl-WdO"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
