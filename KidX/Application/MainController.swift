@@ -57,7 +57,7 @@ class MainController: UIViewController {
             homeNavigation.delegate = HomeCoordinator(authNavigation: authNavigation)
             return HomeController(viewModel: HomeViewModel(navigation: homeNavigation))
         case .learn:
-            return LearnController()
+            return LearnController(viewModel: LearnViewModel())
         case .discovery:
             return DiscoveryController()
         case .profile:
@@ -86,7 +86,7 @@ class MainController: UIViewController {
             newVC.view.topAnchor.constraint(equalTo: view.topAnchor),
             newVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             newVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            newVC.view.bottomAnchor.constraint(equalTo: tabBar.centerYAnchor)
+            newVC.view.bottomAnchor.constraint(equalTo: tabBar.topAnchor)
         ])
         newVC.didMove(toParent: self)
         currentViewController = newVC
@@ -98,4 +98,3 @@ extension MainController: TabBarViewDelegate {
         displayChildViewController(at: tab.index)
     }
 }
-

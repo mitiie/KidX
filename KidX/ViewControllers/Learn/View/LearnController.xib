@@ -4,12 +4,18 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LearnController" customModule="KidX" customModuleProvider="target">
             <connections>
+                <outlet property="clearButton" destination="BTN-cl-001" id="OT-cb-001"/>
+                <outlet property="detectButton" destination="BTN-dt-001" id="OT-db-001"/>
+                <outlet property="drawView" destination="DRW-vw-001" id="OT-dw-001"/>
+                <outlet property="instructionLabel" destination="LBL-in-002" id="OT-il-002"/>
+                <outlet property="resultContainerView" destination="RES-cv-001" id="OT-rc-001"/>
+                <outlet property="resultLabel" destination="RES-lb-001" id="OT-rl-001"/>
+                <outlet property="titleLabel" destination="LBL-tt-001" id="OT-tl-001"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,14 +23,105 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyen tap so" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-tt-001">
+                    <rect key="frame" x="20" y="117.99999999999999" width="353" height="26.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.26700000000000002" green="0.36499999999999999" blue="0.498" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ve mot chu so tu 0 den 9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-in-002">
+                    <rect key="frame" x="20" y="152.33333333333334" width="353" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.43099999999999999" green="0.42399999999999999" blue="0.42399999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-vw-001" customClass="DrawView" customModule="KidX" customModuleProvider="target">
+                    <rect key="frame" x="20" y="185.33333333333337" width="353" height="353"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="DRW-vw-001" secondAttribute="height" id="C-dw-aspect"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RES-cv-001" userLabel="resultContainerView">
+                    <rect key="frame" x="20" y="554.33333333333337" width="353" height="123"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ket qua:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-kq-003">
+                            <rect key="frame" x="0.0" y="8" width="353" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.43099999999999999" green="0.42399999999999999" blue="0.42399999999999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RES-lb-001">
+                            <rect key="frame" x="0.0" y="29" width="353" height="86"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                            <color key="textColor" red="0.0" green="0.46700000000000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="LBL-kq-003" firstAttribute="top" secondItem="RES-cv-001" secondAttribute="top" constant="8" id="RC-c1"/>
+                        <constraint firstItem="LBL-kq-003" firstAttribute="leading" secondItem="RES-cv-001" secondAttribute="leading" id="RC-c2"/>
+                        <constraint firstAttribute="trailing" secondItem="LBL-kq-003" secondAttribute="trailing" id="RC-c3"/>
+                        <constraint firstItem="RES-lb-001" firstAttribute="top" secondItem="LBL-kq-003" secondAttribute="bottom" constant="4" id="RC-c4"/>
+                        <constraint firstItem="RES-lb-001" firstAttribute="leading" secondItem="RES-cv-001" secondAttribute="leading" id="RC-c5"/>
+                        <constraint firstAttribute="trailing" secondItem="RES-lb-001" secondAttribute="trailing" id="RC-c6"/>
+                        <constraint firstAttribute="bottom" secondItem="RES-lb-001" secondAttribute="bottom" constant="8" id="RC-c7"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="STK-btn-001">
+                    <rect key="frame" x="20" y="700" width="353" height="52"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-cl-001" userLabel="clearButton">
+                            <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="52"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="BCL-h1"/>
+                            </constraints>
+                            <state key="normal" title="Xoa">
+                                <color key="titleColor" red="0.0" green="0.46700000000000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="clearTapped:" destination="-1" eventType="touchUpInside" id="ACT-cl-001"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dt-001" userLabel="detectButton">
+                            <rect key="frame" x="184.66666666666663" y="0.0" width="168.33333333333337" height="52"/>
+                            <color key="backgroundColor" red="0.0" green="0.46700000000000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="BDT-h1"/>
+                            </constraints>
+                            <state key="normal" title="Nhan dien">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="detectTapped:" destination="-1" eventType="touchUpInside" id="ACT-dt-001"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="DRW-vw-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-dw-lead"/>
+                <constraint firstItem="DRW-vw-001" firstAttribute="top" secondItem="LBL-in-002" secondAttribute="bottom" constant="16" id="C-dw-top"/>
+                <constraint firstAttribute="trailing" secondItem="DRW-vw-001" secondAttribute="trailing" constant="20" id="C-dw-trail"/>
+                <constraint firstItem="LBL-in-002" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-il-lead"/>
+                <constraint firstItem="LBL-in-002" firstAttribute="top" secondItem="LBL-tt-001" secondAttribute="bottom" constant="8" id="C-il-top"/>
+                <constraint firstAttribute="trailing" secondItem="LBL-in-002" secondAttribute="trailing" constant="20" id="C-il-trail"/>
+                <constraint firstItem="RES-cv-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-rc-lead"/>
+                <constraint firstItem="RES-cv-001" firstAttribute="top" secondItem="DRW-vw-001" secondAttribute="bottom" constant="16" id="C-rc-top"/>
+                <constraint firstAttribute="trailing" secondItem="RES-cv-001" secondAttribute="trailing" constant="20" id="C-rc-trail"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="STK-btn-001" secondAttribute="bottom" constant="32" id="C-sk-bot"/>
+                <constraint firstItem="STK-btn-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-sk-lead"/>
+                <constraint firstAttribute="trailing" secondItem="STK-btn-001" secondAttribute="trailing" constant="20" id="C-sk-trail"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-tt-lead"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="C-tt-top"/>
+                <constraint firstAttribute="trailing" secondItem="LBL-tt-001" secondAttribute="trailing" constant="20" id="C-tt-trail"/>
+            </constraints>
             <point key="canvasLocation" x="126" y="125"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
