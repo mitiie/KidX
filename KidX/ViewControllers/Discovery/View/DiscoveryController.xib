@@ -17,12 +17,27 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSR-13-GU6">
+                    <rect key="frame" x="252" y="672.66666666666663" width="121" height="111.33333333333337"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="ic_add"/>
+                    <connections>
+                        <action selector="btnAddNewTapped:" destination="-1" eventType="touchUpInside" id="B2k-2s-W9Y"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SSR-13-GU6" secondAttribute="trailing" constant="20" id="CZX-8E-f7O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="SSR-13-GU6" secondAttribute="bottom" id="uQe-0i-hSw"/>
+            </constraints>
             <point key="canvasLocation" x="126" y="125"/>
         </view>
     </objects>
     <resources>
+        <image name="ic_add" width="97" height="97.333335876464844"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

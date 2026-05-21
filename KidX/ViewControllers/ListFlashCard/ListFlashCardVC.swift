@@ -13,7 +13,7 @@ class ListFlashCardVC: BaseController {
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var letReviewLabel: UILabel!
     @IBOutlet weak var letReviewContainer: UIView!
-    
+
     private let viewModel: HomeViewModel
 
     init(viewModel: HomeViewModel) {
@@ -72,9 +72,7 @@ class ListFlashCardVC: BaseController {
                 return
             }
 
-            let detailVM = FlashCardDetailViewModel(items: unremembered, category: "Unremembered")
-            let detailVC = FlashCardDetailVC(viewModel: detailVM)
-            self.navigationController?.pushViewController(detailVC, animated: true)
+            self.viewModel.navigateToFlashCardDetail(items: unremembered, category: "Unremembered")
         }
 
         optionView.onRandomTapped = { [weak self] in
@@ -82,10 +80,7 @@ class ListFlashCardVC: BaseController {
             optionView.removeFromSuperview()
 
             let items = self.viewModel.getRandomizedItems()
-
-            let detailVM = FlashCardDetailViewModel(items: items, category: "Random Learning")
-            let detailVC = FlashCardDetailVC(viewModel: detailVM)
-            self.navigationController?.pushViewController(detailVC, animated: true)
+            self.viewModel.navigateToFlashCardDetail(items: items, category: "Random Learning")
         }
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissOptionView(_:)))
@@ -105,7 +100,7 @@ class ListFlashCardVC: BaseController {
     }
 
     @IBAction func btnBackTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        viewModel.navigateBack()
     }
 
     private func presentAlert(message: String) {
@@ -136,10 +131,7 @@ extension ListFlashCardVC: UICollectionViewDelegate, UICollectionViewDataSource 
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let reordered = viewModel.reorderItems(at: indexPath.item)
-
-        let detailVM = FlashCardDetailViewModel(items: reordered, category: viewModel.titleText)
-        let detailVC = FlashCardDetailVC(viewModel: detailVM)
-        navigationController?.pushViewController(detailVC, animated: true)
+        viewModel.navigateToFlashCardDetail(items: reordered, category: viewModel.titleText)
     }
 
     private func presentCreateFlashCardScreen() {
@@ -156,7 +148,6 @@ extension ListFlashCardVC: UICollectionViewDelegate, UICollectionViewDataSource 
 //            }
 //        }
 //
-//        navigationController?.pushViewController(createVC, animated: true)
     }
 }
 
@@ -181,7 +172,7 @@ extension ListFlashCardVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 16 
+        return 16
     }
 
     func collectionView(_ collectionView: UICollectionView,

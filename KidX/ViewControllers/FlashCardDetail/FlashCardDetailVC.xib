@@ -46,7 +46,7 @@
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="mfU-w0-R4q"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="ic_back"/>
+                    <buttonConfiguration key="configuration" style="plain" image="ic-flc-back"/>
                     <connections>
                         <action selector="btnBackTapped:" destination="-1" eventType="touchUpInside" id="GGD-bf-gg0"/>
                     </connections>
@@ -234,7 +234,7 @@
         <image name="cardDetailBG" width="363" height="534"/>
         <image name="eleError" width="100" height="73"/>
         <image name="eleTick" width="100" height="73"/>
-        <image name="ic_back" width="24" height="26"/>
+        <image name="ic-flc-back" width="24" height="26"/>
         <image name="ic_remember" width="65" height="24"/>
         <image name="icon_next" width="91" height="70.666664123535156"/>
         <image name="previous" width="91" height="70.666664123535156"/>

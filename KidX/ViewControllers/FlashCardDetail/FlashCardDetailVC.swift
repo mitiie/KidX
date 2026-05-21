@@ -28,7 +28,7 @@ class FlashCardDetailVC: BaseController {
     @IBOutlet weak var btnFlip: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
-    
+
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var btnPrevious: UIButton!
     @IBOutlet weak var errorIMG: UIImageView!
@@ -145,9 +145,7 @@ class FlashCardDetailVC: BaseController {
 
     private func handleNextCard(isLast: Bool) {
         if isLast {
-            let summaryVM = viewModel.createSummaryViewModel()
-            let summaryVC = SummaryVC(viewModel: summaryVM)
-            navigationController?.pushViewController(summaryVC, animated: true)
+            viewModel.navigateToSummary()
             return
         }
 
@@ -222,6 +220,6 @@ class FlashCardDetailVC: BaseController {
     }
 
     @IBAction func btnBackTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        viewModel.navigateBack()
     }
 }

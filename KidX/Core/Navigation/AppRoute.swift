@@ -7,17 +7,35 @@
 
 
 // MARK: - Route
-enum AuthRoute: Hashable {
+enum AuthRoute {
     case splash
     case login
     case register
     case main
 }
 
-enum HomeRoute: Hashable {
-    case logout
+struct FlashCardDetailRouteInput {
+    let items: [FlashCardItem]
+    let category: String
+    let isRelearnMode: Bool
+    let relearnType: RelearnType?
 }
 
-enum ProfileRoute: Hashable {
+struct SummaryRouteInput {
+    let total: Int
+    let remembered: Int
+    let notRemembered: Int
+    let items: [FlashCardItem]
+}
+
+enum MainRoute {
+    case discovery
+    case learn
+    case home
+    case achieve
+    case profile
+    case listFlashCard(PopularFlashCardCategory)
+    case flashCardDetail(FlashCardDetailRouteInput)
+    case summary(SummaryRouteInput)
     case logout
 }

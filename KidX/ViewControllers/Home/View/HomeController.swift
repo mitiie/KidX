@@ -10,7 +10,7 @@ import UIKit
 class HomeController: BaseController {
     @IBOutlet weak var tableView: UITableView!
     private let viewModel: HomeViewModel
-    
+
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -24,12 +24,12 @@ class HomeController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func setupUI() {
         viewModel.loadData()
         setupTableView()
     }
-    
+
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,11 +44,11 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: PopularTableCell = tableView.dequeueReusableCell(for: indexPath)
         cell.configure(with: viewModel.popularCategories)
@@ -59,8 +59,6 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeController: PopularTableCellDelegate {
     func popularTableCell(_ cell: PopularTableCell, didSelectCategory category: PopularFlashCardCategory) {
-        let vc = ListFlashCardVC(viewModel: viewModel)
-        vc.configureData(popularCategory: category, title: category.category)
-        navigationController?.pushViewController(vc, animated: true)
+        viewModel.navigateToListFlashCard(category: category)
     }
 }

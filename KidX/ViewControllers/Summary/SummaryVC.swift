@@ -12,7 +12,7 @@ class SummaryVC: BaseController {
     @IBOutlet weak var rememberCount: UILabel!
     @IBOutlet weak var dontRememberLabel: UILabel!
     @IBOutlet weak var dontRememberCount: UILabel!
-    
+
     @IBOutlet weak var relearnRememberView: UIView!
     @IBOutlet weak var relearnRememberLabel: UILabel!
     @IBOutlet weak var relearnDontRememberView: UIView!
@@ -63,7 +63,7 @@ class SummaryVC: BaseController {
 
     @objc private func handleBackToHome() {
         addTapBounceEffect(to: backToHomeView) {
-            self.navigationController?.popToRootViewController(animated: true)
+            self.viewModel.navigateToHome()
         }
     }
 
@@ -80,15 +80,14 @@ class SummaryVC: BaseController {
     }
 
     private func startRelearn(type: RelearnType) {
-        guard let detailVM = viewModel.createRelearnViewModel(type: type) else {
+        guard let input = viewModel.createRelearnRouteInput(type: type) else {
             let alert = UIAlertController(title: "Notice", message: "There are no cards to review.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
             return
         }
 
-        let vc = FlashCardDetailVC(viewModel: detailVM)
-        navigationController?.pushViewController(vc, animated: true)
+        viewModel.navigateToFlashCardDetail(input)
     }
 
     private func addTapBounceEffect(to view: UIView, completion: @escaping () -> Void) {

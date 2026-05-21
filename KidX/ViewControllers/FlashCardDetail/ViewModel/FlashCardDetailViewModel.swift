@@ -13,11 +13,13 @@ class FlashCardDetailViewModel {
     let isRelearnMode: Bool
     let relearnType: RelearnType?
 
+    private let navigation: NavigationState<MainRoute>
     private(set) var currentIndex: Int = 0
     private(set) var rememberCount: Int = 0
     private(set) var dontRememberCount: Int = 0
 
-    init(items: [FlashCardItem], category: String, isRelearnMode: Bool = false, relearnType: RelearnType? = nil) {
+    init(navigation: NavigationState<MainRoute>, items: [FlashCardItem], category: String, isRelearnMode: Bool = false, relearnType: RelearnType? = nil) {
+        self.navigation = navigation
         self.itemList = items
         self.categoryName = category
         self.isRelearnMode = isRelearnMode
@@ -79,12 +81,17 @@ class FlashCardDetailViewModel {
         return false
     }
 
-    func createSummaryViewModel() -> SummaryViewModel {
-        return SummaryViewModel(
+    func navigateToSummary() {
+        let input = SummaryRouteInput(
             total: itemList.count,
             remembered: rememberCount,
             notRemembered: dontRememberCount,
             items: itemList
         )
+        navigation.push(.summary(input))
+    }
+
+    func navigateBack() {
+        navigation.pop()
     }
 }

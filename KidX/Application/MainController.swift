@@ -8,35 +8,38 @@
 import UIKit
 
 class MainController: UIViewController {
-    
+
     private let authNavigation: NavigationState<AuthRoute>
+    private let mainNavigation: NavigationState<MainRoute>
     private var customChildViewController: [UIViewController] = []
     private let tabBar = TabBarView()
     private var currentViewController: UIViewController?
 
     init(authNavigation: NavigationState<AuthRoute>) {
         self.authNavigation = authNavigation
+        self.mainNavigation = NavigationState<MainRoute>(routes: [])
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainNavigation.delegate = MainCoordinator(rootViewController: self, authNavigation: authNavigation, navigationState: mainNavigation)
         setupUI()
         setupConstraints()
         setupChildViewControllers()
         displayChildViewController(at: 2)
     }
-    
+
     private func setupUI() {
         tabBar.translatesAutoresizingMaskIntoConstraints = false
         tabBar.delegate = self
         view.addSubview(tabBar)
     }
-    
+
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             tabBar.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -49,35 +52,31 @@ class MainController: UIViewController {
     private func setupChildViewControllers() {
         customChildViewController = TabBarItem.allCases.map { makeViewController(for: $0) }
     }
-    
+
     private func makeViewController(for tab: TabBarItem) -> UIViewController {
         switch tab {
         case .home:
-            let homeNavigation = NavigationState<HomeRoute>(routes: [])
-            homeNavigation.delegate = HomeCoordinator(authNavigation: authNavigation)
-            return HomeController(viewModel: HomeViewModel(navigation: homeNavigation))
+            return HomeController(viewModel: HomeViewModel(navigation: mainNavigation))
         case .learn:
             return LearnController(viewModel: LearnViewModel())
         case .discovery:
-            return DiscoveryController()
+            return DiscoveryController(viewModel: DiscoveryViewModel(navigation: mainNavigation))
         case .profile:
-            let profileNavigation = NavigationState<ProfileRoute>(routes: [])
-            profileNavigation.delegate = ProfileCoordinator(authNavigation: authNavigation)
-            return ProfileController(viewModel: ProfileViewModel(navigation: profileNavigation))
+            return ProfileController(viewModel: ProfileViewModel(navigation: mainNavigation))
         case .achieve:
             return AchieveController()
         }
     }
-    
+
     private func displayChildViewController(at index: Int) {
         guard customChildViewController.indices.contains(index) else { return }
-        
+
         if let currentVC = currentViewController {
             currentVC.willMove(toParent: nil)
             currentVC.view.removeFromSuperview()
             currentVC.removeFromParent()
         }
-        
+
         let newVC = customChildViewController[index]
         addChild(newVC)
         view.insertSubview(newVC.view, belowSubview: tabBar)

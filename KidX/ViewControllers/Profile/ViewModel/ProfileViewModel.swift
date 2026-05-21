@@ -11,12 +11,12 @@ import StoreKit
 
 final class ProfileViewModel {
 
-    private let navigation: NavigationState<ProfileRoute>
+    private let navigation: NavigationState<MainRoute>
 
-    init(navigation: NavigationState<ProfileRoute>) {
+    init(navigation: NavigationState<MainRoute>) {
         self.navigation = navigation
     }
-    
+
     func handleAction(_ item: SettingItem) {
         switch item {
         case .update: Utils.openWebBrowser(AppLinks.APP_STORE)
@@ -26,22 +26,22 @@ final class ProfileViewModel {
         case .privacyPolicy: openPolicy()
         }
     }
-    
+
     private func showFeedback() {
 
     }
-    
+
     private func showRateApp() {
         guard let scene = UIApplication.shared.connectedScenes
             .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else { return }
-        
+
         if #available(iOS 18.0, *) {
             AppStore.requestReview(in: scene)
         } else {
             SKStoreReviewController.requestReview(in: scene)
         }
     }
-    
+
     func openPolicy() {
         openURL(AppLinks.PRIVACY_POLICY)
     }
@@ -49,7 +49,7 @@ final class ProfileViewModel {
     func openTermOfUse() {
         openURL(AppLinks.TERM_OF_USE)
     }
-    
+
     private func openURL(_ urlString: String) {
         Utils.openWebBrowser(urlString)
     }

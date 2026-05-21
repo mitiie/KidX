@@ -14,9 +14,9 @@ final class HomeViewModel {
     private(set) var itemList: [FlashCardItem] = []
     private(set) var titleText: String = ""
 
-    private let navigation: NavigationState<HomeRoute>
+    private let navigation: NavigationState<MainRoute>
 
-    init(navigation: NavigationState<HomeRoute>) {
+    init(navigation: NavigationState<MainRoute>) {
         self.navigation = navigation
     }
 
@@ -58,5 +58,23 @@ final class HomeViewModel {
 
     func navigateToLogin() {
         navigation.push(.logout)
+    }
+
+    func navigateToListFlashCard(category: PopularFlashCardCategory) {
+        navigation.push(.listFlashCard(category))
+    }
+
+    func navigateToFlashCardDetail(items: [FlashCardItem], category: String) {
+        let input = FlashCardDetailRouteInput(
+            items: items,
+            category: category,
+            isRelearnMode: false,
+            relearnType: nil
+        )
+        navigation.push(.flashCardDetail(input))
+    }
+
+    func navigateBack() {
+        navigation.pop()
     }
 }
