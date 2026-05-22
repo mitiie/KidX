@@ -101,7 +101,6 @@ class DrawView: UIView {
     func getPixelBuffer() -> CVPixelBuffer? {
         guard !lines.isEmpty else { return nil }
 
-        // 1. Tìm bounding box của nét vẽ để căn giữa
         var minX = CGFloat.greatestFiniteMagnitude
         var minY = CGFloat.greatestFiniteMagnitude
         var maxX = CGFloat.leastNormalMagnitude
@@ -114,62 +113,10 @@ class DrawView: UIView {
             maxY = max(maxY, line.start.y, line.end.y)
         }
 
-        // Thêm padding cho bounding box dựa trên lineWidth
-        let drawingRect = CGRect(x: minX - lineWidth/2,
-                                 y: minY - lineWidth/2,
-                                 width: (maxX - minX) + lineWidth,
-                                 height: (maxY - minY) + lineWidth)
-
-        // 2. Tạo CGContext 28×28 grayscale
-        let colorSpace = CGColorSpaceCreateDeviceGray()
-        guard let context = CGContext(
-            data: nil,
-            width: 28,
-            height: 28,
-            bitsPerComponent: 8,
-            bytesPerRow: 28,
-            space: colorSpace,
-            bitmapInfo: CGImageAlphaInfo.none.rawValue
-        ) else { return nil }
-
-        // Tô đen background
-        context.setFillColor(UIColor.black.cgColor)
-        context.fill(CGRect(x: 0, y: 0, width: 28, height: 28))
-
-        // Tính toán scale để fit vào vùng 20x20 (để có padding 4px mỗi bên)
-        let targetSize: CGFloat = 20
-        let scale = min(targetSize / drawingRect.width, targetSize / drawingRect.height)
-        let scaledWidth = drawingRect.width * scale
-        let scaledHeight = drawingRect.height * scale
-
-        // Căn giữa
-        let offsetX = (28 - scaledWidth) / 2
-        let offsetY = (28 - scaledHeight) / 2
-
-        context.saveGState()
-        context.translateBy(x: offsetX, y: offsetY + scaledHeight)
-        context.scaleBy(x: scale, y: -scale)
-        context.translateBy(x: -drawingRect.origin.x, y: -drawingRect.origin.y)
-
-        layer.render(in: context)
-        context.restoreGState()
-
-        // 3. CGContext → CGImage → CIImage
-        guard let cgImage = context.makeImage() else { return nil }
-        let ciImage = CIImage(cgImage: cgImage)
-
-        // 3. Tạo CVPixelBuffer OneComponent8 (1 kênh grayscale, không alpha)
-        var pixelBuffer: CVPixelBuffer?
-        let attrs: CFDictionary = [
-            kCVPixelBufferCGImageCompatibilityKey: kCFBooleanTrue!,
-            kCVPixelBufferCGBitmapContextCompatibilityKey: kCFBooleanTrue!
-        ] as CFDictionary
-        CVPixelBufferCreate(kCFAllocatorDefault, 28, 28,
-                            kCVPixelFormatType_OneComponent8,
-                            attrs, &pixelBuffer)
-
-        guard let buffer = pixelBuffer else { return nil }
-        CIContext().render(ciImage, to: buffer)
-        return buffer
+        let drawingRect = CGRect(x: minX,
+                                 y: minY,
+                                 width: maxX - minX,
+                                 height: maxY - minY)
+        return MNISTPixelBufferFactory.makePixelBuffer(from: layer, drawingRect: drawingRect, lineWidth: lineWidth)
     }
 }

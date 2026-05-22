@@ -19,7 +19,7 @@ final class ProfileViewModel {
 
     func handleAction(_ item: SettingItem) {
         switch item {
-        case .update: Utils.openWebBrowser(AppLinks.APP_STORE)
+        case .update: Common.openWebBrowser(AppLinks.APP_STORE)
         case .feedback: showFeedback()
         case .rate: showRateApp()
         case .term: openTermOfUse()
@@ -51,7 +51,7 @@ final class ProfileViewModel {
     }
 
     private func openURL(_ urlString: String) {
-        Utils.openWebBrowser(urlString)
+        Common.openWebBrowser(urlString)
     }
 
     func logout(completion: @escaping (Error?) -> Void) {

@@ -59,11 +59,11 @@ class RegisterController: BaseController {
             return
         }
 
-        Utils.showLoading()
+        Common.showLoading()
 
         viewModel.register(email: email, password: password) { [weak self] result in
             guard let self else { return }
-            Utils.hideLoading()
+            Common.hideLoading()
 
             switch result {
             case .success:

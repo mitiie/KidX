@@ -60,11 +60,11 @@ class LoginController: BaseController {
             return
         }
         
-        Utils.showLoading()
+        Common.showLoading()
         
         viewModel.loginWithEmail(email: email, password: password) { [weak self] result in
             guard let self else { return }
-            Utils.hideLoading()
+            Common.hideLoading()
             
             switch result {
             case .success:
@@ -114,11 +114,11 @@ class LoginController: BaseController {
             return
         }
         
-        Utils.showLoading()
+        Common.showLoading()
         
         viewModel.sendPasswordReset(email: email) { [weak self] error in
             guard let self else { return }
-            Utils.hideLoading()
+            Common.hideLoading()
             
             if let error = error {
                 self.showAlert(title: "Notice", message: error.message)
@@ -133,11 +133,11 @@ class LoginController: BaseController {
     
     // MARK: - Google Sign-In
     private func signInWithGoogle() {
-        Utils.showLoading()
+        Common.showLoading()
         
         viewModel.signInWithGoogle(presenting: self) { [weak self] result in
             guard let self else { return }
-            Utils.hideLoading()
+            Common.hideLoading()
             
             switch result {
             case .success:

@@ -6,7 +6,8 @@
 //  thông qua mnistCNN CoreML model.
 //
 
-import CoreML
+import CoreVideo
+import Foundation
 
 class LearnViewModel {
 
@@ -20,30 +21,21 @@ class LearnViewModel {
 
     // MARK: - State
     private(set) var lastPrediction: String = ""
-
-    // MARK: - CoreML Model (lazy — chỉ tạo khi cần lần đầu)
-    private lazy var model: mnistCNN = {
-        do {
-            return try mnistCNN(configuration: MLModelConfiguration())
-        } catch {
-            fatalError("Không thể load mnistCNN model: \(error)")
-        }
-    }()
+    private let predictor = MNISTDigitPredictor()
 
     // MARK: - Public API
 
     /// Nhận diện chữ số từ CVPixelBuffer 28×28 grayscale
     func predict(from pixelBuffer: CVPixelBuffer) {
         do {
-            let output = try model.prediction(image: pixelBuffer)
-            let confidence = output.output[output.classLabel] ?? 0.0
+            let output = try predictor.predict(from: pixelBuffer)
             
             // Nếu độ tin cậy thấp (< 70%), coi như không nhận diện được
-            if confidence < 0.7 {
+            if output.confidence < 0.7 {
                 onUnreliableResult?()
             } else {
-                lastPrediction = output.classLabel
-                onPredictionResult?(output.classLabel)
+                lastPrediction = output.digit
+                onPredictionResult?(output.digit)
             }
         } catch {
             onError?("Lỗi nhận diện: \(error.localizedDescription)")
