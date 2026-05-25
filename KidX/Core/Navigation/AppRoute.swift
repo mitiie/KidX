@@ -38,4 +38,5 @@ enum MainRoute {
     case flashCardDetail(FlashCardDetailRouteInput)
     case summary(SummaryRouteInput)
     case logout
+    case language(ProfileViewModel)
 }

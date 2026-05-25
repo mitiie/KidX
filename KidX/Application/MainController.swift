@@ -9,6 +9,8 @@ import UIKit
 
 class MainController: UIViewController {
 
+    private static var lastSelectedIndex: Int = 2
+
     private let authNavigation: NavigationState<AuthRoute>
     private let mainNavigation: NavigationState<MainRoute>
     private var customChildViewController: [UIViewController] = []
@@ -31,7 +33,8 @@ class MainController: UIViewController {
         setupUI()
         setupConstraints()
         setupChildViewControllers()
-        displayChildViewController(at: 2)
+        displayChildViewController(at: Self.lastSelectedIndex)
+        tabBar.selectTab(at: Self.lastSelectedIndex)
     }
 
     private func setupUI() {
@@ -89,6 +92,7 @@ class MainController: UIViewController {
         ])
         newVC.didMove(toParent: self)
         currentViewController = newVC
+        Self.lastSelectedIndex = index
     }
 }
 

@@ -1,0 +1,140 @@
+"Save" = "حفظ";
+"Next" = "التالي";
+"Get Started" = "ابدأ";
+"Language" = "اللغة";
+"OK" = "موافق";
+"Nothing to Restore. No previous purchase were found" = "لا يوجد ما يمكن استعادته. لم يتم العثور على مشتريات سابقة";
+"loading_ads" = "نحضّر الإعلان لك\nيرجى الانتظار...";
+"New Update Available" = "يتوفر تحديث جديد";
+"new_update_desc" = "تحسينات في الأداء، إصلاحات للأخطاء وميزات جديدة.\nحدّث الآن لتجربة أكثر سلاسة!";
+"Later" = "لاحقًا";
+"Update Now" = "حدّث الآن";
+"Setting" = "الإعدادات";
+"No Internet" = "لا يوجد إنترنت";
+"Please connect to the network to use the app" = "يرجى الاتصال بالشبكة لاستخدام التطبيق";
+"Catch the newest trend in seconds!" = "واكب أحدث صيحة خلال ثوانٍ!";
+"Let us bring your loved ones closer to you although you have a busy life!" = "دعنا نقرّب أحباءك إليك رغم انشغالك!";
+"Turn your real-life moments into cinematic videos!" = "حوّل لحظاتك الواقعية إلى فيديوهات سينمائية!";
+"Let our AI turn your photo to trending video." = "دع الذكاء الاصطناعي يحوّل صورتك إلى فيديو رائج.";
+"Capture all unforgettable moments." = "احتفظ بكل اللحظات التي لا تُنسى.";
+"Make your life become more vivid." = "اجعل حياتك أكثر حيوية.";
+"Discover now" = "اكتشف الآن";
+"Continue" = "متابعة";
+"Welcome to Pixo AI" = "مرحبًا بك في Pixo AI";
+"What can Pixo AI do for you?" = "ماذا يمكن أن يفعل Pixo AI لك؟";
+"Choose a Dance Style" = "اختر نمط رقص";
+"Try Now" = "جرّب الآن";
+"Generate" = "إنشاء";
+"Detecting Faces..." = "جارٍ اكتشاف الوجوه...";
+"Together Under Fireworks" = "معًا تحت الألعاب النارية";
+"Tap here to upload a photo to make it come alive." = "اضغط هنا لرفع صورة\nواجعلها تنبض بالحياة.";
+"Camera" = "الكاميرا";
+"Gallery" = "المعرض";
+"Select to upload your photo" = "اختر لرفع صورتك";
+
+// Home
+"PRO" = "PRO";
+"See all" = "عرض الكل";
+"Video Maker" = "صانع الفيديو";
+"Please wait, AI is generating..." = "يرجى الانتظار، الذكاء الاصطناعي ينشئ...";
+
+
+// Video Maker
+"Prompt" = "المطالبة";
+"Turn your imagination into realistic videos with detailed descriptions" = "حوّل خيالك إلى فيديوهات واقعية بأوصاف تفصيلية";
+"AI Model" = "نموذج AI";
+"Create" = "إنشاء";
+"Get Inspired" = "استلهم";
+"Get Prompt" = "احصل على مطالبة";
+"Apply" = "تطبيق";
+"AI Models" = "نماذج AI";
+"AI Video" = "فيديو AI";
+"Use Prompt" = "استخدم المطالبة";
+"Copy Prompt" = "نسخ المطالبة";
+"Enrich Prompt" = "تحسين المطالبة";
+"Random Pick" = "اختيار عشوائي";
+"Upload Photo" = "رفع صورة";
+
+// My Profile
+"My profile" = "ملفي الشخصي";
+"Get 1250+ templates" = "احصل على 1250+ قالبًا";
+"Weekly update collection" = "مجموعة تُحدّث أسبوعيًا";
+"Upgrade" = "ترقية";
+"Your Gallery" = "معرضك";
+"Pick a trending style, let the AI work its magic, and your video will land right here in your Library." = "اختر نمطًا رائجًا، ودع الذكاء الاصطناعي يعمل بسحره، وسيظهر الفيديو هنا في مكتبتك.";
+"Create now" = "أنشئ الآن";
+"Your video" = "فيديوك";
+"Select" = "اختيار";
+"Done" = "تم";
+"Generating..." = "جارٍ الإنشاء...";
+"Generation failed" = "فشل الإنشاء";
+"Try again" = "حاول مجددًا";
+"Select all" = "تحديد الكل";
+"Delete" = "حذف";
+"Cancel" = "إلغاء";
+"Recreate" = "إعادة الإنشاء";
+"Are you sure you want to delete?" = "هل أنت متأكد أنك تريد الحذف؟";
+
+// Upload Photo
+"Face not recognized" = "لم يتم التعرف على الوجه";
+"Multiple faces detected" = "تم اكتشاف عدة وجوه";
+"Copied to clipboard" = "تم النسخ إلى الحافظة";
+"Run in background" = "تشغيل في الخلفية";
+"AI is generating" = "الذكاء الاصطناعي ينشئ";
+"Do you want to leave? The data will be lost" = "هل تريد المغادرة؟ ستفقد البيانات";
+"Stay here" = "ابق هنا";
+"Leave anyway" = "المغادرة على أي حال";
+"Auto hide in" = "إخفاء تلقائي خلال";
+"seconds" = "ثوانٍ";
+"You can freely purchase credits to discover more without waiting" = "يمكنك شراء الأرصدة لاكتشاف المزيد دون انتظار";
+"Your credits will be refilled after 1 week, and your balance will be 2000 credits" = "سيتم تعبئة أرصدتك بعد أسبوع واحد، وسيصبح رصيدك 2000 رصيد";
+
+
+"Back to home" = "العودة للرئيسية";
+"Saved successfully" = "تم الحفظ بنجاح";
+"Something went wrong. Please try again." = "حدث خطأ ما. يرجى المحاولة مرة أخرى.";
+"Error" = "خطأ";
+"Not found" = "غير موجود";
+
+// IAP
+"Cancel anytime" = "إلغاء في أي وقت";
+"week" = "أسبوع";
+"year" = "سنة";
+
+// Setting
+"Restore purchase successfully" = "تمت استعادة عملية الشراء بنجاح";
+"Feedback" = "ملاحظات";
+"Rate us" = "قيّمنا";
+"Term of service" = "شروط الخدمة";
+"Privacy policy" = "سياسة الخصوصية";
+"Restore purchase" = "استعادة الشراء";
+"Delete all infomation" = "حذف جميع المعلومات";
+"Result" = "النتيجة";
+"Share" = "مشاركة";
+"*Save this item before it is deleted in 14 days" = "احتفظ بهذا العنصر قبل حذفه خلال 14 يومًا*";
+"Best Offer" = "أفضل عرض";
+
+// IAP
+"Unlock full access" = "افتح الوصول الكامل";
+"Create videos with your idea" = "أنشئ مقاطع فيديو بفكرتك";
+"Enjoy ultra HD 4K AI videos" = "استمتع بفيديوهات AI بدقة 4K فائقة";
+"Claim 2,000 coins to start" = "احصل على 2,000 عملة للبدء";
+"Access unlimited templates" = "الوصول إلى قوالب غير محدودة";
+"No commitment, cancel anytime" = "بدون التزام، يمكنك الإلغاء في أي وقت";
+"Terms of Use" = "شروط الاستخدام";
+"Privacy Policy" = "سياسة الخصوصية";
+"Restore" = "استعادة";
+"You have" = "لديك";
+"Select a reason below" = "اختر سببًا أدناه";
+"Not really me" = "لا يشبهني";
+"Low quality" = "جودة منخفضة";
+"Too slow" = "بطيء جدًا";
+"Didn’t work" = "لم يعمل";
+"Look fake/plastic" = "يبدو مزيفًا/بلاستيكيًا";
+"Enter your creative edit idea here" = "أدخل فكرتك الإبداعية للتعديل هنا";
+"This action will permanently remove all your data, including generated videos and personal information" = "سيؤدي هذا الإجراء إلى إزالة جميع بياناتك نهائيًا، بما في ذلك مقاطع الفيديو التي تم إنشاؤها والمعلومات الشخصية";
+"Are you sure?" = "هل أنت متأكد؟";
+"Just" = "فقط";
+"Saved" = "تم الحفظ";
+"Confirm" = "تأكيد";
+"Estimated: 2-3 min" = "الوقت التقديري: 2-3 دقائق";

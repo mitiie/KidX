@@ -1,0 +1,140 @@
+"Save" = "保存";
+"Next" = "次へ";
+"Get Started" = "始める";
+"Language" = "言語";
+"OK" = "OK";
+"Nothing to Restore. No previous purchase were found" = "復元できるものがありません。以前の購入は見つかりませんでした";
+"loading_ads" = "広告を準備しています\n少々お待ちください...";
+"New Update Available" = "新しいアップデートがあります";
+"new_update_desc" = "パフォーマンス向上、エラー修正、新機能を追加しました。\n今すぐ更新して、より快適にご利用ください！";
+"Later" = "あとで";
+"Update Now" = "今すぐ更新";
+"Setting" = "設定";
+"No Internet" = "ネットワークなし";
+"Please connect to the network to use the app" = "アプリを使用するにはネットワークに接続してください";
+"Catch the newest trend in seconds!" = "最新トレンドを数秒でキャッチ！";
+"Let us bring your loved ones closer to you although you have a busy life!" = "忙しい毎日でも、大切な人をもっと近くに感じられます！";
+"Turn your real-life moments into cinematic videos!" = "日常の瞬間を映画のような動画に！";
+"Let our AI turn your photo to trending video." = "AI があなたの写真をトレンド動画に変えます。";
+"Capture all unforgettable moments." = "忘れられない瞬間をすべて残しましょう。";
+"Make your life become more vivid." = "毎日をもっと鮮やかに。";
+"Discover now" = "今すぐ発見";
+"Continue" = "続ける";
+"Welcome to Pixo AI" = "Pixo AI へようこそ";
+"What can Pixo AI do for you?" = "Pixo AI で何をしますか？";
+"Choose a Dance Style" = "ダンススタイルを選択";
+"Try Now" = "今すぐ試す";
+"Generate" = "生成";
+"Detecting Faces..." = "顔を検出中...";
+"Together Under Fireworks" = "花火の下で一緒に";
+"Tap here to upload a photo to make it come alive." = "ここをタップして写真をアップロードし\n動き出すようにしましょう。";
+"Camera" = "カメラ";
+"Gallery" = "ギャラリー";
+"Select to upload your photo" = "写真を選択してアップロード";
+
+// Home
+"PRO" = "PRO";
+"See all" = "すべて表示";
+"Video Maker" = "動画メーカー";
+"Please wait, AI is generating..." = "AI が生成中です。お待ちください...";
+
+
+// Video Maker
+"Prompt" = "プロンプト";
+"Turn your imagination into realistic videos with detailed descriptions" = "詳しい説明で想像をリアルな動画に変えましょう";
+"AI Model" = "AIモデル";
+"Create" = "作成";
+"Get Inspired" = "ヒントを見る";
+"Get Prompt" = "プロンプト取得";
+"Apply" = "適用";
+"AI Models" = "AIモデル";
+"AI Video" = "AI動画";
+"Use Prompt" = "プロンプト使用";
+"Copy Prompt" = "プロンプトをコピー";
+"Enrich Prompt" = "プロンプトを強化";
+"Random Pick" = "ランダム";
+"Upload Photo" = "写真をアップロード";
+
+// My Profile
+"My profile" = "プロフィール";
+"Get 1250+ templates" = "1250以上のテンプレート";
+"Weekly update collection" = "毎週更新のコレクション";
+"Upgrade" = "アップグレード";
+"Your Gallery" = "あなたのギャラリー";
+"Pick a trending style, let the AI work its magic, and your video will land right here in your Library." = "トレンドスタイルを選び、AI に任せると、動画がここライブラリに表示されます。";
+"Create now" = "今すぐ作成";
+"Your video" = "あなたの動画";
+"Select" = "選択";
+"Done" = "完了";
+"Generating..." = "生成中...";
+"Generation failed" = "生成に失敗しました";
+"Try again" = "再試行";
+"Select all" = "すべて選択";
+"Delete" = "削除";
+"Cancel" = "キャンセル";
+"Recreate" = "再作成";
+"Are you sure you want to delete?" = "削除してもよろしいですか？";
+
+// Upload Photo
+"Face not recognized" = "顔を認識できません";
+"Multiple faces detected" = "複数の顔を検出しました";
+"Copied to clipboard" = "クリップボードにコピーしました";
+"Run in background" = "バックグラウンドで実行";
+"AI is generating" = "AI が生成中";
+"Do you want to leave? The data will be lost" = "終了しますか？データは失われます";
+"Stay here" = "ここに残る";
+"Leave anyway" = "終了する";
+"Auto hide in" = "自動非表示まで";
+"seconds" = "秒";
+"You can freely purchase credits to discover more without waiting" = "クレジットを購入すると、待たずにさらに楽しめます";
+"Your credits will be refilled after 1 week, and your balance will be 2000 credits" = "クレジットは1週間後に補充され、残高は2000クレジットになります";
+
+
+"Back to home" = "ホームへ戻る";
+"Saved successfully" = "保存しました";
+"Something went wrong. Please try again." = "問題が発生しました。もう一度お試しください。";
+"Error" = "エラー";
+"Not found" = "見つかりません";
+
+// IAP
+"Cancel anytime" = "いつでもキャンセル可";
+"week" = "週";
+"year" = "年";
+
+// Setting
+"Restore purchase successfully" = "購入が正常に復元されました";
+"Feedback" = "フィードバック";
+"Rate us" = "評価する";
+"Term of service" = "利用規約";
+"Privacy policy" = "プライバシーポリシー";
+"Restore purchase" = "購入を復元";
+"Delete all infomation" = "すべての情報を削除";
+"Result" = "結果";
+"Share" = "共有";
+"*Save this item before it is deleted in 14 days" = "*14日以内に削除される前にこの項目を保存してください";
+"Best Offer" = "ベストオファー";
+
+// IAP
+"Unlock full access" = "フルアクセスを解除";
+"Create videos with your idea" = "あなたのアイデアで動画を作成";
+"Enjoy ultra HD 4K AI videos" = "超高画質4KのAI動画を楽しもう";
+"Claim 2,000 coins to start" = "開始用に2,000コインを獲得";
+"Access unlimited templates" = "無制限のテンプレートにアクセス";
+"No commitment, cancel anytime" = "縛りなし、いつでもキャンセル可能";
+"Terms of Use" = "利用規約";
+"Privacy Policy" = "プライバシーポリシー";
+"Restore" = "復元";
+"You have" = "あなたの所持数";
+"Select a reason below" = "以下から理由を選択してください";
+"Not really me" = "あまり自分らしくない";
+"Low quality" = "低品質";
+"Too slow" = "遅すぎる";
+"Didn’t work" = "うまく動かなかった";
+"Look fake/plastic" = "偽物/プラスチックっぽい";
+"Enter your creative edit idea here" = "ここにクリエイティブな編集アイデアを入力してください";
+"This action will permanently remove all your data, including generated videos and personal information" = "この操作により、生成された動画や個人情報を含むすべてのデータが完全に削除されます";
+"Are you sure?" = "よろしいですか？";
+"Just" = "たった";
+"Saved" = "保存済み";
+"Confirm" = "確認";
+"Estimated: 2-3 min" = "推定: 2〜3分";

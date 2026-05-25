@@ -38,6 +38,9 @@ final class MainCoordinator: NavigationStateDelegate {
         case .logout:
             authNavigation.push(.login, isReplaceTop: true)
 
+        case .language(let profileVM):
+            push(LanguageController(profileVM: profileVM), animated: animated)
+
         default:
             break
         }

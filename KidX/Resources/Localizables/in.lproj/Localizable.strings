@@ -1,0 +1,140 @@
+"Save" = "Simpan";
+"Next" = "Lanjut";
+"Get Started" = "Mulai";
+"Language" = "Bahasa";
+"OK" = "OK";
+"Nothing to Restore. No previous purchase were found" = "Tidak ada yang dipulihkan. Pembelian sebelumnya tidak ditemukan";
+"loading_ads" = "Menyiapkan iklan untukmu\nMohon tunggu...";
+"New Update Available" = "Update baru tersedia";
+"new_update_desc" = "Performa ditingkatkan, bug diperbaiki, dan fitur baru ditambahkan.\nUpdate sekarang untuk pengalaman lebih lancar!";
+"Later" = "Nanti";
+"Update Now" = "Update";
+"Setting" = "Pengaturan";
+"No Internet" = "Tidak ada internet";
+"Please connect to the network to use the app" = "Hubungkan ke jaringan untuk menggunakan app";
+"Catch the newest trend in seconds!" = "Ikuti tren terbaru dalam hitungan detik!";
+"Let us bring your loved ones closer to you although you have a busy life!" = "Biarkan kami mendekatkan orang tersayang meski hidupmu sibuk!";
+"Turn your real-life moments into cinematic videos!" = "Ubah momen nyata menjadi video sinematik!";
+"Let our AI turn your photo to trending video." = "Biarkan AI kami mengubah fotomu menjadi video tren.";
+"Capture all unforgettable moments." = "Abadikan semua momen tak terlupakan.";
+"Make your life become more vivid." = "Buat hidupmu lebih berwarna.";
+"Discover now" = "Jelajahi";
+"Continue" = "Lanjut";
+"Welcome to Pixo AI" = "Selamat datang di Pixo AI";
+"What can Pixo AI do for you?" = "Apa yang bisa Pixo AI lakukan untukmu?";
+"Choose a Dance Style" = "Pilih gaya tari";
+"Try Now" = "Coba";
+"Generate" = "Buat";
+"Detecting Faces..." = "Mendeteksi wajah...";
+"Together Under Fireworks" = "Bersama di bawah kembang api";
+"Tap here to upload a photo to make it come alive." = "Ketuk di sini untuk mengunggah foto\ndan membuatnya hidup.";
+"Camera" = "Kamera";
+"Gallery" = "Galeri";
+"Select to upload your photo" = "Pilih untuk mengunggah fotomu";
+
+// Home
+"PRO" = "PRO";
+"See all" = "Lihat semua";
+"Video Maker" = "Pembuat Video";
+"Please wait, AI is generating..." = "Mohon tunggu, AI sedang membuat...";
+
+
+// Video Maker
+"Prompt" = "Prompt";
+"Turn your imagination into realistic videos with detailed descriptions" = "Ubah imajinasimu menjadi video realistis dengan deskripsi detail";
+"AI Model" = "Model AI";
+"Create" = "Buat";
+"Get Inspired" = "Cari inspirasi";
+"Get Prompt" = "Ambil prompt";
+"Apply" = "Terapkan";
+"AI Models" = "Model AI";
+"AI Video" = "Video AI";
+"Use Prompt" = "Pakai prompt";
+"Copy Prompt" = "Salin prompt";
+"Enrich Prompt" = "Perkaya prompt";
+"Random Pick" = "Acak";
+"Upload Photo" = "Unggah foto";
+
+// My Profile
+"My profile" = "Profil saya";
+"Get 1250+ templates" = "Dapatkan 1250+ template";
+"Weekly update collection" = "Koleksi update mingguan";
+"Upgrade" = "Upgrade";
+"Your Gallery" = "Galerimu";
+"Pick a trending style, let the AI work its magic, and your video will land right here in your Library." = "Pilih gaya tren, biarkan AI bekerja, dan videomu akan muncul di sini dalam Library.";
+"Create now" = "Buat sekarang";
+"Your video" = "Videomu";
+"Select" = "Pilih";
+"Done" = "Selesai";
+"Generating..." = "Membuat...";
+"Generation failed" = "Gagal membuat";
+"Try again" = "Coba lagi";
+"Select all" = "Pilih semua";
+"Delete" = "Hapus";
+"Cancel" = "Batal";
+"Recreate" = "Buat ulang";
+"Are you sure you want to delete?" = "Yakin ingin menghapus?";
+
+// Upload Photo
+"Face not recognized" = "Wajah tidak dikenali";
+"Multiple faces detected" = "Beberapa wajah terdeteksi";
+"Copied to clipboard" = "Disalin ke clipboard";
+"Run in background" = "Jalankan di latar belakang";
+"AI is generating" = "AI sedang membuat";
+"Do you want to leave? The data will be lost" = "Ingin keluar? Data akan hilang";
+"Stay here" = "Tetap di sini";
+"Leave anyway" = "Tetap keluar";
+"Auto hide in" = "Sembunyi dalam";
+"seconds" = "detik";
+"You can freely purchase credits to discover more without waiting" = "Kamu bisa membeli kredit untuk menjelajah lebih banyak tanpa menunggu";
+"Your credits will be refilled after 1 week, and your balance will be 2000 credits" = "Kreditmu akan diisi ulang setelah 1 minggu, dan saldomu menjadi 2000 kredit";
+
+
+"Back to home" = "Kembali ke beranda";
+"Saved successfully" = "Berhasil disimpan";
+"Something went wrong. Please try again." = "Terjadi kesalahan. Coba lagi.";
+"Error" = "Error";
+"Not found" = "Tidak ditemukan";
+
+// IAP
+"Cancel anytime" = "Batalkan kapan saja";
+"week" = "minggu";
+"year" = "tahun";
+
+// Setting
+"Restore purchase successfully" = "Pemulihan pembelian berhasil";
+"Feedback" = "Masukan";
+"Rate us" = "Nilai kami";
+"Term of service" = "Ketentuan layanan";
+"Privacy policy" = "Kebijakan privasi";
+"Restore purchase" = "Pulihkan pembelian";
+"Delete all infomation" = "Hapus semua informasi";
+"Result" = "Hasil";
+"Share" = "Bagikan";
+"*Save this item before it is deleted in 14 days" = "*Simpan item ini sebelum dihapus dalam 14 hari";
+"Best Offer" = "Penawaran Terbaik";
+
+// IAP
+"Unlock full access" = "Buka akses penuh";
+"Create videos with your idea" = "Buat video dengan idemu";
+"Enjoy ultra HD 4K AI videos" = "Nikmati video AI ultra HD 4K";
+"Claim 2,000 coins to start" = "Klaim 2.000 koin untuk memulai";
+"Access unlimited templates" = "Akses template tanpa batas";
+"No commitment, cancel anytime" = "Tanpa komitmen, batalkan kapan saja";
+"Terms of Use" = "Syarat Penggunaan";
+"Privacy Policy" = "Kebijakan Privasi";
+"Restore" = "Pulihkan";
+"You have" = "Anda memiliki";
+"Select a reason below" = "Pilih alasan di bawah";
+"Not really me" = "Tidak terlalu mirip saya";
+"Low quality" = "Kualitas rendah";
+"Too slow" = "Terlalu lambat";
+"Didn’t work" = "Tidak berhasil";
+"Look fake/plastic" = "Terlihat palsu/plastik";
+"Enter your creative edit idea here" = "Masukkan ide edit kreatif Anda di sini";
+"This action will permanently remove all your data, including generated videos and personal information" = "Tindakan ini akan menghapus semua data Anda secara permanen, termasuk video yang dihasilkan dan informasi pribadi";
+"Are you sure?" = "Apakah Anda yakin?";
+"Just" = "Hanya";
+"Saved" = "Tersimpan";
+"Confirm" = "Konfirmasi";
+"Estimated: 2-3 min" = "Perkiraan: 2-3 menit";

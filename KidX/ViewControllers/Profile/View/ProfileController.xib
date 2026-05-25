@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileController" customModule="KidX" customModuleProvider="target">
             <connections>
+                <outlet property="animateView" destination="d8t-Ty-dvw" id="cpa-c6-rg5"/>
                 <outlet property="tableView" destination="MnN-7x-Qgk" id="QOD-gM-sXg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,17 +19,16 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAQ-W6-zAW">
-                    <rect key="frame" x="299.66666666666669" y="118" width="77.333333333333314" height="35"/>
-                    <color key="backgroundColor" red="0.97254901959999995" green="0.83921568629999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Logout"/>
-                    <connections>
-                        <action selector="btnLogoutTapped:" destination="-1" eventType="touchUpInside" id="XXN-i3-V9s"/>
-                    </connections>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8t-Ty-dvw">
+                    <rect key="frame" x="24" y="118" width="120" height="120"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="d8t-Ty-dvw" secondAttribute="height" id="Dsm-mj-X9h"/>
+                        <constraint firstAttribute="height" constant="120" id="ttr-t7-0Dw"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MnN-7x-Qgk">
-                    <rect key="frame" x="0.0" y="251" width="393" height="400"/>
+                    <rect key="frame" x="0.0" y="274" width="393" height="400"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="400" id="OG6-EL-mMh"/>
@@ -38,14 +38,25 @@
                         <outlet property="delegate" destination="-1" id="5ZX-f3-6f9"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAQ-W6-zAW">
+                    <rect key="frame" x="299.66666666666669" y="706" width="77.333333333333314" height="35"/>
+                    <color key="backgroundColor" red="0.97254901959999995" green="0.83921568629999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                    <connections>
+                        <action selector="btnLogoutTapped:" destination="-1" eventType="touchUpInside" id="XXN-i3-V9s"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="MnN-7x-Qgk" firstAttribute="top" secondItem="d8t-Ty-dvw" secondAttribute="bottom" constant="36" id="6Sb-bK-sCF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZAQ-W6-zAW" secondAttribute="trailing" constant="16" id="IZ5-J3-S38"/>
-                <constraint firstItem="MnN-7x-Qgk" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="X24-nB-IF0"/>
+                <constraint firstItem="d8t-Ty-dvw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Llv-ZH-8nK"/>
                 <constraint firstItem="MnN-7x-Qgk" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="fTH-zW-lty"/>
-                <constraint firstItem="ZAQ-W6-zAW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qde-yU-wT0"/>
+                <constraint firstItem="d8t-Ty-dvw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="i8p-vW-v0D"/>
+                <constraint firstItem="ZAQ-W6-zAW" firstAttribute="top" secondItem="MnN-7x-Qgk" secondAttribute="bottom" constant="32" id="k5A-aK-YE5"/>
                 <constraint firstItem="MnN-7x-Qgk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="stv-Ye-6X1"/>
             </constraints>
             <point key="canvasLocation" x="140" y="130"/>

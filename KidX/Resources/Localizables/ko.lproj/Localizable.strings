@@ -1,0 +1,140 @@
+"Save" = "저장";
+"Next" = "다음";
+"Get Started" = "시작하기";
+"Language" = "언어";
+"OK" = "확인";
+"Nothing to Restore. No previous purchase were found" = "복원할 항목이 없습니다. 이전 구매를 찾을 수 없습니다";
+"loading_ads" = "광고를 준비 중입니다\n잠시만 기다려 주세요...";
+"New Update Available" = "새 업데이트 사용 가능";
+"new_update_desc" = "성능 개선, 오류 수정 및 새 기능이 포함되었습니다.\n더 매끄러운 사용을 위해 지금 업데이트하세요!";
+"Later" = "나중에";
+"Update Now" = "지금 업데이트";
+"Setting" = "설정";
+"No Internet" = "인터넷 없음";
+"Please connect to the network to use the app" = "앱을 사용하려면 네트워크에 연결하세요";
+"Catch the newest trend in seconds!" = "최신 트렌드를 몇 초 만에 만나보세요!";
+"Let us bring your loved ones closer to you although you have a busy life!" = "바쁜 일상 속에서도 소중한 사람을 더 가깝게 느껴보세요!";
+"Turn your real-life moments into cinematic videos!" = "일상의 순간을 영화 같은 영상으로 바꾸세요!";
+"Let our AI turn your photo to trending video." = "AI가 사진을 트렌디한 영상으로 바꿔드립니다.";
+"Capture all unforgettable moments." = "잊지 못할 모든 순간을 담아보세요.";
+"Make your life become more vivid." = "삶을 더 생생하게 만들어 보세요.";
+"Discover now" = "지금 보기";
+"Continue" = "계속";
+"Welcome to Pixo AI" = "Pixo AI에 오신 것을 환영합니다";
+"What can Pixo AI do for you?" = "Pixo AI로 무엇을 해볼까요?";
+"Choose a Dance Style" = "댄스 스타일 선택";
+"Try Now" = "지금 시도";
+"Generate" = "생성";
+"Detecting Faces..." = "얼굴 감지 중...";
+"Together Under Fireworks" = "불꽃 아래 함께";
+"Tap here to upload a photo to make it come alive." = "여기를 눌러 사진을 업로드하고\n생동감 있게 만들어 보세요.";
+"Camera" = "카메라";
+"Gallery" = "갤러리";
+"Select to upload your photo" = "업로드할 사진 선택";
+
+// Home
+"PRO" = "PRO";
+"See all" = "모두 보기";
+"Video Maker" = "비디오 메이커";
+"Please wait, AI is generating..." = "AI가 생성 중입니다. 잠시만 기다려 주세요...";
+
+
+// Video Maker
+"Prompt" = "프롬프트";
+"Turn your imagination into realistic videos with detailed descriptions" = "자세한 설명으로 상상을 현실감 있는 영상으로 바꾸세요";
+"AI Model" = "AI 모델";
+"Create" = "만들기";
+"Get Inspired" = "영감 얻기";
+"Get Prompt" = "프롬프트 받기";
+"Apply" = "적용";
+"AI Models" = "AI 모델";
+"AI Video" = "AI 비디오";
+"Use Prompt" = "프롬프트 사용";
+"Copy Prompt" = "프롬프트 복사";
+"Enrich Prompt" = "프롬프트 보강";
+"Random Pick" = "랜덤 선택";
+"Upload Photo" = "사진 업로드";
+
+// My Profile
+"My profile" = "내 프로필";
+"Get 1250+ templates" = "1250개+ 템플릿 받기";
+"Weekly update collection" = "매주 업데이트 컬렉션";
+"Upgrade" = "업그레이드";
+"Your Gallery" = "내 갤러리";
+"Pick a trending style, let the AI work its magic, and your video will land right here in your Library." = "트렌드 스타일을 고르고 AI에게 맡기면, 영상이 라이브러리에 바로 표시됩니다.";
+"Create now" = "지금 만들기";
+"Your video" = "내 영상";
+"Select" = "선택";
+"Done" = "완료";
+"Generating..." = "생성 중...";
+"Generation failed" = "생성 실패";
+"Try again" = "다시 시도";
+"Select all" = "전체 선택";
+"Delete" = "삭제";
+"Cancel" = "취소";
+"Recreate" = "다시 만들기";
+"Are you sure you want to delete?" = "정말 삭제하시겠습니까?";
+
+// Upload Photo
+"Face not recognized" = "얼굴을 인식하지 못했습니다";
+"Multiple faces detected" = "여러 얼굴이 감지되었습니다";
+"Copied to clipboard" = "클립보드에 복사됨";
+"Run in background" = "백그라운드 실행";
+"AI is generating" = "AI 생성 중";
+"Do you want to leave? The data will be lost" = "나가시겠습니까? 데이터가 손실됩니다";
+"Stay here" = "여기 머물기";
+"Leave anyway" = "그래도 나가기";
+"Auto hide in" = "자동 숨김";
+"seconds" = "초";
+"You can freely purchase credits to discover more without waiting" = "크레딧을 구매하면 기다리지 않고 더 많이 탐색할 수 있습니다";
+"Your credits will be refilled after 1 week, and your balance will be 2000 credits" = "크레딧은 1주 후 충전되며 잔액은 2000 크레딧이 됩니다";
+
+
+"Back to home" = "홈으로";
+"Saved successfully" = "저장되었습니다";
+"Something went wrong. Please try again." = "문제가 발생했습니다. 다시 시도해 주세요.";
+"Error" = "오류";
+"Not found" = "찾을 수 없음";
+
+// IAP
+"Cancel anytime" = "언제든 취소";
+"week" = "주";
+"year" = "년";
+
+// Setting
+"Restore purchase successfully" = "구매가 성공적으로 복원되었습니다";
+"Feedback" = "피드백";
+"Rate us" = "평가하기";
+"Term of service" = "서비스 약관";
+"Privacy policy" = "개인정보 처리방침";
+"Restore purchase" = "구매 복원";
+"Delete all infomation" = "모든 정보 삭제";
+"Result" = "결과";
+"Share" = "공유";
+"*Save this item before it is deleted in 14 days" = "*이 항목은 14일 내 삭제되므로 그 전에 저장하세요";
+"Best Offer" = "베스트 오퍼";
+
+// IAP
+"Unlock full access" = "전체 이용 권한 잠금 해제";
+"Create videos with your idea" = "아이디어로 비디오를 만들어 보세요";
+"Enjoy ultra HD 4K AI videos" = "초고화질 4K AI 비디오를 즐기세요";
+"Claim 2,000 coins to start" = "시작용으로 코인 2,000개 받기";
+"Access unlimited templates" = "무제한 템플릿 이용";
+"No commitment, cancel anytime" = "약정 없이 언제든지 취소 가능";
+"Terms of Use" = "이용 약관";
+"Privacy Policy" = "개인정보";
+"Restore" = "복원";
+"You have" = "보유 중인 항목";
+"Select a reason below" = "아래에서 이유를 선택하세요";
+"Not really me" = "별로 나 같지 않아요";
+"Low quality" = "품질이 낮아요";
+"Too slow" = "너무 느려요";
+"Didn’t work" = "작동하지 않았어요";
+"Look fake/plastic" = "가짜/플라스틱처럼 보여요";
+"Enter your creative edit idea here" = "여기에 창의적인 편집 아이디어를 입력하세요";
+"This action will permanently remove all your data, including generated videos and personal information" = "이 작업을 수행하면 생성된 비디오와 개인 정보를 포함한 모든 데이터가 영구적으로 삭제됩니다";
+"Are you sure?" = "확실하신가요?";
+"Just" = "단";
+"Saved" = "저장됨";
+"Confirm" = "확인";
+"Estimated: 2-3 min" = "예상 시간: 2-3분";

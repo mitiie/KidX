@@ -9,9 +9,17 @@ import FirebaseAuth
 import GoogleSignIn
 import StoreKit
 
+import UIKit
+
 final class ProfileViewModel {
 
     private let navigation: NavigationState<MainRoute>
+    
+    private(set) var selectedLanguage: LanguageModel? = LocalizeHelper.shared.currentLanguage()
+    
+    var languages: [LanguageModel] {
+        return LocalizeHelper.generateLanguages()
+    }
 
     init(navigation: NavigationState<MainRoute>) {
         self.navigation = navigation
@@ -19,12 +27,39 @@ final class ProfileViewModel {
 
     func handleAction(_ item: SettingItem) {
         switch item {
+        case .language: navigateToLanguage()
         case .update: Common.openWebBrowser(AppLinks.APP_STORE)
         case .feedback: showFeedback()
         case .rate: showRateApp()
         case .term: openTermOfUse()
         case .privacyPolicy: openPolicy()
         }
+    }
+    
+    func navigateToLanguage() {
+        navigation.push(.language(self))
+    }
+    
+    func selectLanguage(_ language: LanguageModel) {
+        self.selectedLanguage = language
+    }
+    
+    func changedLanguageSuccessfully() {
+        if let selectedLanguage = selectedLanguage {
+            LocalizeHelper.shared.setLanguage(selectedLanguage)
+            
+            DispatchQueue.main.async {
+                if let sceneDelegate = UIApplication.shared.connectedScenes
+                    .first(where: { $0.activationState == .foregroundActive })?
+                    .delegate as? SceneDelegate {
+                    sceneDelegate.changeRootToMain()
+                }
+            }
+        }
+    }
+    
+    func goBack() {
+        navigation.pop()
     }
 
     private func showFeedback() {

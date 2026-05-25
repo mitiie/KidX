@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Lottie
 
 class ProfileController: BaseController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var animateView: UIView!
     
     private let viewModel: ProfileViewModel
     
@@ -24,6 +26,16 @@ class ProfileController: BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+    }
+    
+    override func setupUI() {
+        let animationView = LottieAnimationView(name: "profile_anim.json")
+        animationView.frame = self.animateView.bounds
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        animationView.play()
+        
+        self.animateView.addSubview(animationView)
     }
 
     private func setupTableView() {

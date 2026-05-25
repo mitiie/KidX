@@ -1,0 +1,140 @@
+"Save" = "Opslaan";
+"Next" = "Volgende";
+"Get Started" = "Starten";
+"Language" = "Taal";
+"OK" = "OK";
+"Nothing to Restore. No previous purchase were found" = "Niets om te herstellen. Geen eerdere aankoop gevonden";
+"loading_ads" = "Advertentie wordt voorbereid\nEven wachten...";
+"New Update Available" = "Nieuwe update beschikbaar";
+"new_update_desc" = "Betere prestaties, foutoplossingen en nieuwe functies.\nUpdate nu voor een soepelere ervaring!";
+"Later" = "Later";
+"Update Now" = "Nu updaten";
+"Setting" = "Instellingen";
+"No Internet" = "Geen internet";
+"Please connect to the network to use the app" = "Maak verbinding met het netwerk om de app te gebruiken";
+"Catch the newest trend in seconds!" = "Pak de nieuwste trend in seconden!";
+"Let us bring your loved ones closer to you although you have a busy life!" = "Wij brengen je dierbaren dichterbij, ook met een druk leven!";
+"Turn your real-life moments into cinematic videos!" = "Maak van echte momenten filmische video's!";
+"Let our AI turn your photo to trending video." = "Laat onze AI je foto omzetten in een trendvideo.";
+"Capture all unforgettable moments." = "Leg alle onvergetelijke momenten vast.";
+"Make your life become more vivid." = "Maak je leven levendiger.";
+"Discover now" = "Ontdek nu";
+"Continue" = "Doorgaan";
+"Welcome to Pixo AI" = "Welkom bij Pixo AI";
+"What can Pixo AI do for you?" = "Wat kan Pixo AI voor je doen?";
+"Choose a Dance Style" = "Kies een dansstijl";
+"Try Now" = "Probeer nu";
+"Generate" = "Genereren";
+"Detecting Faces..." = "Gezichten detecteren...";
+"Together Under Fireworks" = "Samen onder vuurwerk";
+"Tap here to upload a photo to make it come alive." = "Tik hier om een foto te uploaden\nen tot leven te brengen.";
+"Camera" = "Camera";
+"Gallery" = "Galerij";
+"Select to upload your photo" = "Selecteer om je foto te uploaden";
+
+// Home
+"PRO" = "PRO";
+"See all" = "Alles zien";
+"Video Maker" = "Videomaker";
+"Please wait, AI is generating..." = "Even wachten, AI genereert...";
+
+
+// Video Maker
+"Prompt" = "Prompt";
+"Turn your imagination into realistic videos with detailed descriptions" = "Zet je fantasie om in realistische video's met gedetailleerde beschrijvingen";
+"AI Model" = "AI-model";
+"Create" = "Maken";
+"Get Inspired" = "Inspiratie";
+"Get Prompt" = "Prompt ophalen";
+"Apply" = "Toepassen";
+"AI Models" = "AI-modellen";
+"AI Video" = "AI-video";
+"Use Prompt" = "Prompt gebruiken";
+"Copy Prompt" = "Prompt kopiëren";
+"Enrich Prompt" = "Prompt verrijken";
+"Random Pick" = "Willekeurig";
+"Upload Photo" = "Foto uploaden";
+
+// My Profile
+"My profile" = "Mijn profiel";
+"Get 1250+ templates" = "Krijg 1250+ sjablonen";
+"Weekly update collection" = "Wekelijks bijgewerkte collectie";
+"Upgrade" = "Upgraden";
+"Your Gallery" = "Je galerij";
+"Pick a trending style, let the AI work its magic, and your video will land right here in your Library." = "Kies een trendstijl, laat AI zijn magie doen, en je video verschijnt hier in je bibliotheek.";
+"Create now" = "Nu maken";
+"Your video" = "Je video";
+"Select" = "Selecteer";
+"Done" = "Klaar";
+"Generating..." = "Genereren...";
+"Generation failed" = "Genereren mislukt";
+"Try again" = "Opnieuw proberen";
+"Select all" = "Alles selecteren";
+"Delete" = "Verwijderen";
+"Cancel" = "Annuleren";
+"Recreate" = "Opnieuw maken";
+"Are you sure you want to delete?" = "Weet je zeker dat je wilt verwijderen?";
+
+// Upload Photo
+"Face not recognized" = "Gezicht niet herkend";
+"Multiple faces detected" = "Meerdere gezichten gedetecteerd";
+"Copied to clipboard" = "Gekopieerd naar klembord";
+"Run in background" = "Op achtergrond uitvoeren";
+"AI is generating" = "AI genereert";
+"Do you want to leave? The data will be lost" = "Wil je weggaan? De gegevens gaan verloren";
+"Stay here" = "Hier blijven";
+"Leave anyway" = "Toch weggaan";
+"Auto hide in" = "Auto verbergen in";
+"seconds" = "seconden";
+"You can freely purchase credits to discover more without waiting" = "Je kunt credits kopen om meer te ontdekken zonder te wachten";
+"Your credits will be refilled after 1 week, and your balance will be 2000 credits" = "Je credits worden na 1 week aangevuld en je saldo wordt 2000 credits";
+
+
+"Back to home" = "Terug naar home";
+"Saved successfully" = "Succesvol opgeslagen";
+"Something went wrong. Please try again." = "Er is iets misgegaan. Probeer opnieuw.";
+"Error" = "Fout";
+"Not found" = "Niet gevonden";
+
+// IAP
+"Cancel anytime" = "Altijd opzegbaar";
+"week" = "week";
+"year" = "jaar";
+
+// Setting
+"Restore purchase successfully" = "Aankoop succesvol hersteld";
+"Feedback" = "Feedback";
+"Rate us" = "Beoordeel ons";
+"Term of service" = "Servicevoorwaarden";
+"Privacy policy" = "Privacybeleid";
+"Restore purchase" = "Aankoop herstellen";
+"Delete all infomation" = "Alle informatie verwijderen";
+"Result" = "Resultaat";
+"Share" = "Delen";
+"*Save this item before it is deleted in 14 days" = "*Sla dit item op voordat het binnen 14 dagen wordt verwijderd";
+"Best Offer" = "Beste aanbieding";
+
+// IAP
+"Unlock full access" = "Volledige toegang ontgrendelen";
+"Create videos with your idea" = "Maak videos met jouw idee";
+"Enjoy ultra HD 4K AI videos" = "Geniet van ultra-HD 4K AI-videos";
+"Claim 2,000 coins to start" = "Claim 2.000 munten om te beginnen";
+"Access unlimited templates" = "Krijg toegang tot onbeperkte sjablonen";
+"No commitment, cancel anytime" = "Geen verplichtingen, op elk moment annuleren";
+"Terms of Use" = "Gebruiksvoorwaarden";
+"Privacy Policy" = "Privacybeleid";
+"Restore" = "Herstellen";
+"You have" = "Je hebt";
+"Select a reason below" = "Selecteer hieronder een reden";
+"Not really me" = "Niet echt ik";
+"Low quality" = "Lage kwaliteit";
+"Too slow" = "Te traag";
+"Didn’t work" = "Werkte niet";
+"Look fake/plastic" = "Ziet er nep/plastic uit";
+"Enter your creative edit idea here" = "Voer hier je creatieve bewerkingsidee in";
+"This action will permanently remove all your data, including generated videos and personal information" = "Deze actie verwijdert permanent al je gegevens, inclusief gegenereerde videos en persoonlijke informatie";
+"Are you sure?" = "Weet je het zeker?";
+"Just" = "Slechts";
+"Saved" = "Opgeslagen";
+"Confirm" = "Bevestigen";
+"Estimated: 2-3 min" = "Geschat: 2-3 min";

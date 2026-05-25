@@ -1,0 +1,140 @@
+"Save" = "Lưu";
+"Next" = "Tiếp";
+"Get Started" = "Bắt đầu";
+"Language" = "Ngôn ngữ";
+"OK" = "OK";
+"Nothing to Restore. No previous purchase were found" = "Không có gì để khôi phục. Không tìm thấy giao dịch mua trước đó";
+"loading_ads" = "Đang chuẩn bị quảng cáo cho bạn\nVui lòng đợi trong...";
+"New Update Available" = "Có bản cập nhật mới";
+"new_update_desc" = "Cải thiện hiệu năng, sửa lỗi và thêm tính năng mới.\nCập nhật ngay để trải nghiệm mượt hơn!";
+"Later" = "Để sau";
+"Update Now" = "Cập nhật";
+"Setting" = "Cài đặt";
+"No Internet" = "Không có mạng";
+"Please connect to the network to use the app" = "Vui lòng kết nối mạng để sử dụng ứng dụng";
+"Catch the newest trend in seconds!" = "Bắt trend mới nhất trong vài giây!";
+"Let us bring your loved ones closer to you although you have a busy life!" = "Để chúng tôi đưa người thân đến gần bạn hơn dù cuộc sống bận rộn!";
+"Turn your real-life moments into cinematic videos!" = "Biến khoảnh khắc đời thật thành video điện ảnh!";
+"Let our AI turn your photo to trending video." = "Để AI biến ảnh của bạn thành video thịnh hành.";
+"Capture all unforgettable moments." = "Lưu giữ mọi khoảnh khắc khó quên.";
+"Make your life become more vivid." = "Làm cuộc sống của bạn rực rỡ hơn.";
+"Discover now" = "Khám phá";
+"Continue" = "Tiếp tục";
+"Welcome to Pixo AI" = "Chào mừng đến Pixo AI";
+"What can Pixo AI do for you?" = "Pixo AI có thể giúp gì cho bạn?";
+"Choose a Dance Style" = "Chọn kiểu nhảy";
+"Try Now" = "Thử ngay";
+"Generate" = "Tạo";
+"Detecting Faces..." = "Đang nhận diện khuôn mặt...";
+"Together Under Fireworks" = "Bên nhau dưới pháo hoa";
+"Tap here to upload a photo to make it come alive." = "Nhấn vào đây để tải ảnh lên\nvà làm ảnh sống động.";
+"Camera" = "Camera";
+"Gallery" = "Thư viện";
+"Select to upload your photo" = "Chọn để tải ảnh lên";
+
+// Home
+"PRO" = "PRO";
+"See all" = "Xem tất cả";
+"Video Maker" = "Tạo Video";
+"Please wait, AI is generating..." = "Vui lòng đợi, AI đang tạo...";
+
+
+// Video Maker
+"Prompt" = "Prompt";
+"Turn your imagination into realistic videos with detailed descriptions" = "Biến trí tưởng tượng thành video chân thực bằng mô tả chi tiết";
+"AI Model" = "Mẫu AI";
+"Create" = "Tạo";
+"Get Inspired" = "Lấy ý tưởng";
+"Get Prompt" = "Lấy prompt";
+"Apply" = "Áp dụng";
+"AI Models" = "Mẫu AI";
+"AI Video" = "Video AI";
+"Use Prompt" = "Dùng prompt";
+"Copy Prompt" = "Sao chép prompt";
+"Enrich Prompt" = "Làm giàu prompt";
+"Random Pick" = "Chọn ngẫu nhiên";
+"Upload Photo" = "Tải ảnh lên";
+
+// My Profile
+"My profile" = "Hồ sơ";
+"Get 1250+ templates" = "Nhận 1250+ mẫu";
+"Weekly update collection" = "Bộ sưu tập cập nhật hằng tuần";
+"Upgrade" = "Nâng cấp";
+"Your Gallery" = "Thư viện của bạn";
+"Pick a trending style, let the AI work its magic, and your video will land right here in your Library." = "Chọn một phong cách thịnh hành, để AI làm điều kỳ diệu, và video của bạn sẽ xuất hiện ngay trong Thư viện.";
+"Create now" = "Tạo ngay";
+"Your video" = "Video của bạn";
+"Select" = "Chọn";
+"Done" = "Xong";
+"Generating..." = "Đang tạo...";
+"Generation failed" = "Tạo thất bại";
+"Try again" = "Thử lại";
+"Select all" = "Chọn tất cả";
+"Delete" = "Xóa";
+"Cancel" = "Hủy";
+"Recreate" = "Tạo lại";
+"Are you sure you want to delete?" = "Bạn có chắc muốn xóa?";
+
+// Upload Photo
+"Face not recognized" = "Không nhận diện được khuôn mặt";
+"Multiple faces detected" = "Phát hiện nhiều khuôn mặt";
+"Copied to clipboard" = "Đã sao chép vào clipboard";
+"Run in background" = "Chạy nền";
+"AI is generating" = "AI đang tạo";
+"Do you want to leave? The data will be lost" = "Bạn muốn rời đi? Dữ liệu sẽ bị mất";
+"Stay here" = "Ở lại";
+"Leave anyway" = "Vẫn rời đi";
+"Auto hide in" = "Tự ẩn sau";
+"seconds" = "giây";
+"You can freely purchase credits to discover more without waiting" = "Bạn có thể mua credits để khám phá thêm mà không cần chờ";
+"Your credits will be refilled after 1 week, and your balance will be 2000 credits" = "Credits của bạn sẽ được nạp lại sau 1 tuần, số dư sẽ là 2000 credits";
+
+
+"Back to home" = "Về trang chủ";
+"Saved successfully" = "Đã lưu thành công";
+"Something went wrong. Please try again." = "Đã xảy ra lỗi. Vui lòng thử lại.";
+"Error" = "Lỗi";
+"Not found" = "Không tìm thấy";
+
+// IAP
+"Cancel anytime" = "Hủy bất cứ lúc nào";
+"week" = "tuần";
+"year" = "năm";
+
+// Setting
+"Restore purchase successfully" = "Khôi phục mua hàng thành công";
+"Feedback" = "Phản hồi";
+"Rate us" = "Đánh giá chúng tôi";
+"Term of service" = "Điều khoản dịch vụ";
+"Privacy policy" = "Chính sách quyền riêng tư";
+"Restore purchase" = "Khôi phục mua hàng";
+"Delete all infomation" = "Xóa toàn bộ thông tin";
+"Result" = "Kết quả";
+"Share" = "Chia sẻ";
+"*Save this item before it is deleted in 14 days" = "*Hãy lưu mục này trước khi nó bị xóa trong 14 ngày";
+"Best Offer" = "Ưu đãi tốt nhất";
+
+// IAP
+"Unlock full access" = "Mở khóa toàn quyền truy cập";
+"Create videos with your idea" = "Tạo video theo ý tưởng của bạn";
+"Enjoy ultra HD 4K AI videos" = "Thưởng thức video AI 4K ultra HD";
+"Claim 2,000 coins to start" = "Nhận 2.000 xu để bắt đầu";
+"Access unlimited templates" = "Truy cập mẫu không giới hạn";
+"No commitment, cancel anytime" = "Không ràng buộc, hủy bất cứ lúc nào";
+"Terms of Use" = "Điều khoản sử dụng";
+"Privacy Policy" = "Quyền riêng tư";
+"Restore" = "Khôi phục";
+"You have" = "Bạn có";
+"Select a reason below" = "Chọn một lý do bên dưới";
+"Not really me" = "Không thực sự giống tôi";
+"Low quality" = "Chất lượng thấp";
+"Too slow" = "Quá chậm";
+"Didn’t work" = "Không hoạt động";
+"Look fake/plastic" = "Trông giả/nhựa";
+"Enter your creative edit idea here" = "Nhập ý tưởng chỉnh sửa sáng tạo của bạn tại đây";
+"This action will permanently remove all your data, including generated videos and personal information" = "Hành động này sẽ xóa vĩnh viễn toàn bộ dữ liệu của bạn, bao gồm video đã tạo và thông tin cá nhân";
+"Are you sure?" = "Bạn có chắc không?";
+"Just" = "Chỉ";
+"Saved" = "Đã lưu";
+"Confirm" = "Xác nhận";
+"Estimated: 2-3 min" = "Ước tính: 2-3 phút";

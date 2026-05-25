@@ -1,0 +1,140 @@
+"Save" = "Сохранить";
+"Next" = "Далее";
+"Get Started" = "Начать";
+"Language" = "Язык";
+"OK" = "OK";
+"Nothing to Restore. No previous purchase were found" = "Нечего восстанавливать. Предыдущие покупки не найдены";
+"loading_ads" = "Готовим рекламу для вас\nПожалуйста, подождите...";
+"New Update Available" = "Доступно новое обновление";
+"new_update_desc" = "Улучшена производительность, исправлены ошибки и добавлены функции.\nОбновите сейчас для более плавной работы!";
+"Later" = "Позже";
+"Update Now" = "Обновить";
+"Setting" = "Настройки";
+"No Internet" = "Нет интернета";
+"Please connect to the network to use the app" = "Подключитесь к сети, чтобы использовать приложение";
+"Catch the newest trend in seconds!" = "Поймайте новый тренд за секунды!";
+"Let us bring your loved ones closer to you although you have a busy life!" = "Мы поможем стать ближе к любимым, даже если вы очень заняты!";
+"Turn your real-life moments into cinematic videos!" = "Превратите реальные моменты в кинематографичные видео!";
+"Let our AI turn your photo to trending video." = "Пусть наш ИИ превратит ваше фото в трендовое видео.";
+"Capture all unforgettable moments." = "Сохраните все незабываемые моменты.";
+"Make your life become more vivid." = "Сделайте жизнь ярче.";
+"Discover now" = "Открыть";
+"Continue" = "Продолжить";
+"Welcome to Pixo AI" = "Добро пожаловать в Pixo AI";
+"What can Pixo AI do for you?" = "Что Pixo AI может сделать для вас?";
+"Choose a Dance Style" = "Выберите стиль танца";
+"Try Now" = "Попробовать";
+"Generate" = "Создать";
+"Detecting Faces..." = "Распознаем лица...";
+"Together Under Fireworks" = "Вместе под фейерверком";
+"Tap here to upload a photo to make it come alive." = "Нажмите, чтобы загрузить фото\nи оживить его.";
+"Camera" = "Камера";
+"Gallery" = "Галерея";
+"Select to upload your photo" = "Выберите фото для загрузки";
+
+// Home
+"PRO" = "PRO";
+"See all" = "Смотреть все";
+"Video Maker" = "Создание видео";
+"Please wait, AI is generating..." = "Подождите, ИИ создает...";
+
+
+// Video Maker
+"Prompt" = "Промпт";
+"Turn your imagination into realistic videos with detailed descriptions" = "Превратите фантазию в реалистичные видео с подробными описаниями";
+"AI Model" = "Модель ИИ";
+"Create" = "Создать";
+"Get Inspired" = "Вдохновиться";
+"Get Prompt" = "Получить промпт";
+"Apply" = "Применить";
+"AI Models" = "Модели ИИ";
+"AI Video" = "ИИ-видео";
+"Use Prompt" = "Использовать промпт";
+"Copy Prompt" = "Копировать промпт";
+"Enrich Prompt" = "Улучшить промпт";
+"Random Pick" = "Случайно";
+"Upload Photo" = "Загрузить фото";
+
+// My Profile
+"My profile" = "Мой профиль";
+"Get 1250+ templates" = "Получите 1250+ шаблонов";
+"Weekly update collection" = "Коллекция обновляется еженедельно";
+"Upgrade" = "Улучшить";
+"Your Gallery" = "Ваша галерея";
+"Pick a trending style, let the AI work its magic, and your video will land right here in your Library." = "Выберите трендовый стиль, позвольте ИИ творить магию, и ваше видео появится здесь, в библиотеке.";
+"Create now" = "Создать сейчас";
+"Your video" = "Ваше видео";
+"Select" = "Выбрать";
+"Done" = "Готово";
+"Generating..." = "Создание...";
+"Generation failed" = "Не удалось создать";
+"Try again" = "Повторить";
+"Select all" = "Выбрать все";
+"Delete" = "Удалить";
+"Cancel" = "Отмена";
+"Recreate" = "Создать снова";
+"Are you sure you want to delete?" = "Вы уверены, что хотите удалить?";
+
+// Upload Photo
+"Face not recognized" = "Лицо не распознано";
+"Multiple faces detected" = "Обнаружено несколько лиц";
+"Copied to clipboard" = "Скопировано в буфер";
+"Run in background" = "Запустить в фоне";
+"AI is generating" = "ИИ создает";
+"Do you want to leave? The data will be lost" = "Хотите выйти? Данные будут потеряны";
+"Stay here" = "Остаться";
+"Leave anyway" = "Все равно выйти";
+"Auto hide in" = "Скрыть через";
+"seconds" = "сек.";
+"You can freely purchase credits to discover more without waiting" = "Вы можете купить кредиты, чтобы открывать больше без ожидания";
+"Your credits will be refilled after 1 week, and your balance will be 2000 credits" = "Кредиты пополнятся через 1 неделю, и ваш баланс составит 2000 кредитов";
+
+
+"Back to home" = "На главный экран";
+"Saved successfully" = "Успешно сохранено";
+"Something went wrong. Please try again." = "Что-то пошло не так. Попробуйте еще раз.";
+"Error" = "Ошибка";
+"Not found" = "Не найдено";
+
+// IAP
+"Cancel anytime" = "Отмена в любое время";
+"week" = "неделя";
+"year" = "год";
+
+// Setting
+"Restore purchase successfully" = "Покупка успешно восстановлена";
+"Feedback" = "Обратная связь";
+"Rate us" = "Оцените нас";
+"Term of service" = "Условия обслуживания";
+"Privacy policy" = "Политика конфиденциальности";
+"Restore purchase" = "Восстановить покупку";
+"Delete all infomation" = "Удалить всю информацию";
+"Result" = "Результат";
+"Share" = "Поделиться";
+"*Save this item before it is deleted in 14 days" = "*Сохраните этот элемент до того, как он будет удален через 14 дней";
+"Best Offer" = "Лучшее предложение";
+
+// IAP
+"Unlock full access" = "Откройте полный доступ";
+"Create videos with your idea" = "Создавайте видео по своей идее";
+"Enjoy ultra HD 4K AI videos" = "Наслаждайтесь AI-видео в ультра-HD 4K";
+"Claim 2,000 coins to start" = "Получите 2 000 монет для старта";
+"Access unlimited templates" = "Доступ к неограниченным шаблонам";
+"No commitment, cancel anytime" = "Без обязательств, отмена в любое время";
+"Terms of Use" = "Условия использования";
+"Privacy Policy" = "Конфиденциальность";
+"Restore" = "Восстановить";
+"You have" = "У вас есть";
+"Select a reason below" = "Выберите причину ниже";
+"Not really me" = "Не очень похож на меня";
+"Low quality" = "Низкое качество";
+"Too slow" = "Слишком медленно";
+"Didn’t work" = "Не сработало";
+"Look fake/plastic" = "Выглядит фальшиво/пластиково";
+"Enter your creative edit idea here" = "Введите здесь свою креативную идею редактирования";
+"This action will permanently remove all your data, including generated videos and personal information" = "Это действие навсегда удалит все ваши данные, включая сгенерированные видео и личную информацию";
+"Are you sure?" = "Вы уверены?";
+"Just" = "Всего";
+"Saved" = "Сохранено";
+"Confirm" = "Подтвердить";
+"Estimated: 2-3 min" = "Примерно: 2-3 мин";

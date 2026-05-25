@@ -246,6 +246,22 @@ class TabBarView: UIView {
         label.textColor = isSelected ? UIColor(hex: 0x35ADFF) : UIColor(hex: 0x424242)
     }
     
+    func selectTab(at index: Int) {
+        guard tabItems.indices.contains(index), index != selectedIndex else { return }
+        
+        let previousIndex = selectedIndex
+        selectedIndex = index
+        
+        buttons[previousIndex].setImage(tabItems[previousIndex].image(isSelected: false)?.withRenderingMode(.alwaysOriginal), for: .normal)
+        buttons[index].setImage(tabItems[index].image(isSelected: true)?.withRenderingMode(.alwaysOriginal), for: .normal)
+        
+        updateLabel(labels[previousIndex], isSelected: false)
+        updateLabel(labels[index], isSelected: true)
+        
+        updateShapePath(animated: false)
+        updateButtonPositions(animated: false)
+    }
+    
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard !isHidden && isUserInteractionEnabled && alpha > 0 else { return nil }
         
