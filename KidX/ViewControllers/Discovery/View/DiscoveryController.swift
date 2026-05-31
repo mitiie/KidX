@@ -5,6 +5,7 @@
 //  Created by 𝙢𝙩 on 26/3/26.
 //
 
+import AVFoundation
 import PhotosUI
 import UIKit
 
@@ -12,6 +13,7 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
     private let viewModel: DiscoveryViewModel
     private let imagePredictor = ImagePredictor()
     private let predictionsToShow = 2
+    private let speechSynthesizer = AVSpeechSynthesizer()
 
     init(viewModel: DiscoveryViewModel) {
         self.viewModel = viewModel
@@ -99,8 +101,47 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
             return
         }
 
-        let predictionString = formatPredictions(predictions).joined(separator: "\n")
-        showAlert(title: "Prediction", message: predictionString)
+        guard let bestPrediction = predictions.first else {
+            showAlert(title: "Notice", message: "No predictions found.")
+            return
+        }
+
+        var name = bestPrediction.classification
+        if let firstComma = name.firstIndex(of: ",") {
+            name = String(name.prefix(upTo: firstComma))
+        }
+        let objectName = name.capitalized
+
+        let resultView = DetectResultView()
+        
+        resultView.onSaveTapped = { [weak self, weak resultView] in
+            resultView?.dismiss()
+            self?.showAlert(title: "Thành công", message: "Đã lưu \"\(objectName)\" vào bộ sưu tập!")
+        }
+        
+        resultView.onRetryTapped = { [weak self, weak resultView] in
+            resultView?.dismiss()
+            if let self = self {
+                self.btnAddNewTapped(self)
+            }
+        }
+        
+        resultView.onAudioTapped = { [weak self] in
+            self?.speak(text: objectName)
+        }
+
+        resultView.show(
+            on: self.view,
+            objectName: objectName,
+            description: "Bạn vừa khám phá ra một đồ vật mới!"
+        )
+    }
+
+    private func speak(text: String) {
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = 0.5
+        speechSynthesizer.speak(utterance)
     }
 
     private func formatPredictions(_ predictions: [ImagePredictor.Prediction]) -> [String] {
