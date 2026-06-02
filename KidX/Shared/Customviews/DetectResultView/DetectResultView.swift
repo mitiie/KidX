@@ -17,6 +17,7 @@ final class DetectResultView: UIView, XibLoadable {
     
     @IBOutlet private weak var badgeContainer: UIView!
     @IBOutlet private weak var badgeLabel: UILabel!
+    @IBOutlet private weak var resultImageView: UIImageView!
     
     @IBOutlet private weak var objectNameLabel: UILabel!
     @IBOutlet private weak var audioButton: UIButton!
@@ -73,6 +74,14 @@ final class DetectResultView: UIView, XibLoadable {
         if let gradient = saveButtonGradient {
             gradient.frame = saveButton.bounds
             gradient.cornerRadius = saveButton.bounds.height / 2
+        }
+        
+        // Bring button subviews to the front so the gradient layer doesn't cover them
+        if let imageView = saveButton.imageView {
+            saveButton.bringSubviewToFront(imageView)
+        }
+        if let titleLabel = saveButton.titleLabel {
+            saveButton.bringSubviewToFront(titleLabel)
         }
     }
     
@@ -132,6 +141,12 @@ final class DetectResultView: UIView, XibLoadable {
         badgeContainer.layer.cornerRadius = 18
         badgeLabel.font = UIFont.custom(14, .semiBold)
         
+        // --- Result Image View ---
+        resultImageView.layer.cornerRadius = 16
+        resultImageView.layer.borderWidth = 1
+        resultImageView.layer.borderColor = UIColor(red: 0.827, green: 0.89, blue: 1, alpha: 1).cgColor
+        resultImageView.clipsToBounds = true
+        
         // --- 2. Object Row ---
         objectNameLabel.font = UIFont.custom(26, .semiBold)
         
@@ -150,6 +165,14 @@ final class DetectResultView: UIView, XibLoadable {
         // --- 4. Save Button ---
         saveButton.titleLabel?.font = UIFont.custom(18, .semiBold)
         saveButton.addTarget(self, action: #selector(handleSaveTap), for: .touchUpInside)
+        
+        // Fix for star image not displaying: set it programmatically with template rendering and explicit tint
+        let starConfig = UIImage.SymbolConfiguration(pointSize: 16, weight: .bold)
+        if let starImage = UIImage(systemName: "star.fill", withConfiguration: starConfig)?.withRenderingMode(.alwaysTemplate) {
+            saveButton.setImage(starImage, for: .normal)
+            saveButton.tintColor = .white
+            saveButton.imageView?.tintColor = .white
+        }
         
         // Gradient layer for Save Button
         let gradient = CAGradientLayer.horizontal(colors: [UIColor(hex: 0x0D6CBE), UIColor(hex: 0x35A3EB)])
@@ -196,15 +219,16 @@ final class DetectResultView: UIView, XibLoadable {
     
     // MARK: - Public Configuration & Animations
     
-    /// Configures the view with detected object name and descriptive text.
-    func configure(objectName: String, description: String) {
+    /// Configures the view with detected object name, descriptive text, and image.
+    func configure(objectName: String, description: String, image: UIImage?) {
         objectNameLabel.text = objectName
         descriptionLabel.text = description
+        resultImageView.image = image
     }
     
     /// Shows the result view on a parent view with custom fade & scale-up animation.
-    func show(on view: UIView, objectName: String, description: String) {
-        configure(objectName: objectName, description: description)
+    func show(on view: UIView, objectName: String, description: String, image: UIImage?) {
+        configure(objectName: objectName, description: description, image: image)
         
         self.frame = view.bounds
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]

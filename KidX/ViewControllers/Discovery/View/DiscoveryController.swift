@@ -80,7 +80,7 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
             do {
                 try imagePredictor.makePredictions(for: photo) { [weak self] predictions in
                     DispatchQueue.main.async {
-                        self?.imagePredictionHandler(predictions)
+                        self?.imagePredictionHandler(predictions, photo: photo)
                     }
                 }
             } catch {
@@ -93,7 +93,7 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
         }
     }
 
-    private func imagePredictionHandler(_ predictions: [ImagePredictor.Prediction]?) {
+    private func imagePredictionHandler(_ predictions: [ImagePredictor.Prediction]?, photo: UIImage) {
         Common.hideLoading()
 
         guard let predictions = predictions else {
@@ -133,7 +133,8 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
         resultView.show(
             on: self.view,
             objectName: objectName,
-            description: "Bạn vừa khám phá ra một đồ vật mới!"
+            description: "Bạn vừa khám phá ra một đồ vật mới!",
+            image: photo
         )
     }
 
