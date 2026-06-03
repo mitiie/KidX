@@ -218,15 +218,12 @@ final class DetectResultView: UIView, XibLoadable {
     }
     
     // MARK: - Public Configuration & Animations
-    
-    /// Configures the view with detected object name, descriptive text, and image.
     func configure(objectName: String, description: String, image: UIImage?) {
         objectNameLabel.text = objectName
         descriptionLabel.text = description
         resultImageView.image = image
     }
     
-    /// Shows the result view on a parent view with custom fade & scale-up animation.
     func show(on view: UIView, objectName: String, description: String, image: UIImage?) {
         configure(objectName: objectName, description: description, image: image)
         
@@ -234,7 +231,6 @@ final class DetectResultView: UIView, XibLoadable {
         self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(self)
         
-        // Initial hidden state for animation
         self.backgroundDimView.alpha = 0
         self.containerView.alpha = 0
         self.containerView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
@@ -246,7 +242,6 @@ final class DetectResultView: UIView, XibLoadable {
         }, completion: nil)
     }
     
-    /// Dismisses the result view with fade & scale-down animation.
     func dismiss() {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
             self.backgroundDimView.alpha = 0

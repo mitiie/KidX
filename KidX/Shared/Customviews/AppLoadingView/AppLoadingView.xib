@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVn-Mn-XNm">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="952"/>
                     <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dya-Sg-ju4">
@@ -82,7 +82,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="EVn-Mn-XNm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9Cq-Gp-nbb"/>
-                <constraint firstItem="EVn-Mn-XNm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="9SW-Nm-fnC"/>
+                <constraint firstItem="EVn-Mn-XNm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="50" id="9SW-Nm-fnC"/>
                 <constraint firstItem="Dya-Sg-ju4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Be3-X1-LzF"/>
                 <constraint firstItem="EVn-Mn-XNm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Bf0-lp-uo0"/>
                 <constraint firstItem="EVn-Mn-XNm" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="H6S-gs-fbC"/>
