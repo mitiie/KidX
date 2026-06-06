@@ -60,6 +60,14 @@ class LocalizeHelper: NSObject {
     public func currentLanguage() -> LanguageModel? {
         return lang
     }
+
+    public var currentLanguageCode: String {
+        lang?.code ?? defaultLanguage.code
+    }
+
+    public var isVietnameseSelected: Bool {
+        currentLanguageCode == "vi"
+    }
     
     private func applyLanguage(_ language: LanguageModel?) {
         let path = Bundle.main.path(forResource: language?.code ?? defaultLanguage.code, ofType: "lproj")

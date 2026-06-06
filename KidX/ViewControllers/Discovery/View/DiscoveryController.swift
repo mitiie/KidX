@@ -26,6 +26,7 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        assert(MobileNetLabelTranslator.hasFullCoverage, "MobileNet Vietnamese dictionary is missing labels.")
     }
 
     @IBAction func btnAddNewTapped(_ sender: Any) {
@@ -106,11 +107,7 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
             return
         }
 
-        var name = bestPrediction.classification
-        if let firstComma = name.firstIndex(of: ",") {
-            name = String(name.prefix(upTo: firstComma))
-        }
-        let objectName = name.capitalized
+        let objectName = displayName(for: bestPrediction.classification)
 
         let resultView = DetectResultView()
         
@@ -140,20 +137,27 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
 
     private func speak(text: String) {
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.voice = AVSpeechSynthesisVoice(language: speechLanguageCode)
         utterance.rate = 0.5
         speechSynthesizer.speak(utterance)
     }
 
     private func formatPredictions(_ predictions: [ImagePredictor.Prediction]) -> [String] {
         return predictions.prefix(predictionsToShow).map { prediction in
-            var name = prediction.classification
-
-            if let firstComma = name.firstIndex(of: ",") {
-                name = String(name.prefix(upTo: firstComma))
-            }
-
+            let name = displayName(for: prediction.classification)
             return "\(name) - \(prediction.confidencePercentage)%"
         }
+    }
+
+    private func displayName(for rawLabel: String) -> String {
+        guard LocalizeHelper.shared.isVietnameseSelected else {
+            return rawLabel
+        }
+
+        return MobileNetLabelTranslator.vietnameseName(for: rawLabel)
+    }
+
+    private var speechLanguageCode: String {
+        LocalizeHelper.shared.isVietnameseSelected ? "vi-VN" : "en-US"
     }
 }
