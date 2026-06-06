@@ -10,11 +10,17 @@ import PhotosUI
 import UIKit
 
 class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHPickerViewControllerDelegate {
+    // MARK: - Outlets
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    // MARK: - Properties
     private let viewModel: DiscoveryViewModel
     private let imagePredictor = ImagePredictor()
-    private let predictionsToShow = 2
     private let speechSynthesizer = AVSpeechSynthesizer()
-
+    
+    private var savedItems: [SavedObjectItem] = []
+    
+    // MARK: - Initializers
     init(viewModel: DiscoveryViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -24,15 +30,51 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        assert(MobileNetLabelTranslator.hasFullCoverage, "MobileNet Vietnamese dictionary is missing labels.")
+        setupCollectionView()
+        loadData()
+        setupNotificationObserver()
     }
-
-    @IBAction func btnAddNewTapped(_ sender: Any) {
+    
+    private func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerNib(for: BannerCollectionViewCell.self)
+        collectionView.registerNib(for: CollectionRowCollectionViewCell.self)
+        collectionView.registerNib(for: GameCollectionViewCell.self)
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumLineSpacing = 24
+            layout.sectionInset = UIEdgeInsets(top: 16, left: 0, bottom: 24, right: 0)
+        }
+    }
+    
+    private func loadData() {
+        savedItems = SavedObjectsManager.shared.loadObjects()
+        collectionView.reloadData()
+    }
+    
+    private func setupNotificationObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleReloadSavedObjects),
+            name: NSNotification.Name("ReloadSavedObjects"),
+            object: nil
+        )
+    }
+    
+    @objc private func handleReloadSavedObjects() {
+        loadData()
+    }
+    
+    // MARK: - Actions
+    func startDetection() {
         viewModel.importPhoto(from: view, presenter: self, imagePickerDelegate: self, photoPickerDelegate: self)
     }
 
+    // MARK: - UIImagePickerController & PHPicker Delegates
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
@@ -41,15 +83,8 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: false)
 
-        guard let originalImage = info[.originalImage] else {
-            fatalError("Picker didn't have an original image.")
-        }
-
-        guard let photo = originalImage as? UIImage else {
-            fatalError("The Camera Image Picker's image isn't a/n \(UIImage.self) instance.")
-        }
-
-        userSelectedPhoto(photo)
+        guard let originalImage = info[.originalImage] as? UIImage else { return }
+        userSelectedPhoto(originalImage)
     }
 
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
@@ -63,10 +98,7 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
                 return
             }
 
-            guard let photo = object as? UIImage else {
-                fatalError("The Photo Picker's image isn't a/n \(UIImage.self) instance.")
-            }
-
+            guard let photo = object as? UIImage else { return }
             DispatchQueue.main.async {
                 self?.userSelectedPhoto(photo)
             }
@@ -97,67 +129,106 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
     private func imagePredictionHandler(_ predictions: [ImagePredictor.Prediction]?, photo: UIImage) {
         Common.hideLoading()
 
-        guard let predictions = predictions else {
-            showAlert(title: "Notice", message: "No predictions. Check console log.")
+        guard let predictions = predictions, let bestPrediction = predictions.first else {
+            showAlert(title: "Notice".localize(), message: "Not found".localize())
             return
         }
 
-        guard let bestPrediction = predictions.first else {
-            showAlert(title: "Notice", message: "No predictions found.")
-            return
+        let rawLabel = bestPrediction.classification
+        let objectName: String
+        let isVietnamese = LocalizeHelper.shared.isVietnameseSelected
+        
+        if isVietnamese {
+            objectName = MobileNetLabelTranslator.vietnameseName(for: rawLabel).capitalized
+        } else {
+            var name = rawLabel
+            if let firstComma = name.firstIndex(of: ",") {
+                name = String(name.prefix(upTo: firstComma))
+            }
+            objectName = name.capitalized
         }
-
-        let objectName = displayName(for: bestPrediction.classification)
 
         let resultView = DetectResultView()
         
         resultView.onSaveTapped = { [weak self, weak resultView] in
             resultView?.dismiss()
-            self?.showAlert(title: "Thành công", message: "Đã lưu \"\(objectName)\" vào bộ sưu tập!")
+            SavedObjectsManager.shared.save(image: photo, name: objectName)
+            
+            let title = isVietnamese ? "Thành công" : "Success"
+            let message = isVietnamese ? "Đã lưu \"\(objectName)\" vào bộ sưu tập!" : "Saved \"\(objectName)\" to collection!"
+            self?.showAlert(title: title, message: message)
         }
         
         resultView.onRetryTapped = { [weak self, weak resultView] in
             resultView?.dismiss()
-            if let self = self {
-                self.btnAddNewTapped(self)
-            }
+            self?.startDetection()
         }
         
         resultView.onAudioTapped = { [weak self] in
             self?.speak(text: objectName)
         }
 
+        let desc = isVietnamese ? "Bạn vừa khám phá ra một đồ vật mới!" : "You just discovered a new object!"
         resultView.show(
             on: self.view,
             objectName: objectName,
-            description: "Bạn vừa khám phá ra một đồ vật mới!",
+            description: desc,
             image: photo
         )
     }
 
     private func speak(text: String) {
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: speechLanguageCode)
+        utterance.voice = AVSpeechSynthesisVoice(language: LocalizeHelper.shared.isVietnameseSelected ? "vi-VN" : "en-US")
         utterance.rate = 0.5
         speechSynthesizer.speak(utterance)
     }
+}
 
-    private func formatPredictions(_ predictions: [ImagePredictor.Prediction]) -> [String] {
-        return predictions.prefix(predictionsToShow).map { prediction in
-            let name = displayName(for: prediction.classification)
-            return "\(name) - \(prediction.confidencePercentage)%"
+// MARK: - UICollectionView Delegate & DataSource
+extension DiscoveryController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.item {
+        case 0:
+            let cell: BannerCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+            cell.onStartTapped = { [weak self] in
+                self?.startDetection()
+            }
+            return cell
+            
+        case 1:
+            let cell: CollectionRowCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+            cell.items = savedItems
+            cell.onViewAllTapped = { [weak self] in
+                self?.showAlert(title: "Bộ Sưu Tập", message: "Tính năng đang được phát triển!")
+            }
+            return cell
+            
+        case 2:
+            let cell = collectionView.dequeueReusableCell(for: indexPath, cellType: GameCollectionViewCell.self)
+            return cell
+            
+        default:
+            return UICollectionViewCell()
         }
     }
-
-    private func displayName(for rawLabel: String) -> String {
-        guard LocalizeHelper.shared.isVietnameseSelected else {
-            return rawLabel
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.bounds.width
+        switch indexPath.item {
+        case 0:
+            return CGSize(width: width, height: 150)
+        case 1:
+            return CGSize(width: width, height: 250)
+        case 2:
+            return CGSize(width: width, height: 230)
+        default:
+            return .zero
         }
-
-        return MobileNetLabelTranslator.vietnameseName(for: rawLabel)
-    }
-
-    private var speechLanguageCode: String {
-        LocalizeHelper.shared.isVietnameseSelected ? "vi-VN" : "en-US"
     }
 }

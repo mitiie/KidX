@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24506"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GameCollectionViewCell" customModule="KidX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="230"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="230"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trò Chơi Truy Tìm Kho Báu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-bg-title">
+                        <rect key="frame" x="24" y="0.0" width="223" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <color key="textColor" red="0.066666666666666666" green="0.1803921568627451" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hG1-jH-12D" userLabel="Mission Card">
+                        <rect key="frame" x="24" y="38" width="342" height="188"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="left-border">
+                                <rect key="frame" x="0.0" y="0.0" width="8" height="188"/>
+                                <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="left-border-width"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="badge-view">
+                                <rect key="frame" x="24" y="20" width="138" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NHIỆM VỤ HÔM NAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="badge-label">
+                                        <rect key="frame" x="8" y="0.0" width="122" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                        <color key="textColor" red="1" green="0.58431372549019611" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="badge-label" firstAttribute="leading" secondItem="badge-view" secondAttribute="leading" constant="8" id="c1"/>
+                                    <constraint firstAttribute="trailing" secondItem="badge-label" secondAttribute="trailing" constant="8" id="c2"/>
+                                    <constraint firstItem="badge-label" firstAttribute="top" secondItem="badge-view" secondAttribute="top" id="c3"/>
+                                    <constraint firstAttribute="bottom" secondItem="badge-label" secondAttribute="bottom" id="c4"/>
+                                    <constraint firstAttribute="height" constant="24" id="badge-height"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm một chiếc Bàn!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-bg-mtitle">
+                                <rect key="frame" x="24" y="52" width="222" height="27"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.1803921568627451" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiến độ khám phá" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-bg-ptext">
+                                <rect key="frame" x="24" y="95" width="107" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.30196078431372547" green="0.41176470588235292" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/5 Ngôi sao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-bg-pval">
+                                <rect key="frame" x="238" y="95" width="80" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.1803921568627451" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prog-bar-container">
+                                <rect key="frame" x="24" y="119" width="294" height="16"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prog-bar-fill">
+                                        <rect key="frame" x="0.0" y="0.0" width="176.33333333333334" height="16"/>
+                                        <color key="backgroundColor" red="1" green="0.58431372549019611" blue="0.17647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90980392156862744" green="0.94901960784313721" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="prog-bar-fill" firstAttribute="leading" secondItem="prog-bar-container" secondAttribute="leading" id="c5"/>
+                                    <constraint firstItem="prog-bar-fill" firstAttribute="top" secondItem="prog-bar-container" secondAttribute="top" id="c6"/>
+                                    <constraint firstAttribute="bottom" secondItem="prog-bar-fill" secondAttribute="bottom" id="c7"/>
+                                    <constraint firstItem="prog-bar-fill" firstAttribute="width" secondItem="prog-bar-container" secondAttribute="width" multiplier="0.6" id="c8"/>
+                                    <constraint firstAttribute="height" constant="16" id="prog-height"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="star-circle">
+                                <rect key="frame" x="262" y="33.666666666666671" width="56" height="56"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="star-icon">
+                                        <rect key="frame" x="16" y="15.666666666666666" width="24" height="23.666666666666668"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="star-width"/>
+                                            <constraint firstAttribute="height" constant="24" id="star-height"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.77647058823529413" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="star-icon" firstAttribute="centerX" secondItem="star-circle" secondAttribute="centerX" id="c9"/>
+                                    <constraint firstItem="star-icon" firstAttribute="centerY" secondItem="star-circle" secondAttribute="centerY" id="c10"/>
+                                    <constraint firstAttribute="width" constant="56" id="star-circle-width"/>
+                                    <constraint firstAttribute="height" constant="56" id="star-circle-height"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="left-border" firstAttribute="leading" secondItem="hG1-jH-12D" secondAttribute="leading" id="c11"/>
+                            <constraint firstItem="left-border" firstAttribute="top" secondItem="hG1-jH-12D" secondAttribute="top" id="c12"/>
+                            <constraint firstItem="left-border" firstAttribute="bottom" secondItem="hG1-jH-12D" secondAttribute="bottom" id="c13"/>
+                            
+                            <constraint firstItem="badge-view" firstAttribute="top" secondItem="hG1-jH-12D" secondAttribute="top" constant="20" id="c14"/>
+                            <constraint firstItem="badge-view" firstAttribute="leading" secondItem="hG1-jH-12D" secondAttribute="leading" constant="24" id="c15"/>
+                            
+                            <constraint firstItem="aGz-bg-mtitle" firstAttribute="top" secondItem="badge-view" secondAttribute="bottom" constant="8" id="c16"/>
+                            <constraint firstItem="aGz-bg-mtitle" firstAttribute="leading" secondItem="hG1-jH-12D" secondAttribute="leading" constant="24" id="c17"/>
+                            <constraint firstItem="star-circle" firstAttribute="centerY" secondItem="aGz-bg-mtitle" secondAttribute="centerY" constant="-4" id="c18"/>
+                            <constraint firstAttribute="trailing" secondItem="star-circle" secondAttribute="trailing" constant="24" id="c19"/>
+                            <constraint firstItem="aGz-bg-mtitle" firstAttribute="trailing" secondItem="star-circle" secondAttribute="leading" constant="-16" id="c20"/>
+                            
+                            <constraint firstItem="aGz-bg-ptext" firstAttribute="top" secondItem="aGz-bg-mtitle" secondAttribute="bottom" constant="16" id="c21"/>
+                            <constraint firstItem="aGz-bg-ptext" firstAttribute="leading" secondItem="hG1-jH-12D" secondAttribute="leading" constant="24" id="c22"/>
+                            
+                            <constraint firstItem="aGz-bg-pval" firstAttribute="centerY" secondItem="aGz-bg-ptext" secondAttribute="centerY" id="c23"/>
+                            <constraint firstAttribute="trailing" secondItem="aGz-bg-pval" secondAttribute="trailing" constant="24" id="c24"/>
+                            
+                            <constraint firstItem="prog-bar-container" firstAttribute="top" secondItem="aGz-bg-ptext" secondAttribute="bottom" constant="8" id="c25"/>
+                            <constraint firstItem="prog-bar-container" firstAttribute="leading" secondItem="hG1-jH-12D" secondAttribute="leading" constant="24" id="c26"/>
+                            <constraint firstAttribute="trailing" secondItem="prog-bar-container" secondAttribute="trailing" constant="24" id="c27"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="aGz-bg-title" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="c28"/>
+                <constraint firstItem="aGz-bg-title" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="c29"/>
+                <constraint firstItem="hG1-jH-12D" firstAttribute="top" secondItem="aGz-bg-title" secondAttribute="bottom" constant="16" id="c30"/>
+                <constraint firstItem="hG1-jH-12D" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="c31"/>
+                <constraint firstAttribute="trailing" secondItem="hG1-jH-12D" secondAttribute="trailing" constant="24" id="c32"/>
+                <constraint firstAttribute="bottom" secondItem="hG1-jH-12D" secondAttribute="bottom" id="c33"/>
+            </constraints>
+            <size key="customSize" width="390" height="230"/>
+            <connections>
+                <outlet property="badgeLabel" destination="badge-label" id="badgeLabelOutlet"/>
+                <outlet property="badgeView" destination="badge-view" id="badgeViewOutlet"/>
+                <outlet property="leftBorderView" destination="left-border" id="leftBorderOutlet"/>
+                <outlet property="missionCard" destination="hG1-jH-12D" id="missionCardOutlet"/>
+                <outlet property="missionTitleLabel" destination="aGz-bg-mtitle" id="missionTitleLabelOutlet"/>
+                <outlet property="progressBarContainer" destination="prog-bar-container" id="progressBarContainerOutlet"/>
+                <outlet property="progressBarFill" destination="prog-bar-fill" id="progressBarFillOutlet"/>
+                <outlet property="progressTitleLabel" destination="aGz-bg-ptext" id="progressTitleLabelOutlet"/>
+                <outlet property="progressValueLabel" destination="aGz-bg-pval" id="progressValueLabelOutlet"/>
+                <outlet property="starImageView" destination="star-icon" id="starIconOutlet"/>
+                <outlet property="titleLabel" destination="aGz-bg-title" id="titleLabelOutlet"/>
+                <outlet property="yellowStarCircle" destination="star-circle" id="yellowStarCircleOutlet"/>
+            </connections>
+            <point key="canvasLocation" x="126" y="125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
+</document>
