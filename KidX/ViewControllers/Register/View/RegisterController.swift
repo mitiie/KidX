@@ -55,7 +55,7 @@ class RegisterController: BaseController {
         let confirmPassword = confirmPasswordTF.text ?? ""
 
         if let error = viewModel.validate(email: email, password: password, confirmPassword: confirmPassword) {
-            showAlert(title: "Notice", message: error.message)
+            showAlert(title: "Notice".localize(), message: error.message)
             return
         }
 
@@ -68,14 +68,14 @@ class RegisterController: BaseController {
             switch result {
             case .success:
                 self.showAlert(
-                    title: "Account Created",
-                    message: "Your account has been created successfully. Please check your inbox to verify your email.",
+                    title: "Account Created".localize(),
+                    message: "Your account has been created successfully. Please check your inbox to verify your email.".localize(),
                     confirmHandler: {
                         self.viewModel.navigateBack()
                     }
                 )
             case .failure(let error):
-                self.showAlert(title: "Notice", message: error.message)
+                self.showAlert(title: "Notice".localize(), message: error.message)
             }
         }
     }

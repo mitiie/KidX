@@ -81,8 +81,8 @@ class SummaryVC: BaseController {
 
     private func startRelearn(type: RelearnType) {
         guard let input = viewModel.createRelearnRouteInput(type: type) else {
-            let alert = UIAlertController(title: "Notice", message: "There are no cards to review.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            let alert = UIAlertController(title: "Notice".localize(), message: "There are no cards to review.".localize(), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK".localize(), style: .default))
             present(alert, animated: true)
             return
         }

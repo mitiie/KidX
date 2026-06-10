@@ -52,7 +52,6 @@ class WritingPracticeController: BaseController {
     }
     
     private func setupLabels() {
-        titleLabel.text = "Luyện viết chữ số"
         titleLabel.font = UIFont.custom(22, .semiBold)
         titleLabel.textColor = AppColor.text.color
         titleLabel.textAlignment = .center
@@ -74,7 +73,8 @@ class WritingPracticeController: BaseController {
         let config = UIImage.SymbolConfiguration(pointSize: 18, weight: .bold)
         
         // Detect button (Magic Wand)
-        detectButton.setTitle(" Kiểm tra", for: .normal)
+        let checkTitle = "Check".localize()
+        detectButton.setTitle(" \(checkTitle)", for: .normal)
         detectButton.setImage(UIImage(systemName: "wand.and.stars", withConfiguration: config), for: .normal)
         detectButton.tintColor = .white
         detectButton.backgroundColor = UIColor(hex: 0x2DCE89) // Green
@@ -87,7 +87,8 @@ class WritingPracticeController: BaseController {
         detectButton.layer.shadowRadius = 8
         
         // Clear button (Eraser)
-        clearButton.setTitle(" Xóa vẽ", for: .normal)
+        let clearTitle = "Clear".localize()
+        clearButton.setTitle(" \(clearTitle)", for: .normal)
         clearButton.setImage(UIImage(systemName: "eraser.line.dashed", withConfiguration: config), for: .normal)
         clearButton.tintColor = .white
         clearButton.backgroundColor = UIColor(hex: 0xFF5B5C) // Soft red-orange
@@ -155,7 +156,7 @@ class WritingPracticeController: BaseController {
     // MARK: - Digit Selection
     private func selectDigit(_ digit: Int) {
         selectedDigit = digit
-        instructionLabel.text = "Bé hãy viết số \(digit) lên bảng vẽ nhé!"
+        instructionLabel.text = String(format: "Please write number %d on the canvas!".localize(), digit)
         
         // Update button states
         for button in digitButtons {
@@ -187,11 +188,11 @@ class WritingPracticeController: BaseController {
         let isCorrect = (digit == String(selectedDigit))
         if isCorrect {
             resultLabel.textColor = UIColor(hex: 0x27AE60) // Green
-            resultMessageLabel.text = "Đúng rồi! Bé giỏi quá! 🎉"
+            resultMessageLabel.text = "Correct! You did great! 🎉".localize()
             resultMessageLabel.textColor = UIColor(hex: 0x27AE60)
         } else {
             resultLabel.textColor = UIColor(hex: 0xEB5757) // Red
-            resultMessageLabel.text = "Chưa đúng rồi, bé hãy viết lại nhé! 💪"
+            resultMessageLabel.text = "Not quite right, try writing it again! 💪".localize()
             resultMessageLabel.textColor = UIColor(hex: 0xEB5757)
         }
         
@@ -219,14 +220,14 @@ class WritingPracticeController: BaseController {
     
     private func showUnreliableAlert() {
         let alert = UIAlertController(
-            title: "Không nhận diện được",
-            message: "Nét vẽ chưa rõ ràng, bé hãy vẽ lại nhé!",
+            title: "Could Not Recognize".localize(),
+            message: "The drawing is not clear, please draw again!".localize(),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Vẽ lại", style: .default, handler: { [weak self] _ in
+        alert.addAction(UIAlertAction(title: "Draw Again".localize(), style: .default, handler: { [weak self] _ in
             self?.clearCanvas()
         }))
-        alert.addAction(UIAlertAction(title: "Đóng", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Close".localize(), style: .cancel))
         present(alert, animated: true)
     }
     

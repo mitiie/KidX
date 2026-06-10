@@ -92,6 +92,11 @@ final class DetectResultView: UIView, XibLoadable {
         setupGesture()
         setupCardShadowAndBorder()
         styleViews()
+        
+        // Localize labels and buttons programmatically to support dynamic language switching
+        badgeLabel.text = "GREAT! THIS IS:".localize()
+        saveButton.setTitle("  " + "Save to Collection".localize(), for: .normal)
+        retryButton.setTitle("Retry".localize(), for: .normal)
     }
     
     private func setupGesture() {

@@ -56,7 +56,7 @@ class LoginController: BaseController {
         let password = passwordTF.text ?? ""
         
         if let error = viewModel.validate(email: email, password: password) {
-            showAlert(title: "Notice", message: error.message)
+            showAlert(title: "Notice".localize(), message: error.message)
             return
         }
         
@@ -72,18 +72,18 @@ class LoginController: BaseController {
                 
             case .failure(let error) where error == .emailNotVerified:
                 self.showAlert(
-                    title: "Email Not Verified",
+                    title: "Email Not Verified".localize(),
                     message: error.message,
-                    confirmTitle: "Resend Email",
+                    confirmTitle: "Resend Email".localize(),
                     confirmHandler: {
                         guard let user = Auth.auth().currentUser else { return }
                         self.resendVerification(user: user)
                     },
-                    cancelTitle: "OK"
+                    cancelTitle: "OK".localize()
                 )
                 
             case .failure(let error):
-                self.showAlert(title: "Notice", message: error.message)
+                self.showAlert(title: "Notice".localize(), message: error.message)
             }
         }
     }
@@ -94,11 +94,11 @@ class LoginController: BaseController {
             guard let self else { return }
             if let error = error {
                 print("❌ Resend verification failed: \(error.message)")
-                self.showAlert(title: "Notice", message: error.message)
+                self.showAlert(title: "Notice".localize(), message: error.message)
                 return
             }
             print("✅ Verification email resent successfully")
-            self.showAlert(title: "Email Sent", message: "Verification email has been resent. Please check your inbox.")
+            self.showAlert(title: "Email Sent".localize(), message: "Verification email has been resent. Please check your inbox.".localize())
         }
     }
     
@@ -108,8 +108,8 @@ class LoginController: BaseController {
         
         guard !email.isEmpty, viewModel.isValidEmail(email) else {
             showAlert(
-                title: "Forgot Password",
-                message: "Please enter a valid email address in the email field to reset your password"
+                title: "Forgot Password".localize(),
+                message: "Please enter a valid email address in the email field to reset your password".localize()
             )
             return
         }
@@ -121,12 +121,12 @@ class LoginController: BaseController {
             Common.hideLoading()
             
             if let error = error {
-                self.showAlert(title: "Notice", message: error.message)
+                self.showAlert(title: "Notice".localize(), message: error.message)
                 return
             }
             self.showAlert(
-                title: "Email Sent",
-                message: "Password reset instructions have been sent to \(email). Please check your inbox."
+                title: "Email Sent".localize(),
+                message: String(format: "Password reset instructions have been sent to %@. Please check your inbox.".localize(), email)
             )
         }
     }
@@ -143,7 +143,7 @@ class LoginController: BaseController {
             case .success:
                 self.viewModel.navigateToHome()
             case .failure(let error):
-                self.showAlert(title: "Notice", message: error.message)
+                self.showAlert(title: "Notice".localize(), message: error.message)
             }
         }
     }

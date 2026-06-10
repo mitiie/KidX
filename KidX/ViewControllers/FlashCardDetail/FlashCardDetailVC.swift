@@ -54,7 +54,7 @@ class FlashCardDetailVC: BaseController {
     }
 
     override func setupUI() {
-        flashCardLabel.text = viewModel.categoryName
+        flashCardLabel.text = viewModel.categoryName.localize()
         [flashCardLabel, progressLabel, rememberCount, dontRememberCount, cardName].forEach {
             $0?.font = UIFont.custom(20, .semiBold)
         }
@@ -158,8 +158,8 @@ class FlashCardDetailVC: BaseController {
     private func showCurrentCard() {
         guard let item = viewModel.currentItem else { return }
 
-        cardName.text = item.title
-        descriptionLabel.text = item.description
+        cardName.text = item.title.localize()
+        descriptionLabel.text = item.description.localize()
         noteIMG.image = loadImage(from: item.imageName)
         markIMG.image = item.isRemembered ? UIImage(resource: .starSelected) : UIImage(resource: .starUnselected)
 
@@ -190,7 +190,7 @@ class FlashCardDetailVC: BaseController {
                 self.noteIMG.alpha = 0
             }
             UIView.transition(with: descriptionLabel, duration: 0.3, options: .transitionFlipFromRight) {
-                self.descriptionLabel.text = currentItem.description
+                self.descriptionLabel.text = currentItem.description.localize()
                 self.descriptionLabel.alpha = 1
             }
         } else {

@@ -13,7 +13,7 @@ enum TabBarItem: String, CaseIterable {
     var index: Int { Self.allCases.firstIndex(of: self) ?? 0 }
     
     var title: String {
-        return rawValue.capitalized
+        return rawValue.capitalized.localize()
     }
     
     func image(isSelected: Bool) -> UIImage? {

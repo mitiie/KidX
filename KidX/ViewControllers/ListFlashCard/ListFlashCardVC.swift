@@ -41,7 +41,7 @@ class ListFlashCardVC: BaseController {
     }
 
     override func setupUI() {
-        label.text = viewModel.titleText
+        label.text = viewModel.titleText.localize()
         let tap = UITapGestureRecognizer(target: self, action: #selector(letReviewTapped))
         letReviewContainer.addGestureRecognizer(tap)
     }
@@ -68,11 +68,11 @@ class ListFlashCardVC: BaseController {
 
             let unremembered = self.viewModel.getUnrememberedItems()
             guard !unremembered.isEmpty else {
-                self.presentAlert(message: "All cards are remembered!")
+                self.presentAlert(message: "All cards are remembered!".localize())
                 return
             }
 
-            self.viewModel.navigateToFlashCardDetail(items: unremembered, category: "Unremembered")
+            self.viewModel.navigateToFlashCardDetail(items: unremembered, category: "Unremembered".localize())
         }
 
         optionView.onRandomTapped = { [weak self] in
@@ -80,7 +80,7 @@ class ListFlashCardVC: BaseController {
             optionView.removeFromSuperview()
 
             let items = self.viewModel.getRandomizedItems()
-            self.viewModel.navigateToFlashCardDetail(items: items, category: "Random Learning")
+            self.viewModel.navigateToFlashCardDetail(items: items, category: "Random Learning".localize())
         }
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissOptionView(_:)))
@@ -104,8 +104,8 @@ class ListFlashCardVC: BaseController {
     }
 
     private func presentAlert(message: String) {
-        let alert = UIAlertController(title: "Info", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        let alert = UIAlertController(title: "Info".localize(), message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localize(), style: .default))
         present(alert, animated: true)
     }
 }
@@ -131,7 +131,7 @@ extension ListFlashCardVC: UICollectionViewDelegate, UICollectionViewDataSource 
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let reordered = viewModel.reorderItems(at: indexPath.item)
-        viewModel.navigateToFlashCardDetail(items: reordered, category: viewModel.titleText)
+        viewModel.navigateToFlashCardDetail(items: reordered, category: viewModel.titleText.localize())
     }
 
     private func presentCreateFlashCardScreen() {

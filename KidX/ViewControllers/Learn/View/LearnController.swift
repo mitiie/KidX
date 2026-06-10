@@ -87,16 +87,13 @@ class LearnController: BaseController {
     }
 
     private func setupMainLabels() {
-        heroTitleLabel.text = "Cùng khám phá\nthế giới con số"
         heroTitleLabel.font = UIFont.custom(28, .semiBold)
         heroTitleLabel.textColor = AppColor.text.color
         heroTitleLabel.numberOfLines = 2
         
-        challengeSectionTitleLabel.text = "Thử Thách Hôm Nay"
         challengeSectionTitleLabel.font = UIFont.custom(20, .semiBold)
         challengeSectionTitleLabel.textColor = AppColor.text.color
         
-        challengeRewardButton.setTitle("Xem tất cả", for: .normal)
         challengeRewardButton.setTitleColor(AppColor.primary.color, for: .normal)
         challengeRewardButton.titleLabel?.font = UIFont.custom(14, .semiBold)
     }
@@ -116,16 +113,14 @@ class LearnController: BaseController {
         writingPracticeBadgeLabel.textAlignment = .center
         writingPracticeBadgeLabel.clipsToBounds = true
         
-        writingPracticeTitleLabel.text = "Luyện Viết Chữ Số"
         writingPracticeTitleLabel.font = UIFont.custom(20, .semiBold)
         writingPracticeTitleLabel.textColor = AppColor.text.color
         
-        writingPracticeDescLabel.text = "Tập viết các con số từ 0 đến 9 thật xinh xắn cùng bạn Bút Chì."
         writingPracticeDescLabel.font = UIFont.custom(14, .regular)
         writingPracticeDescLabel.textColor = AppColor.grey.color
         writingPracticeDescLabel.numberOfLines = 0
         
-        styleTextLinkButton(writingPracticeButton, title: "Bắt đầu ngay", color: AppColor.primary.color)
+        styleTextLinkButton(writingPracticeButton, title: "Start now".localize(), color: AppColor.primary.color)
         
         // Card 2: Phép Tính Vui Nhộn (Yellow card)
         mathProblemsCardView.backgroundColor = UIColor(hex: 0xFFCC00)
@@ -137,16 +132,14 @@ class LearnController: BaseController {
         mpBadgeView.backgroundColor = UIColor(hex: 0x0055B3)
         mpBadgeView.clipsToBounds = true
         
-        mathProblemsTitleLabel.text = "Phép Tính Vui Nhộn"
         mathProblemsTitleLabel.font = UIFont.custom(20, .semiBold)
         mathProblemsTitleLabel.textColor = AppColor.text.color
         
-        mathProblemsDescLabel.text = "Thử thách cộng trừ siêu tốc cùng các bạn thú rừng xanh."
         mathProblemsDescLabel.font = UIFont.custom(14, .regular)
         mathProblemsDescLabel.textColor = AppColor.text.color.withAlphaComponent(0.8)
         mathProblemsDescLabel.numberOfLines = 0
         
-        styleTextLinkButton(mathProblemsButton, title: "Chơi ngay nào", color: AppColor.text.color)
+        styleTextLinkButton(mathProblemsButton, title: "Play now".localize(), color: AppColor.text.color)
         
         // Card 3: Thử Thách Hôm Nay (Light blue/purple card)
         challengeCardView.backgroundColor = UIColor(hex: 0xEEF2FF)
@@ -155,19 +148,16 @@ class LearnController: BaseController {
         chIconContainerView.backgroundColor = .white
         chIconContainerView.clipsToBounds = true
         
-        challengeTimeLabel.text = "CÒN 2 GIỜ NỮA"
         challengeTimeLabel.font = UIFont.custom(10, .semiBold)
         challengeTimeLabel.textColor = UIColor(hex: 0xD97706) // Brown/orange
         challengeTimeLabel.backgroundColor = UIColor(hex: 0xFEF3C7)
         challengeTimeLabel.layer.cornerRadius = 6
         challengeTimeLabel.clipsToBounds = true
         
-        challengeDescLabel.text = "Giải 10 phép tính cộng trong 1 phút!"
         challengeDescLabel.font = UIFont.custom(16, .semiBold)
         challengeDescLabel.textColor = AppColor.text.color
         challengeDescLabel.numberOfLines = 0
         
-        challengeProgressLabel.text = "Đã hoàn thành 7/10"
         challengeProgressLabel.font = UIFont.custom(12, .medium)
         challengeProgressLabel.textColor = AppColor.grey.color
         
@@ -221,24 +211,24 @@ class LearnController: BaseController {
     }
     
     @IBAction func mathProblemsTapped(_ sender: UIButton) {
-        showAlertPlaceholder(title: "Phép Tính Vui Nhộn")
+        showAlertPlaceholder(title: "Fun Math Problems".localize())
     }
     
     @IBAction func challengeTapped(_ sender: UIButton) {
-        showAlertPlaceholder(title: "Thử Thách Hôm Nay")
+        showAlertPlaceholder(title: "Today's Challenge".localize())
     }
     
     @IBAction func challengeRewardTapped(_ sender: UIButton) {
-        showAlertPlaceholder(title: "Xem Tất Cả")
+        showAlertPlaceholder(title: "View all".localize())
     }
     
     private func showAlertPlaceholder(title: String) {
         let alert = UIAlertController(
             title: title,
-            message: "Tính năng này sẽ được cập nhật trong các bài học tiếp theo!",
+            message: "This feature will be updated in future lessons!".localize(),
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: "Đồng ý", style: .default))
+        alert.addAction(UIAlertAction(title: "OK".localize(), style: .default))
         present(alert, animated: true)
     }
 }

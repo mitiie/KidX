@@ -26,6 +26,7 @@
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="string" keyPath="weight" value="semiBold"/>
                             <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Popular Flash Card"/>
                         </userDefinedRuntimeAttributes>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8pU-8Z-b7T">

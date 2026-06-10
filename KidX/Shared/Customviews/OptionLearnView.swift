@@ -9,8 +9,8 @@ import UIKit
 
 class OptionLearnView: UIView {
     private let backgroundIMG = UIImageView(image: UIImage(resource: .bgOptionLearn))
-    private let learnStarLabel = OptionLearnView.makeLabel(text: "Unremembered")
-    private let randomLabel = OptionLearnView.makeLabel(text: "Random")
+    private let learnStarLabel = OptionLearnView.makeLabel(text: "Unremembered".localize())
+    private let randomLabel = OptionLearnView.makeLabel(text: "Random".localize())
     private let nextIcon1 = OptionLearnView.makeNextIcon()
     private let nextIcon2 = OptionLearnView.makeNextIcon()
     let view1 = UIView()

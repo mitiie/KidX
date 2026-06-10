@@ -20,6 +20,9 @@
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                         <color key="textColor" red="0.066666666666666666" green="0.1803921568627451" blue="0.31764705882352939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Baby's Collection"/>
+                        </userDefinedRuntimeAttributes>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-bg-btn">
                         <rect key="frame" x="323" y="-3.6666666666666661" width="43" height="29"/>
@@ -28,6 +31,9 @@
                         <state key="normal" title="Tất cả">
                             <color key="titleColor" red="0.050980392156862744" green="0.42352941176470588" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="normalLocalizedTitle" value="View all"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <action selector="viewAllButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="btn-tap-conn"/>
                         </connections>

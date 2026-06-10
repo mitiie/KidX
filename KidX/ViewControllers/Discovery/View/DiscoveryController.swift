@@ -120,7 +120,7 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
                 print("Vision was unable to make a prediction...\n\n\(error.localizedDescription)")
                 DispatchQueue.main.async {
                     Common.hideLoading()
-                    self?.showAlert(title: "Notice", message: "Unable to recognize this image.")
+                    self?.showAlert(title: "Notice".localize(), message: "Unable to recognize this image.".localize())
                 }
             }
         }
@@ -154,8 +154,8 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
             resultView?.dismiss()
             SavedObjectsManager.shared.save(image: photo, name: objectName)
             
-            let title = isVietnamese ? "Thành công" : "Success"
-            let message = isVietnamese ? "Đã lưu \"\(objectName)\" vào bộ sưu tập!" : "Saved \"\(objectName)\" to collection!"
+            let title = "Success".localize()
+            let message = String(format: "Saved \"%@\" to collection!".localize(), objectName)
             self?.showAlert(title: title, message: message)
         }
         
@@ -168,7 +168,7 @@ class DiscoveryController: BaseController, UIImagePickerControllerDelegate, UINa
             self?.speak(text: objectName)
         }
 
-        let desc = isVietnamese ? "Bạn vừa khám phá ra một đồ vật mới!" : "You just discovered a new object!"
+        let desc = "You just discovered a new object!".localize()
         resultView.show(
             on: self.view,
             objectName: objectName,
@@ -205,7 +205,7 @@ extension DiscoveryController: UICollectionViewDelegate, UICollectionViewDataSou
             let cell: CollectionRowCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
             cell.items = savedItems
             cell.onViewAllTapped = { [weak self] in
-                self?.showAlert(title: "Bộ Sưu Tập", message: "Tính năng đang được phát triển!")
+                self?.showAlert(title: "Collection".localize(), message: "Under development!".localize())
             }
             return cell
             

@@ -74,13 +74,13 @@ final class SystemPermissionService: PermissionServiceProtocol {
         topVC.showAlert(
             title: type.title,
             message: type.desc,
-            confirmTitle: "Settings",
+            confirmTitle: "Settings".localize(),
             confirmHandler: {
                 guard let url = URL(string: UIApplication.openSettingsURLString),
                       UIApplication.shared.canOpenURL(url) else { return }
                 UIApplication.shared.open(url)
             },
-            cancelTitle: "Cancel"
+            cancelTitle: "Cancel".localize()
         )
     }
 }
