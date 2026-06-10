@@ -41,6 +41,9 @@ final class MainCoordinator: NavigationStateDelegate {
         case .language(let profileVM):
             push(LanguageController(profileVM: profileVM), animated: animated)
 
+        case .writingPractice(let learnVM):
+            push(WritingPracticeController(viewModel: learnVM), animated: animated)
+
         default:
             break
         }

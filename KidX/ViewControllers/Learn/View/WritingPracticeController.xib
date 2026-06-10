@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WritingPracticeController" customModule="KidX" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="BTN-bk-001" id="OT-bk-001"/>
+                <outlet property="clearButton" destination="BTN-cl-001" id="OT-cl-001"/>
+                <outlet property="detectButton" destination="BTN-dt-001" id="OT-dt-001"/>
+                <outlet property="drawView" destination="DRW-vw-001" id="OT-dw-001"/>
+                <outlet property="instructionLabel" destination="LBL-in-001" id="OT-in-001"/>
+                <outlet property="resultContainerView" destination="RES-cv-001" id="OT-rc-001"/>
+                <outlet property="resultLabel" destination="RES-lb-001" id="OT-rl-001"/>
+                <outlet property="resultMessageLabel" destination="RES-msg-001" id="OT-msg-001"/>
+                <outlet property="titleLabel" destination="LBL-tt-001" id="OT-tt-001"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-0" collectionClass="NSMutableArray" id="OT-dg-0"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-1" collectionClass="NSMutableArray" id="OT-dg-1"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-2" collectionClass="NSMutableArray" id="OT-dg-2"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-3" collectionClass="NSMutableArray" id="OT-dg-3"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-4" collectionClass="NSMutableArray" id="OT-dg-4"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-5" collectionClass="NSMutableArray" id="OT-dg-5"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-6" collectionClass="NSMutableArray" id="OT-dg-6"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-7" collectionClass="NSMutableArray" id="OT-dg-7"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-8" collectionClass="NSMutableArray" id="OT-dg-8"/>
+                <outletCollection property="digitButtons" destination="BTN-dg-9" collectionClass="NSMutableArray" id="OT-dg-9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-bk-001" userLabel="backButton">
+                    <rect key="frame" x="16" y="118.33333333333331" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="H-bk-001"/>
+                        <constraint firstAttribute="width" constant="44" id="W-bk-001"/>
+                    </constraints>
+                    <color key="tintColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="ACT-bk-001"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyện viết chữ số" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-tt-001" userLabel="titleLabel">
+                    <rect key="frame" x="68" y="126.99999999999999" width="257" height="26.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCR-dg-001" userLabel="digitScrollView">
+                    <rect key="frame" x="0.0" y="178.33333333333334" width="393" height="48"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="STK-dg-001" userLabel="digitStackView">
+                            <rect key="frame" x="16" y="4" width="468" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-0" userLabel="0">
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-0"/>
+                                    </constraints>
+                                    <state key="normal" title="0"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-1" userLabel="1">
+                                    <rect key="frame" x="48" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-1"/>
+                                    </constraints>
+                                    <state key="normal" title="1"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-2" userLabel="2">
+                                    <rect key="frame" x="96" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-2"/>
+                                    </constraints>
+                                    <state key="normal" title="2"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-3" userLabel="3">
+                                    <rect key="frame" x="144" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-3"/>
+                                    </constraints>
+                                    <state key="normal" title="3"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-4" userLabel="4">
+                                    <rect key="frame" x="192" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-4"/>
+                                    </constraints>
+                                    <state key="normal" title="4"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-4"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-5" userLabel="5">
+                                    <rect key="frame" x="240" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-5"/>
+                                    </constraints>
+                                    <state key="normal" title="5"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-5"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-6" userLabel="6">
+                                    <rect key="frame" x="288" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-6"/>
+                                    </constraints>
+                                    <state key="normal" title="6"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-6"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-7" userLabel="7">
+                                    <rect key="frame" x="336" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-7"/>
+                                    </constraints>
+                                    <state key="normal" title="7"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-8" userLabel="8">
+                                    <rect key="frame" x="384" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-8"/>
+                                    </constraints>
+                                    <state key="normal" title="8"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-8"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-9" userLabel="9">
+                                    <rect key="frame" x="432" y="0.0" width="36" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="36" id="W-dg-9"/>
+                                    </constraints>
+                                    <state key="normal" title="9"/>
+                                    <connections>
+                                        <action selector="digitTapped:" destination="-1" eventType="touchUpInside" id="ACT-dg-9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="H-dg-stack"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="STK-dg-001" secondAttribute="bottom" constant="4" id="S-dg-1"/>
+                        <constraint firstItem="STK-dg-001" firstAttribute="top" secondItem="SCR-dg-001" secondAttribute="top" constant="4" id="S-dg-2"/>
+                        <constraint firstItem="STK-dg-001" firstAttribute="leading" secondItem="SCR-dg-001" secondAttribute="leading" constant="16" id="S-dg-3"/>
+                        <constraint firstAttribute="trailing" secondItem="STK-dg-001" secondAttribute="trailing" constant="16" id="S-dg-4"/>
+                        <constraint firstAttribute="height" constant="48" id="S-dg-h"/>
+                    </constraints>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bé hãy vẽ số 0 lên bảng vẽ nhé!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-in-001" userLabel="instructionLabel">
+                    <rect key="frame" x="20" y="242.33333333333334" width="353" height="19.333333333333343"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-vw-001" customClass="DrawView" customModule="KidX" customModuleProvider="target">
+                    <rect key="frame" x="20" y="277.66666666666669" width="353" height="353.00000000000006"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="DRW-vw-001" secondAttribute="height" multiplier="1:1" id="C-dw-aspect"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RES-cv-001" userLabel="resultContainerView">
+                    <rect key="frame" x="20" y="662.66666666666663" width="353" height="99.666666666666629"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RES-lb-001" userLabel="resultLabel">
+                            <rect key="frame" x="0.0" y="10" width="353" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="H-rl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                            <color key="textColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đúng rồi! Bé giỏi quá! 🎉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RES-msg-001" userLabel="resultMessageLabel">
+                            <rect key="frame" x="0.0" y="68" width="353" height="21.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="RES-lb-001" firstAttribute="leading" secondItem="RES-cv-001" secondAttribute="leading" id="RC-c1"/>
+                        <constraint firstAttribute="trailing" secondItem="RES-lb-001" secondAttribute="trailing" id="RC-c2"/>
+                        <constraint firstItem="RES-lb-001" firstAttribute="top" secondItem="RES-cv-001" secondAttribute="top" constant="10" id="RC-c3"/>
+                        <constraint firstItem="RES-msg-001" firstAttribute="leading" secondItem="RES-cv-001" secondAttribute="leading" id="RC-c4"/>
+                        <constraint firstAttribute="trailing" secondItem="RES-msg-001" secondAttribute="trailing" id="RC-c5"/>
+                        <constraint firstItem="RES-msg-001" firstAttribute="top" secondItem="RES-lb-001" secondAttribute="bottom" constant="8" id="RC-c6"/>
+                        <constraint firstAttribute="bottom" secondItem="RES-msg-001" secondAttribute="bottom" constant="10" id="RC-c7"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="STK-btn-001" userLabel="actionStackView">
+                    <rect key="frame" x="20" y="700" width="353" height="52"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-cl-001" userLabel="clearButton">
+                            <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="52"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="H-cl-btn"/>
+                            </constraints>
+                            <state key="normal" title="Xóa"/>
+                            <connections>
+                                <action selector="clearTapped:" destination="-1" eventType="touchUpInside" id="ACT-cl-001"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dt-001" userLabel="detectButton">
+                            <rect key="frame" x="184.66666666666663" y="0.0" width="168.33333333333337" height="52"/>
+                            <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="H-dt-btn"/>
+                            </constraints>
+                            <state key="normal" title="Nhận diện"/>
+                            <connections>
+                                <action selector="detectTapped:" destination="-1" eventType="touchUpInside" id="ACT-dt-001"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BTN-bk-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="C-bk-l"/>
+                <constraint firstItem="BTN-bk-001" firstAttribute="centerY" secondItem="LBL-tt-001" secondAttribute="centerY" id="C-bk-y"/>
+                <constraint firstItem="DRW-vw-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-dw-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DRW-vw-001" secondAttribute="trailing" constant="20" id="C-dw-r"/>
+                <constraint firstItem="DRW-vw-001" firstAttribute="top" secondItem="LBL-in-001" secondAttribute="bottom" constant="16" id="C-dw-t"/>
+                <constraint firstItem="LBL-in-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-in-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LBL-in-001" secondAttribute="trailing" constant="20" id="C-in-r"/>
+                <constraint firstItem="LBL-in-001" firstAttribute="top" secondItem="SCR-dg-001" secondAttribute="bottom" constant="16" id="C-in-t"/>
+                <constraint firstItem="RES-cv-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-rc-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RES-cv-001" secondAttribute="trailing" constant="20" id="C-rc-r"/>
+                <constraint firstItem="RES-cv-001" firstAttribute="top" secondItem="DRW-vw-001" secondAttribute="bottom" constant="32" id="C-rc-t"/>
+                <constraint firstItem="SCR-dg-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="C-sc-l"/>
+                <constraint firstItem="SCR-dg-001" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="C-sc-r"/>
+                <constraint firstItem="SCR-dg-001" firstAttribute="top" secondItem="LBL-tt-001" secondAttribute="bottom" constant="25" id="C-sc-t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="STK-btn-001" secondAttribute="bottom" constant="32" id="C-sk-b"/>
+                <constraint firstItem="STK-btn-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-sk-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="STK-btn-001" secondAttribute="trailing" constant="20" id="C-sk-r"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="leading" secondItem="BTN-bk-001" secondAttribute="trailing" constant="8" id="C-tt-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LBL-tt-001" secondAttribute="trailing" constant="68" id="C-tt-r"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="9" id="C-tt-t"/>
+            </constraints>
+            <point key="canvasLocation" x="-138" y="22"/>
+        </view>
+    </objects>
+</document>

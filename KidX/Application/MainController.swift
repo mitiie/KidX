@@ -61,7 +61,7 @@ class MainController: UIViewController {
         case .home:
             return HomeController(viewModel: HomeViewModel(navigation: mainNavigation))
         case .learn:
-            return LearnController(viewModel: LearnViewModel())
+            return LearnController(viewModel: LearnViewModel(navigation: mainNavigation))
         case .discovery:
             return DiscoveryController(viewModel: DiscoveryViewModel(navigation: mainNavigation))
         case .profile:
@@ -88,7 +88,7 @@ class MainController: UIViewController {
             newVC.view.topAnchor.constraint(equalTo: view.topAnchor),
             newVC.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             newVC.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            newVC.view.bottomAnchor.constraint(equalTo: tabBar.topAnchor)
+            newVC.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         newVC.didMove(toParent: self)
         currentViewController = newVC

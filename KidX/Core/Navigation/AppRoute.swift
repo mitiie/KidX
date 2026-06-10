@@ -39,4 +39,5 @@ enum MainRoute {
     case summary(SummaryRouteInput)
     case logout
     case language(ProfileViewModel)
+    case writingPractice(LearnViewModel)
 }

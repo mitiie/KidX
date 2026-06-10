@@ -22,8 +22,21 @@ class LearnViewModel {
     // MARK: - State
     private(set) var lastPrediction: String = ""
     private let predictor = MNISTDigitPredictor()
+    private let navigation: NavigationState<MainRoute>
+
+    init(navigation: NavigationState<MainRoute>) {
+        self.navigation = navigation
+    }
 
     // MARK: - Public API
+    
+    func navigateToWritingPractice() {
+        navigation.push(.writingPractice(self))
+    }
+    
+    func navigateBack() {
+        navigation.pop()
+    }
 
     /// Nhận diện chữ số từ CVPixelBuffer 28×28 grayscale
     func predict(from pixelBuffer: CVPixelBuffer) {
