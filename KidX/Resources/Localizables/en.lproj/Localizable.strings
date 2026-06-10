@@ -115,3 +115,23 @@
 "Profile" = "Profile";
 "Popular Flash Card" = "Popular Flash Card";
 
+/* Treasure Hunt Game */
+"DAILY CHALLENGES" = "DAILY CHALLENGES";
+"Treasure Hunt" = "Treasure Hunt";
+"Con's Progress" = "Con's Progress";
+"Missions" = "Missions";
+"%d/%d Missions" = "%d/%d Missions";
+"Find the Table" = "Find the Table";
+"Find the Chair" = "Find the Chair";
+"Find the Phone" = "Find the Phone";
+"Find the Apple" = "Find the Apple";
+"Where you usually sit to study or draw!" = "Where you usually sit to study or draw!";
+"The most comfortable chair in your house." = "The most comfortable chair in your house.";
+"Mom or dad is holding it to take your picture!" = "Mom or dad is holding it to take your picture!";
+"A red, crunchy, and very sweet fruit." = "A red, crunchy, and very sweet fruit.";
+"Đã hoàn thành" = "Completed";
+"Bắt đầu  ▷" = "Start  ▷";
+"Congratulations! You found the %@!" = "Congratulations! You found the %@!";
+"Oops! This looks like %@. Try again!" = "Oops! This looks like %@. Try again!";
+
+

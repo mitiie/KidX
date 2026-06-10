@@ -109,3 +109,23 @@
 "Profile" = "Hồ sơ";
 "Popular Flash Card" = "Bộ thẻ phổ biến";
 
+/* Treasure Hunt Game */
+"DAILY CHALLENGES" = "THỬ THÁCH MỖI NGÀY";
+"Treasure Hunt" = "Truy Tìm Kho Báu";
+"Con's Progress" = "Tiến trình của con";
+"Missions" = "Nhiệm vụ";
+"%d/%d Missions" = "%d/%d Nhiệm vụ";
+"Find the Table" = "Tìm cái Bàn";
+"Find the Chair" = "Tìm cái Ghế";
+"Find the Phone" = "Tìm Điện Thoại";
+"Find the Apple" = "Tìm Quả Táo";
+"Where you usually sit to study or draw!" = "Nơi con thường ngồi học hoặc vẽ tranh đó!";
+"The most comfortable chair in your house." = "Một cái ghế êm ái nhất trong nhà con.";
+"Mom or dad is holding it to take your picture!" = "Ba hoặc mẹ đang cầm nó để chụp ảnh con nè!";
+"A red, crunchy, and very sweet fruit." = "Một loại quả màu đỏ, giòn và rất ngọt.";
+"Đã hoàn thành" = "Đã hoàn thành";
+"Bắt đầu  ▷" = "Bắt đầu  ▷";
+"Congratulations! You found the %@!" = "Chúc mừng! Con đã tìm thấy %@!";
+"Oops! This looks like %@. Try again!" = "Tiếc quá! Đây là %@. Bé hãy thử lại nhé!";
+
+

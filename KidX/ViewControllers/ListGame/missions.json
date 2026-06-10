@@ -1,0 +1,66 @@
+{
+  "missions": {
+    "1": {
+      "id": "1",
+      "titleEn": "Find the Table",
+      "titleVi": "Tìm cái Bàn",
+      "descriptionEn": "Where you usually sit to study or draw!",
+      "descriptionVi": "Nơi con thường ngồi học hoặc vẽ tranh đó!",
+      "iconSymbol": "tablecells.fill",
+      "iconBgColorHex": "35ADFF",
+      "buttonColorHex": null,
+      "keywords": [
+        "desk",
+        "table",
+        "dining table",
+        "board"
+      ]
+    },
+    "2": {
+      "id": "2",
+      "titleEn": "Find the Chair",
+      "titleVi": "Tìm cái Ghế",
+      "descriptionEn": "The most comfortable chair in your house.",
+      "descriptionVi": "Một cái ghế êm ái nhất trong nhà con.",
+      "iconSymbol": "couch.fill",
+      "iconBgColorHex": "FFCB00",
+      "buttonColorHex": "FFCB00",
+      "keywords": [
+        "chair",
+        "folding chair",
+        "rocking chair, rocker",
+        "barber chair"
+      ]
+    },
+    "3": {
+      "id": "3",
+      "titleEn": "Find the Phone",
+      "titleVi": "Tìm Điện Thoại",
+      "descriptionEn": "Mom or dad is holding it to take your picture!",
+      "descriptionVi": "Ba hoặc mẹ đang cầm nó để chụp ảnh con nè!",
+      "iconSymbol": "iphone",
+      "iconBgColorHex": "FF972D",
+      "buttonColorHex": null,
+      "keywords": [
+        "cellular telephone",
+        "handheld computer",
+        "ipod",
+        "cellular phone"
+      ]
+    },
+    "4": {
+      "id": "4",
+      "titleEn": "Find the Apple",
+      "titleVi": "Tìm Quả Táo",
+      "descriptionEn": "A red, crunchy, and very sweet fruit.",
+      "descriptionVi": "Một loại quả màu đỏ, giòn và rất ngọt.",
+      "iconSymbol": "leaf.fill",
+      "iconBgColorHex": "FB5151",
+      "buttonColorHex": null,
+      "keywords": [
+        "apple",
+        "pomegranate"
+      ]
+    }
+  }
+}

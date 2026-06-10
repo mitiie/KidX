@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 final class DetectResultView: UIView, XibLoadable {
     
@@ -39,6 +40,7 @@ final class DetectResultView: UIView, XibLoadable {
     private var shadowLayer: CALayer?
     private var shapesBackgroundLayer: CALayer?
     private var saveButtonGradient: CAGradientLayer?
+    private let speechSynthesizer = AVSpeechSynthesizer()
     
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -255,6 +257,147 @@ final class DetectResultView: UIView, XibLoadable {
         }) { _ in
             self.removeFromSuperview()
             self.onDismiss?()
+        }
+    }
+    
+    // MARK: - Speech Synthesis Helper
+    private func speak(text: String) {
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: LocalizeHelper.shared.isVietnameseSelected ? "vi-VN" : "en-US")
+        utterance.rate = 0.5
+        speechSynthesizer.speak(utterance)
+    }
+    
+    // MARK: - Confetti Particle Helper
+    private func makeConfettiImage(color: UIColor, size: CGSize = CGSize(width: 5, height: 10)) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: size)
+        return renderer.image { ctx in
+            color.setFill()
+            ctx.cgContext.fill(CGRect(origin: .zero, size: size))
+        }
+    }
+    
+    private func triggerConfetti(in view: UIView) {
+        let colors: [UIColor] = [
+            UIColor(hex: 0xFF3B30), // Red
+            UIColor(hex: 0xFFCC00), // Gold/Yellow
+            UIColor(hex: 0x007AFF), // Blue
+            UIColor(hex: 0x34C759), // Green
+            UIColor(hex: 0xFF9500), // Orange
+            UIColor(hex: 0xAF52DE), // Purple
+            UIColor(hex: 0xFF2D55)  // Pink
+        ]
+        
+        let emitter = CAEmitterLayer()
+        emitter.emitterPosition = CGPoint(x: view.bounds.midX, y: -20)
+        emitter.emitterSize = CGSize(width: view.bounds.width, height: 1)
+        emitter.emitterShape = .rectangle
+        emitter.emitterMode = .volume
+        
+        var cells: [CAEmitterCell] = []
+        for color in colors {
+            let cell = CAEmitterCell()
+            cell.birthRate = 12
+            cell.lifetime = 5.0
+            cell.lifetimeRange = 1.0
+            cell.velocity = 120
+            cell.velocityRange = 40
+            cell.yAcceleration = 80 // Gentle down pull
+            cell.emissionLongitude = .pi / 2 // Downward direction
+            cell.emissionRange = .pi / 4     // Spread angle
+            cell.spin = 3.5
+            cell.spinRange = 4.0
+            cell.scale = 0.6
+            cell.scaleRange = 0.2
+            
+            let image = self.makeConfettiImage(color: color, size: CGSize(width: 5, height: 10))
+            cell.contents = image.cgImage
+            
+            cells.append(cell)
+        }
+        
+        emitter.emitterCells = cells
+        view.layer.addSublayer(emitter)
+        
+        // Stop emitting after 1.5 seconds, then remove the emitter layer from screen
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            emitter.birthRate = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+            emitter.removeFromSuperlayer()
+        }
+    }
+    
+    // MARK: - Configure & Show for Missions
+    func showForMission(
+        on view: UIView,
+        isSuccess: Bool,
+        message: String,
+        image: UIImage?,
+        onRetry: (() -> Void)?,
+        onDismiss: (() -> Void)?
+    ) {
+        // Ensure labels wrap content properly
+        objectNameLabel.numberOfLines = 0
+        descriptionLabel.numberOfLines = 0
+        
+        // Configure layouts
+        objectNameLabel.text = isSuccess ? "Success".localize() : "Notice".localize()
+        descriptionLabel.text = message
+        resultImageView.image = image
+        
+        starBadgeView.isHidden = !isSuccess
+        
+        if isSuccess {
+            saveButton.isHidden = false
+            saveButton.setTitle("  " + "OK".localize(), for: .normal)
+            
+            retryButton.isHidden = true
+            
+            self.onSaveTapped = { [weak self] in
+                self?.dismiss()
+            }
+            self.onDismiss = onDismiss
+        } else {
+            saveButton.isHidden = true
+            
+            retryButton.isHidden = false
+            retryButton.setTitle("Retry".localize(), for: .normal)
+            
+            self.onRetryTapped = { [weak self] in
+                self?.dismiss()
+                onRetry?()
+            }
+            self.onDismiss = onDismiss
+        }
+        
+        // Present the popup
+        self.frame = view.bounds
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(self)
+        
+        self.backgroundDimView.alpha = 0
+        self.containerView.alpha = 0
+        self.containerView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+            self.backgroundDimView.alpha = 1
+            self.containerView.alpha = 1
+            self.containerView.transform = .identity
+        }) { [weak self] _ in
+            guard let self = self else { return }
+            // Speak audio automatically
+            self.speak(text: message)
+            
+            // Set up audio tap to repeat speech
+            self.onAudioTapped = { [weak self] in
+                self?.speak(text: message)
+            }
+            
+            // Trigger confetti if success
+            if isSuccess {
+                self.triggerConfetti(in: self)
+            }
         }
     }
 }

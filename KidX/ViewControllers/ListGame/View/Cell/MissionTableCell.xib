@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MissionTableCell" id="KGk-i7-Jjw" customClass="MissionTableCell" customModule="KidX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="240"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="390" height="240"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="card-view-id" userLabel="Card View">
+                        <rect key="frame" x="24" y="8" width="342" height="224"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icon-bg-id" userLabel="Icon Bg View">
+                                <rect key="frame" x="20" y="20" width="48" height="48"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="icon-img-id">
+                                        <rect key="frame" x="12" y="12" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="img-w"/>
+                                            <constraint firstAttribute="height" constant="24" id="img-h"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.67843137249999996" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="icon-img-id" firstAttribute="centerX" secondItem="icon-bg-id" secondAttribute="centerX" id="ib-x"/>
+                                    <constraint firstItem="icon-img-id" firstAttribute="centerY" secondItem="icon-bg-id" secondAttribute="centerY" id="ib-y"/>
+                                    <constraint firstAttribute="width" constant="48" id="ib-w"/>
+                                    <constraint firstAttribute="height" constant="48" id="ib-h"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="title-lbl-id">
+                                <rect key="frame" x="20" y="80" width="302" height="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="0.066666666669999999" green="0.18039215689999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mission Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="desc-lbl-id">
+                                <rect key="frame" x="20" y="110" width="302" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.30196078430000001" green="0.41176470590000003" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="start-btn-id">
+                                <rect key="frame" x="20" y="156" width="302" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="btn-h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Bắt đầu  ▷"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="star-badge-id" userLabel="Star Badge View">
+                                <rect key="frame" x="294" y="16" width="32" height="32"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="star-icon-id">
+                                        <rect key="frame" x="8" y="8" width="16" height="16"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="st-w"/>
+                                            <constraint firstAttribute="height" constant="16" id="st-h"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="star-icon-id" firstAttribute="centerX" secondItem="star-badge-id" secondAttribute="centerX" id="sb-x"/>
+                                    <constraint firstItem="star-icon-id" firstAttribute="centerY" secondItem="star-badge-id" secondAttribute="centerY" id="sb-y"/>
+                                    <constraint firstAttribute="width" constant="32" id="sb-w"/>
+                                    <constraint firstAttribute="height" constant="32" id="sb-h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="icon-bg-id" firstAttribute="top" secondItem="card-view-id" secondAttribute="top" constant="20" id="c-icon-top"/>
+                            <constraint firstItem="icon-bg-id" firstAttribute="leading" secondItem="card-view-id" secondAttribute="leading" constant="20" id="c-icon-lead"/>
+                            
+                            <constraint firstItem="title-lbl-id" firstAttribute="top" secondItem="icon-bg-id" secondAttribute="bottom"  constant="12" id="c-title-top"/>
+                            <constraint firstItem="title-lbl-id" firstAttribute="leading" secondItem="card-view-id" secondAttribute="leading" constant="20" id="c-title-lead"/>
+                            <constraint firstAttribute="trailing" secondItem="title-lbl-id" secondAttribute="trailing" constant="20" id="c-title-trail"/>
+                            
+                            <constraint firstItem="desc-lbl-id" firstAttribute="top" secondItem="title-lbl-id" secondAttribute="bottom" constant="8" id="c-desc-top"/>
+                            <constraint firstItem="desc-lbl-id" firstAttribute="leading" secondItem="card-view-id" secondAttribute="leading" constant="20" id="c-desc-lead"/>
+                            <constraint firstAttribute="trailing" secondItem="desc-lbl-id" secondAttribute="trailing" constant="20" id="c-desc-trail"/>
+                            
+                            <constraint firstItem="start-btn-id" firstAttribute="top" secondItem="desc-lbl-id" secondAttribute="bottom" constant="30" id="c-btn-top"/>
+                            <constraint firstItem="start-btn-id" firstAttribute="leading" secondItem="card-view-id" secondAttribute="leading" constant="20" id="c-btn-lead"/>
+                            <constraint firstAttribute="trailing" secondItem="start-btn-id" secondAttribute="trailing" constant="20" id="c-btn-trail"/>
+                            <constraint firstAttribute="bottom" secondItem="start-btn-id" secondAttribute="bottom" constant="20" id="c-btn-bot"/>
+                            
+                            <constraint firstItem="star-badge-id" firstAttribute="top" secondItem="card-view-id" secondAttribute="top" constant="16" id="c-star-top"/>
+                            <constraint firstAttribute="trailing" secondItem="star-badge-id" secondAttribute="trailing" constant="16" id="c-star-trail"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="card-view-id" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="c-card-top"/>
+                    <constraint firstAttribute="bottom" secondItem="card-view-id" secondAttribute="bottom" constant="8" id="c-card-bot"/>
+                    <constraint firstItem="card-view-id" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="c-card-lead"/>
+                    <constraint firstAttribute="trailing" secondItem="card-view-id" secondAttribute="trailing" constant="24" id="c-card-trail"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="cardView" destination="card-view-id" id="cardViewOutlet"/>
+                <outlet property="iconBgView" destination="icon-bg-id" id="iconBgViewOutlet"/>
+                <outlet property="iconImageView" destination="icon-img-id" id="iconImageViewOutlet"/>
+                <outlet property="titleLabel" destination="title-lbl-id" id="titleLabelOutlet"/>
+                <outlet property="descLabel" destination="desc-lbl-id" id="descLabelOutlet"/>
+                <outlet property="startButton" destination="start-btn-id" id="startButtonOutlet"/>
+                <outlet property="starBadgeView" destination="star-badge-id" id="starBadgeViewOutlet"/>
+            </connections>
+            <point key="canvasLocation" x="110" y="8"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
+</document>

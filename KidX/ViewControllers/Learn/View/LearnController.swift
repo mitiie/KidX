@@ -70,14 +70,6 @@ class LearnController: BaseController {
 
     // MARK: - Setup UI (gọi bởi BaseController.viewDidLoad)
     override func setupUI() {
-        // Hide base background image, set custom light blue-grey background
-        view.backgroundColor = UIColor(hex: 0xF4F6FF)
-        for subview in view.subviews {
-            if let imageView = subview as? UIImageView, imageView.image == UIImage(resource: .icBg) {
-                imageView.isHidden = true
-            }
-        }
-        
         // Prevent tab bar from blocking the bottom content
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: CGFloat(AppConfiguration.HEIGHT_TABBAR) + 16.0, right: 0)
         scrollView.scrollIndicatorInsets = scrollView.contentInset

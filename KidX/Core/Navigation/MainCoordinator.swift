@@ -44,6 +44,9 @@ final class MainCoordinator: NavigationStateDelegate {
         case .writingPractice(let learnVM):
             push(WritingPracticeController(viewModel: learnVM), animated: animated)
 
+        case .listGame(let viewModel):
+            push(ListGameController(viewModel: viewModel), animated: animated)
+
         default:
             break
         }

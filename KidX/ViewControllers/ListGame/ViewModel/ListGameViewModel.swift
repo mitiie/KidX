@@ -1,15 +1,15 @@
 //
-//  DiscoveryViewModel.swift
+//  ListGameViewModel.swift
 //  KidX
 //
-//  Created by 𝙢𝙩 on 22/5/26.
+//  Created by mt on 11/6/26.
 //
 
 import Foundation
 import PhotosUI
 import UIKit
 
-final class DiscoveryViewModel {
+final class ListGameViewModel {
     private let navigation: NavigationState<MainRoute>
     private let permissionService: PermissionServiceProtocol
     private weak var importPictureView: ImportPictureView?
@@ -18,11 +18,6 @@ final class DiscoveryViewModel {
          permissionService: PermissionServiceProtocol = SystemPermissionService()) {
         self.navigation = navigation
         self.permissionService = permissionService
-    }
-
-    func goToListGame() {
-        let listGameVM = ListGameViewModel(navigation: navigation)
-        navigation.push(.listGame(listGameVM))
     }
 
     func importPhoto(from rootView: UIView,

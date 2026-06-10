@@ -37,7 +37,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-bk-001" userLabel="backButton">
-                    <rect key="frame" x="16" y="118.33333333333331" width="44" height="44"/>
+                    <rect key="frame" x="16" y="109.33333333333331" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="H-bk-001"/>
                         <constraint firstAttribute="width" constant="44" id="W-bk-001"/>
@@ -51,7 +51,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyện viết chữ số" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-tt-001" userLabel="titleLabel">
-                    <rect key="frame" x="68" y="126.99999999999999" width="257" height="26.333333333333329"/>
+                    <rect key="frame" x="68" y="117.99999999999999" width="257" height="26.333333333333329"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -60,10 +60,10 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCR-dg-001" userLabel="digitScrollView">
-                    <rect key="frame" x="0.0" y="178.33333333333334" width="393" height="48"/>
+                    <rect key="frame" x="0.0" y="180.33333333333334" width="393" height="56"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="STK-dg-001" userLabel="digitStackView">
-                            <rect key="frame" x="16" y="4" width="468" height="40"/>
+                            <rect key="frame" x="16" y="8" width="468" height="40"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dg-0" userLabel="0">
                                     <rect key="frame" x="0.0" y="0.0" width="36" height="40"/>
@@ -172,28 +172,28 @@
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="STK-dg-001" secondAttribute="bottom" constant="4" id="S-dg-1"/>
-                        <constraint firstItem="STK-dg-001" firstAttribute="top" secondItem="SCR-dg-001" secondAttribute="top" constant="4" id="S-dg-2"/>
+                        <constraint firstAttribute="bottom" secondItem="STK-dg-001" secondAttribute="bottom" constant="8" id="S-dg-1"/>
+                        <constraint firstItem="STK-dg-001" firstAttribute="top" secondItem="SCR-dg-001" secondAttribute="top" constant="8" id="S-dg-2"/>
                         <constraint firstItem="STK-dg-001" firstAttribute="leading" secondItem="SCR-dg-001" secondAttribute="leading" constant="16" id="S-dg-3"/>
                         <constraint firstAttribute="trailing" secondItem="STK-dg-001" secondAttribute="trailing" constant="16" id="S-dg-4"/>
-                        <constraint firstAttribute="height" constant="48" id="S-dg-h"/>
+                        <constraint firstAttribute="height" constant="56" id="S-dg-h"/>
                     </constraints>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bé hãy vẽ số 0 lên bảng vẽ nhé!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-in-001" userLabel="instructionLabel">
-                    <rect key="frame" x="20" y="242.33333333333334" width="353" height="19.333333333333343"/>
+                    <rect key="frame" x="20" y="260.33333333333331" width="353" height="19.333333333333314"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-vw-001" customClass="DrawView" customModule="KidX" customModuleProvider="target">
-                    <rect key="frame" x="20" y="277.66666666666669" width="353" height="353.00000000000006"/>
+                    <rect key="frame" x="20" y="315.66666666666669" width="353" height="353.00000000000006"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="DRW-vw-001" secondAttribute="height" multiplier="1:1" id="C-dw-aspect"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RES-cv-001" userLabel="resultContainerView">
-                    <rect key="frame" x="20" y="662.66666666666663" width="353" height="99.666666666666629"/>
+                    <rect key="frame" x="20" y="700.66666666666663" width="353" height="99.666666666666629"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RES-lb-001" userLabel="resultLabel">
                             <rect key="frame" x="0.0" y="10" width="353" height="50"/>
@@ -257,22 +257,22 @@
                 <constraint firstItem="BTN-bk-001" firstAttribute="centerY" secondItem="LBL-tt-001" secondAttribute="centerY" id="C-bk-y"/>
                 <constraint firstItem="DRW-vw-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-dw-l"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DRW-vw-001" secondAttribute="trailing" constant="20" id="C-dw-r"/>
-                <constraint firstItem="DRW-vw-001" firstAttribute="top" secondItem="LBL-in-001" secondAttribute="bottom" constant="16" id="C-dw-t"/>
+                <constraint firstItem="DRW-vw-001" firstAttribute="top" secondItem="LBL-in-001" secondAttribute="bottom" constant="36" id="C-dw-t"/>
                 <constraint firstItem="LBL-in-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-in-l"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LBL-in-001" secondAttribute="trailing" constant="20" id="C-in-r"/>
-                <constraint firstItem="LBL-in-001" firstAttribute="top" secondItem="SCR-dg-001" secondAttribute="bottom" constant="16" id="C-in-t"/>
+                <constraint firstItem="LBL-in-001" firstAttribute="top" secondItem="SCR-dg-001" secondAttribute="bottom" constant="24" id="C-in-t"/>
                 <constraint firstItem="RES-cv-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-rc-l"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RES-cv-001" secondAttribute="trailing" constant="20" id="C-rc-r"/>
                 <constraint firstItem="RES-cv-001" firstAttribute="top" secondItem="DRW-vw-001" secondAttribute="bottom" constant="32" id="C-rc-t"/>
                 <constraint firstItem="SCR-dg-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="C-sc-l"/>
                 <constraint firstItem="SCR-dg-001" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="C-sc-r"/>
-                <constraint firstItem="SCR-dg-001" firstAttribute="top" secondItem="LBL-tt-001" secondAttribute="bottom" constant="25" id="C-sc-t"/>
+                <constraint firstItem="SCR-dg-001" firstAttribute="top" secondItem="LBL-tt-001" secondAttribute="bottom" constant="36" id="C-sc-t"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="STK-btn-001" secondAttribute="bottom" constant="32" id="C-sk-b"/>
                 <constraint firstItem="STK-btn-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-sk-l"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="STK-btn-001" secondAttribute="trailing" constant="20" id="C-sk-r"/>
                 <constraint firstItem="LBL-tt-001" firstAttribute="leading" secondItem="BTN-bk-001" secondAttribute="trailing" constant="8" id="C-tt-l"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LBL-tt-001" secondAttribute="trailing" constant="68" id="C-tt-r"/>
-                <constraint firstItem="LBL-tt-001" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="9" id="C-tt-t"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="C-tt-t"/>
             </constraints>
             <point key="canvasLocation" x="-138" y="22"/>
         </view>

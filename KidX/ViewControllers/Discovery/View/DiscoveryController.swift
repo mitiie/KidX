@@ -218,6 +218,12 @@ extension DiscoveryController: UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item == 2 {
+            viewModel.goToListGame()
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.bounds.width
         switch indexPath.item {
