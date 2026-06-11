@@ -110,7 +110,7 @@ class WritingPracticeController: BaseController {
         resultContainerView.layer.borderWidth = 1
         resultContainerView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.2).cgColor
         
-        resultLabel.font = UIFont.custom(64, .semiBold)
+        resultLabel.font = UIFont.custom(56, .semiBold)
         resultLabel.textAlignment = .center
     }
     

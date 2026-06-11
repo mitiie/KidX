@@ -9,7 +9,7 @@
 "Today's Challenge" = "Thử Thách Hôm Nay";
 "View all" = "Xem tất cả";
 "2 HOURS LEFT" = "CÒN 2 GIỜ NỮA";
-"Solve 10 addition math problems in 1 minute!" = "Giải 10 phép tính cộng trong 1 phút!";
+"Solve 10 math problems in 3 minutes!" = "Giải 10 phép tính trong 3 phút!";
 "Completed 7/10" = "Đã hoàn thành 7/10";
 "Number Writing" = "Luyện viết chữ số";
 "Please write number %d on the canvas!" = "Bé hãy viết số %d lên bảng vẽ nhé!";
@@ -136,6 +136,11 @@
 "Excellent! 🎉" = "Tuyệt Vời! 🎉";
 "The child successfully completed all math challenges!" = "Bé đã hoàn thành xuất sắc tất cả các thử thách phép tính!";
 "Play again" = "Chơi lại";
+"PHÉP TÍNH CƠ BẢN" = "PHÉP TÍNH CƠ BẢN";
+"THỬ THÁCH HÔM NAY" = "THỬ THÁCH HÔM NAY";
+"You have completed today's challenge! Here is your reward! 🏆" = "Bé đã hoàn thành thử thách hôm nay! Đây là phần thưởng dành cho bé! 🏆";
+"Complete all 10 levels to unlock your reward!" = "Bé hãy hoàn thành tất cả 10 thử thách để mở khóa phần thưởng nhé!";
+
 
 
 

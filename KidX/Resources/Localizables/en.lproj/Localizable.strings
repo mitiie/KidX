@@ -9,7 +9,7 @@
 "Today's Challenge" = "Today's Challenge";
 "View all" = "View all";
 "2 HOURS LEFT" = "2 HOURS LEFT";
-"Solve 10 addition math problems in 1 minute!" = "Solve 10 addition math problems in 1 minute!";
+"Solve 10 math problems in 3 minutes!" = "Solve 10 math problems in 3 minutes!";
 "Completed 7/10" = "Completed 7/10";
 
 /* Writing Practice Screen */
@@ -142,5 +142,10 @@
 "Excellent! 🎉" = "Excellent! 🎉";
 "The child successfully completed all math challenges!" = "The child successfully completed all math challenges!";
 "Play again" = "Play again";
+"PHÉP TÍNH CƠ BẢN" = "BASIC MATH PROBLEMS";
+"THỬ THÁCH HÔM NAY" = "TODAY'S CHALLENGE";
+"You have completed today's challenge! Here is your reward! 🏆" = "You have completed today's challenge! Here is your reward! 🏆";
+"Complete all 10 levels to unlock your reward!" = "Complete all 10 levels to unlock your reward!";
+
 
 

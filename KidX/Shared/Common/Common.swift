@@ -64,4 +64,64 @@ final class Common {
             vc.present(picker, animated: true)
         }
     }
+    
+    static func triggerConfetti(in view: UIView) {
+        let colors: [UIColor] = [
+            UIColor(hex: 0xFF3B30), // Red
+            UIColor(hex: 0xFFCC00), // Gold/Yellow
+            UIColor(hex: 0x007AFF), // Blue
+            UIColor(hex: 0x34C759), // Green
+            UIColor(hex: 0xFF9500), // Orange
+            UIColor(hex: 0xAF52DE), // Purple
+            UIColor(hex: 0xFF2D55)  // Pink
+        ]
+        
+        let emitter = CAEmitterLayer()
+        emitter.emitterPosition = CGPoint(x: view.bounds.midX, y: -20)
+        emitter.emitterSize = CGSize(width: view.bounds.width, height: 1)
+        emitter.emitterShape = .rectangle
+        emitter.emitterMode = .volume
+        
+        func makeConfettiImage(color: UIColor, size: CGSize = CGSize(width: 5, height: 10)) -> UIImage {
+            let renderer = UIGraphicsImageRenderer(size: size)
+            return renderer.image { ctx in
+                color.setFill()
+                ctx.cgContext.fill(CGRect(origin: .zero, size: size))
+            }
+        }
+        
+        var cells: [CAEmitterCell] = []
+        for color in colors {
+            let cell = CAEmitterCell()
+            cell.birthRate = 12
+            cell.lifetime = 5.0
+            cell.lifetimeRange = 1.0
+            cell.velocity = 120
+            cell.velocityRange = 40
+            cell.yAcceleration = 80 // Gentle down pull
+            cell.emissionLongitude = .pi / 2 // Downward direction
+            cell.emissionRange = .pi / 4     // Spread angle
+            cell.spin = 3.5
+            cell.spinRange = 4.0
+            cell.scale = 0.6
+            cell.scaleRange = 0.2
+            
+            let image = makeConfettiImage(color: color, size: CGSize(width: 5, height: 10))
+            cell.contents = image.cgImage
+            
+            cells.append(cell)
+        }
+        
+        emitter.emitterCells = cells
+        view.layer.addSublayer(emitter)
+        
+        // Stop emitting after 1.5 seconds, then remove the emitter layer from screen
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            emitter.birthRate = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+            emitter.removeFromSuperlayer()
+        }
+    }
 }
+

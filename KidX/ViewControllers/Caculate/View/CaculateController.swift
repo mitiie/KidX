@@ -52,6 +52,8 @@ class CaculateController: BaseController {
     @IBOutlet private weak var dashedBox: DashedBorderView!
     @IBOutlet private weak var answerLabel: UILabel!
     @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet private weak var difficultyLabel: UILabel!
+    @IBOutlet private weak var timerLabel: UILabel!
     
     // Instruction Elements
     @IBOutlet private weak var writePromptLabel: UILabel!
@@ -68,6 +70,8 @@ class CaculateController: BaseController {
     
     // MARK: - Properties
     private let viewModel: CaculateViewModel
+    private var countdownTimer: Timer?
+    private var timeRemaining: Int = 180
     
     // MARK: - Initialization
     init(viewModel: CaculateViewModel) {
@@ -84,6 +88,15 @@ class CaculateController: BaseController {
         super.viewDidLoad()
         setupBindings()
         viewModel.loadChallenges()
+        
+        if viewModel.difficulty == .advanced {
+            startTimer()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopTimer()
     }
     
     override func viewDidLayoutSubviews() {
@@ -95,6 +108,49 @@ class CaculateController: BaseController {
         // Dynamic shadow paths for styled buttons
         checkButton.layer.shadowPath = UIBezierPath(roundedRect: checkButton.bounds, cornerRadius: 26).cgPath
         clearButton.layer.shadowPath = UIBezierPath(roundedRect: clearButton.bounds, cornerRadius: 26).cgPath
+    }
+    
+    // MARK: - Timer Logic
+    private func startTimer() {
+        countdownTimer?.invalidate()
+        timeRemaining = 180
+        updateTimerLabel()
+        
+        countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            if self.timeRemaining > 0 {
+                self.timeRemaining -= 1
+                self.updateTimerLabel()
+                UserDefaults.standard.set(self.timeRemaining, forKey: "advanced_challenge_time_remaining")
+            } else {
+                self.handleTimeUp()
+            }
+        }
+    }
+    
+    private func stopTimer() {
+        countdownTimer?.invalidate()
+        countdownTimer = nil
+    }
+    
+    private func updateTimerLabel() {
+        let minutes = timeRemaining / 60
+        let seconds = timeRemaining % 60
+        timerLabel.text = String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    private func handleTimeUp() {
+        stopTimer()
+        
+        let alert = UIAlertController(
+            title: "Time is up! ⏰".localize(),
+            message: "Time is up! Let's try again!".localize(),
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK".localize(), style: .default, handler: { [weak self] _ in
+            self?.viewModel.navigateBack()
+        }))
+        present(alert, animated: true)
     }
     
     // MARK: - Bindings
@@ -125,6 +181,26 @@ class CaculateController: BaseController {
         // Navigation Header Fonts & Tint
         titleLabel.font = UIFont.custom(22, .semiBold)
         titleLabel.textColor = AppColor.text.color
+        
+        difficultyLabel.font = UIFont.custom(11, .semiBold)
+        difficultyLabel.textAlignment = .center
+        difficultyLabel.textColor = .white
+        difficultyLabel.layer.cornerRadius = 10
+        difficultyLabel.clipsToBounds = true
+        
+        if viewModel.difficulty == .basic {
+            titleLabel.text = "Phép Tính Vui Nhộn".localize()
+            todayChallengeLabel.text = "PHÉP TÍNH CƠ BẢN".localize()
+            difficultyLabel.text = "Cơ bản".localize().uppercased()
+            difficultyLabel.backgroundColor = UIColor(hex: 0x007AFF) // Blue
+            timerLabel.isHidden = true
+        } else {
+            titleLabel.text = "Thử Thách Hôm Nay".localize()
+            todayChallengeLabel.text = "THỬ THÁCH HÔM NAY".localize()
+            difficultyLabel.text = "Nâng cao".localize().uppercased()
+            difficultyLabel.backgroundColor = UIColor(hex: 0xAF52DE) // Purple
+            timerLabel.isHidden = false
+        }
         
         backButton.setTitle("", for: .normal)
         backButton.setImage(UIImage(resource: .icFlcBack), for: .normal)
@@ -336,6 +412,10 @@ class CaculateController: BaseController {
     }
     
     private func showGameCompletePopup() {
+        stopTimer()
+        UserDefaults.standard.removeObject(forKey: "advanced_challenge_time_remaining")
+        Common.triggerConfetti(in: self.view)
+        
         let alert = UIAlertController(
             title: "Excellent! 🎉".localize(),
             message: "The child successfully completed all math challenges!".localize(),

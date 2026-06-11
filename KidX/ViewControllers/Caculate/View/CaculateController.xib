@@ -17,9 +17,11 @@
                 <outlet property="clearButton" destination="BTN-cl-001" id="OT-clear"/>
                 <outlet property="dashedBox" destination="DSH-bv-001" id="OT-dsh-bx"/>
                 <outlet property="drawView" destination="DRW-vw-001" id="OT-drw-vw"/>
+                <outlet property="difficultyLabel" destination="DIF-lb-001" id="OT-dif-lb"/>
                 <outlet property="equationLabel" destination="EQN-lb-001" id="OT-eqn-lb"/>
                 <outlet property="levelLabel" destination="LVL-lb-001" id="OT-lvl-lb"/>
                 <outlet property="nextButton" destination="BTN-nx-001" id="OT-next"/>
+                <outlet property="timerLabel" destination="TMR-lb-001" id="OT-tmr-lb"/>
                 <outlet property="titleLabel" destination="LBL-tt-001" id="OT-tt"/>
                 <outlet property="todayChallengeLabel" destination="TDY-lb-001" id="OT-tdy-lb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -109,20 +111,40 @@
                                 <userDefinedRuntimeAttribute type="string" keyPath="normalLocalizedTitle" value="Continue  →"/>
                             </userDefinedRuntimeAttributes>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CƠ BẢN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIF-lb-001" userLabel="difficultyLabel">
+                            <rect key="frame" x="20" y="43" width="90" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="H-dif-lbl"/>
+                                <constraint firstAttribute="width" constant="90" id="W-dif-lbl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="bold" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMR-lb-001" userLabel="timerLabel">
+                            <rect key="frame" x="287" y="43" width="46" height="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="TDY-lb-001" firstAttribute="top" secondItem="CRD-cv-001" secondAttribute="top" constant="20" id="T-crd-1"/>
-                        <constraint firstItem="BTN-nx-001" firstAttribute="top" secondItem="DSH-bv-001" secondAttribute="bottom" constant="16" id="T-crd-10"/>
-                        <constraint firstItem="BTN-nx-001" firstAttribute="centerX" secondItem="CRD-cv-001" secondAttribute="centerX" id="T-crd-11"/>
                         <constraint firstItem="TDY-lb-001" firstAttribute="leading" secondItem="CRD-cv-001" secondAttribute="leading" constant="20" id="T-crd-2"/>
                         <constraint firstItem="LVL-lb-001" firstAttribute="top" secondItem="CRD-cv-001" secondAttribute="top" constant="20" id="T-crd-3"/>
                         <constraint firstAttribute="trailing" secondItem="LVL-lb-001" secondAttribute="trailing" constant="20" id="T-crd-4"/>
-                        <constraint firstItem="EQN-lb-001" firstAttribute="top" secondItem="TDY-lb-001" secondAttribute="bottom" constant="16" id="T-crd-5"/>
+                        <constraint firstItem="DIF-lb-001" firstAttribute="top" secondItem="TDY-lb-001" secondAttribute="bottom" constant="6" id="T-crd-dif-1"/>
+                        <constraint firstItem="DIF-lb-001" firstAttribute="leading" secondItem="CRD-cv-001" secondAttribute="leading" constant="20" id="T-crd-dif-2"/>
+                        <constraint firstItem="TMR-lb-001" firstAttribute="top" secondItem="LVL-lb-001" secondAttribute="bottom" constant="6" id="T-crd-tmr-1"/>
+                        <constraint firstAttribute="trailing" secondItem="TMR-lb-001" secondAttribute="trailing" constant="20" id="T-crd-tmr-2"/>
+                        <constraint firstItem="EQN-lb-001" firstAttribute="top" secondItem="DIF-lb-001" secondAttribute="bottom" constant="12" id="T-crd-5"/>
                         <constraint firstItem="EQN-lb-001" firstAttribute="leading" secondItem="CRD-cv-001" secondAttribute="leading" constant="20" id="T-crd-6"/>
                         <constraint firstAttribute="trailing" secondItem="EQN-lb-001" secondAttribute="trailing" constant="20" id="T-crd-7"/>
                         <constraint firstItem="DSH-bv-001" firstAttribute="top" secondItem="EQN-lb-001" secondAttribute="bottom" constant="12" id="T-crd-8"/>
                         <constraint firstItem="DSH-bv-001" firstAttribute="centerX" secondItem="CRD-cv-001" secondAttribute="centerX" id="T-crd-9"/>
+                        <constraint firstItem="BTN-nx-001" firstAttribute="top" secondItem="DSH-bv-001" secondAttribute="bottom" constant="16" id="T-crd-10"/>
+                        <constraint firstItem="BTN-nx-001" firstAttribute="centerX" secondItem="CRD-cv-001" secondAttribute="centerX" id="T-crd-11"/>
                         <constraint firstAttribute="bottom" secondItem="BTN-nx-001" secondAttribute="bottom" constant="20" id="eQq-Ai-Y7T"/>
                     </constraints>
                 </view>

@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum CaculateDifficulty {
+    case basic
+    case advanced
+}
+
 struct CaculateChallenge: Codable {
     let id: String
     let level: Int
@@ -77,19 +82,22 @@ struct CaculateChallenge: Codable {
         isCompleted = false
     }
     
-    static func getCompletedChallengeIds() -> [String] {
-        return UserDefaults.standard.stringArray(forKey: "completed_caculate_challenges") ?? []
+    static func getCompletedChallengeIds(for difficulty: CaculateDifficulty) -> [String] {
+        let key = difficulty == .basic ? "completed_caculate_challenges_basic" : "completed_caculate_challenges_advanced"
+        return UserDefaults.standard.stringArray(forKey: key) ?? []
     }
     
-    static func setChallengeCompleted(id: String) {
-        var completed = getCompletedChallengeIds()
+    static func setChallengeCompleted(id: String, difficulty: CaculateDifficulty) {
+        var completed = getCompletedChallengeIds(for: difficulty)
         if !completed.contains(id) {
             completed.append(id)
-            UserDefaults.standard.set(completed, forKey: "completed_caculate_challenges")
+            let key = difficulty == .basic ? "completed_caculate_challenges_basic" : "completed_caculate_challenges_advanced"
+            UserDefaults.standard.set(completed, forKey: key)
         }
     }
     
-    static func clearProgress() {
-        UserDefaults.standard.removeObject(forKey: "completed_caculate_challenges")
+    static func clearProgress(for difficulty: CaculateDifficulty) {
+        let key = difficulty == .basic ? "completed_caculate_challenges_basic" : "completed_caculate_challenges_advanced"
+        UserDefaults.standard.removeObject(forKey: key)
     }
 }

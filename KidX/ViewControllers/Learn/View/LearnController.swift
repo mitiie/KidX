@@ -57,6 +57,40 @@ class LearnController: BaseController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateChallengeProgress()
+    }
+    
+    private func updateChallengeProgress() {
+        let completedIds = CaculateChallenge.getCompletedChallengeIds(for: .advanced)
+        let completedCount = completedIds.count
+        
+        challengeProgressLabel.text = "\(completedCount)/10"
+        challengeProgressBar.progress = Float(completedCount) / 10.0
+        
+        if completedCount == 10 {
+            challengeProgressBar.progressTintColor = UIColor(hex: 0x2DCE89) // Green when completed
+            challengeTimeLabel.text = " " + "Completed".localize() + " "
+            challengeTimeLabel.textColor = UIColor(hex: 0x155724)
+            challengeTimeLabel.backgroundColor = UIColor(hex: 0xD4EDDA)
+        } else {
+            challengeProgressBar.progressTintColor = UIColor(hex: 0xFF8800) // Orange in progress
+            
+            // Check if there is a saved remaining time in UserDefaults
+            let timeRemaining = UserDefaults.standard.integer(forKey: "advanced_challenge_time_remaining")
+            if timeRemaining > 0 && timeRemaining < 180 {
+                let minutes = timeRemaining / 60
+                let seconds = timeRemaining % 60
+                challengeTimeLabel.text = String(format: "  %02d:%02d  ", minutes, seconds)
+            } else {
+                challengeTimeLabel.text = "  3:00  "
+            }
+            challengeTimeLabel.textColor = UIColor(hex: 0xD97706)
+            challengeTimeLabel.backgroundColor = UIColor(hex: 0xFEF3C7)
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Make decoration views perfectly circular after layouts are calculated
@@ -140,10 +174,10 @@ class LearnController: BaseController {
         chIconContainerView.backgroundColor = .white
         chIconContainerView.clipsToBounds = true
         
-        challengeTimeLabel.font = UIFont.custom(10, .semiBold)
+        challengeTimeLabel.font = UIFont.custom(14, .semiBold)
         challengeTimeLabel.textColor = UIColor(hex: 0xD97706) // Brown/orange
         challengeTimeLabel.backgroundColor = UIColor(hex: 0xFEF3C7)
-        challengeTimeLabel.layer.cornerRadius = 6
+        challengeTimeLabel.layer.cornerRadius = 8
         challengeTimeLabel.clipsToBounds = true
         
         challengeDescLabel.font = UIFont.custom(16, .semiBold)
@@ -203,24 +237,32 @@ class LearnController: BaseController {
     }
     
     @IBAction func mathProblemsTapped(_ sender: UIButton) {
-        viewModel.navigateToCaculate()
+        viewModel.navigateToCaculate(difficulty: .basic)
     }
     
     @IBAction func challengeTapped(_ sender: UIButton) {
-        showAlertPlaceholder(title: "Today's Challenge".localize())
+        viewModel.navigateToCaculate(difficulty: .advanced)
     }
     
     @IBAction func challengeRewardTapped(_ sender: UIButton) {
-        showAlertPlaceholder(title: "View all".localize())
-    }
-    
-    private func showAlertPlaceholder(title: String) {
-        let alert = UIAlertController(
-            title: title,
-            message: "This feature will be updated in future lessons!".localize(),
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "OK".localize(), style: .default))
-        present(alert, animated: true)
+        let completedCount = CaculateChallenge.getCompletedChallengeIds(for: .advanced).count
+        if completedCount == 10 {
+            Common.triggerConfetti(in: self.view)
+            let alert = UIAlertController(
+                title: "Excellent! 🎉".localize(),
+                message: "You have completed today's challenge! Here is your reward! 🏆".localize(),
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK".localize(), style: .default))
+            present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(
+                title: "Today's Challenge".localize(),
+                message: "Complete all 10 levels to unlock your reward!".localize(),
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK".localize(), style: .default))
+            present(alert, animated: true)
+        }
     }
 }

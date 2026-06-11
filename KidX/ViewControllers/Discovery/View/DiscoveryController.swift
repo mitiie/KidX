@@ -230,7 +230,7 @@ extension DiscoveryController: UICollectionViewDelegate, UICollectionViewDataSou
         case 0:
             return CGSize(width: width, height: 150)
         case 1:
-            return CGSize(width: width, height: 250)
+            return CGSize(width: width, height: 220)
         case 2:
             return CGSize(width: width, height: 230)
         default:

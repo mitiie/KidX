@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LearnController" customModule="KidX" customModuleProvider="target">
             <connections>
+                <outlet property="chIconContainerView" destination="VW-ch-icon-container" id="OT-ch-icon"/>
                 <outlet property="challengeButton" destination="BTN-ch-001" id="OT-ch-001"/>
                 <outlet property="challengeCardView" destination="VW-ch-card" id="OT-ch-card"/>
                 <outlet property="challengeDescLabel" destination="LBL-ch-desc" id="OT-ch-desc"/>
@@ -17,7 +18,6 @@
                 <outlet property="challengeRewardButton" destination="BTN-ch-rwd" id="OT-ch-rwd"/>
                 <outlet property="challengeSectionTitleLabel" destination="LBL-ch-sec" id="OT-ch-sec"/>
                 <outlet property="challengeTimeLabel" destination="LBL-ch-time" id="OT-ch-time"/>
-                <outlet property="chIconContainerView" destination="VW-ch-icon-container" id="OT-ch-icon"/>
                 <outlet property="heroTitleLabel" destination="LBL-hr-title" id="OT-hr-title"/>
                 <outlet property="mathProblemsButton" destination="BTN-mp-start" id="OT-mp-start"/>
                 <outlet property="mathProblemsCardView" destination="VW-mp-card" id="OT-mp-card"/>
@@ -40,49 +40,46 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <!-- Scroll View -->
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SCR-mn-001">
-                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCR-mn-001">
+                    <rect key="frame" x="0.0" y="118" width="393" height="666"/>
                     <subviews>
-                        <!-- Content View -->
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-mn-cnt" userLabel="ContentView">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="920"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="892.66666666666663"/>
                             <subviews>
-                                <!-- Hero Title -->
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cùng khám phá&#10;thế giới con số" textAlignment="left" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-hr-title">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-hr-title">
                                     <rect key="frame" x="24" y="24" width="345" height="67"/>
+                                    <string key="text">Cùng khám phá
+thế giới con số</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                     <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Explore the&#10;world of numbers"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText">
+                                            <string key="value">Explore the
+world of numbers</string>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </label>
-
-                                <!-- Card 1: Practice Writing Numbers (White Card) -->
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-wp-card" userLabel="writingPracticeCardView">
-                                    <rect key="frame" x="24" y="115" width="345" height="230"/>
+                                    <rect key="frame" x="24" y="114.99999999999999" width="345" height="225.66666666666663"/>
                                     <subviews>
-                                        <!-- Watermark Math operators background -->
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.forwardslash.minus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-wp-wtr">
-                                            <rect key="frame" x="225" y="110.33333333333331" width="120" height="119.66666666666669"/>
+                                            <rect key="frame" x="225" y="107" width="120" height="117.66666666666669"/>
                                             <color key="tintColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="120" id="W-wtr1"/>
                                                 <constraint firstAttribute="height" constant="120" id="H-wtr1"/>
+                                                <constraint firstAttribute="width" constant="120" id="W-wtr1"/>
                                             </constraints>
                                         </imageView>
-
-                                        <!-- Top Left Icon Circle -->
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-wp-icon-container" userLabel="wpIconContainerView">
                                             <rect key="frame" x="24" y="24" width="44" height="44"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.and.outline" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-wp-icon">
-                                                    <rect key="frame" x="10" y="9.6666666666666643" width="24" height="24.333333333333336"/>
+                                                    <rect key="frame" x="10" y="9.3333333333333321" width="24" height="24.333333333333339"/>
                                                     <color key="tintColor" red="0.0" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="W-wp-i"/>
                                                         <constraint firstAttribute="height" constant="24" id="H-wp-i"/>
+                                                        <constraint firstAttribute="width" constant="24" id="W-wp-i"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -90,12 +87,10 @@
                                             <constraints>
                                                 <constraint firstItem="IMG-wp-icon" firstAttribute="centerX" secondItem="VW-wp-icon-container" secondAttribute="centerX" id="C-wpic-x"/>
                                                 <constraint firstItem="IMG-wp-icon" firstAttribute="centerY" secondItem="VW-wp-icon-container" secondAttribute="centerY" id="C-wpic-y"/>
-                                                <constraint firstAttribute="width" constant="44" id="W-wp-c"/>
                                                 <constraint firstAttribute="height" constant="44" id="H-wp-c"/>
+                                                <constraint firstAttribute="width" constant="44" id="W-wp-c"/>
                                             </constraints>
                                         </view>
-
-                                        <!-- Top Right Badge Orange "123" -->
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-wp-badge" userLabel="writingPracticeBadgeLabel">
                                             <rect key="frame" x="285" y="24" width="36" height="36"/>
                                             <color key="backgroundColor" red="1" green="0.53333333329999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,8 +102,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyện Viết Chữ Số" textAlignment="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-wp-title">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luyện Viết Chữ Số" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-wp-title">
                                             <rect key="frame" x="24" y="84" width="297" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -117,17 +111,17 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Number Writing Practice"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tập viết các con số từ 0 đến 9 thật xinh xắn cùng bạn Bút Chì." textAlignment="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-wp-desc">
-                                            <rect key="frame" x="24" y="116" width="297" height="38"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tập viết các con số từ 0 đến 9 thật xinh xắn cùng bạn Bút Chì." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-wp-desc">
+                                            <rect key="frame" x="24" y="116.00000000000001" width="297" height="33.666666666666671"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.43137254900000002" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.43137254899999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Practice writing numbers from 0 to 9 beautifully with Pencil."/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-wp-start" userLabel="writingPracticeButton">
-                                            <rect key="frame" x="24" y="170" width="297" height="40"/>
+                                            <rect key="frame" x="24" y="165.66666666666669" width="297" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="H-wp-btn"/>
                                             </constraints>
@@ -142,9 +136,10 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="VW-wp-icon-container" firstAttribute="leading" secondItem="VW-wp-card" secondAttribute="leading" constant="24" id="C-wp-1"/>
+                                        <constraint firstAttribute="trailing" secondItem="BTN-wp-start" secondAttribute="trailing" constant="24" id="C-wp-10"/>
+                                        <constraint firstItem="BTN-wp-start" firstAttribute="top" secondItem="LBL-wp-desc" secondAttribute="bottom" constant="16" id="C-wp-11"/>
+                                        <constraint firstAttribute="bottom" secondItem="BTN-wp-start" secondAttribute="bottom" constant="20" id="C-wp-12"/>
                                         <constraint firstItem="VW-wp-icon-container" firstAttribute="top" secondItem="VW-wp-card" secondAttribute="top" constant="24" id="C-wp-2"/>
-                                        <constraint firstAttribute="trailing" secondItem="LBL-wp-badge" secondAttribute="trailing" constant="24" id="C-wp-b1"/>
-                                        <constraint firstItem="LBL-wp-badge" firstAttribute="top" secondItem="VW-wp-card" secondAttribute="top" constant="24" id="C-wp-b2"/>
                                         <constraint firstItem="LBL-wp-title" firstAttribute="leading" secondItem="VW-wp-card" secondAttribute="leading" constant="24" id="C-wp-3"/>
                                         <constraint firstAttribute="trailing" secondItem="LBL-wp-title" secondAttribute="trailing" constant="24" id="C-wp-4"/>
                                         <constraint firstItem="LBL-wp-title" firstAttribute="top" secondItem="VW-wp-icon-container" secondAttribute="bottom" constant="16" id="C-wp-5"/>
@@ -152,76 +147,67 @@
                                         <constraint firstAttribute="trailing" secondItem="LBL-wp-desc" secondAttribute="trailing" constant="24" id="C-wp-7"/>
                                         <constraint firstItem="LBL-wp-desc" firstAttribute="top" secondItem="LBL-wp-title" secondAttribute="bottom" constant="8" id="C-wp-8"/>
                                         <constraint firstItem="BTN-wp-start" firstAttribute="leading" secondItem="VW-wp-card" secondAttribute="leading" constant="24" id="C-wp-9"/>
-                                        <constraint firstAttribute="trailing" secondItem="BTN-wp-start" secondAttribute="trailing" constant="24" id="C-wp-10"/>
-                                        <constraint firstItem="BTN-wp-start" firstAttribute="top" secondItem="LBL-wp-desc" secondAttribute="bottom" constant="16" id="C-wp-11"/>
-                                        <constraint firstAttribute="bottom" secondItem="BTN-wp-start" secondAttribute="bottom" constant="20" id="C-wp-12"/>
+                                        <constraint firstAttribute="trailing" secondItem="LBL-wp-badge" secondAttribute="trailing" constant="24" id="C-wp-b1"/>
+                                        <constraint firstItem="LBL-wp-badge" firstAttribute="top" secondItem="VW-wp-card" secondAttribute="top" constant="24" id="C-wp-b2"/>
                                         <constraint firstAttribute="trailing" secondItem="IMG-wp-wtr" secondAttribute="trailing" id="C-wp-wtr1"/>
                                         <constraint firstAttribute="bottom" secondItem="IMG-wp-wtr" secondAttribute="bottom" id="C-wp-wtr2"/>
                                     </constraints>
                                 </view>
-
-                                <!-- Card 2: Fun Math Problems (Yellow Card) -->
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-mp-card" userLabel="mathProblemsCardView">
-                                    <rect key="frame" x="24" y="369" width="345" height="230"/>
+                                    <rect key="frame" x="24" y="364.66666666666669" width="345" height="225.66666666666669"/>
                                     <subviews>
-                                        <!-- Watermark Question Mark background -->
                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.080000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-mp-wtr">
-                                            <rect key="frame" x="249" y="110" width="80" height="120"/>
+                                            <rect key="frame" x="249" y="105.66666666666669" width="80" height="120"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="W-wtr2"/>
                                                 <constraint firstAttribute="height" constant="120" id="H-wtr2"/>
+                                                <constraint firstAttribute="width" constant="80" id="W-wtr2"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="120"/>
                                             <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-
-                                        <!-- Top Left Icon Circle -->
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-mp-icon-container" userLabel="mpIconContainerView">
                                             <rect key="frame" x="24" y="24" width="44" height="44"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-mp-icon">
-                                                    <rect key="frame" x="10" y="12.333333333333332" width="24" height="19.666666666666668"/>
+                                                    <rect key="frame" x="10" y="12.333333333333274" width="24" height="19.666666666666671"/>
                                                     <color key="tintColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="24" id="W-mp-i"/>
                                                         <constraint firstAttribute="height" constant="24" id="H-mp-i"/>
+                                                        <constraint firstAttribute="width" constant="24" id="W-mp-i"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.90196078430000004" blue="0.50196078430000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="1" green="0.90196078430000004" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="IMG-mp-icon" firstAttribute="centerX" secondItem="VW-mp-icon-container" secondAttribute="centerX" id="C-mpic-x"/>
                                                 <constraint firstItem="IMG-mp-icon" firstAttribute="centerY" secondItem="VW-mp-icon-container" secondAttribute="centerY" id="C-mpic-y"/>
-                                                <constraint firstAttribute="width" constant="44" id="W-mp-c"/>
                                                 <constraint firstAttribute="height" constant="44" id="H-mp-c"/>
+                                                <constraint firstAttribute="width" constant="44" id="W-mp-c"/>
                                             </constraints>
                                         </view>
-
-                                        <!-- Top Right Blue Circle Badge -->
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-mp-badge" userLabel="mpBadgeView">
                                             <rect key="frame" x="285" y="24" width="36" height="36"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divide" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-mp-badge">
-                                                    <rect key="frame" x="8" y="10.333333333333334" width="20" height="15.33333333333333"/>
+                                                    <rect key="frame" x="8" y="10.999999999999943" width="20" height="14"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="W-mp-bdg-i"/>
                                                         <constraint firstAttribute="height" constant="20" id="H-mp-bdg-i"/>
+                                                        <constraint firstAttribute="width" constant="20" id="W-mp-bdg-i"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.3333333333" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.0" green="0.33333333329999998" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="IMG-mp-badge" firstAttribute="centerX" secondItem="VW-mp-badge" secondAttribute="centerX" id="C-mpbdg-x"/>
                                                 <constraint firstItem="IMG-mp-badge" firstAttribute="centerY" secondItem="VW-mp-badge" secondAttribute="centerY" id="C-mpbdg-y"/>
-                                                <constraint firstAttribute="width" constant="36" id="W-mp-bdg"/>
                                                 <constraint firstAttribute="height" constant="36" id="H-mp-bdg"/>
+                                                <constraint firstAttribute="width" constant="36" id="W-mp-bdg"/>
                                             </constraints>
                                         </view>
-
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phép Tính Vui Nhộn" textAlignment="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-mp-title">
-                                            <rect key="frame" x="24" y="84" width="297" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phép Tính Vui Nhộn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-mp-title">
+                                            <rect key="frame" x="24" y="83.999999999999943" width="297" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -229,8 +215,8 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Fun Math Problems"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thử thách cộng trừ siêu tốc cùng các bạn thú rừng xanh." textAlignment="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-mp-desc">
-                                            <rect key="frame" x="24" y="116" width="297" height="38"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thử thách cộng trừ siêu tốc cùng các bạn thú rừng xanh." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-mp-desc">
+                                            <rect key="frame" x="24" y="115.99999999999996" width="297" height="33.666666666666671"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -239,7 +225,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-mp-start" userLabel="mathProblemsButton">
-                                            <rect key="frame" x="24" y="170" width="297" height="40"/>
+                                            <rect key="frame" x="24" y="165.66666666666669" width="297" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="H-mp-btn"/>
                                             </constraints>
@@ -254,9 +240,10 @@
                                     <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="VW-mp-icon-container" firstAttribute="leading" secondItem="VW-mp-card" secondAttribute="leading" constant="24" id="C-mp-1"/>
+                                        <constraint firstAttribute="trailing" secondItem="BTN-mp-start" secondAttribute="trailing" constant="24" id="C-mp-10"/>
+                                        <constraint firstItem="BTN-mp-start" firstAttribute="top" secondItem="LBL-mp-desc" secondAttribute="bottom" constant="16" id="C-mp-11"/>
+                                        <constraint firstAttribute="bottom" secondItem="BTN-mp-start" secondAttribute="bottom" constant="20" id="C-mp-12"/>
                                         <constraint firstItem="VW-mp-icon-container" firstAttribute="top" secondItem="VW-mp-card" secondAttribute="top" constant="24" id="C-mp-2"/>
-                                        <constraint firstAttribute="trailing" secondItem="VW-mp-badge" secondAttribute="trailing" constant="24" id="C-mp-b1"/>
-                                        <constraint firstItem="VW-mp-badge" firstAttribute="top" secondItem="VW-mp-card" secondAttribute="top" constant="24" id="C-mp-b2"/>
                                         <constraint firstItem="LBL-mp-title" firstAttribute="leading" secondItem="VW-mp-card" secondAttribute="leading" constant="24" id="C-mp-3"/>
                                         <constraint firstAttribute="trailing" secondItem="LBL-mp-title" secondAttribute="trailing" constant="24" id="C-mp-4"/>
                                         <constraint firstItem="LBL-mp-title" firstAttribute="top" secondItem="VW-mp-icon-container" secondAttribute="bottom" constant="16" id="C-mp-5"/>
@@ -264,20 +251,17 @@
                                         <constraint firstAttribute="trailing" secondItem="LBL-mp-desc" secondAttribute="trailing" constant="24" id="C-mp-7"/>
                                         <constraint firstItem="LBL-mp-desc" firstAttribute="top" secondItem="LBL-mp-title" secondAttribute="bottom" constant="8" id="C-mp-8"/>
                                         <constraint firstItem="BTN-mp-start" firstAttribute="leading" secondItem="VW-mp-card" secondAttribute="leading" constant="24" id="C-mp-9"/>
-                                        <constraint firstAttribute="trailing" secondItem="BTN-mp-start" secondAttribute="trailing" constant="24" id="C-mp-10"/>
-                                        <constraint firstItem="BTN-mp-start" firstAttribute="top" secondItem="LBL-mp-desc" secondAttribute="bottom" constant="16" id="C-mp-11"/>
-                                        <constraint firstAttribute="bottom" secondItem="BTN-mp-start" secondAttribute="bottom" constant="20" id="C-mp-12"/>
+                                        <constraint firstAttribute="trailing" secondItem="VW-mp-badge" secondAttribute="trailing" constant="24" id="C-mp-b1"/>
+                                        <constraint firstItem="VW-mp-badge" firstAttribute="top" secondItem="VW-mp-card" secondAttribute="top" constant="24" id="C-mp-b2"/>
                                         <constraint firstAttribute="trailing" secondItem="LBL-mp-wtr" secondAttribute="trailing" constant="16" id="C-mp-wtr1"/>
                                         <constraint firstAttribute="bottom" secondItem="LBL-mp-wtr" secondAttribute="bottom" id="C-mp-wtr2"/>
                                     </constraints>
                                 </view>
-
-                                <!-- Section: Today's Challenge Header -->
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-ch-hdr" userLabel="challengeHeaderView">
-                                    <rect key="frame" x="24" y="623" width="345" height="40"/>
+                                    <rect key="frame" x="24" y="614.33333333333337" width="345" height="40"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thử Thách Hôm Nay" textAlignment="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-ch-sec">
-                                            <rect key="frame" x="0.0" y="8" width="200" height="24"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thử Thách Hôm Nay" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-ch-sec">
+                                            <rect key="frame" x="0.0" y="8" width="180.33333333333334" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -288,8 +272,8 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-ch-rwd">
                                             <rect key="frame" x="245" y="5" width="100" height="30"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="W-ch-rwd"/>
                                                 <constraint firstAttribute="height" constant="30" id="H-ch-rwd"/>
+                                                <constraint firstAttribute="width" constant="100" id="W-ch-rwd"/>
                                             </constraints>
                                             <state key="normal" title="Xem tất cả"/>
                                             <userDefinedRuntimeAttributes>
@@ -309,21 +293,18 @@
                                         <constraint firstAttribute="height" constant="40" id="H-chh"/>
                                     </constraints>
                                 </view>
-
-                                <!-- Card 3: Challenge Details Card (Light Blue Card) -->
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-ch-card" userLabel="challengeCardView">
-                                    <rect key="frame" x="24" y="679" width="345" height="190"/>
+                                    <rect key="frame" x="24" y="670.33333333333337" width="345" height="190.33333333333337"/>
                                     <subviews>
-                                        <!-- Left Icon Circle white container -->
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VW-ch-icon-container" userLabel="chIconContainerView">
-                                            <rect key="frame" x="24" y="67" width="56" height="56"/>
+                                            <rect key="frame" x="24" y="67.333333333333258" width="56" height="56"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopwatch" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IMG-ch-icon">
-                                                    <rect key="frame" x="14" y="12.333333333333332" width="28" height="29.666666666666668"/>
+                                                    <rect key="frame" x="14" y="12.999999999999996" width="28" height="28.333333333333332"/>
                                                     <color key="tintColor" red="0.85098039215686272" green="0.46666666666666667" blue="0.023529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="28" id="W-ch-i"/>
                                                         <constraint firstAttribute="height" constant="28" id="H-ch-i"/>
+                                                        <constraint firstAttribute="width" constant="28" id="W-ch-i"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -331,11 +312,10 @@
                                             <constraints>
                                                 <constraint firstItem="IMG-ch-icon" firstAttribute="centerX" secondItem="VW-ch-icon-container" secondAttribute="centerX" id="C-chic-x"/>
                                                 <constraint firstItem="IMG-ch-icon" firstAttribute="centerY" secondItem="VW-ch-icon-container" secondAttribute="centerY" id="C-chic-y"/>
-                                                <constraint firstAttribute="width" constant="56" id="W-ch-c"/>
                                                 <constraint firstAttribute="height" constant="56" id="H-ch-c"/>
+                                                <constraint firstAttribute="width" constant="56" id="W-ch-c"/>
                                             </constraints>
                                         </view>
-
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CÒN 2 GIỜ NỮA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-ch-time">
                                             <rect key="frame" x="96" y="24" width="110" height="24"/>
                                             <constraints>
@@ -349,35 +329,35 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="2 HOURS LEFT"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giải 10 phép tính cộng trong 1 phút!" textAlignment="left" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-ch-desc">
-                                            <rect key="frame" x="96" y="60" width="160" height="38"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giải 10 phép tính trong 3 phút!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-ch-desc">
+                                            <rect key="frame" x="96" y="60" width="160" height="38.333333333333343"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Solve 10 addition math problems in 1 minute!"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Solve 10 math problems in 3 minutes!"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="PRG-ch-bar">
-                                            <rect key="frame" x="96" y="114" width="160" height="8"/>
+                                            <rect key="frame" x="96" y="114.33333333333326" width="160" height="8"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="8" id="H-ch-bar"/>
                                             </constraints>
                                         </progressView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã hoàn thành 7/10" textAlignment="left" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-ch-prog">
-                                            <rect key="frame" x="96" y="134" width="160" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đã hoàn thành 7/10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-ch-prog">
+                                            <rect key="frame" x="96" y="134.33333333333326" width="160" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.43137254900000002" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.43137254899999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Completed 7/10"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-ch-001" userLabel="challengeButton">
-                                            <rect key="frame" x="277" y="73" width="44" height="44"/>
+                                            <rect key="frame" x="277" y="73.333333333333258" width="44" height="44"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="44" id="W-ch-btn"/>
                                                 <constraint firstAttribute="height" constant="44" id="H-ch-btn"/>
+                                                <constraint firstAttribute="width" constant="44" id="W-ch-btn"/>
                                             </constraints>
                                             <state key="normal" image="play.fill" catalog="system"/>
                                             <connections>
@@ -388,6 +368,13 @@
                                     <color key="backgroundColor" red="0.93333333330000001" green="0.94901960780000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="VW-ch-icon-container" firstAttribute="leading" secondItem="VW-ch-card" secondAttribute="leading" constant="24" id="C-ch-c1"/>
+                                        <constraint firstItem="PRG-ch-bar" firstAttribute="top" secondItem="LBL-ch-desc" secondAttribute="bottom" constant="16" id="C-ch-c10"/>
+                                        <constraint firstItem="BTN-ch-001" firstAttribute="leading" secondItem="PRG-ch-bar" secondAttribute="trailing" constant="21" id="C-ch-c10b"/>
+                                        <constraint firstItem="PRG-ch-bar" firstAttribute="leading" secondItem="VW-ch-icon-container" secondAttribute="trailing" constant="16" id="C-ch-c11"/>
+                                        <constraint firstItem="LBL-ch-prog" firstAttribute="top" secondItem="PRG-ch-bar" secondAttribute="bottom" constant="12" id="C-ch-c12"/>
+                                        <constraint firstItem="LBL-ch-prog" firstAttribute="leading" secondItem="VW-ch-icon-container" secondAttribute="trailing" constant="16" id="C-ch-c13"/>
+                                        <constraint firstItem="BTN-ch-001" firstAttribute="leading" secondItem="LBL-ch-prog" secondAttribute="trailing" constant="21" id="C-ch-c14"/>
+                                        <constraint firstAttribute="bottom" secondItem="LBL-ch-prog" secondAttribute="bottom" constant="41" id="C-ch-c15"/>
                                         <constraint firstItem="VW-ch-icon-container" firstAttribute="centerY" secondItem="VW-ch-card" secondAttribute="centerY" id="C-ch-c2"/>
                                         <constraint firstItem="LBL-ch-time" firstAttribute="leading" secondItem="VW-ch-icon-container" secondAttribute="trailing" constant="16" id="C-ch-c3"/>
                                         <constraint firstItem="LBL-ch-time" firstAttribute="top" secondItem="VW-ch-card" secondAttribute="top" constant="24" id="C-ch-c4"/>
@@ -396,38 +383,27 @@
                                         <constraint firstItem="BTN-ch-001" firstAttribute="centerY" secondItem="VW-ch-card" secondAttribute="centerY" id="C-ch-c7"/>
                                         <constraint firstAttribute="trailing" secondItem="BTN-ch-001" secondAttribute="trailing" constant="24" id="C-ch-c8"/>
                                         <constraint firstItem="BTN-ch-001" firstAttribute="leading" secondItem="LBL-ch-desc" secondAttribute="trailing" constant="21" id="C-ch-c9"/>
-                                        <constraint firstItem="PRG-ch-bar" firstAttribute="top" secondItem="LBL-ch-desc" secondAttribute="bottom" constant="16" id="C-ch-c10"/>
-                                        <constraint firstItem="PRG-ch-bar" firstAttribute="leading" secondItem="VW-ch-icon-container" secondAttribute="trailing" constant="16" id="C-ch-c11"/>
-                                        <constraint firstItem="BTN-ch-001" firstAttribute="leading" secondItem="PRG-ch-bar" secondAttribute="trailing" constant="21" id="C-ch-c10b"/>
-                                        <constraint firstItem="LBL-ch-prog" firstAttribute="top" secondItem="PRG-ch-bar" secondAttribute="bottom" constant="12" id="C-ch-c12"/>
-                                        <constraint firstItem="LBL-ch-prog" firstAttribute="leading" secondItem="VW-ch-icon-container" secondAttribute="trailing" constant="16" id="C-ch-c13"/>
-                                        <constraint firstItem="BTN-ch-001" firstAttribute="leading" secondItem="LBL-ch-prog" secondAttribute="trailing" constant="21" id="C-ch-c14"/>
-                                        <constraint firstAttribute="bottom" secondItem="LBL-ch-prog" secondAttribute="bottom" constant="41" id="C-ch-c15"/>
                                     </constraints>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="LBL-hr-title" firstAttribute="leading" secondItem="VW-mn-cnt" secondAttribute="leading" constant="24" id="C-cnt-1"/>
-                                <constraint firstItem="LBL-hr-title" firstAttribute="top" secondItem="VW-mn-cnt" secondAttribute="top" constant="24" id="C-cnt-2"/>
-                                <constraint firstAttribute="trailing" secondItem="LBL-hr-title" secondAttribute="trailing" constant="24" id="C-cnt-3"/>
-                                
-                                <constraint firstItem="VW-wp-card" firstAttribute="top" secondItem="LBL-hr-title" secondAttribute="bottom" constant="24" id="C-cnt-4"/>
-                                <constraint firstItem="VW-wp-card" firstAttribute="leading" secondItem="VW-mn-cnt" secondAttribute="leading" constant="24" id="C-cnt-5"/>
-                                <constraint firstAttribute="trailing" secondItem="VW-wp-card" secondAttribute="trailing" constant="24" id="C-cnt-6"/>
-                                
-                                <constraint firstItem="VW-mp-card" firstAttribute="top" secondItem="VW-wp-card" secondAttribute="bottom" constant="24" id="C-cnt-7"/>
-                                <constraint firstItem="VW-mp-card" firstAttribute="leading" secondItem="VW-mn-cnt" secondAttribute="leading" constant="24" id="C-cnt-8"/>
-                                <constraint firstAttribute="trailing" secondItem="VW-mp-card" secondAttribute="trailing" constant="24" id="C-cnt-9"/>
-                                
                                 <constraint firstItem="VW-ch-hdr" firstAttribute="top" secondItem="VW-mp-card" secondAttribute="bottom" constant="24" id="C-cnt-10"/>
                                 <constraint firstItem="VW-ch-hdr" firstAttribute="leading" secondItem="VW-mn-cnt" secondAttribute="leading" constant="24" id="C-cnt-11"/>
                                 <constraint firstAttribute="trailing" secondItem="VW-ch-hdr" secondAttribute="trailing" constant="24" id="C-cnt-12"/>
-                                
                                 <constraint firstItem="VW-ch-card" firstAttribute="top" secondItem="VW-ch-hdr" secondAttribute="bottom" constant="16" id="C-cnt-13"/>
                                 <constraint firstItem="VW-ch-card" firstAttribute="leading" secondItem="VW-mn-cnt" secondAttribute="leading" constant="24" id="C-cnt-14"/>
                                 <constraint firstAttribute="trailing" secondItem="VW-ch-card" secondAttribute="trailing" constant="24" id="C-cnt-15"/>
                                 <constraint firstAttribute="bottom" secondItem="VW-ch-card" secondAttribute="bottom" constant="32" id="C-cnt-16"/>
+                                <constraint firstItem="LBL-hr-title" firstAttribute="top" secondItem="VW-mn-cnt" secondAttribute="top" constant="24" id="C-cnt-2"/>
+                                <constraint firstAttribute="trailing" secondItem="LBL-hr-title" secondAttribute="trailing" constant="24" id="C-cnt-3"/>
+                                <constraint firstItem="VW-wp-card" firstAttribute="top" secondItem="LBL-hr-title" secondAttribute="bottom" constant="24" id="C-cnt-4"/>
+                                <constraint firstItem="VW-wp-card" firstAttribute="leading" secondItem="VW-mn-cnt" secondAttribute="leading" constant="24" id="C-cnt-5"/>
+                                <constraint firstAttribute="trailing" secondItem="VW-wp-card" secondAttribute="trailing" constant="24" id="C-cnt-6"/>
+                                <constraint firstItem="VW-mp-card" firstAttribute="top" secondItem="VW-wp-card" secondAttribute="bottom" constant="24" id="C-cnt-7"/>
+                                <constraint firstItem="VW-mp-card" firstAttribute="leading" secondItem="VW-mn-cnt" secondAttribute="leading" constant="24" id="C-cnt-8"/>
+                                <constraint firstAttribute="trailing" secondItem="VW-mp-card" secondAttribute="trailing" constant="24" id="C-cnt-9"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -443,21 +419,21 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.95686274510000002" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="SCR-mn-001" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="C-app-b"/>
                 <constraint firstItem="SCR-mn-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="C-app-l"/>
                 <constraint firstItem="SCR-mn-001" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="C-app-r"/>
                 <constraint firstItem="SCR-mn-001" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="C-app-t"/>
-                <constraint firstItem="SCR-mn-001" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="C-app-b"/>
                 <constraint firstItem="VW-mn-cnt" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="C-cnt-w"/>
             </constraints>
             <point key="canvasLocation" x="126" y="125"/>
         </view>
     </objects>
     <resources>
-        <image name="pencil.and.outline" catalog="system"/>
-        <image name="plus" catalog="system"/>
-        <image name="plus.forwardslash.minus" catalog="system"/>
-        <image name="divide" catalog="system"/>
-        <image name="stopwatch" catalog="system"/>
-        <image name="play.fill" catalog="system"/>
+        <image name="divide" catalog="system" width="128" height="101"/>
+        <image name="pencil.and.outline" catalog="system" width="123" height="128"/>
+        <image name="play.fill" catalog="system" width="120" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="plus.forwardslash.minus" catalog="system" width="128" height="115"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
     </resources>
 </document>
