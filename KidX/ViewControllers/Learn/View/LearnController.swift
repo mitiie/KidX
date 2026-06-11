@@ -203,7 +203,7 @@ class LearnController: BaseController {
     }
     
     @IBAction func mathProblemsTapped(_ sender: UIButton) {
-        showAlertPlaceholder(title: "Fun Math Problems".localize())
+        viewModel.navigateToCaculate()
     }
     
     @IBAction func challengeTapped(_ sender: UIButton) {

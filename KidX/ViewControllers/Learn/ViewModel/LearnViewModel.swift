@@ -34,6 +34,10 @@ class LearnViewModel {
         navigation.push(.writingPractice(self))
     }
     
+    func navigateToCaculate() {
+        navigation.push(.caculate(CaculateViewModel(navigation: navigation)))
+    }
+    
     func navigateBack() {
         navigation.pop()
     }

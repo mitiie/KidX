@@ -134,4 +134,13 @@
 "Congratulations! You found the %@!" = "Congratulations! You found the %@!";
 "Oops! This looks like %@. Try again!" = "Oops! This looks like %@. Try again!";
 
+/* Math Challenges Screen */
+"Write answer here" = "Write answer here";
+"Use finger or pen" = "Use finger or pen";
+"Continue  →" = "Continue  →";
+"Please draw your answer before checking!" = "Please draw your answer before checking!";
+"Excellent! 🎉" = "Excellent! 🎉";
+"The child successfully completed all math challenges!" = "The child successfully completed all math challenges!";
+"Play again" = "Play again";
+
 

@@ -30,6 +30,8 @@ class DrawView: UIView {
 
     /// Callback — được gọi ngay khi người dùng nhấc tay lên (touchesEnded)
     var onDrawingEnded: (() -> Void)?
+    /// Callback — được gọi khi người dùng bắt đầu chạm vẽ (touchesBegan)
+    var onDrawingBegan: (() -> Void)?
 
     // MARK: - Init
     override init(frame: CGRect) {
@@ -53,6 +55,7 @@ class DrawView: UIView {
     // MARK: - Touch Handling
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         lastPoint = touches.first?.location(in: self)
+        onDrawingBegan?()
     }
 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -101,6 +104,18 @@ class DrawView: UIView {
     func getPixelBuffer() -> CVPixelBuffer? {
         guard !lines.isEmpty else { return nil }
 
+        let originalBG = backgroundColor
+        let originalStroke = strokeColor
+        let originalBorderColor = layer.borderColor
+        
+        // Temporarily set to black background and white strokes for MNIST rendering
+        backgroundColor = .black
+        strokeColor = .white
+        layer.borderColor = UIColor.black.cgColor
+        
+        // Force display update
+        setNeedsDisplay()
+
         var minX = CGFloat.greatestFiniteMagnitude
         var minY = CGFloat.greatestFiniteMagnitude
         var maxX = CGFloat.leastNormalMagnitude
@@ -117,6 +132,14 @@ class DrawView: UIView {
                                  y: minY,
                                  width: maxX - minX,
                                  height: maxY - minY)
-        return MNISTPixelBufferFactory.makePixelBuffer(from: layer, drawingRect: drawingRect, lineWidth: lineWidth)
+        let buffer = MNISTPixelBufferFactory.makePixelBuffer(from: layer, drawingRect: drawingRect, lineWidth: lineWidth)
+        
+        // Restore original visual styles
+        backgroundColor = originalBG
+        strokeColor = originalStroke
+        layer.borderColor = originalBorderColor
+        setNeedsDisplay()
+        
+        return buffer
     }
 }

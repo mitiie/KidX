@@ -41,4 +41,6 @@ enum MainRoute {
     case language(ProfileViewModel)
     case writingPractice(LearnViewModel)
     case listGame(ListGameViewModel)
+    case caculate(CaculateViewModel)
 }
+

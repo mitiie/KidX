@@ -128,4 +128,14 @@
 "Congratulations! You found the %@!" = "Chúc mừng! Con đã tìm thấy %@!";
 "Oops! This looks like %@. Try again!" = "Tiếc quá! Đây là %@. Bé hãy thử lại nhé!";
 
+/* Math Challenges Screen */
+"Write answer here" = "Viết đáp án vào đây";
+"Use finger or pen" = "Sử dụng ngón tay hoặc bút";
+"Continue  →" = "Tiếp tục  →";
+"Please draw your answer before checking!" = "Hãy vẽ đáp án trước khi kiểm tra nhé!";
+"Excellent! 🎉" = "Tuyệt Vời! 🎉";
+"The child successfully completed all math challenges!" = "Bé đã hoàn thành xuất sắc tất cả các thử thách phép tính!";
+"Play again" = "Chơi lại";
+
+
 

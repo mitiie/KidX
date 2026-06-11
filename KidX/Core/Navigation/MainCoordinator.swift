@@ -47,6 +47,9 @@ final class MainCoordinator: NavigationStateDelegate {
         case .listGame(let viewModel):
             push(ListGameController(viewModel: viewModel), animated: animated)
 
+        case .caculate(let viewModel):
+            push(CaculateController(viewModel: viewModel), animated: animated)
+
         default:
             break
         }
