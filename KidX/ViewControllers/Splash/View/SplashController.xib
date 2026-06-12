@@ -25,9 +25,9 @@
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                            <real key="value" value="17"/>
+                            <real key="value" value="18"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="string" keyPath="weight" value="medium"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="weight" value="cherryBombRegular"/>
                         <userDefinedRuntimeAttribute type="string" keyPath="color" value="primary"/>
                     </userDefinedRuntimeAttributes>
                 </label>

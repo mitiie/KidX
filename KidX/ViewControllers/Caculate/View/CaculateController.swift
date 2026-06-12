@@ -7,36 +7,6 @@
 
 import UIKit
 
-// MARK: - DashedBorderView
-class DashedBorderView: UIView {
-    private let borderLayer = CAShapeLayer()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setup()
-    }
-    
-    private func setup() {
-        backgroundColor = .clear
-        borderLayer.strokeColor = UIColor(hex: 0xD0D7DE).cgColor
-        borderLayer.fillColor = nil
-        borderLayer.lineDashPattern = [6, 4]
-        borderLayer.lineWidth = 2
-        layer.addSublayer(borderLayer)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        borderLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
-        borderLayer.frame = bounds
-    }
-}
-
 // MARK: - CaculateController
 class CaculateController: BaseController {
     
@@ -220,11 +190,11 @@ class CaculateController: BaseController {
         levelLabel.font = UIFont.custom(14, .semiBold)
         levelLabel.textColor = AppColor.text.color
         
-        equationLabel.font = UIFont.custom(54, .semiBold)
+        equationLabel.font = UIFont.custom(64, .cherryBombRegular)
         equationLabel.textColor = AppColor.text.color
         equationLabel.textAlignment = .center
         
-        answerLabel.font = UIFont.custom(48, .semiBold)
+        answerLabel.font = UIFont.custom(64, .cherryBombRegular)
         answerLabel.textColor = AppColor.text.color
         answerLabel.textAlignment = .center
         
@@ -336,9 +306,9 @@ class CaculateController: BaseController {
         
         guard let pixelBuffer = drawView.getPixelBuffer() else { return }
         
-        Common.showLoading()
+        Common.showMBHUDLoading()
         viewModel.checkAnswer(pixelBuffer: pixelBuffer) { [weak self] isCorrect, prediction in
-            Common.hideLoading()
+            Common.hideMBHUDLoading()
             guard let self = self else { return }
             
             if isCorrect {

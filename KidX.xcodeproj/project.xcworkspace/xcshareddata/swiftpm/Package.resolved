@@ -1,5 +1,5 @@
 {
-  "originHash" : "5ed0c0ea1cc5290de8bcc429624f5017957df45fa241499b3ec49727a5025c04",
+  "originHash" : "386a6dcbf1192cdbf08541bf95ee5085e44baab56631df905c539e4ff525ad26",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -134,6 +134,15 @@
       "state" : {
         "revision" : "69faaefa7721fba9e434a52c16adf4329c9084db",
         "version" : "4.6.0"
+      }
+    },
+    {
+      "identity" : "mbprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jdg/MBProgressHUD.git",
+      "state" : {
+        "revision" : "bca42b801100b2b3a4eda0ba8dd33d858c780b0d",
+        "version" : "1.2.0"
       }
     },
     {

@@ -7,6 +7,7 @@
 
 import PhotosUI
 import UIKit
+import MBProgressHUD
 
 final class Common {
     static func showLoading() {
@@ -28,6 +29,20 @@ final class Common {
                 guard let view = view as? AppLoadingView else { continue }
                 view.hide(animated)
             }
+        }
+    }
+    
+    static func showMBHUDLoading(on view: UIView? = nil) {
+        DispatchQueue.main.async {
+            guard let topVC = UIApplication.topViewController() else { return }
+            MBProgressHUD.showAdded(to: view ?? topVC.view, animated: true)
+        }
+    }
+    
+    static func hideMBHUDLoading(on view: UIView? = nil) {
+        DispatchQueue.main.async {
+            guard let topVC = UIApplication.topViewController() else { return }
+            MBProgressHUD.hide(for: view ?? topVC.view, animated: true)
         }
     }
     

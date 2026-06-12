@@ -65,7 +65,7 @@ class ProfileController: BaseController {
             btnLogout.configuration = config
         } else {
             btnLogout.setTitle("Logout", for: .normal)
-            btnLogout.titleLabel?.font = UIFont.custom(15, .semiBold)
+            btnLogout.titleLabel?.font = UIFont.custom(15, .cherryBombRegular)
             btnLogout.setImage(UIImage(systemName: "rectangle.portrait.and.arrow.right"), for: .normal)
             btnLogout.backgroundColor = UIColor(hex: 0xFF5B5B)
             btnLogout.tintColor = .white

@@ -7,6 +7,7 @@
         <string>Lexend-SemiBold.ttf</string>
         <string>Lexend-Regular.ttf</string>
         <string>Lexend-Medium.ttf</string>
+        <string>CherryBombOne-Regular.ttf</string>
     </array>
     <key>NSCameraUsageDescription</key>
     <string>KidX needs camera access so you can take photos to import into your learning content.</string>

@@ -13,7 +13,7 @@ protocol TabBarViewDelegate: AnyObject {
 
 class TabBarView: UIView {
     weak var delegate: TabBarViewDelegate?
-    private var selectedIndex = 2
+    private var selectedIndex = 0
     private let tabItems: [TabBarItem] = TabBarItem.allCases
     
     private var buttons: [UIButton] = []

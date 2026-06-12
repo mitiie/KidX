@@ -31,7 +31,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnE-Ud-rnB">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="916"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jD8-CJ-UZp">
@@ -202,7 +202,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="NnE-Ud-rnB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0F1-kO-CXy"/>
-                <constraint firstItem="NnE-Ud-rnB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="32" id="6iU-Fq-bvo"/>
+                <constraint firstItem="NnE-Ud-rnB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6iU-Fq-bvo"/>
                 <constraint firstItem="NnE-Ud-rnB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ANh-IA-rPa"/>
                 <constraint firstItem="NnE-Ud-rnB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KZ6-9y-I0x"/>
                 <constraint firstItem="jD8-CJ-UZp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jo4-3r-DGU"/>

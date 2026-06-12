@@ -48,7 +48,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="ILf-wz-Bh4" firstAttribute="centerX" secondItem="seY-Do-EDX" secondAttribute="centerX" id="2QS-Vp-cAa"/>
                         <constraint firstAttribute="bottom" secondItem="ILf-wz-Bh4" secondAttribute="bottom" constant="40" id="4cK-6k-FNk"/>

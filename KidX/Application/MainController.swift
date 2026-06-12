@@ -9,7 +9,7 @@ import UIKit
 
 class MainController: UIViewController {
 
-    private static var lastSelectedIndex: Int = 2
+    private static var lastSelectedIndex: Int = 0
 
     private let authNavigation: NavigationState<AuthRoute>
     private let mainNavigation: NavigationState<MainRoute>
@@ -66,8 +66,6 @@ class MainController: UIViewController {
             return DiscoveryController(viewModel: DiscoveryViewModel(navigation: mainNavigation))
         case .profile:
             return ProfileController(viewModel: ProfileViewModel(navigation: mainNavigation))
-        case .achieve:
-            return AchieveController()
         }
     }
 

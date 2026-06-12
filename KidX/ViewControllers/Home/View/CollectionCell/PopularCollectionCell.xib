@@ -21,17 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="176" height="140"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School supplies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82g-VL-xBJ" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
-                        <rect key="frame" x="156.33333333333337" y="116.33333333333333" width="135.66666666666663" height="23.666666666666671"/>
+                        <rect key="frame" x="156.33333333333337" y="117.33333333333333" width="135.66666666666663" height="22.666666666666671"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="shadowColor" systemColor="systemCyanColor"/>
-                        <size key="shadowOffset" width="0.0" height="2"/>
+                        <size key="shadowOffset" width="0.0" height="1"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                 <real key="value" value="20"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="string" keyPath="weight" value="medium"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="weight" value="cherryBombRegular"/>
                             <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
                         </userDefinedRuntimeAttributes>
                     </label>

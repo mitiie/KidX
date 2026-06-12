@@ -58,16 +58,19 @@ struct LexendFonts {
     static let regular = FontConvertible(name: "Lexend-Regular", family: "Lexend", path: "Lexend-Regular.ttf")
     static let medium = FontConvertible(name: "Lexend-Medium", family: "Lexend", path: "Lexend-Medium.ttf")
     static let semiBold = FontConvertible(name: "Lexend-SemiBold", family: "Lexend", path: "Lexend-SemiBold.ttf")
+    
+    static let cherryBombRegular = FontConvertible(name: "CherryBombOne-Regular", family: "CherryBombOne", path: "CherryBombOne-Regular.ttf")
 }
 
 enum FontWeight: String {
-    case semiBold, medium, regular
+    case semiBold, medium, regular, cherryBombRegular
 
     var fontName: String {
         switch self {
         case .semiBold:     return LexendFonts.semiBold.name
         case .medium:       return LexendFonts.medium.name
         case .regular:      return LexendFonts.regular.name
+        case .cherryBombRegular: return LexendFonts.cherryBombRegular.name
         }
     }
 }
