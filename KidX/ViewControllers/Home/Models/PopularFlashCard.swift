@@ -19,6 +19,20 @@ struct FlashCardItem: Codable, Equatable {
     let description: String
 }
 
+struct BasicFlashCardCategory: Codable {
+    let id: String
+    let titleVi: String
+    let titleEn: String
+    let descriptionVi: String
+    let descriptionEn: String
+    let items: [BasicFlashCardItem]
+}
+
+struct BasicFlashCardItem: Codable, Equatable {
+    let vietnameseText: String
+    let englishText: String
+}
+
 extension FlashCardItem {
     var isRemembered: Bool {
         get {

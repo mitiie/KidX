@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gTV-IL-0wX" customClass="BasicCategoryCollectionCell" customModule="KidX" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="153"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="250" height="153"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1S-gk-mWP">
+                        <rect key="frame" x="8" y="8" width="234" height="137"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Động vật" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dk-jj-hmj" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
+                                <rect key="frame" x="18" y="18" width="198" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="weight" value="cherryBombRegular"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cN-Ho-wRn" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
+                                <rect key="frame" x="18" y="48" width="198" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="weight" value="regular"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="color" value="grey"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfJ-pa-i7j" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
+                                <rect key="frame" x="18" y="91" width="72" height="28"/>
+                                <color key="backgroundColor" red="0.20784313725490197" green="0.67843137254901964" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="72" id="ESU-p9-Di2"/>
+                                    <constraint firstAttribute="height" constant="28" id="NgV-Ts-qTk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="weight" value="semiBold"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="color" value="white"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Dk-jj-hmj" firstAttribute="top" secondItem="E1S-gk-mWP" secondAttribute="top" constant="18" id="0Ys-Ga-18X"/>
+                            <constraint firstItem="8Dk-jj-hmj" firstAttribute="leading" secondItem="E1S-gk-mWP" secondAttribute="leading" constant="18" id="3WP-J9-DHe"/>
+                            <constraint firstAttribute="trailing" secondItem="8Dk-jj-hmj" secondAttribute="trailing" constant="18" id="8jH-wb-l4C"/>
+                            <constraint firstItem="3cN-Ho-wRn" firstAttribute="top" secondItem="8Dk-jj-hmj" secondAttribute="bottom" constant="6" id="GcO-fU-BHZ"/>
+                            <constraint firstItem="3cN-Ho-wRn" firstAttribute="leading" secondItem="8Dk-jj-hmj" secondAttribute="leading" id="bj6-Zu-Tad"/>
+                            <constraint firstAttribute="trailing" secondItem="3cN-Ho-wRn" secondAttribute="trailing" constant="18" id="eDq-Iv-qlo"/>
+                            <constraint firstItem="yfJ-pa-i7j" firstAttribute="leading" secondItem="8Dk-jj-hmj" secondAttribute="leading" id="fPC-Nj-NVy"/>
+                            <constraint firstAttribute="bottom" secondItem="yfJ-pa-i7j" secondAttribute="bottom" constant="18" id="i8A-k2-Gp8"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="E1S-gk-mWP" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="1MB-nT-pFi"/>
+                <constraint firstItem="E1S-gk-mWP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="6b2-rj-lDI"/>
+                <constraint firstItem="E1S-gk-mWP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="8BY-FU-Q10"/>
+                <constraint firstItem="E1S-gk-mWP" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="N67-sS-BOW"/>
+            </constraints>
+            <size key="customSize" width="250" height="153"/>
+            <connections>
+                <outlet property="containerView" destination="E1S-gk-mWP" id="B1a-Yl-ytL"/>
+                <outlet property="countLabel" destination="yfJ-pa-i7j" id="Cv8-Ul-L7K"/>
+                <outlet property="englishLabel" destination="3cN-Ho-wRn" id="nJz-L4-Qre"/>
+                <outlet property="titleLabel" destination="8Dk-jj-hmj" id="xlg-cU-cHx"/>
+            </connections>
+            <point key="canvasLocation" x="222" y="-44"/>
+        </collectionViewCell>
+    </objects>
+</document>

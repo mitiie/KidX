@@ -29,6 +29,9 @@ final class MainCoordinator: NavigationStateDelegate {
         case .listFlashCard(let category):
             push(makeListFlashCardController(category: category), animated: animated)
 
+        case .listFlashCardBasic(let category):
+            push(makeListFlashCardBasicController(category: category), animated: animated)
+
         case .flashCardDetail(let input):
             push(makeFlashCardDetailController(input: input), animated: animated)
 
@@ -74,6 +77,11 @@ final class MainCoordinator: NavigationStateDelegate {
         let viewModel = makeHomeViewModel()
         viewModel.selectCategory(category)
         return ListFlashCardVC(viewModel: viewModel)
+    }
+
+    private func makeListFlashCardBasicController(category: BasicFlashCardCategory) -> UIViewController {
+        let viewModel = ListFlashCardBasicViewModel(navigation: navigationState, category: category)
+        return ListFlashCardBasicController(viewModel: viewModel)
     }
 
     private func makeFlashCardDetailController(input: FlashCardDetailRouteInput) -> UIViewController {

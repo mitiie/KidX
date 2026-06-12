@@ -35,6 +35,7 @@ enum MainRoute {
     case achieve
     case profile
     case listFlashCard(PopularFlashCardCategory)
+    case listFlashCardBasic(BasicFlashCardCategory)
     case flashCardDetail(FlashCardDetailRouteInput)
     case summary(SummaryRouteInput)
     case logout
@@ -43,4 +44,3 @@ enum MainRoute {
     case listGame(ListGameViewModel)
     case caculate(CaculateViewModel)
 }
-

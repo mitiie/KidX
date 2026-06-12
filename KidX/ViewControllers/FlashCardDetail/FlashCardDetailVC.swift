@@ -96,9 +96,9 @@ class FlashCardDetailVC: BaseController {
     @objc private func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
         switch gesture.direction {
         case .left:
-            markAsRemembered()
-        case .right:
             markAsNotRemembered()
+        case .right:
+            markAsRemembered()
         default: break
         }
     }
@@ -106,7 +106,7 @@ class FlashCardDetailVC: BaseController {
     private func markAsRemembered() {
         UIView.animate(withDuration: 0.5, animations: {
             self.backGroundIMG.image = UIImage(resource: .rememberBG)
-            self.containerView.transform = CGAffineTransform(translationX: -300, y: 1000).rotated(by: -.pi / 2)
+            self.containerView.transform = CGAffineTransform(translationX: 300, y: 1000).rotated(by: .pi / 2)
         }) { _ in
             let isLast = self.viewModel.markAsRemembered()
             self.incrementRemember()
@@ -117,7 +117,7 @@ class FlashCardDetailVC: BaseController {
     private func markAsNotRemembered() {
         UIView.animate(withDuration: 0.5, animations: {
             self.backGroundIMG.image = UIImage(resource: .dontRememberBG)
-            self.containerView.transform = CGAffineTransform(translationX: 300, y: 1000).rotated(by: .pi / 2)
+            self.containerView.transform = CGAffineTransform(translationX: -300, y: 1000).rotated(by: -.pi / 2)
         }) { _ in
             let isLast = self.viewModel.markAsNotRemembered()
             self.incrementDontRemember()

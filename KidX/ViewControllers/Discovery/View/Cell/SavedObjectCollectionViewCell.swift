@@ -32,10 +32,7 @@ final class SavedObjectCollectionViewCell: UICollectionViewCell {
         // Card styling
         cardView.backgroundColor = .white
         cardView.layer.cornerRadius = 24
-        cardView.layer.shadowColor = UIColor(hex: 0x00264D).cgColor
-        cardView.layer.shadowOpacity = 0.08
-        cardView.layer.shadowRadius = 8
-        cardView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        cardView.addShadow(color: UIColor(hex: 0x00264D))
         
         // Image styling
         resultImageView.layer.cornerRadius = 16

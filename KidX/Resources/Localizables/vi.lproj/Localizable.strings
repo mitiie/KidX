@@ -108,6 +108,13 @@
 "Achieve" = "Thành tích";
 "Profile" = "Hồ sơ";
 "Popular Flash Card" = "Bộ thẻ phổ biến";
+"Basic Bilingual Cards" = "Bộ thẻ song ngữ";
+"Flip cards: Vietnamese first, English after" = "Lật thẻ: tiếng Việt trước, tiếng Anh sau";
+"%d cards" = "%d thẻ";
+"Vietnamese" = "Tiếng Việt";
+"English" = "Tiếng Anh";
+"Tap to flip" = "Chạm để lật";
+"Listen" = "Nghe phát âm";
 
 /* Treasure Hunt Game */
 "DAILY CHALLENGES" = "THỬ THÁCH MỖI NGÀY";

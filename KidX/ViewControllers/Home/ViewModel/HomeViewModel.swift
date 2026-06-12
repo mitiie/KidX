@@ -11,6 +11,7 @@ import GoogleSignIn
 final class HomeViewModel {
 
     private(set) var popularCategories: [PopularFlashCardCategory] = []
+    private(set) var basicCategories: [BasicFlashCardCategory] = []
     private(set) var itemList: [FlashCardItem] = []
     private(set) var titleText: String = ""
 
@@ -22,6 +23,7 @@ final class HomeViewModel {
 
     func loadData() {
         popularCategories = PopularFlashCardService.loadCategories()
+        basicCategories = BasicFlashCardService.loadCategories()
     }
 
     func selectCategory(_ category: PopularFlashCardCategory) {
@@ -62,6 +64,10 @@ final class HomeViewModel {
 
     func navigateToListFlashCard(category: PopularFlashCardCategory) {
         navigation.push(.listFlashCard(category))
+    }
+
+    func navigateToListFlashCardBasic(category: BasicFlashCardCategory) {
+        navigation.push(.listFlashCardBasic(category))
     }
 
     func navigateToFlashCardDetail(items: [FlashCardItem], category: String) {

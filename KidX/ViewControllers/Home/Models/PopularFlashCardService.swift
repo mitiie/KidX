@@ -22,3 +22,16 @@ class PopularFlashCardService {
         return loadCategories().flatMap { $0.items }
     }
 }
+
+final class BasicFlashCardService {
+    static func loadCategories() -> [BasicFlashCardCategory] {
+        guard let url = Bundle.main.url(forResource: "BasicFlashCard", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let categories = try? JSONDecoder().decode([BasicFlashCardCategory].self, from: data) else {
+            print("Failed to load BasicFlashCard.json")
+            return []
+        }
+
+        return categories
+    }
+}
