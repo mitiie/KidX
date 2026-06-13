@@ -33,6 +33,10 @@ class LearnViewModel {
     func navigateToWritingPractice() {
         navigation.push(.writingPractice(self))
     }
+
+    func navigateToListAlphabet() {
+        navigation.push(.listAlphabet)
+    }
     
     func navigateToCaculate(difficulty: CaculateDifficulty = .basic) {
         navigation.push(.caculate(CaculateViewModel(navigation: navigation, difficulty: difficulty)))

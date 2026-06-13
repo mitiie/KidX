@@ -20,8 +20,16 @@ class LearnController: BaseController {
     @IBOutlet weak var writingPracticeTitleLabel: UILabel!
     @IBOutlet weak var writingPracticeDescLabel: UILabel!
     @IBOutlet weak var writingPracticeButton: UIButton!
+
+    // Card 2: Luyện Viết Chữ Cái
+    @IBOutlet weak var letterPracticeCardView: UIView!
+    @IBOutlet weak var lpIconContainerView: UIView!
+    @IBOutlet weak var letterPracticeBadgeLabel: UILabel!
+    @IBOutlet weak var letterPracticeTitleLabel: UILabel!
+    @IBOutlet weak var letterPracticeDescLabel: UILabel!
+    @IBOutlet weak var letterPracticeButton: UIButton!
     
-    // Card 2: Phép Tính Vui Nhộn
+    // Card 3: Phép Tính Vui Nhộn
     @IBOutlet weak var mathProblemsCardView: UIView!
     @IBOutlet weak var mpIconContainerView: UIView!
     @IBOutlet weak var mpBadgeView: UIView!
@@ -29,7 +37,7 @@ class LearnController: BaseController {
     @IBOutlet weak var mathProblemsDescLabel: UILabel!
     @IBOutlet weak var mathProblemsButton: UIButton!
     
-    // Card 3: Thử Thách Hôm Nay
+    // Card 4: Thử Thách Hôm Nay
     @IBOutlet weak var challengeSectionTitleLabel: UILabel!
     @IBOutlet weak var challengeRewardButton: UIButton!
     @IBOutlet weak var challengeCardView: UIView!
@@ -96,6 +104,8 @@ class LearnController: BaseController {
         // Make decoration views perfectly circular after layouts are calculated
         wpIconContainerView.layer.cornerRadius = wpIconContainerView.frame.height / 2
         writingPracticeBadgeLabel.layer.cornerRadius = writingPracticeBadgeLabel.frame.height / 2
+        lpIconContainerView.layer.cornerRadius = lpIconContainerView.frame.height / 2
+        letterPracticeBadgeLabel.layer.cornerRadius = letterPracticeBadgeLabel.frame.height / 2
         mpIconContainerView.layer.cornerRadius = mpIconContainerView.frame.height / 2
         mpBadgeView.layer.cornerRadius = mpBadgeView.frame.height / 2
         chIconContainerView.layer.cornerRadius = chIconContainerView.frame.height / 2
@@ -147,8 +157,31 @@ class LearnController: BaseController {
         writingPracticeDescLabel.numberOfLines = 0
         
         styleTextLinkButton(writingPracticeButton, title: "Start now".localize(), color: AppColor.primary.color)
+
+        // Card 2: Luyện Viết Chữ Cái (Pink card)
+        letterPracticeCardView.backgroundColor = UIColor(hex: 0xFFE9F4)
+        styleCardView(letterPracticeCardView)
+
+        lpIconContainerView.backgroundColor = .white
+        lpIconContainerView.clipsToBounds = true
+
+        letterPracticeBadgeLabel.text = "Aa"
+        letterPracticeBadgeLabel.font = UIFont.custom(12, .semiBold)
+        letterPracticeBadgeLabel.textColor = .white
+        letterPracticeBadgeLabel.backgroundColor = UIColor(hex: 0xE94F9A)
+        letterPracticeBadgeLabel.textAlignment = .center
+        letterPracticeBadgeLabel.clipsToBounds = true
+
+        letterPracticeTitleLabel.font = UIFont.custom(20, .semiBold)
+        letterPracticeTitleLabel.textColor = AppColor.text.color
+
+        letterPracticeDescLabel.font = UIFont.custom(14, .regular)
+        letterPracticeDescLabel.textColor = AppColor.grey.color
+        letterPracticeDescLabel.numberOfLines = 0
+
+        styleTextLinkButton(letterPracticeButton, title: "Color letters".localize(), color: UIColor(hex: 0xE94F9A))
         
-        // Card 2: Phép Tính Vui Nhộn (Yellow card)
+        // Card 3: Phép Tính Vui Nhộn (Yellow card)
         mathProblemsCardView.backgroundColor = UIColor(hex: 0xFFCC00)
         styleCardView(mathProblemsCardView)
         
@@ -234,6 +267,10 @@ class LearnController: BaseController {
     // MARK: - IBActions
     @IBAction func writingPracticeTapped(_ sender: UIButton) {
         viewModel.navigateToWritingPractice()
+    }
+
+    @IBAction func letterPracticeTapped(_ sender: UIButton) {
+        viewModel.navigateToListAlphabet()
     }
     
     @IBAction func mathProblemsTapped(_ sender: UIButton) {

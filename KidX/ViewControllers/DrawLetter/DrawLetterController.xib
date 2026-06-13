@@ -1,22 +1,222 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawLetterController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawLetterController" customModule="KidX" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="BTN-bk-001" id="OT-bk-001"/>
+                <outlet property="caseSegmentedControl" destination="SEG-case-001" id="OT-seg-001"/>
+                <outlet property="clearButton" destination="BTN-clear-001" id="OT-clear-001"/>
+                <outlet property="coloringView" destination="CLR-vw-001" id="OT-clr-001"/>
+                <outlet property="titleLabel" destination="LBL-tt-001" id="OT-tt-001"/>
+                <outlet property="toolbarView" destination="TB-vw-001" id="OT-tb-001"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="colorButtons" destination="BTN-color-0" collectionClass="NSMutableArray" id="OT-color-0"/>
+                <outletCollection property="colorButtons" destination="BTN-color-1" collectionClass="NSMutableArray" id="OT-color-1"/>
+                <outletCollection property="colorButtons" destination="BTN-color-2" collectionClass="NSMutableArray" id="OT-color-2"/>
+                <outletCollection property="colorButtons" destination="BTN-color-3" collectionClass="NSMutableArray" id="OT-color-3"/>
+                <outletCollection property="colorButtons" destination="BTN-color-4" collectionClass="NSMutableArray" id="OT-color-4"/>
+                <outletCollection property="widthButtons" destination="BTN-width-0" collectionClass="NSMutableArray" id="OT-width-0"/>
+                <outletCollection property="widthButtons" destination="BTN-width-1" collectionClass="NSMutableArray" id="OT-width-1"/>
+                <outletCollection property="widthButtons" destination="BTN-width-2" collectionClass="NSMutableArray" id="OT-width-2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-bk-001" userLabel="backButton">
+                    <rect key="frame" x="18" y="115.33333333333331" width="38" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="H-bk-001"/>
+                        <constraint firstAttribute="width" constant="38" id="W-bk-001"/>
+                    </constraints>
+                    <state key="normal" title=""/>
+                    <connections>
+                        <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="ACT-bk-001"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color the Letter" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-tt-001" userLabel="titleLabel">
+                    <rect key="frame" x="74" y="120.00000000000001" width="245" height="28.666666666666671"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SEG-case-001" userLabel="caseSegmentedControl">
+                    <rect key="frame" x="265" y="166.66666666666666" width="104" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="H-seg-001"/>
+                        <constraint firstAttribute="width" constant="104" id="W-seg-001"/>
+                    </constraints>
+                    <segments>
+                        <segment title="A"/>
+                        <segment title="a"/>
+                    </segments>
+                    <connections>
+                        <action selector="caseChanged:" destination="-1" eventType="valueChanged" id="ACT-case-001"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLR-vw-001" userLabel="coloringView" customClass="LetterColoringView" customModule="KidX" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="206.66666666666669" width="393" height="527.33333333333326"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TB-vw-001" userLabel="toolbarView">
+                    <rect key="frame" x="0.0" y="718" width="393" height="134"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="STK-width-001" userLabel="widthStack">
+                            <rect key="frame" x="20" y="18" width="132" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-width-0">
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="H-w0"/>
+                                        <constraint firstAttribute="width" constant="36" id="W-w0"/>
+                                    </constraints>
+                                    <state key="normal">
+                                        <imageReference key="image" image="pencil.tip" catalog="system" symbolScale="small"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="widthTapped:" destination="-1" eventType="touchUpInside" id="ACT-w0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-width-1">
+                                    <rect key="frame" x="48" y="0.0" width="36" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="H-w1"/>
+                                        <constraint firstAttribute="width" constant="36" id="W-w1"/>
+                                    </constraints>
+                                    <state key="normal">
+                                        <imageReference key="image" image="paintbrush.pointed.fill" catalog="system" symbolScale="small"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="widthTapped:" destination="-1" eventType="touchUpInside" id="ACT-w1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-width-2">
+                                    <rect key="frame" x="96" y="0.0" width="36" height="36"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="H-w2"/>
+                                        <constraint firstAttribute="width" constant="36" id="W-w2"/>
+                                    </constraints>
+                                    <state key="normal">
+                                        <imageReference key="image" image="highlighter" catalog="system" symbolScale="small"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="widthTapped:" destination="-1" eventType="touchUpInside" id="ACT-w2"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="STK-color-001" userLabel="colorStack">
+                            <rect key="frame" x="20" y="72" width="210" height="34"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-color-0">
+                                    <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="H-c0"/>
+                                        <constraint firstAttribute="width" constant="34" id="W-c0"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="colorTapped:" destination="-1" eventType="touchUpInside" id="ACT-c0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-color-1">
+                                    <rect key="frame" x="44" y="0.0" width="34" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="H-c1"/>
+                                        <constraint firstAttribute="width" constant="34" id="W-c1"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="colorTapped:" destination="-1" eventType="touchUpInside" id="ACT-c1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-color-2">
+                                    <rect key="frame" x="88" y="0.0" width="34" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="H-c2"/>
+                                        <constraint firstAttribute="width" constant="34" id="W-c2"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="colorTapped:" destination="-1" eventType="touchUpInside" id="ACT-c2"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-color-3">
+                                    <rect key="frame" x="132" y="0.0" width="34" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="H-c3"/>
+                                        <constraint firstAttribute="width" constant="34" id="W-c3"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="colorTapped:" destination="-1" eventType="touchUpInside" id="ACT-c3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-color-4">
+                                    <rect key="frame" x="176" y="0.0" width="34" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="34" id="H-c4"/>
+                                        <constraint firstAttribute="width" constant="34" id="W-c4"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="colorTapped:" destination="-1" eventType="touchUpInside" id="ACT-c4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-clear-001" userLabel="clearButton">
+                            <rect key="frame" x="273" y="68" width="96" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="H-clear"/>
+                                <constraint firstAttribute="width" constant="96" id="W-clear"/>
+                            </constraints>
+                            <state key="normal" title="Clear"/>
+                            <connections>
+                                <action selector="clearTapped:" destination="-1" eventType="touchUpInside" id="ACT-clear"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="BTN-clear-001" secondAttribute="trailing" constant="24" id="C-clear-r"/>
+                        <constraint firstItem="BTN-clear-001" firstAttribute="centerY" secondItem="STK-color-001" secondAttribute="centerY" id="C-clear-y"/>
+                        <constraint firstItem="STK-color-001" firstAttribute="leading" secondItem="STK-width-001" secondAttribute="leading" id="C-cs-l"/>
+                        <constraint firstItem="STK-color-001" firstAttribute="top" secondItem="STK-width-001" secondAttribute="bottom" constant="18" id="C-cs-t"/>
+                        <constraint firstItem="STK-width-001" firstAttribute="leading" secondItem="TB-vw-001" secondAttribute="leading" constant="20" id="C-ws-l"/>
+                        <constraint firstItem="STK-width-001" firstAttribute="top" secondItem="TB-vw-001" secondAttribute="top" constant="18" id="C-ws-t"/>
+                        <constraint firstAttribute="height" constant="134" id="H-tb-001"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BTN-bk-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="C-bk-l"/>
+                <constraint firstItem="BTN-bk-001" firstAttribute="centerY" secondItem="LBL-tt-001" secondAttribute="centerY" id="C-bk-y"/>
+                <constraint firstItem="CLR-vw-001" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C-clr-l"/>
+                <constraint firstAttribute="trailing" secondItem="CLR-vw-001" secondAttribute="trailing" id="C-clr-r"/>
+                <constraint firstItem="CLR-vw-001" firstAttribute="top" secondItem="SEG-case-001" secondAttribute="bottom" constant="8" id="C-clr-t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SEG-case-001" secondAttribute="trailing" constant="24" id="C-seg-r"/>
+                <constraint firstItem="SEG-case-001" firstAttribute="top" secondItem="LBL-tt-001" secondAttribute="bottom" constant="18" id="C-seg-t"/>
+                <constraint firstAttribute="bottom" secondItem="TB-vw-001" secondAttribute="bottom" id="C-tb-b"/>
+                <constraint firstItem="TB-vw-001" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C-tb-l"/>
+                <constraint firstAttribute="trailing" secondItem="TB-vw-001" secondAttribute="trailing" id="C-tb-r"/>
+                <constraint firstItem="TB-vw-001" firstAttribute="top" secondItem="CLR-vw-001" secondAttribute="bottom" constant="-16" id="C-tb-t"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="leading" secondItem="BTN-bk-001" secondAttribute="trailing" constant="18" id="C-tt-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LBL-tt-001" secondAttribute="trailing" constant="74" id="C-tt-r"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="2" id="C-tt-t"/>
+            </constraints>
+            <point key="canvasLocation" x="126" y="125"/>
         </view>
     </objects>
+    <resources>
+        <image name="highlighter" catalog="system" width="128" height="120"/>
+        <image name="paintbrush.pointed.fill" catalog="system" width="128" height="118"/>
+        <image name="pencil.tip" catalog="system" width="99" height="128"/>
+    </resources>
 </document>

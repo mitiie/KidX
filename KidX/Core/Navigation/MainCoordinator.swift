@@ -50,6 +50,12 @@ final class MainCoordinator: NavigationStateDelegate {
         case .writingPractice(let learnVM):
             push(WritingPracticeController(viewModel: learnVM), animated: animated)
 
+        case .listAlphabet:
+            push(makeListAlphabetController(), animated: animated)
+
+        case .drawLetter(let letter):
+            push(makeDrawLetterController(letter: letter), animated: animated)
+
         case .listGame(let viewModel):
             push(ListGameController(viewModel: viewModel), animated: animated)
 
@@ -90,6 +96,16 @@ final class MainCoordinator: NavigationStateDelegate {
     private func makeAchieveController() -> UIViewController {
         let viewModel = AchievementStatsViewModel(navigation: navigationState)
         return AchieveController(viewModel: viewModel)
+    }
+
+    private func makeListAlphabetController() -> UIViewController {
+        let viewModel = ListAlphabetViewModel(navigation: navigationState)
+        return ListAlphabetController(viewModel: viewModel)
+    }
+
+    private func makeDrawLetterController(letter: AlphabetLetter) -> UIViewController {
+        let viewModel = DrawLetterViewModel(navigation: navigationState, letter: letter)
+        return DrawLetterController(viewModel: viewModel)
     }
 
     private func makeFlashCardDetailController(input: FlashCardDetailRouteInput) -> UIViewController {
