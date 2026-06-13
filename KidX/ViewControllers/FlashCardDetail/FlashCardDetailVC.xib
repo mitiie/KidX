@@ -3,12 +3,14 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlashCardDetailVC" customModule="KidX" customModuleProvider="target">
             <connections>
+                <outlet property="audioButton" destination="Rdy-jD-shu" id="nDq-RZ-2F4"/>
                 <outlet property="backGroundIMG" destination="WiZ-LE-khw" id="tlC-WS-sEk"/>
                 <outlet property="btnBack" destination="iZt-kG-nKR" id="p6S-hg-jBx"/>
                 <outlet property="btnFlip" destination="pHb-a5-1rA" id="v5y-z6-WVU"/>
@@ -90,6 +92,22 @@
                                 <constraint firstAttribute="height" constant="25" id="Th3-er-YrM"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdy-jD-shu" userLabel="audioButton">
+                            <rect key="frame" x="266.33333333333331" y="65.666666666666686" width="46" height="46"/>
+                            <color key="backgroundColor" red="1" green="0.75294117647058822" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="0BG-E9-a1g"/>
+                                <constraint firstAttribute="width" secondItem="Rdy-jD-shu" secondAttribute="height" id="R5K-pb-vu2"/>
+                            </constraints>
+                            <color key="tintColor" red="0.29019607843137252" green="0.21568627450980393" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <inset key="contentEdgeInsets" minX="9" minY="9" maxX="9" maxY="9"/>
+                            <state key="normal">
+                                <imageReference key="image" image="speaker.wave.3.fill" catalog="system" symbolScale="small"/>
+                            </state>
+                            <connections>
+                                <action selector="audioButtonTapped:" destination="-1" eventType="touchUpInside" id="Wtx-lJ-oRL"/>
+                            </connections>
+                        </button>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="detail" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olI-lt-wN6">
                             <rect key="frame" x="48.666666666666657" y="182.33333333333331" width="263.66666666666674" height="23"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,10 +124,12 @@
                         <constraint firstItem="olI-lt-wN6" firstAttribute="centerY" secondItem="e7V-S3-702" secondAttribute="centerY" id="7AW-iR-1GB"/>
                         <constraint firstItem="e7V-S3-702" firstAttribute="trailing" secondItem="YUu-92-b13" secondAttribute="trailing" constant="8" id="AQd-CI-Y6L"/>
                         <constraint firstItem="WiZ-LE-khw" firstAttribute="leading" secondItem="9Ns-aD-KnZ" secondAttribute="leading" id="C9Y-NI-wUF"/>
+                        <constraint firstItem="Rdy-jD-shu" firstAttribute="top" secondItem="e7V-S3-702" secondAttribute="top" id="IC4-LI-MBn"/>
                         <constraint firstItem="e7V-S3-702" firstAttribute="centerY" secondItem="WiZ-LE-khw" secondAttribute="centerY" constant="-35" id="LiT-vw-fDG"/>
                         <constraint firstItem="e7V-S3-702" firstAttribute="bottom" secondItem="YUu-92-b13" secondAttribute="bottom" constant="8" id="SJi-aG-URa"/>
                         <constraint firstItem="W8P-3c-J7q" firstAttribute="trailing" secondItem="WiZ-LE-khw" secondAttribute="trailing" id="TxZ-R7-uU2"/>
                         <constraint firstItem="WiZ-LE-khw" firstAttribute="top" secondItem="9Ns-aD-KnZ" secondAttribute="top" id="UiS-GF-Wkv"/>
+                        <constraint firstItem="Rdy-jD-shu" firstAttribute="trailing" secondItem="e7V-S3-702" secondAttribute="trailing" id="Z4h-RP-th8"/>
                         <constraint firstItem="e7V-S3-702" firstAttribute="width" secondItem="WiZ-LE-khw" secondAttribute="width" multiplier="0.73" id="akE-VA-XKB"/>
                         <constraint firstItem="olI-lt-wN6" firstAttribute="trailing" secondItem="e7V-S3-702" secondAttribute="trailing" id="d2h-gv-EsV"/>
                         <constraint firstItem="e7V-S3-702" firstAttribute="height" secondItem="WiZ-LE-khw" secondAttribute="height" multiplier="0.56" id="iVb-oz-AN3"/>
@@ -139,7 +159,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QsZ-z9-ZaT">
-                    <rect key="frame" x="259.66666666666669" y="772" width="12.333333333333314" height="24"/>
+                    <rect key="frame" x="269.66666666666669" y="772" width="12.333333333333314" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="0.12549019607843137" green="0.76470588235294112" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -154,7 +174,7 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Remember" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2y-fw-y2N">
-                    <rect key="frame" x="35.666666666666657" y="801" width="95.333333333333343" height="14.333333333333371"/>
+                    <rect key="frame" x="35.666666666666664" y="801" width="95.333333333333343" height="14.333333333333371"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -244,6 +264,7 @@
         <image name="ic_remember" width="65" height="24"/>
         <image name="icon_next" width="91" height="70.666664123535156"/>
         <image name="previous" width="91" height="70.666664123535156"/>
+        <image name="speaker.wave.3.fill" catalog="system" width="128" height="84"/>
         <image name="star_selected" width="22" height="22.666666030883789"/>
     </resources>
 </document>

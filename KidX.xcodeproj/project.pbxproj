@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		052330C02FDC89A700BE407A /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 052330BF2FDC89A700BE407A /* MBProgressHUD */; };
+		0523368C2FDD210C00BE407A /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0523368B2FDD210C00BE407A /* DGCharts */; };
 		0525D2212F82B2270065E83E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0525D2202F82B2270065E83E /* Lottie */; };
 		052766472F73004400D46095 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 052766462F73004400D46095 /* FirebaseAuthCombine-Community */; };
 		052766492F73004400D46095 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 052766482F73004400D46095 /* FirebaseDatabase */; };
@@ -50,6 +51,7 @@
 				052766472F73004400D46095 /* FirebaseAuthCombine-Community in Frameworks */,
 				052766492F73004400D46095 /* FirebaseDatabase in Frameworks */,
 				05276A162F74602A00D46095 /* GoogleSignIn in Frameworks */,
+				0523368C2FDD210C00BE407A /* DGCharts in Frameworks */,
 				0525D2212F82B2270065E83E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +109,7 @@
 				05276A172F74602A00D46095 /* GoogleSignInSwift */,
 				0525D2202F82B2270065E83E /* Lottie */,
 				052330BF2FDC89A700BE407A /* MBProgressHUD */,
+				0523368B2FDD210C00BE407A /* DGCharts */,
 			);
 			productName = KidX;
 			productReference = 05275B252F69C99500D46095 /* KidX.app */;
@@ -160,6 +163,7 @@
 				05276A142F74602A00D46095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				0525D21F2F82B2270065E83E /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				052330BE2FDC89A700BE407A /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				0523368A2FDD210C00BE407A /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 05275B262F69C99500D46095 /* Products */;
@@ -411,6 +415,14 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		0523368A2FDD210C00BE407A /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		0525D21F2F82B2270065E83E /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -442,6 +454,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 052330BE2FDC89A700BE407A /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
 			productName = MBProgressHUD;
+		};
+		0523368B2FDD210C00BE407A /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0523368A2FDD210C00BE407A /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 		0525D2202F82B2270065E83E /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

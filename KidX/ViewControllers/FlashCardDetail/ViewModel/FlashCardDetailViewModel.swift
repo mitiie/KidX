@@ -55,6 +55,7 @@ class FlashCardDetailViewModel {
         guard currentIndex < itemList.count else { return false }
         itemList[currentIndex].isRemembered = true
         rememberCount += 1
+        AchievementStatsService.shared.recordFlashCardAnswer(remembered: true)
         return moveToNextCard()
     }
 
@@ -62,6 +63,7 @@ class FlashCardDetailViewModel {
         guard currentIndex < itemList.count else { return false }
         itemList[currentIndex].isRemembered = false
         dontRememberCount += 1
+        AchievementStatsService.shared.recordFlashCardAnswer(remembered: false)
         return moveToNextCard()
     }
 

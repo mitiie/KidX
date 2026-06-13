@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 enum RelearnType {
     case remembered
@@ -26,6 +27,7 @@ class FlashCardDetailVC: BaseController {
     @IBOutlet weak var dontRememberCount: UILabel!
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var btnFlip: UIButton!
+    @IBOutlet weak var audioButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
 
@@ -36,6 +38,7 @@ class FlashCardDetailVC: BaseController {
     @IBOutlet weak var rememState: UIImageView!
 
     private let viewModel: FlashCardDetailViewModel
+    private static let speechSynthesizer = AVSpeechSynthesizer()
     private var isFlipped = false
 
     init(viewModel: FlashCardDetailViewModel) {
@@ -61,6 +64,10 @@ class FlashCardDetailVC: BaseController {
 
         descriptionLabel.font = UIFont.custom(20, .regular)
         progressBar.transform = CGAffineTransform(scaleX: 1, y: 3)
+        audioButton.layer.cornerRadius = 22
+        audioButton.clipsToBounds = true
+        audioButton.tintColor = UIColor(hex: 0x4A3700)
+        audioButton.accessibilityLabel = "Listen".localize()
 
         btnNext.isHidden = !viewModel.isRelearnMode
         btnPrevious.isHidden = !viewModel.isRelearnMode
@@ -172,6 +179,24 @@ class FlashCardDetailVC: BaseController {
         progressBar.setProgress(viewModel.progress, animated: true)
     }
 
+    private func speakCurrentCardContent() {
+        guard let item = viewModel.currentItem else { return }
+
+        let text = (isFlipped ? item.description : item.title)
+            .localize()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !text.isEmpty else { return }
+
+        if Self.speechSynthesizer.isSpeaking {
+            Self.speechSynthesizer.stopSpeaking(at: .immediate)
+        }
+
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: LocalizeHelper.shared.isVietnameseSelected ? "vi-VN" : "en-US")
+        utterance.rate = 0.45
+        Self.speechSynthesizer.speak(utterance)
+    }
+
     private func loadImage(from path: String?) -> UIImage? {
         guard let path = path, !path.isEmpty else { return nil }
 
@@ -217,6 +242,10 @@ class FlashCardDetailVC: BaseController {
             }
             showCurrentCard()
         }
+    }
+
+    @IBAction func audioButtonTapped(_ sender: UIButton) {
+        speakCurrentCardContent()
     }
 
     @IBAction func btnBackTapped(_ sender: UIButton) {

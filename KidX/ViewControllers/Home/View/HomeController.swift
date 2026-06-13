@@ -13,6 +13,7 @@ class HomeController: BaseController {
     private enum Row: Int, CaseIterable {
         case popular
         case basic
+        case stats
     }
 
     init(viewModel: HomeViewModel) {
@@ -37,11 +38,14 @@ class HomeController: BaseController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.registerNib(for: StatsTableCell.self)
         tableView.registerNib(for: PopularTableCell.self)
         tableView.registerNib(for: BasicTableCell.self)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        tableView.contentInset.bottom = 130
+        tableView.verticalScrollIndicatorInsets.bottom = 130
     }
 }
 
@@ -58,6 +62,8 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
             return 300
         case .basic:
             return 230
+        case .stats:
+            return 247
         }
     }
 
@@ -65,6 +71,12 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
         guard let row = Row(rawValue: indexPath.row) else { return UITableViewCell() }
 
         switch row {
+        case .stats:
+            let cell: StatsTableCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.configure(with: viewModel.statsSummary)
+            cell.delegate = self
+            return cell
+
         case .popular:
             let cell: PopularTableCell = tableView.dequeueReusableCell(for: indexPath)
             cell.configure(with: viewModel.popularCategories)
@@ -89,5 +101,11 @@ extension HomeController: PopularTableCellDelegate {
 extension HomeController: BasicTableCellDelegate {
     func basicTableCell(_ cell: BasicTableCell, didSelectCategory category: BasicFlashCardCategory) {
         viewModel.navigateToListFlashCardBasic(category: category)
+    }
+}
+
+extension HomeController: StatsTableCellDelegate {
+    func statsTableCellDidTap(_ cell: StatsTableCell) {
+        viewModel.navigateToAchieve()
     }
 }

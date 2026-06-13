@@ -41,6 +41,8 @@ final class SavedObjectsManager {
         if let encoded = try? JSONEncoder().encode(list) {
             UserDefaults.standard.set(encoded, forKey: metadataKey)
         }
+
+        AchievementStatsService.shared.recordDiscovery()
         
         // Post a notification to reload the collection view
         NotificationCenter.default.post(name: NSNotification.Name("ReloadSavedObjects"), object: nil)
@@ -79,6 +81,10 @@ final class SavedObjectsManager {
         items.append(defaultCat)
         
         return items
+    }
+
+    func savedUserObjectCount() -> Int {
+        return getMetadataList().count
     }
     
     private func getMetadataList() -> [SavedMetadata] {

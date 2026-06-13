@@ -115,6 +115,27 @@
 "English" = "Tiếng Anh";
 "Tap to flip" = "Chạm để lật";
 "Listen" = "Nghe phát âm";
+"Stats &\nAchievements" = "Thống kê &\nThành tựu";
+"Level %d" = "Cấp độ %d";
+"You completed %d%% of this week's challenges!" = "Bé đã hoàn thành %d%% thử thách tuần này!";
+"Achievements" = "Thành tựu";
+"Today" = "Hôm nay";
+"This Week" = "Tuần này";
+"TIME" = "THỜI GIAN";
+"STARS" = "NGÔI SAO";
+"COMPLETED" = "HOÀN THÀNH";
+"PROGRESS" = "SỰ TIẾN BỘ";
+"Weekly Activity" = "Hoạt động trong tuần";
+"Completed exercises" = "Bài tập đã làm";
+"Achievements earned" = "Thành tựu đạt được";
+"See all  ›" = "Xem tất cả  ›";
+"%d min" = "%d phút";
+"Math Hero" = "Siêu Nhân Toán Học";
+"Completed math lessons" = "Hoàn thành bài toán";
+"Little Bookworm" = "Một Sách Nhí";
+"Read 5 stories" = "Đọc 5 câu chuyện";
+"Explorer" = "Nhà Khám Phá";
+"Found new objects" = "Tìm thấy đồ vật mới";
 
 /* Treasure Hunt Game */
 "DAILY CHALLENGES" = "THỬ THÁCH MỖI NGÀY";

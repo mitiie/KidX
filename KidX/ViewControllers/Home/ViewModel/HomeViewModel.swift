@@ -12,6 +12,7 @@ final class HomeViewModel {
 
     private(set) var popularCategories: [PopularFlashCardCategory] = []
     private(set) var basicCategories: [BasicFlashCardCategory] = []
+    private(set) var statsSummary: AchievementStatsSummary = AchievementStatsService.shared.loadSnapshot().summary
     private(set) var itemList: [FlashCardItem] = []
     private(set) var titleText: String = ""
 
@@ -24,6 +25,7 @@ final class HomeViewModel {
     func loadData() {
         popularCategories = PopularFlashCardService.loadCategories()
         basicCategories = BasicFlashCardService.loadCategories()
+        statsSummary = AchievementStatsService.shared.loadSnapshot().summary
     }
 
     func selectCategory(_ category: PopularFlashCardCategory) {
@@ -68,6 +70,10 @@ final class HomeViewModel {
 
     func navigateToListFlashCardBasic(category: BasicFlashCardCategory) {
         navigation.push(.listFlashCardBasic(category))
+    }
+
+    func navigateToAchieve() {
+        navigation.push(.achieve)
     }
 
     func navigateToFlashCardDetail(items: [FlashCardItem], category: String) {

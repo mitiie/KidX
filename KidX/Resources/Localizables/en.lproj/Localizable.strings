@@ -121,6 +121,27 @@
 "English" = "English";
 "Tap to flip" = "Tap to flip";
 "Listen" = "Listen";
+"Stats &\nAchievements" = "Stats &\nAchievements";
+"Level %d" = "Level %d";
+"You completed %d%% of this week's challenges!" = "You completed %d%% of this week's challenges!";
+"Achievements" = "Achievements";
+"Today" = "Today";
+"This Week" = "This Week";
+"TIME" = "TIME";
+"STARS" = "STARS";
+"COMPLETED" = "COMPLETED";
+"PROGRESS" = "PROGRESS";
+"Weekly Activity" = "Weekly Activity";
+"Completed exercises" = "Completed exercises";
+"Achievements earned" = "Achievements earned";
+"See all  ›" = "See all  ›";
+"%d min" = "%d min";
+"Math Hero" = "Math Hero";
+"Completed math lessons" = "Completed math lessons";
+"Little Bookworm" = "Little Bookworm";
+"Read 5 stories" = "Read 5 stories";
+"Explorer" = "Explorer";
+"Found new objects" = "Found new objects";
 
 /* Treasure Hunt Game */
 "DAILY CHALLENGES" = "DAILY CHALLENGES";
