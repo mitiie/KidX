@@ -1,0 +1,56 @@
+@startuml SD_ThemMoiThuThach
+skinparam defaultFontName Arial
+skinparam defaultFontSize 18
+skinparam shadowing false
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor #555555
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Quản trị viên" as Admin
+boundary "Giao diện thêm mới" as UI
+control "Hệ thống" as Controller
+entity "Cơ sở dữ liệu" as CSDL
+
+Admin -> UI : 1. Nhập thông tin thử thách và nhấn "Lưu"
+activate UI
+
+UI -> Controller : 2. Gửi yêu cầu thêm mới thử thách
+activate Controller
+
+Controller -> Controller : 3. Kiểm tra thông tin hợp lệ
+
+alt Lỗi thiếu dữ liệu (Ngoại lệ 1)
+  Controller --[#red]> UI : 4. Trả thông báo thiếu dữ liệu
+  UI --[#red]> Admin : 5. Cảnh báo lỗi thiếu thông tin
+
+else Thông tin hợp lệ
+  Controller -> CSDL : 4. Lưu thử thách mới vào CSDL
+  activate CSDL
+  
+  alt Lỗi lưu trữ (Ngoại lệ 2)
+    CSDL --[#red]> Controller : 5. Báo lỗi lưu trữ
+    Controller --[#red]> UI : 6. Trả thông báo lưu thất bại
+    UI --[#red]> Admin : 7. Thông báo lỗi & quay lui trạng thái
+    
+  else Lưu thành công (Luồng chính)
+    CSDL --> Controller : 5. Xác nhận lưu thành công
+    deactivate CSDL
+    Controller --> UI : 6. Trả kết quả thêm thành công
+    deactivate Controller
+    UI --> Admin : 7. Hiển thị thông báo thành công
+  end
+end
+
+deactivate UI
+@enduml

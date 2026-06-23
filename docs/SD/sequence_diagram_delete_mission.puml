@@ -1,0 +1,57 @@
+@startuml SD_XoaThuThach
+skinparam defaultFontName Arial
+skinparam defaultFontSize 18
+skinparam shadowing false
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor #555555
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Quản trị viên" as Admin
+boundary "Giao diện xóa thử thách" as UI
+control "Hệ thống" as Controller
+entity "Cơ sở dữ liệu" as CSDL
+
+Admin -> UI : 1. Chọn xóa thử thách
+activate UI
+
+UI -> UI : 2. Hiển thị hộp thoại xác nhận xóa
+
+alt Hủy bỏ yêu cầu xóa (Ngoại lệ 1)
+  Admin -> UI : 3. Nhấn "Hủy"
+  UI -> UI : Đóng hộp thoại xác nhận
+
+else Xác nhận xóa
+  Admin -> UI : 3. Nhấn "Xác nhận"
+  UI -> Controller : 4. Gửi yêu cầu xóa thử thách
+  activate Controller
+
+  Controller -> CSDL : 5. Yêu cầu xóa node thử thách trên Firebase
+  activate CSDL
+  
+  alt Lỗi xóa dữ liệu (Ngoại lệ 2)
+    CSDL --[#red]> Controller : 6. Báo lỗi hệ thống
+    Controller --[#red]> UI : 7. Trả thông báo xóa thất bại
+    UI --[#red]> Admin : 8. Cảnh báo lỗi xóa thất bại
+    
+  else Xóa thành công
+    CSDL --> Controller : 6. Xác nhận đã xóa thành công
+    deactivate CSDL
+    Controller --> UI : 7. Trả kết quả xóa thành công
+    deactivate Controller
+    UI --> Admin : 8. Thông báo thành công & cập nhật lại danh sách
+  end
+end
+
+deactivate UI
+@enduml
