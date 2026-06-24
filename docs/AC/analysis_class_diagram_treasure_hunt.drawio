@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="diagram_class_treasure_hunt" name="Analysis Class Diagram Treasure Hunt">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="950" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Actor: Người dùng -->
+        <mxCell id="actor_user" value="Người dùng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#333333;strokeWidth=1.5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Boundary: GiaoDienDanhSachThuThach (ListGameController) -->
+        <mxCell id="class_ui" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;GiaoDienDanhSachThuThach&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ hienThiDanhSachNhiemVu()&lt;br&gt;+ capNhatTienTrinh()&lt;br&gt;+ clickThucHienNhiemVu()&lt;br&gt;+ clickQuayLai()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="130" y="110" width="200" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- Boundary: GiaoDienKetQuaNhanDang (DetectResultView) -->
+        <mxCell id="class_ui_result" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;GiaoDienKetQuaNhanDang&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ hienThiThanhCong()&lt;br&gt;+ hienThiThatBai()&lt;br&gt;+ phatAmThanh()&lt;br&gt;+ clickLuu()&lt;br&gt;+ clickThuLai()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="130" y="290" width="200" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- Control: DieuKhienTruyTimDoVat -->
+        <mxCell id="class_control" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;DieuKhienTruyTimDoVat&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ taiDanhSachTuFirebase()&lt;br&gt;+ xuLyNhanDangAnh(buffer)&lt;br&gt;+ kiemTraKetQua(rawLabel)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="410" y="200" width="200" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- Entity: MissionData -->
+        <mxCell id="class_entity_mission" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;MissionData&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;- id&lt;br&gt;- title&lt;br&gt;- description&lt;br&gt;- isCompleted&lt;br&gt;- keywords&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ layDanhSachNhiemVu()&lt;br&gt;+ setMissionCompleted(id)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="690" y="40" width="190" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Entity: MobileNet -->
+        <mxCell id="class_entity_model" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;MobileNet&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ predict(image)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="690" y="220" width="190" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Entity: SavedObjectItem -->
+        <mxCell id="class_entity_saved" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;SavedObjectItem&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ save(image, name)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="690" y="350" width="190" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Connections -->
+        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" edge="1" parent="1" source="actor_user" target="class_ui">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="270" />
+              <mxPoint x="100" y="185" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" edge="1" parent="1" source="actor_user" target="class_ui_result">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="100" y="270" />
+              <mxPoint x="100" y="365" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" edge="1" parent="1" source="class_ui" target="class_control">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="185" />
+              <mxPoint x="370" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" edge="1" parent="1" source="class_ui_result" target="class_control">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="370" y="365" />
+              <mxPoint x="370" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" edge="1" parent="1" source="class_control" target="class_entity_mission">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="270" />
+              <mxPoint x="650" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" edge="1" parent="1" source="class_control" target="class_entity_model">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="270" />
+              <mxPoint x="650" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" edge="1" parent="1" source="class_control" target="class_entity_saved">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="270" />
+              <mxPoint x="650" y="405" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

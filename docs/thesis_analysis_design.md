@@ -109,7 +109,7 @@ Quản trị viên
 **Tiền điều kiện**
 Quản trị viên đăng nhập vào hệ thống và đang ở màn hình danh sách thẻ ghi nhớ.
 
-**Đảm bảo tối thiểu**
+**Điều kiện thất bại**
 Hệ thống giữ nguyên thông tin thẻ ghi nhớ cũ và hủy bỏ các thay đổi đã thực hiện.
 
 **Đảm bảo thành công**
@@ -159,7 +159,7 @@ Quản trị viên
 **Tiền điều kiện**
 Quản trị viên đăng nhập vào hệ thống và đang ở màn hình danh sách thẻ ghi nhớ.
 
-**Đảm bảo tối thiểu**
+**Điều kiện thất bại**
 Hệ thống không thực hiện xóa thẻ và giữ nguyên dữ liệu CSDL.
 
 **Đảm bảo thành công**
@@ -200,7 +200,7 @@ Quản trị viên
 **Tiền điều kiện**
 Quản trị viên đăng nhập vào hệ thống quản lý.
 
-**Đảm bảo tối thiểu**
+**Điều kiện thất bại**
 Hệ thống loại bỏ các thông tin đã nhập lỗi và quay lại giao diện quản lý danh sách thử thách.
 
 **Đảm bảo thành công**
@@ -247,7 +247,7 @@ Quản trị viên
 **Tiền điều kiện**
 Quản trị viên đăng nhập vào hệ thống quản lý và đang ở giao diện danh sách thử thách.
 
-**Đảm bảo tối thiểu**
+**Điều kiện thất bại**
 Hệ thống giữ nguyên thông tin thử thách cũ và hủy bỏ các thay đổi đã thực hiện.
 
 **Đảm bảo thành công**
@@ -294,7 +294,7 @@ Quản trị viên
 **Tiền điều kiện**
 Quản trị viên đăng nhập vào hệ thống quản lý và đang ở giao diện danh sách thử thách.
 
-**Đảm bảo tối thiểu**
+**Điều kiện thất bại**
 Hệ thống không thực hiện xóa thử thách và giữ nguyên dữ liệu CSDL.
 
 **Đảm bảo thành công**
@@ -370,7 +370,117 @@ Hệ thống lưu tiến trình học tập của người dùng.
 
 ---
 
-### 2.1.11 Biểu đồ hoạt động (Activity Diagram)
+### 2.1.11 Đặc tả chi tiết Use Case "Tập viết theo mẫu các chữ cái"
+
+*   **Tên Usecase:** Tập viết theo mẫu các chữ cái
+*   **Tác nhân:** Người dùng (Trẻ em)
+*   **Mức:** 1 (Mức người dùng - User Goal)
+*   **Điều kiện tiên quyết:** Người dùng đang ở giao diện danh sách chữ cái (ListAlphabet) và tiến hành chọn một chữ cái.
+*   **Điều kiện kích hoạt:** Người dùng chạm vào thẻ chữ cái bất kỳ trên danh sách.
+*   **Điều kiện thành công:** Người dùng hoàn thành quá trình luyện viết và quay lại màn hình danh sách với tiến trình được cập nhật (nếu có).
+*   **Điều kiện thất bại:** Trình vẽ không thể hiển thị do lỗi tải tài nguyên mẫu chữ, hệ thống giữ nguyên trạng thái cũ của màn hình danh sách.
+
+*   **Luồng sự kiện chính:**
+    1. Hệ thống hiển thị giao diện tập viết với chữ mẫu tương ứng (mặc định hiển thị chữ in hoa, màu vẽ cam và nét vẽ cỡ trung bình).
+    2. Người dùng thực hiện các tùy chọn thiết lập bảng vẽ (nếu muốn):
+        - **Chọn loại ký tự (in hoa / viết thường):** Người dùng chạm vào Segmented Control để đổi kiểu chữ. Hệ thống xóa sạch toàn bộ nét vẽ hiện tại trên bảng vẽ và thay thế bằng khuôn mẫu tương ứng (chữ thường hoặc chữ hoa).
+        - **Chọn màu vẽ hoặc kích thước nét vẽ:** Người dùng chạm chọn màu sắc mới trên khay màu hoặc thay đổi kích cỡ bút vẽ. Hệ thống ghi nhận thiết lập và áp dụng ngay lập tức cho nét vẽ tiếp theo.
+        - **Xóa bảng vẽ:** Người dùng nhấn nút "Clear". Hệ thống xóa toàn bộ nét vẽ cũ để người dùng viết lại từ đầu.
+    3. Người dùng di chuyển ngón tay trên bảng vẽ để tập viết theo khuôn chữ mẫu.
+    4. Hệ thống liên tục nhận dạng cử chỉ vẽ và hiển thị nét vẽ thời gian thực trên màn hình theo màu sắc và kích thước nét vẽ đang cấu hình.
+    5. Người dùng hoàn thành và nhấn nút quay lại (Back).
+    6. Hệ thống đóng giao diện tập viết và đưa người dùng về giao diện danh sách chữ cái.
+
+*   **Luồng sự kiện ngoại lệ:**
+    *   **Ngoại lệ 1: Thiết bị không tải được tài nguyên hình ảnh chữ mẫu**
+        - Hệ thống phát hiện lỗi không tìm thấy mẫu chữ tương ứng trong thư viện.
+        - Hệ thống hiển thị cảnh báo lỗi tải dữ liệu.
+        - Hệ thống tự động đóng giao diện tập viết và quay về màn hình danh sách chữ cái.
+
+---
+
+### 2.1.12 Đặc tả chi tiết Use Case "Tập viết chữ số 0 - 9"
+
+*   **Tác nhân:** Người dùng (Trẻ em)
+*   **Mức:** 1 (Mức người dùng - User Goal)
+*   **Điều kiện tiên quyết:** Người dùng đang ở màn hình chính của phần học tập.
+*   **Điều kiện kích hoạt:** Người dùng chạm chọn thẻ "Luyện Viết Chữ Số" trên màn hình học tập.
+*   **Điều kiện thành công:** Người dùng chọn được chữ số muốn tập viết, thực hiện vẽ lên bảng đen, hệ thống nhận diện nét vẽ bằng mô hình AI và hiển thị kết quả.
+*   **Điều kiện thất bại:** Giao diện bảng vẽ tập viết số lỗi không thể khởi tạo.
+
+*   **Luồng sự kiện chính:**
+    1. Hệ thống hiển thị giao diện tập viết chữ số gồm:
+        - Một bảng vẽ đen ở trạng thái trống.
+        - Thanh chọn chữ số từ 0 đến 9, mặc định chọn số 0.
+        - Nhãn hướng dẫn hiển thị yêu cầu mặc định: “Bé hãy viết số 0 lên bảng vẽ nhé”.
+        - Các nút chức năng điều khiển bảng vẽ: nút "Kiểm tra” màu xanh lá và nút "Xóa” màu đỏ.
+        - Nút "Quay lại".
+    2. Người dùng thực hiện các tùy chọn tương tác thiết lập hoặc bổ sung (nếu muốn):
+        - **Chọn số muốn tập viết:** Người dùng chạm chọn một nút số bất kỳ từ 0 đến 9 trên thanh chọn số. Hệ thống chuyển trạng thái kích hoạt sang số đó (đổi màu nền nút sang màu chủ đạo và chữ trắng), cập nhật nhãn hướng dẫn hiển thị số mới, đồng thời tự động xóa sạch bảng vẽ đen và ẩn kết quả kiểm tra trước đó.
+        - **Xóa nét vẽ để viết lại:** Người dùng chạm chọn nút "Clear". Hệ thống xóa sạch toàn bộ nét vẽ hiện tại trên bảng vẽ, reset bộ nhớ đệm nhận dạng và ẩn khung hiển thị kết quả kiểm tra.
+    3. Người dùng sử dụng ngón tay thực hiện thao tác vẽ nét chữ số đã chọn lên bảng vẽ đen.
+    4. Hệ thống liên tục ghi nhận tọa độ di chuyển ngón tay của người dùng và hiển thị nét vẽ theo thời gian thực trên bảng vẽ đen.
+    5. Người dùng chạm chọn nút "Kiểm tra" để thực hiện nhận diện nét vẽ chữ số:
+        - **Trường hợp bảng vẽ trống:** Hệ thống bỏ qua yêu cầu kiểm tra (không thực hiện hành động nhận dạng).
+        - **Trường hợp bảng vẽ có nét vẽ:** Hệ thống trích xuất dữ liệu hình ảnh nét vẽ gửi sang mô hình AI. Mô hình tiến hành nhận dạng và trả về kết quả dự đoán:
+            - **Nhánh kết quả chính xác:** Hệ thống hiển thị chữ số nhận dạng được với màu xanh lá tại vùng kết quả, kèm theo thông báo chúc mừng: "Đúng rồi! Bé làm tốt lắm”.
+            - **Nhánh kết quả chưa chính xác:** Hệ thống hiển thị chữ số nhận dạng được với màu đỏ tại vùng kết quả, kèm theo thông điệp động viên: "Chưa đúng lắm, bé hãy thử viết lại nhé”.
+    6. Người dùng hoàn thành quá trình luyện viết và chạm chọn nút Quay lại.
+    7. Hệ thống đóng giao diện tập viết chữ số và đưa người dùng quay trở lại giao diện màn hình học tập chính.
+
+*   **Luồng sự kiện ngoại lệ:**
+    *   **Ngoại lệ: Không thể nhận dạng do nét viết không rõ ràng hoặc không hợp lệ**
+        - Hệ thống phát hiện mô hình AI trả về kết quả có độ tin cậy quá thấp hoặc nét chữ không đủ thông tin để nhận dạng chữ số.
+        - Hệ thống hiển thị hộp thoại cảnh báo: "Không thể nhận dạng”.
+        - Người dùng tương tác trên hộp thoại cảnh báo:
+            - Nếu người dùng chọn "Viết lại”: Hệ thống tự động xóa sạch bảng vẽ đen, đóng hộp thoại và đưa người dùng về trạng thái viết mới.
+            - Nếu người dùng chọn "Đóng”: Hệ thống đóng hộp thoại và giữ nguyên nét viết hiện tại trên bảng vẽ.
+
+---
+
+### 2.1.13 Đặc tả chi tiết Use Case "Thử thách truy tìm đồ vật"
+
+*   **Tác nhân:** Người dùng (Trẻ em)
+*   **Mức:** 1 (Mức người dùng - User Goal)
+*   **Điều kiện tiên quyết:** Người dùng đã đăng nhập hệ thống và đang ở màn hình khám phá (DiscoveryController).
+*   **Điều kiện kích hoạt:** Người dùng chạm chọn thẻ "Game truy tìm kho báu" trên màn hình khám phá.
+*   **Điều kiện thành công:** Người dùng hoàn thành thử thách bằng cách chụp ảnh hoặc tải ảnh vật thể chính xác; hệ thống ghi nhận trạng thái hoàn thành và lưu vật thể vào bộ sưu tập.
+*   **Điều kiện thất bại:** Lỗi tải danh sách thử thách từ Firebase, hệ thống giữ nguyên giao diện cũ.
+
+*   **Luồng sự kiện chính:**
+    1. Hệ thống gửi yêu cầu và tải danh sách các thử thách truy tìm đồ vật (missions) từ Firebase Realtime Database.
+    2. Hệ thống hiển thị giao diện danh sách thử thách (ListGameController) gồm:
+        - Biểu ngữ tiến trình thống kê số thử thách đã hoàn thành trên tổng số thử thách.
+        - Danh sách các thẻ thử thách chi tiết (màu nền, biểu tượng, tiêu đề và mô tả vật thể cần tìm).
+        - Nút "Quay lại" (Back).
+    3. Người dùng chạm chọn nút thực hiện trên một thẻ thử thách chưa hoàn thành.
+    4. Hệ thống hiển thị hộp thoại lựa chọn phương thức nạp ảnh: "Chụp ảnh" (Camera) hoặc "Chọn từ thư viện" (Photo Library).
+    5. Người dùng thực hiện phương thức nạp ảnh:
+        - **Trường hợp chụp ảnh:** Người dùng chọn "Chụp ảnh", hệ thống mở camera thiết bị, người dùng chụp ảnh vật thể thực tế và xác nhận chọn ảnh.
+        - **Trường hợp chọn từ thư viện:** Người dùng chọn "Chọn từ thư viện", hệ thống mở bộ sưu tập ảnh của thiết bị, người dùng chọn một ảnh vật thể có sẵn.
+    6. Hệ thống thực hiện nạp ảnh, hiển thị màn hình tải (loading) và chuyển ảnh qua mô hình AI (MobileNet) để tiến hành nhận diện phân loại vật thể.
+    7. Mô hình AI phân tích ảnh và trả về nhãn nhận diện có độ tin cậy cao nhất.
+    8. Hệ thống đối chiếu nhãn nhận diện với danh sách từ khóa tương ứng của thử thách:
+        - **Nhánh kết quả chính xác (Match):** Hệ thống ghi nhận thử thách đã hoàn thành, lưu trạng thái hoàn thành vào cơ sở dữ liệu cục bộ (UserDefaults), dịch nhãn nhận diện sang ngôn ngữ đã chọn và lưu ảnh vật thể vào bộ sưu tập chung (SavedObjectsManager). Hệ thống hiển thị hộp thoại kết quả thành công (DetectResultView) kèm thông điệp chúc mừng: "Congratulations! You found the [Tên vật thể]!" (Chúc mừng! Bé đã tìm thấy [Tên vật thể]!).
+        - **Nhánh kết quả chưa chính xác (Not Match):** Hệ thống hiển thị hộp thoại kết quả thất bại (DetectResultView) kèm hình ảnh và thông báo: "Oops! This looks like [Vật thể nhận dạng]. Try again!" (Ôi! Vật thể này trông giống [Vật thể nhận dạng]. Bé hãy thử lại nhé!). Người dùng chọn nút "Thử lại" (Retry) để quay lại bước 4 hoặc chọn "Đóng" (Close) để tắt hộp thoại.
+    9. Hệ thống cập nhật lại tiến trình hoàn thành và làm mới giao diện danh sách thử thách.
+    10. Người dùng chạm chọn nút Quay lại (Back).
+    11. Hệ thống đóng giao diện danh sách thử thách, đưa người dùng quay lại màn hình khám phá chính.
+
+*   **Luồng sự kiện ngoại lệ:**
+    *   **Ngoại lệ 1: Lỗi nạp dữ liệu danh sách thử thách từ Firebase**
+        - Hệ thống phát hiện sự cố kết nối mạng hoặc lỗi Firebase.
+        - Hệ thống tắt màn hình tải và hiển thị thông báo lỗi tải dữ liệu.
+    *   **Ngoại lệ 2: Hệ thống không thể nhận diện được hình ảnh**
+        - Hệ thống gặp lỗi phân tích ảnh hoặc mô hình AI không trả về dự đoán nào.
+        - Hệ thống tắt màn hình tải, hiển thị thông báo lỗi: "Unable to recognize this image." (Không thể nhận dạng hình ảnh này.) và quay về giao diện danh sách thử thách.
+    *   **Ngoại lệ 3: Người dùng hủy bỏ thao tác nhập ảnh**
+        - Người dùng nhấn nút hủy bỏ (Cancel) khi camera hoặc thư viện ảnh đang mở.
+        - Hệ thống đóng màn hình camera/thư viện ảnh và quay về màn hình danh sách thử thách.
+
+---
+
+### 2.1.14 Biểu đồ hoạt động (Activity Diagram)
 
 #### 1. Biểu đồ hoạt động tính năng "Thêm mới thẻ ghi nhớ"
 Biểu đồ hoạt động mô tả quy trình các bước nghiệp vụ diễn ra tuyến tính khi Quản trị viên thêm một thẻ từ vựng song ngữ mới vào ứng dụng:
@@ -451,6 +561,46 @@ Quy trình hoạt động khi Người dùng (bé) học từ vựng qua thẻ g
 - Hệ thống lưu kết quả tiến trình học tập cục bộ của người dùng và kết thúc luồng.
 
 *Lưu ý:* File thiết kế chi tiết đã được lưu tại [activity_diagram_learn_flashcard.drawio](file:///Users/mitie/tlu-app/KidX/docs/activity_diagram_learn_flashcard.drawio).
+
+#### 8. Biểu đồ hoạt động tính năng "Tập viết theo mẫu các chữ cái"
+Quy trình hoạt động tập viết theo mẫu chữ cái của Người dùng (bé) diễn ra như sau:
+- Bắt đầu: Người dùng chọn thẻ chữ cái bất kỳ trên danh sách.
+- Hệ thống thực hiện kiểm tra nạp dữ liệu mẫu chữ.
+- Nếu tải thất bại: Hệ thống hiển thị cảnh báo lỗi tải dữ liệu, tự động đóng giao diện tập viết và quay về màn hình danh sách.
+- Nếu tải thành công: Hệ thống hiển thị màn hình tập viết với chữ mẫu tương ứng (mặc định in hoa, màu vẽ cam, nét bút cỡ trung).
+- Người dùng thực hiện các tùy chọn thiết lập bảng vẽ (chọn in hoa/thường, chọn màu/nét vẽ, hoặc nhấn xóa bảng vẽ) hoặc thực hiện nét vẽ trên bảng đen.
+- Hệ thống áp dụng thiết lập tương ứng hoặc ghi nhận tọa độ vẽ và hiển thị nét vẽ theo thời gian thực.
+- Người dùng nhấn nút quay lại (Back).
+- Hệ thống đóng giao diện tập viết chữ cái, trở về màn hình danh sách chữ cái và kết thúc luồng.
+
+*Lưu ý:* File thiết kế chi tiết đã được lưu tại [activity_diagram_draw_letter.drawio](file:///Users/mitie/ios-base-app/KidX/docs/activity_diagram_draw_letter.drawio).
+
+#### 9. Biểu đồ hoạt động tính năng "Tập viết chữ số 0 - 9"
+Quy trình hoạt động tập viết chữ số từ 0 đến 9 của Người dùng (bé) diễn ra theo cơ chế vòng lặp tương tác như sau:
+- Bắt đầu: Người dùng chọn thẻ "Luyện Viết Chữ Số" trên màn hình học tập.
+- Hệ thống hiển thị giao diện tập viết số (mặc định chọn số 0, bảng vẽ trống, hiển thị hướng dẫn viết số 0).
+- Hệ thống đi vào điểm quyết định lựa chọn tương tác của người dùng:
+  - **Chọn số mới:** Người dùng chọn một nút số từ 0 đến 9. Hệ thống cập nhật chữ số chọn, nhãn hướng dẫn mới, đổi màu nút kích hoạt, tự động xóa sạch bảng vẽ đen và ẩn kết quả cũ. Luồng quay lại điểm chọn tương tác.
+  - **Nhấn nút Clear:** Người dùng chạm chọn nút "Clear". Hệ thống xóa sạch toàn bộ nét vẽ hiện tại trên bảng vẽ, reset trạng thái nhận dạng và ẩn khung kết quả. Luồng quay lại điểm chọn tương tác.
+  - **Vẽ và nhấn Kiểm tra:** Người dùng vẽ nét số trên bảng vẽ đen và chọn "Kiểm tra". Hệ thống trích xuất pixel buffer nét vẽ chuyển qua mô hình AI (mnistCNN) để nhận diện:
+    - Nếu kết quả nhận dạng không tin cậy (độ tin cậy quá thấp): Hệ thống hiển thị cảnh báo "Không thể nhận dạng". Người dùng chọn "Viết lại" (hệ thống xóa bảng vẽ, đóng cảnh báo và quay lại điểm chọn tương tác) hoặc chọn "Đóng" (hệ thống đóng cảnh báo, giữ nguyên nét vẽ và quay lại điểm chọn tương tác).
+    - Nếu kết quả nhận dạng hợp lệ: Hệ thống so khớp với chữ số đang chọn. Nếu khớp (Đúng), hiển thị số màu xanh lá kèm thông điệp chúc mừng. Nếu không khớp (Sai), hiển thị số màu đỏ kèm thông điệp động viên. Luồng quay lại điểm chọn tương tác.
+  - **Nhấn Quay lại:** Người dùng chạm chọn nút Quay lại (Back). Hệ thống đóng màn hình tập viết và đưa người dùng trở lại giao diện học tập chính.
+- Kết thúc luồng.
+
+*Lưu ý:* File thiết kế chi tiết đã được lưu tại [activity_diagram_draw_number.drawio](file:///Users/mitie/ios-base-app/KidX/docs/activity_diagram_draw_number.drawio).
+
+#### 10. Biểu đồ hoạt động tính năng "Thử thách truy tìm đồ vật"
+Quy trình hoạt động trong thử thách truy tìm kho báu của Người dùng (bé) diễn ra theo cơ chế vòng lặp tương tác như sau:
+- Bắt đầu: Người dùng chọn thẻ "Game truy tìm kho báu" trên giao diện khám phá.
+- Hệ thống tải dữ liệu nhiệm vụ từ Firebase và hiển thị giao diện danh sách thử thách (biểu ngữ tiến trình và danh sách nhiệm vụ).
+- Hệ thống đi vào điểm quyết định lựa chọn tương tác của người dùng:
+  - **Thực hiện thử thách:** Người dùng chọn một thẻ thử thách chưa hoàn thành và tiến hành chụp ảnh hoặc chọn ảnh vật thể. Hệ thống nhận ảnh, chuyển qua mô hình AI (MobileNet) để nhận diện và so khớp với từ khóa của thử thách:
+    - Nếu khớp (Đúng): Hệ thống đánh dấu hoàn thành nhiệm vụ, lưu tiến trình học tập, lưu vật thể vào bộ sưu tập và hiển thị popup chúc mừng thành công. Luồng quay lại điểm chọn tương tác.
+    - Nếu không khớp (Sai): Hệ thống hiển thị popup thông báo chưa chính xác và gợi ý thử lại. Luồng quay lại điểm chọn tương tác.
+  - **Nhấn Quay lại:** Người dùng chạm chọn nút Quay lại. Hệ thống đóng giao diện danh sách thử thách, đưa người dùng trở lại giao diện khám phá chính và kết thúc luồng.
+
+*Lưu ý:* File thiết kế chi tiết đã được lưu tại [activity_diagram_treasure_hunt.drawio](file:///Users/mitie/ios-base-app/KidX/docs/activity_diagram_treasure_hunt.drawio).
 
 ---
 
@@ -859,6 +1009,181 @@ HeThong -- DichVuCSDL
 
 ---
 
+### 2.2.8 Biểu đồ lớp phân tích Use Case "Tập viết theo mẫu các chữ cái"
+
+---
+
+title: 2.2.8. Biểu đồ lớp phân tích chức năng tập viết theo mẫu các chữ cái
+
+---
+
+```mermaid
+classDiagram
+direction LR
+
+class GiaoDienTapViet {
+  <<Boundary>>
+  +hienThiChuMau()
+  +capNhatKieuChu()
+  +capNhatMauSac()
+  +capNhatKichCoNetVe()
+  +xoaBangVe()
+  +hienThiNetVe()
+  +dongGiaoDien()
+}
+
+class DieuKhienTapViet {
+  <<Control>>
+  +taiThongTinChuCai()
+  +thayDoiThietLapBangVe()
+  +xuLyToaDoNetVe()
+}
+
+class ChuCai {
+  <<Entity>>
+  -maChuCai
+  -kieuInHoa
+  -kieuVietThuong
+  +layMauChu()
+}
+
+class CauHinhBangVe {
+  <<Entity>>
+  -mauSacHienTai
+  -kichCoHienTai
+  -kieuChuHienTai
+  +capNhatCauHinh()
+  +layCauHinh()
+}
+
+GiaoDienTapViet -- DieuKhienTapViet
+DieuKhienTapViet -- ChuCai
+DieuKhienTapViet -- CauHinhBangVe
+```
+
+*Lưu ý cho việc vẽ sơ đồ:* Sơ đồ lớp phân tích chi tiết đã được khởi tạo và lưu dưới dạng tệp tin Draw.io tại đường dẫn [analysis_class_diagram_draw_letter.drawio](file:///Users/mitie/ios-base-app/KidX/docs/AC/analysis_class_diagram_draw_letter.drawio). Người dùng có thể kéo thả tệp này vào trang Web `draw.io` để xuất ảnh đồ họa chèn vào báo cáo.
+
+---
+
+### 2.2.9 Biểu đồ lớp phân tích Use Case "Tập viết chữ số 0 - 9"
+
+---
+
+title: 2.2.9. Biểu đồ lớp phân tích chức năng tập viết chữ số 0 - 9
+
+---
+
+```mermaid
+classDiagram
+direction LR
+
+class GiaoDienTapVietSo {
+  <<Boundary>>
+  +chonSoMuonTapViet()
+  +vietSoLenBangDen()
+  +xoaNetVe()
+  +clickKiemTra()
+  +hienThiKetQua()
+  +quayLaiTrangTruoc()
+}
+
+class DieuKhienTapVietSo {
+  <<Control>>
+  +xuLyChuyenSo()
+  +resetBangVe()
+  +nhanDangChuSo(buffer)
+}
+
+class mnistCNN {
+  <<Entity>>
+  +prediction(image)
+}
+
+class CauHinhBangVeSo {
+  <<Entity>>
+  -soDangChon
+  -trangThaiNetDraw
+  +capNhatCauHinh()
+  +layCauHinh()
+}
+
+GiaoDienTapVietSo -- DieuKhienTapVietSo
+DieuKhienTapVietSo -- mnistCNN
+DieuKhienTapVietSo -- CauHinhBangVeSo
+```
+
+*Lưu ý cho việc vẽ sơ đồ:* Sơ đồ lớp phân tích chi tiết đã được khởi tạo và lưu dưới dạng tệp tin Draw.io tại đường dẫn [analysis_class_diagram_draw_number.drawio](file:///Users/mitie/ios-base-app/KidX/docs/AC/analysis_class_diagram_draw_number.drawio). Người dùng có thể kéo thả tệp này vào trang Web `draw.io` để xuất ảnh đồ họa chèn vào báo cáo.
+
+---
+
+### 2.2.10 Biểu đồ lớp phân tích Use Case "Thử thách truy tìm đồ vật"
+
+---
+
+title: 2.2.10. Biểu đồ lớp phân tích chức năng thử thách truy tìm đồ vật
+
+---
+
+```mermaid
+classDiagram
+direction LR
+
+class GiaoDienDanhSachThuThach {
+  <<Boundary>>
+  +hienThiDanhSachNhiemVu()
+  +capNhatTienTrinh()
+  +clickThucHienNhiemVu()
+  +clickQuayLai()
+}
+
+class GiaoDienKetQuaNhanDang {
+  <<Boundary>>
+  +hienThiThanhCong()
+  +hienThiThatBai()
+  +phatAmThanh()
+  +clickLuu()
+  +clickThuLai()
+}
+
+class DieuKhienTruyTimDoVat {
+  <<Control>>
+  +taiDanhSachTuFirebase()
+  +xuLyNhanDangAnh(buffer)
+  +kiemTraKetQua(rawLabel)
+}
+
+class MissionData {
+  <<Entity>>
+  -id
+  -title
+  -description
+  -isCompleted
+  -keywords
+  +layDanhSachNhiemVu()
+  +setMissionCompleted(id)
+}
+
+class MobileNet {
+  <<Entity>>
+  +predict(image)
+}
+
+class SavedObjectItem {
+  <<Entity>>
+  +save(image, name)
+}
+
+GiaoDienDanhSachThuThach -- DieuKhienTruyTimDoVat
+GiaoDienKetQuaNhanDang -- DieuKhienTruyTimDoVat
+DieuKhienTruyTimDoVat -- MissionData
+DieuKhienTruyTimDoVat -- MobileNet
+DieuKhienTruyTimDoVat -- SavedObjectItem
+```
+
+*Lưu ý cho việc vẽ sơ đồ:* Sơ đồ lớp phân tích chi tiết đã được khởi tạo và lưu dưới dạng tệp tin Draw.io tại đường dẫn [analysis_class_diagram_treasure_hunt.drawio](file:///Users/mitie/ios-base-app/KidX/docs/AC/analysis_class_diagram_treasure_hunt.drawio). Người dùng có thể kéo thả tệp này vào trang Web `draw.io` để xuất ảnh đồ họa chèn vào báo cáo.
+
+---
+
 ### 2.3.2 Mã UML (PlantUML) cho biểu đồ Sequence rút gọn
 
 ```plantuml
@@ -1258,3 +1583,293 @@ deactivate UI
 ```
 
 *Lưu ý cho việc vẽ sơ đồ:* Sơ đồ tuần tự tương ứng đã được khởi tạo và lưu dưới dạng tệp tin Draw.io tại đường dẫn [sequence_diagram_delete_mission.drawio](file:///Users/mitie/tlu-app/KidX/docs/sequence_diagram_delete_mission.drawio).
+
+---
+
+### 2.3.8 Mã UML (PlantUML) cho biểu đồ Sequence rút gọn chức năng tập viết theo mẫu các chữ cái
+
+```plantuml
+@startuml SD_TapVietChuCai
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "Giao diện tập viết" as UI
+control "Hệ thống" as Controller
+entity "Cơ sở dữ liệu cục bộ" as DB
+
+User -> UI : 1. Chọn thẻ chữ cái\ncần tập viết
+activate UI
+||20||
+
+UI -> Controller : 2. Yêu cầu tải thông tin\nmẫu chữ (maChuCai)
+activate Controller
+||20||
+
+Controller -> DB : 3. Truy vấn dữ liệu\nmẫu chữ
+activate DB
+||20||
+DB --> Controller : 4. Trả về dữ liệu chữ cái\n(in hoa, viết thường)
+deactivate DB
+||20||
+
+Controller -> Controller : 5. Kiểm tra tính hợp lệ\ncủa dữ liệu
+||20||
+
+alt Tải dữ liệu thất bại
+  Controller --> UI : 6a. Trả về lỗi\ntải dữ liệu
+  ||20||
+  UI --> User : 7a. Hiển thị thông báo lỗi\nvà đóng màn hình
+  ||20||
+else Tải dữ liệu thành công
+  Controller --> UI : 6b. Truyền thiết lập mặc định\n(chữ in hoa, nét trung, màu cam)
+  ||20||
+  UI --> User : 7b. Hiển thị giao diện\ntập viết
+  ||20||
+  
+  loop Tương tác tập viết
+    alt Tùy chọn thiết lập bảng vẽ
+      User -> UI : 8a. Chọn kiểu chữ, màu sắc,\ncỡ nét hoặc Xóa
+      ||20||
+      UI -> Controller : 9a. Gửi yêu cầu\ncập nhật thiết lập
+      ||20||
+      Controller --> UI : 10a. Xác nhận\ncập nhật
+      ||20||
+      UI --> User : 11a. Hiển thị bảng vẽ\ntheo thiết lập mới
+      ||20||
+    else Tập viết nét chữ
+      User -> UI : 8b. Di chuyển ngón tay\ntô theo nét chữ
+      ||20||
+      UI -> Controller : 9b. Gửi tọa độ nét vẽ
+      ||20||
+      Controller --> UI : 10b. Nhận dạng và cập nhật\nhiển thị nét vẽ
+      ||20||
+      UI --> User : 11b. Hiển thị nét vẽ\nthời gian thực
+      ||20||
+    end
+  end
+  
+  User -> UI : 12. Nhấn nút\n"Quay lại"
+  ||20||
+  UI -> Controller : 13. Xử lý đóng\ngiao diện
+  ||20||
+  Controller --> UI : 14. Xác nhận đóng
+  deactivate Controller
+  ||20||
+  UI --> User : 15. Đóng giao diện,\ntrở về màn hình danh sách
+end
+
+deactivate UI
+@enduml
+```
+
+*Lưu ý cho việc vẽ sơ đồ:* Sơ đồ tuần tự tương ứng đã được khởi tạo và lưu dưới dạng tệp tin Draw.io tại đường dẫn [sequence_diagram_draw_letter.drawio](file:///Users/mitie/ios-base-app/KidX/docs/SD/sequence_diagram_draw_letter.puml).
+
+---
+
+### 2.3.9 Mã UML (PlantUML) cho biểu đồ Sequence rút gọn chức năng tập viết chữ số 0 - 9
+
+```plantuml
+@startuml SD_TapVietChuSo
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "Giao diện tập viết" as UI
+control "Hệ thống" as Controller
+entity "Mô hình AI (mnistCNN)" as AI
+
+User -> UI : 1. Chọn thẻ\n"Luyện Viết Chữ Số"
+activate UI
+||20||
+
+UI -> UI : 2. Khởi tạo giao diện mặc định\n(Bảng vẽ trống, chọn số 0)
+||20||
+
+loop Tương tác luyện viết số
+  alt Chọn số hoặc Xóa bảng vẽ
+    User -> UI : 3a. Chạm chọn số mới (0-9)\nhoặc nhấn Clear
+    ||20||
+    UI -> UI : 4a. Cập nhật số chọn, làm sạch\nbảng vẽ và ẩn kết quả
+    ||20||
+  
+  else Thực hiện nét vẽ
+    User -> UI : 3b. Di chuyển ngón tay\ntrên bảng vẽ
+    ||20||
+    UI -> UI : 4b. Nhận dạng và hiển thị\nnét vẽ thời gian thực
+    ||20||
+  
+  else Kiểm tra nhận diện chữ số
+    User -> UI : 3c. Chạm nút "Kiểm tra"
+    ||20||
+    UI -> Controller : 4c. Gửi yêu cầu nhận diện\nnét vẽ (pixel buffer)
+    activate Controller
+    ||20||
+    
+    Controller -> AI : 5. Dự đoán chữ số\ntừ ảnh nét vẽ
+    activate AI
+    ||20||
+    AI --> Controller : 6. Trả về kết quả\n(số dự đoán, độ tin cậy)
+    deactivate AI
+    ||20||
+    
+    alt Nhận diện không tin cậy (Ngoại lệ)
+      Controller --> UI : 7a. Báo kết quả\nkhông tin cậy (Unreliable)
+      ||20||
+      UI --> User : 8a. Hiển thị cảnh báo\n"Không thể nhận dạng" & viết lại
+      ||20||
+      
+    else Nhận diện thành công
+      Controller --> UI : 7b. Trả về chữ số dự đoán
+      deactivate Controller
+      ||20||
+      UI -> UI : 8b. So khớp chữ số\ndự đoán với số đã chọn
+      ||20||
+      UI --> User : 9b. Hiển thị kết quả\ntương ứng (Đúng / Sai)
+      ||20||
+    end
+  end
+end
+
+User -> UI : 10. Chạm chọn nút\n"Quay lại"
+||20||
+UI -> UI : 11. Giải phóng tài nguyên\nvà đóng màn hình
+||20||
+UI --> User : 12. Trở về màn hình\nhọc tập chính
+deactivate UI
+@enduml
+```
+
+*Lưu ý cho việc vẽ sơ đồ:* Sơ đồ tuần tự tương ứng đã được khởi tạo và lưu dưới dạng tệp tin Draw.io tại đường dẫn [sequence_diagram_draw_number.drawio](file:///Users/mitie/ios-base-app/KidX/docs/SD/sequence_diagram_draw_number.puml).
+
+---
+
+### 2.3.10 Mã UML (PlantUML) cho biểu đồ Sequence rút gọn chức năng thử thách truy tìm đồ vật
+
+```plantuml
+@startuml SD_TruyTimDoVat
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "Giao diện nhiệm vụ" as UI
+control "Hệ thống" as Controller
+entity "Mô hình AI (MobileNet)" as AI
+entity "Cơ sở dữ liệu" as CSDL
+
+User -> UI : 1. Chọn thẻ\n"Game truy tìm kho báu"
+activate UI
+||20||
+
+UI -> CSDL : 2. Yêu cầu tải\ndanh sách nhiệm vụ
+activate CSDL
+||20||
+CSDL --> UI : 3. Trả về danh sách\nnhiệm vụ (Firebase)
+deactivate CSDL
+||20||
+
+UI -> UI : 4. Hiển thị danh sách\nnhiệm vụ và tiến trình
+||20||
+
+loop Tương tác thực hiện nhiệm vụ
+  User -> UI : 5. Chọn thực hiện nhiệm vụ\n& chụp/chọn ảnh
+  ||20||
+  UI -> Controller : 6. Gửi ảnh vật thể\n(UIImage)
+  activate Controller
+  ||20||
+  
+  Controller -> AI : 7. Yêu cầu nhận diện\nvật thể từ ảnh
+  activate AI
+  ||20||
+  AI --> Controller : 8. Trả về kết quả\nphân loại (raw label)
+  deactivate AI
+  ||20||
+  
+  Controller -> Controller : 9. So khớp nhãn nhận diện\nvới từ khóa nhiệm vụ
+  ||20||
+  
+  alt Kết quả chính xác (Match)
+    Controller -> CSDL : 10a. Cập nhật trạng thái\nhoàn thành & lưu vật thể
+    activate CSDL
+    ||20||
+    CSDL --> Controller : 11a. Xác nhận\nlưu thành công
+    deactivate CSDL
+    ||20||
+    Controller --> UI : 12a. Báo nhận diện\nchính xác
+    ||20||
+    UI --> User : 13a. Hiển thị popup\nChúc mừng thành công
+    ||20||
+    
+  else Kết quả chưa chính xác (Not Match)
+    Controller --> UI : 10b. Báo nhận diện\nchưa chính xác
+    deactivate Controller
+    ||20||
+    UI --> User : 11b. Hiển thị popup\nthông báo sai & gợi ý thử lại
+    ||20||
+  end
+end
+
+User -> UI : 14. Nhấn nút "Quay lại"
+||20||
+UI --> User : 15. Đóng giao diện,\ntrở về màn hình khám phá chính
+deactivate UI
+@enduml
+```
+
+*Lưu ý cho việc vẽ sơ đồ:* Sơ đồ tuần tự tương ứng đã được khởi tạo và lưu dưới dạng tệp tin Draw.io tại đường dẫn [sequence_diagram_draw_number.drawio](file:///Users/mitie/ios-base-app/KidX/docs/SD/sequence_diagram_treasure_hunt.puml).
+
+

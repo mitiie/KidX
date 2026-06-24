@@ -1,0 +1,90 @@
+@startuml SD_TapVietChuCai
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "Giao diện tập viết" as UI
+control "Hệ thống" as Controller
+entity "Cơ sở dữ liệu cục bộ" as DB
+
+User -> UI : 1. Chọn thẻ chữ cái\ncần tập viết
+activate UI
+||20||
+
+UI -> Controller : 2. Yêu cầu tải thông tin\nmẫu chữ (maChuCai)
+activate Controller
+||20||
+
+Controller -> DB : 3. Truy vấn dữ liệu\nmẫu chữ
+activate DB
+||20||
+DB --> Controller : 4. Trả về dữ liệu chữ cái\n(in hoa, viết thường)
+deactivate DB
+||20||
+
+Controller -> Controller : 5. Kiểm tra tính hợp lệ\ncủa dữ liệu
+||20||
+
+alt Tải dữ liệu thất bại
+  Controller --> UI : 6a. Trả về lỗi\ntải dữ liệu
+  ||20||
+  UI --> User : 7a. Hiển thị thông báo lỗi\nvà đóng màn hình
+  ||20||
+else Tải dữ liệu thành công
+  Controller --> UI : 6b. Truyền thiết lập mặc định\n(chữ in hoa, nét trung, màu cam)
+  ||20||
+  UI --> User : 7b. Hiển thị giao diện\ntập viết
+  ||20||
+  
+  loop Tương tác tập viết
+    alt Tùy chọn thiết lập bảng vẽ
+      User -> UI : 8a. Chọn kiểu chữ, màu sắc,\ncỡ nét hoặc Xóa
+      ||20||
+      UI -> Controller : 9a. Gửi yêu cầu\ncập nhật thiết lập
+      ||20||
+      Controller --> UI : 10a. Xác nhận\ncập nhật
+      ||20||
+      UI --> User : 11a. Hiển thị bảng vẽ\ntheo thiết lập mới
+      ||20||
+    else Tập viết nét chữ
+      User -> UI : 8b. Di chuyển ngón tay\ntô theo nét chữ
+      ||20||
+      UI -> Controller : 9b. Gửi tọa độ nét vẽ
+      ||20||
+      Controller --> UI : 10b. Nhận dạng và cập nhật\nhiển thị nét vẽ
+      ||20||
+      UI --> User : 11b. Hiển thị nét vẽ\nthời gian thực
+      ||20||
+    end
+  end
+  
+  User -> UI : 12. Nhấn nút\n"Quay lại"
+  ||20||
+  UI -> Controller : 13. Xử lý đóng\ngiao diện
+  ||20||
+  Controller --> UI : 14. Xác nhận đóng
+  deactivate Controller
+  ||20||
+  UI --> User : 15. Đóng giao diện,\ntrở về màn hình danh sách
+end
+
+deactivate UI
+@enduml

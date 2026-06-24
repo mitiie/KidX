@@ -1,0 +1,85 @@
+@startuml SD_TruyTimDoVat
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "Giao diện nhiệm vụ" as UI
+control "Hệ thống" as Controller
+entity "Mô hình AI (MobileNet)" as AI
+entity "Cơ sở dữ liệu" as CSDL
+
+User -> UI : 1. Chọn thẻ\n"Game truy tìm kho báu"
+activate UI
+||20||
+
+UI -> CSDL : 2. Yêu cầu tải\ndanh sách nhiệm vụ
+activate CSDL
+||20||
+CSDL --> UI : 3. Trả về danh sách\nnhiệm vụ (Firebase)
+deactivate CSDL
+||20||
+
+UI -> UI : 4. Hiển thị danh sách\nnhiệm vụ và tiến trình
+||20||
+
+loop Tương tác thực hiện nhiệm vụ
+  User -> UI : 5. Chọn thực hiện nhiệm vụ\n& chụp/chọn ảnh
+  ||20||
+  UI -> Controller : 6. Gửi ảnh vật thể\n(UIImage)
+  activate Controller
+  ||20||
+  
+  Controller -> AI : 7. Yêu cầu nhận diện\nvật thể từ ảnh
+  activate AI
+  ||20||
+  AI --> Controller : 8. Trả về kết quả\nphân loại (raw label)
+  deactivate AI
+  ||20||
+  
+  Controller -> Controller : 9. So khớp nhãn nhận diện\nvới từ khóa nhiệm vụ
+  ||20||
+  
+  alt Kết quả chính xác (Match)
+    Controller -> CSDL : 10a. Cập nhật trạng thái\nhoàn thành & lưu vật thể
+    activate CSDL
+    ||20||
+    CSDL --> Controller : 11a. Xác nhận\nlưu thành công
+    deactivate CSDL
+    ||20||
+    Controller --> UI : 12a. Báo nhận diện\nchính xác
+    ||20||
+    UI --> User : 13a. Hiển thị popup\nChúc mừng thành công
+    ||20||
+    
+  else Kết quả chưa chính xác (Not Match)
+    Controller --> UI : 10b. Báo nhận diện\nchưa chính xác
+    deactivate Controller
+    ||20||
+    UI --> User : 11b. Hiển thị popup\nthông báo sai & gợi ý thử lại
+    ||20||
+  end
+end
+
+User -> UI : 14. Nhấn nút "Quay lại"
+||20||
+UI --> User : 15. Đóng giao diện,\ntrở về màn hình khám phá chính
+deactivate UI
+@enduml

@@ -99,7 +99,8 @@ skinparam sequence {
   ParticipantBackgroundColor White
   ActorBorderColor Black
   ActorBackgroundColor White
-  LifeLineBorderColor #555555
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
   LifeLineBackgroundColor White
   ArrowColor Black
   GroupBorderColor Black
@@ -115,6 +116,18 @@ skinparam sequence {
 - **Rút gọn cột**: Luôn gom các thực thể lưu trữ phụ trợ (ví dụ: UserDefaults, FileManager, API Service) thành một thực thể duy nhất đặt tên là `entity "Cơ sở dữ liệu cục bộ" as DB` (hoặc `entity "Cơ sở dữ liệu" as CSDL`).
 - **Giới hạn số Lifelines tối đa**: Hạn chế số lượng thực thể dưới **4-5 cột** (Actor, Boundary, Control, Entity/DB) để chiều rộng biểu đồ cân đối trên khổ giấy A4 dọc.
 - **Biểu diễn luồng ngoại lệ**: Sử dụng khối `alt ... else ... end` để thể hiện rõ ràng các kịch bản lỗi hệ thống hoặc ngoại lệ của người dùng. Với các mũi tên phản hồi lỗi hoặc cảnh báo thất bại, sử dụng nét vẽ đứt và có thể tô màu đỏ bằng cú pháp `--[#red]>` để làm nổi bật.
+
+### 3.3. Quy chuẩn thiết kế bố cục đứng (A4 Portrait Layout)
+Để biểu đồ tuần tự hiển thị đẹp mắt, rõ chữ, và không bị kéo dẹt hay thu nhỏ quá mức khi chèn vào trang văn bản Word khổ giấy A4, cần tuân thủ cấu hình bố cục đứng sau:
+- **Tăng cỡ chữ mặc định (FontSize)**: Sử dụng `skinparam defaultFontSize 24` để chữ hiển thị đủ lớn và dễ đọc khi in ấn hoặc hiển thị trong báo cáo.
+- **Thu hẹp khoảng cách ngang giữa các cột**:
+  * Thiết lập `skinparam ParticipantPadding 10` (hoặc tối đa `15`) để dồn sát các Lifelines lại gần nhau.
+  * Thiết lập `skinparam BoxPadding 5` (hoặc tối đa `10`).
+- **Ngắt dòng văn bản mô tả (Line Wrapping)**:
+  * Tất cả các mô tả dài trên mũi tên hoặc hành động tự gọi của thực thể bắt buộc phải sử dụng ký tự xuống dòng `\n` (ví dụ: `Chọn thực hiện nhiệm vụ\n& chụp/chọn ảnh` thay vì viết liền một dòng). Điều này ngăn các cột bị kéo giãn rộng ra theo chiều ngang.
+- **Kéo giãn chiều cao bằng các khoảng trống dọc (Vertical Spacing)**:
+  * Chèn các thẻ khoảng trống dọc dạng `||20||` (hoặc tối đa `||25||`) giữa các bước thông điệp liên tiếp hoặc sau mỗi khối kích hoạt.
+  * Khoảng trống lý tưởng là `||20||`. Không đặt khoảng trống quá lớn (như `||45||` trở lên) vì sẽ làm loãng luồng dữ liệu, và không bỏ qua vì sơ đồ sẽ bị nén dẹt theo chiều dọc.
 
 ---
 

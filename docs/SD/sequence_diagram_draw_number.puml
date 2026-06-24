@@ -1,0 +1,86 @@
+@startuml SD_TapVietChuSo
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "Giao diện tập viết" as UI
+control "Hệ thống" as Controller
+entity "Mô hình AI (mnistCNN)" as AI
+
+User -> UI : 1. Chọn thẻ\n"Luyện Viết Chữ Số"
+activate UI
+||20||
+
+UI -> UI : 2. Khởi tạo giao diện mặc định\n(Bảng vẽ trống, chọn số 0)
+||20||
+
+loop Tương tác luyện viết số
+  alt Chọn số hoặc Xóa bảng vẽ
+    User -> UI : 3a. Chạm chọn số mới (0-9)\nhoặc nhấn Clear
+    ||20||
+    UI -> UI : 4a. Cập nhật số chọn, làm sạch\nbảng vẽ và ẩn kết quả
+    ||20||
+  
+  else Thực hiện nét vẽ
+    User -> UI : 3b. Di chuyển ngón tay\ntrên bảng vẽ
+    ||20||
+    UI -> UI : 4b. Nhận dạng và hiển thị\nnét vẽ thời gian thực
+    ||20||
+  
+  else Kiểm tra nhận diện chữ số
+    User -> UI : 3c. Chạm nút "Kiểm tra"
+    ||20||
+    UI -> Controller : 4c. Gửi yêu cầu nhận diện\nnét vẽ (pixel buffer)
+    activate Controller
+    ||20||
+    
+    Controller -> AI : 5. Dự đoán chữ số\ntừ ảnh nét vẽ
+    activate AI
+    ||20||
+    AI --> Controller : 6. Trả về kết quả\n(số dự đoán, độ tin cậy)
+    deactivate AI
+    ||20||
+    
+    alt Nhận diện không tin cậy (Ngoại lệ)
+      Controller --> UI : 7a. Báo kết quả\nkhông tin cậy (Unreliable)
+      ||20||
+      UI --> User : 8a. Hiển thị cảnh báo\n"Không thể nhận dạng" & viết lại
+      ||20||
+      
+    else Nhận diện thành công
+      Controller --> UI : 7b. Trả về chữ số dự đoán
+      deactivate Controller
+      ||20||
+      UI -> UI : 8b. So khớp chữ số\ndự đoán với số đã chọn
+      ||20||
+      UI --> User : 9b. Hiển thị kết quả\ntương ứng (Đúng / Sai)
+      ||20||
+    end
+  end
+end
+
+User -> UI : 10. Chạm chọn nút\n"Quay lại"
+||20||
+UI -> UI : 11. Giải phóng tài nguyên\nvà đóng màn hình
+||20||
+UI --> User : 12. Trở về màn hình\nhọc tập chính
+deactivate UI
+@enduml
