@@ -1,0 +1,133 @@
+@startuml SD_GiaiToanNhanh
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 15
+skinparam BoxPadding 10
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "Giao diện giải toán" as UI
+control "Bộ điều khiển" as Controller
+entity "Cơ sở dữ liệu" as CSDL
+
+User -> UI : 1. Chọn thử thách giải toán
+activate UI
+||20||
+
+UI -> Controller : 2. Yêu cầu tải dữ liệu (loadChallenges)
+activate Controller
+||20||
+
+Controller -> CSDL : 3. Truy vấn tiến trình đã lưu (getCompletedChallengeIds)
+activate CSDL
+||20||
+CSDL --> Controller : 4. Trả về các ID đã hoàn thành
+deactivate CSDL
+||20||
+
+Controller -> Controller : 5. Khởi tạo ngẫu nhiên 10 cấp độ\nvà tìm cấp độ chưa làm đầu tiên
+||20||
+
+Controller --> UI : 6. Gửi callback dữ liệu tải xong (onDataLoaded)
+deactivate Controller
+||20||
+
+UI -> UI : 7. Cập nhật hiển thị (Cấp độ, Phép toán, ẩn nút Next)
+||20||
+
+alt Chế độ nâng cao (Advanced Mode)
+  UI -> UI : 8. Bắt đầu đếm ngược 180 giây (startTimer)
+  ||20||
+end
+
+loop Tương tác giải toán (10 cấp độ)
+  User -> UI : 9. Vẽ nét đáp án trên bảng vẽ và nhấn "Check"
+  ||20||
+  UI -> UI : 10. Hiển thị HUD nhận diện
+  ||20||
+  UI -> Controller : 11. Gửi pixel buffer nét vẽ (checkAnswer)
+  activate Controller
+  ||20||
+  Controller -> Controller : 12. Nhận dạng nét vẽ (MNIST) & so khớp đáp án
+  ||20||
+  
+  alt Đáp án Đúng (isCorrect = true)
+    Controller -> CSDL : 13a. Lưu tiến trình hoàn thành & ghi thành tích
+    activate CSDL
+    ||20||
+    CSDL --> Controller : 14a. Xác nhận lưu thành công
+    deactivate CSDL
+    ||20||
+    Controller --> UI : 15a. Trả về kết quả Đúng & số dự đoán
+    ||20||
+    UI -> UI : 16a. Ẩn HUD, hiện đáp án màu xanh & hiện nút "Kế tiếp"
+    ||20||
+    
+    User -> UI : 17a. Nhấn nút "Kế tiếp" (Next)
+    ||20||
+    UI -> Controller : 18a. Yêu cầu câu hỏi tiếp theo (nextChallenge)
+    activate Controller
+    ||20||
+    Controller --> UI : 19a. Trả về thông tin câu hỏi của cấp độ mới
+    deactivate Controller
+    ||20||
+    UI -> UI : 20a. Tải câu hỏi mới, ẩn nút Next & Clear bảng vẽ
+    ||20||
+    
+  else Đáp án Sai (isCorrect = false)
+    Controller --> UI : 13b. Trả về kết quả Sai & số dự đoán
+    deactivate Controller
+    ||20||
+    UI -> UI : 14b. Ẩn HUD, hiện đáp án màu đỏ & rung hộp đáp án;\nSau 1.2 giây khôi phục "?" & Clear bảng vẽ
+    ||20||
+  end
+end
+
+UI -> UI : 21. Hoàn thành 10 cấp độ, dừng timer,\ntrigger pháo hoa & hiển thị popup chúc mừng
+||20||
+
+alt Người dùng nhấn nút "Đóng" hoặc "Back"
+  User -> UI : 22. Yêu cầu đóng màn hình học tập
+  ||20||
+  UI -> Controller : 23. Điều phối quay lại (navigateBack)
+  activate Controller
+  ||20||
+  Controller --> UI : 24. Xác nhận pop ViewController
+  deactivate Controller
+  ||20||
+  UI --> User : 25. Trở về màn hình học tập chính
+  deactivate UI
+end
+||20||
+
+alt Ngoại lệ: Hết thời gian đếm ngược (Chế độ nâng cao)
+  UI -> UI : Timer đếm ngược về 0 giây
+  ||20||
+  UI -> User : Hiển thị thông báo hết giờ
+  ||20||
+  User -> UI : Nhấn "OK" xác nhận
+  ||20||
+  UI -> Controller : Điều phối quay lại (navigateBack)
+  activate Controller
+  ||20||
+  Controller --> UI : Xác nhận pop ViewController
+  deactivate Controller
+  ||20||
+  UI --> User : Trở về màn hình học tập chính
+end
+@enduml

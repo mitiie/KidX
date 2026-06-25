@@ -1,60 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net" agent="5.0">
-  <diagram id="diagram_class_draw_number" name="Analysis Class Diagram Draw Number">
-    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+  <diagram id="acd_draw_number_bce" name="ACD BCE Draw Number">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
       <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
 
-        <!-- Actor: Người dùng -->
-        <mxCell id="actor_user" value="Người dùng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#333333;strokeWidth=1.5;" parent="1" vertex="1">
-          <mxGeometry x="40" y="220" width="30" height="60" as="geometry" />
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+
+        <!-- Actor -->
+        <mxCell id="actor"
+          value="Người dùng"
+          style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="40" y="250" width="30" height="60" as="geometry"/>
         </mxCell>
 
-        <!-- Boundary: GiaoDienTapVietSo -->
-        <mxCell id="class_ui" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;GiaoDienTapVietSo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ chonSoMuonTapViet()&lt;br&gt;+ vietSoLenBangDen()&lt;br&gt;+ xoaNetVe()&lt;br&gt;+ clickKiemTra()&lt;br&gt;+ hienThiKetQua()&lt;br&gt;+ quayLaiTrangTruoc()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="140" y="150" width="190" height="180" as="geometry" />
+
+
+        <!-- Boundary -->
+        <mxCell id="boundary"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;GiaoDienTapVietSo&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
++ hienThiDanhSachChuSo()&lt;br&gt;
++ hienThiSoMau()&lt;br&gt;
++ vietSoLenBangDen()&lt;br&gt;
++ xoaNetVe()&lt;br&gt;
++ clickKiemTra()&lt;br&gt;
++ hienThiKetQua()&lt;br&gt;
++ hienThiThongBao()&lt;br&gt;
++ quayLai()"
+          style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="150" y="160" width="230" height="240" as="geometry"/>
         </mxCell>
 
-        <!-- Control: DieuKhienTapVietSo -->
-        <mxCell id="class_control" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;DieuKhienTapVietSo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ xuLyChuyenSo()&lt;br&gt;+ resetBangVe()&lt;br&gt;+ nhanDangChuSo(buffer)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="400" y="175" width="190" height="130" as="geometry" />
+
+
+
+        <!-- Control -->
+        <mxCell id="control"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;DieuKhienTapVietSo&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
++ xuLyChonChuSo()&lt;br&gt;
++ capNhatSoMau()&lt;br&gt;
++ resetBangVe()&lt;br&gt;
++ ghiNhanNetVe()&lt;br&gt;
++ yeuCauNhanDang()&lt;br&gt;
++ xuLyKetQua()&lt;br&gt;
++ xuLyNhanDangThatBai()"
+          style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="470" y="180" width="240" height="220" as="geometry"/>
         </mxCell>
 
-        <!-- Entity: mnistCNN (Model AI) -->
-        <mxCell id="class_entity_model" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;mnistCNN&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ prediction(image)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="660" y="40" width="160" height="140" as="geometry" />
+
+
+
+
+        <!-- Entity Data -->
+        <mxCell id="entity_data"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;DuLieuTapViet&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
+- chuSoDuocChon&lt;br&gt;
+- danhSachNetVe&lt;br&gt;
+- trangThaiBaiTap
+&lt;hr&gt;
++ luuNetVe()&lt;br&gt;
++ layChuSoMau()&lt;br&gt;
++ capNhatTrangThai()"
+          style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="820" y="260" width="220" height="180" as="geometry"/>
         </mxCell>
 
-        <!-- Entity: CauHinhBangVeSo -->
-        <mxCell id="class_entity_config" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;CauHinhBangVeSo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;- soDangChon&lt;br&gt;- trangThaiNetDraw&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ capNhatCauHinh()&lt;br&gt;+ layCauHinh()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="660" y="220" width="160" height="140" as="geometry" />
+
+
+
+        <!-- Entity AI -->
+        <mxCell id="entity_ai"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;MoHinhAI&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
+- modelCNN
+&lt;hr&gt;
++ nhanDangChuSo(image)&lt;br&gt;
++ tinhDoTinCay()"
+          style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="820" y="80" width="220" height="140" as="geometry"/>
         </mxCell>
 
-        <!-- Connections -->
-        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="actor_user" target="class_ui" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+
+
+
+        <!-- Relations -->
+
+        <!-- Actor -> Boundary -->
+        <mxCell id="edge1"
+          source="actor"
+          target="boundary"
+          edge="1"
+          parent="1"
+          style="endArrow=none;">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_ui" target="class_control" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+
+
+        <!-- Boundary -> Control -->
+        <mxCell id="edge2"
+          source="boundary"
+          target="control"
+          edge="1"
+          parent="1"
+          style="endArrow=none;">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_control" target="class_entity_model" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="500" y="110" />
-            </Array>
-          </mxGeometry>
+
+
+        <!-- Control -> Entity Data -->
+        <mxCell id="edge3"
+          source="control"
+          target="entity_data"
+          edge="1"
+          parent="1"
+          style="endArrow=none;">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 
-        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_control" target="class_entity_config" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="500" y="290" />
-            </Array>
-          </mxGeometry>
+
+
+        <!-- Control -> Entity AI -->
+        <mxCell id="edge4"
+          source="control"
+          target="entity_ai"
+          edge="1"
+          parent="1"
+          style="endArrow=none;">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
+
 
       </root>
     </mxGraphModel>

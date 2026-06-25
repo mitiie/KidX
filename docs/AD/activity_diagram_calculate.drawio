@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-06-26T00:00:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="diagram_calc_ad" name="Activity Diagram Quick Math">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- === SWIMLANES HEADERS === -->
+        <mxCell id="header_user" value="Người dùng" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="50" y="40" width="370" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="header_system" value="Hệ thống" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="420" y="40" width="370" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- === SWIMLANES BODIES === -->
+        <mxCell id="lane_user" value="" style="fillColor=none;strokeColor=#cccccc;strokeWidth=1;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="370" height="1120" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="lane_system" value="" style="fillColor=none;strokeColor=#cccccc;strokeWidth=1;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="80" width="370" height="1120" as="geometry" />
+        </mxCell>
+        
+        <!-- === NODES === -->
+        <!-- Start Node -->
+        <mxCell id="start" value="" style="ellipse;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="240" y="90" width="20" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- u_choose_mode -->
+        <mxCell id="u_choose_mode" value="Người dùng chọn chế độ thử thách&#10;(Cơ bản / Nâng cao)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="130" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- s_init_game -->
+        <mxCell id="s_init_game" value="Khởi tạo trò chơi với danh sách&#10;10 phép tính ngẫu nhiên" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="127.5" width="200" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- s_display_level -->
+        <mxCell id="s_display_level" value="Hiển thị phép tính hiện tại, cấp độ,&#10;bảng vẽ và các nút chức năng" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="215" width="200" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- dec_timer -->
+        <mxCell id="dec_timer" value="Chế độ Nâng cao?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="300" width="110" height="75" as="geometry" />
+        </mxCell>
+        
+        <!-- s_start_timer -->
+        <mxCell id="s_start_timer" value="Bắt đầu bộ đếm thời gian" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="400" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- u_write_answer -->
+        <mxCell id="u_write_answer" value="Viết đáp án (chữ số từ 0-9)&#10;lên bảng vẽ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="480" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- s_show_strokes -->
+        <mxCell id="s_show_strokes" value="Nhận dạng nét vẽ và hiển thị&#10;nét viết theo thời gian thực" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="477.5" width="200" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- u_click_check -->
+        <mxCell id="u_click_check" value="Người dùng chọn &quot;Kiểm tra&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="560" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- s_check_answer -->
+        <mxCell id="s_check_answer" value="Thực hiện nhận dạng chữ số và&#10;so sánh với đáp án đúng" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="557.5" width="200" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- dec_correct -->
+        <mxCell id="dec_correct" value="Kết quả đúng?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="640" width="110" height="75" as="geometry" />
+        </mxCell>
+        
+        <!-- s_show_incorrect -->
+        <mxCell id="s_show_incorrect" value="Hiển thị đáp án sai và xóa bảng vẽ&#10;để người dùng viết lại" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="745" width="150" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- s_show_correct -->
+        <mxCell id="s_show_correct" value="Hiển thị đáp án đúng, lưu trạng thái&#10;hoàn thành và hiển thị nút &quot;Tiếp theo&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="745" width="150" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- u_click_next -->
+        <mxCell id="u_click_next" value="Người dùng chọn &quot;Tiếp theo&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="150" y="830" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- dec_game_over -->
+        <mxCell id="dec_game_over" value="Hoàn thành&#10;cấp độ 10?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="910" width="110" height="75" as="geometry" />
+        </mxCell>
+        
+        <!-- s_next_level -->
+        <mxCell id="s_next_level" value="Chuyển sang cấp độ tiếp theo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="1020" width="150" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- s_game_complete -->
+        <mxCell id="s_game_complete" value="Kết thúc trò chơi, lưu thành tích&#10;và hiển thị thông báo hoàn thành" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="620" y="1020" width="150" height="55" as="geometry" />
+        </mxCell>
+        
+        <!-- end_node -->
+        <mxCell id="end_node" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="595" y="1110" width="20" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- === CONNECTIONS (EDGES) === -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;" edge="1" parent="1" source="start" target="u_choose_mode">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;" edge="1" parent="1" source="u_choose_mode" target="s_init_game">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;" edge="1" parent="1" source="s_init_game" target="s_display_level">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;" edge="1" parent="1" source="s_display_level" target="dec_timer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Timer Yes -->
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;" edge="1" parent="1" source="dec_timer" target="s_start_timer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l_e5" value="Có" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e5">
+          <mxGeometry x="-0.4" relative="1" as="geometry">
+            <mxPoint x="15" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Timer No -->
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_timer" target="u_write_answer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="337.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_e6" value="Không" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e6">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="s_start_timer" target="u_write_answer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="605" y="460" />
+              <mxPoint x="250" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;" edge="1" parent="1" source="u_write_answer" target="s_show_strokes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="s_show_strokes" target="u_click_check">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="605" y="545" />
+              <mxPoint x="250" y="545" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;" edge="1" parent="1" source="u_click_check" target="s_check_answer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;" edge="1" parent="1" source="s_check_answer" target="dec_correct">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Correct No (Sai) -->
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_correct" target="s_show_incorrect">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="515" y="677.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_e12" value="Sai" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e12">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Correct Yes (Đúng) -->
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_correct" target="s_show_correct">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="677.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_e13" value="Đúng" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e13">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Loop back from Incorrect -->
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="s_show_incorrect" target="u_write_answer">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="515" y="810" />
+              <mxPoint x="90" y="810" />
+              <mxPoint x="90" y="455" />
+              <mxPoint x="250" y="455" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="s_show_correct" target="u_click_next">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="815" />
+              <mxPoint x="250" y="815" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="u_click_next" target="dec_game_over">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="895" />
+              <mxPoint x="605" y="895" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Game over No (Không) -->
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_game_over" target="s_next_level">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="515" y="947.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_e17" value="Không" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e17">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Game over Yes (Có) -->
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="dec_game_over" target="s_game_complete">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="947.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_e18" value="Có" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e18">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Next Level Loop -->
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="s_next_level" target="s_display_level">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="515" y="1090" />
+              <mxPoint x="730" y="1090" />
+              <mxPoint x="730" y="200" />
+              <mxPoint x="605" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Game Complete to End -->
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" edge="1" parent="1" source="s_game_complete" target="end_node">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="1090" />
+              <mxPoint x="605" y="1090" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

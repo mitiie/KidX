@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" version="21.6.8" type="device">
+  <diagram id="KidX_Global_ClassDiagram" name="KidX Global Class Diagram">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- MODULE 1: STATS AND STORAGE MODULE -->
+        <mxCell id="pkg_stats" value="Stats and Storage Module" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=160;tabHeight=25;tabPosition=left;html=1;fillColor=none;strokeColor=#b3b3b3;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="20" y="40" width="260" height="340" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_stats_manager" value="&lt;b&gt;StatsManager&lt;/b&gt;&lt;hr/&gt;+ {static} shared: StatsManager&lt;br/&gt;- dailyStats: DailyStats&lt;hr/&gt;+ recordActivity()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="200" height="90" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_daily_stats" value="&lt;b&gt;DailyStats&lt;/b&gt;&lt;hr/&gt;+ reviewedCards: Int&lt;br/&gt;+ solvedMaths: Int&lt;br/&gt;+ foundObjects: Int&lt;hr/&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="50" y="250" width="200" height="90" as="geometry" />
+        </mxCell>
+        
+        <!-- MODULE 2: INTERACTIVE PLAY MODULE -->
+        <mxCell id="pkg_play" value="Interactive Play Module" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=140;tabHeight=25;tabPosition=left;html=1;fillColor=none;strokeColor=#b3b3b3;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="300" y="10" width="440" height="700" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_play_vc_base" value="&lt;b&gt;PlayViewControllerBase&lt;/b&gt;&lt;hr/&gt;+ hudOverlay: UIView&lt;hr/&gt;+ showCompletionAnimation()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="410" y="50" width="220" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_mnist_pred" value="&lt;b&gt;MNISTPredictor&lt;/b&gt;&lt;hr/&gt;&lt;hr/&gt;+ predictDigit(drawing: Drawing): Int" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="320" y="200" width="220" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_mobilenet_pred" value="&lt;b&gt;MobileNetPredictor&lt;/b&gt;&lt;hr/&gt;&lt;hr/&gt;+ detectObject(image: Image): String" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="200" width="220" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_writing_vc" value="&lt;b&gt;WritingViewController&lt;/b&gt;&lt;hr/&gt;+ sampleLetter: ChuCai&lt;hr/&gt;+ startWriting()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="320" y="330" width="220" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_challenge_vc" value="&lt;b&gt;ChallengeViewController&lt;/b&gt;&lt;hr/&gt;+ activeChallenge: CaculateChallenge&lt;br/&gt;+ activeObject: ThuThach&lt;hr/&gt;+ startTimer()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="330" width="220" height="90" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_chu_cai" value="&lt;b&gt;ChuCai&lt;/b&gt;&lt;hr/&gt;+ letterValue: String&lt;hr/&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="320" y="490" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_calc_challenge" value="&lt;b&gt;CaculateChallenge&lt;/b&gt;&lt;hr/&gt;+ operand1: Int&lt;br/&gt;+ operand2: Int&lt;br/&gt;+ operation: String&lt;br/&gt;+ result: Int&lt;hr/&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="490" width="200" height="95" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_thu_thach" value="&lt;b&gt;ThuThach&lt;/b&gt;&lt;hr/&gt;+ keyword: String&lt;hr/&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="610" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- MODULE 3: VOCABULARY FLASHCARD MODULE -->
+        <mxCell id="pkg_flashcard" value="Vocabulary Flashcard Module" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=140;tabHeight=25;tabPosition=left;html=1;fillColor=none;strokeColor=#b3b3b3;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="40" width="260" height="530" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_flashcard_vc" value="&lt;b&gt;FlashcardViewController&lt;/b&gt;&lt;hr/&gt;+ activeTopic: FlashcardTopic&lt;hr/&gt;+ displayTopicList()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="780" y="100" width="220" height="80" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_flashcard_mgr" value="&lt;b&gt;FlashcardManager&lt;/b&gt;&lt;hr/&gt;&lt;hr/&gt;+ loadFlashcards()" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="780" y="230" width="220" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_flashcard_topic" value="&lt;b&gt;FlashcardTopic&lt;/b&gt;&lt;hr/&gt;+ topicId: String&lt;br/&gt;+ topicName: String&lt;hr/&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="780" y="340" width="200" height="75" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="class_flashcard_item" value="&lt;b&gt;FlashcardItem&lt;/b&gt;&lt;hr/&gt;+ englishWord: String&lt;br/&gt;+ vietnameseWord: String&lt;hr/&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fillColor=#ffffff;strokeColor=#000000;fontFamily=Arial;fontSize=12;spacingLeft=6;spacingTop=4;" vertex="1" parent="1">
+          <mxGeometry x="780" y="465" width="200" height="75" as="geometry" />
+        </mxCell>
+        
+        <!-- EDGES AND RELATIONSHIPS -->
+        
+        <!-- 1. StatsManager to DailyStats -->
+        <mxCell id="edge_stats_composition" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;startArrow=diamond;startSize=12;startFill=1;" edge="1" parent="1" source="class_stats_manager" target="class_daily_stats">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_stats_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_stats_composition">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_stats_c2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_stats_composition">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 2. PlayViewControllerBase to MNISTPredictor -->
+        <mxCell id="edge_play_mnist_comp" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;startArrow=diamond;startSize=12;startFill=1;" edge="1" parent="1" source="class_play_vc_base" target="class_mnist_pred">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_play_mnist_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_play_mnist_comp">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="-10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_play_mnist_c2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_play_mnist_comp">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="-10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 3. PlayViewControllerBase to MobileNetPredictor -->
+        <mxCell id="edge_play_mobilenet_comp" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;startArrow=diamond;startSize=12;startFill=1;" edge="1" parent="1" source="class_play_vc_base" target="class_mobilenet_pred">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_play_mobile_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_play_mobilenet_comp">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_play_mobile_c2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_play_mobilenet_comp">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 4. PlayViewControllerBase parent of WritingViewController -->
+        <mxCell id="edge_writing_inheritance" style="endArrow=block;endSize=10;endFill=0;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="class_writing_vc" target="class_play_vc_base">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="290" />
+              <mxPoint x="430" y="160" />
+              <mxPoint x="520" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 5. PlayViewControllerBase parent of ChallengeViewController -->
+        <mxCell id="edge_challenge_inheritance" style="endArrow=block;endSize=10;endFill=0;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="class_challenge_vc" target="class_play_vc_base">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="290" />
+              <mxPoint x="610" y="160" />
+              <mxPoint x="520" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 6. WritingViewController to ChuCai -->
+        <mxCell id="edge_writing_chucai" style="endArrow=open;endSize=8;endFill=0;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="class_writing_vc" target="class_chu_cai">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_w_cai_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_writing_chucai">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_w_cai_c2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_writing_chucai">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 7. ChallengeViewController to CaculateChallenge -->
+        <mxCell id="edge_challenge_calc" style="endArrow=open;endSize=8;endFill=0;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="class_challenge_vc" target="class_calc_challenge">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_c_calc_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_challenge_calc">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_c_calc_c2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_challenge_calc">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 8. ChallengeViewController to ThuThach -->
+        <mxCell id="edge_challenge_thuthach" style="endArrow=open;endSize=8;endFill=0;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="class_challenge_vc" target="class_thu_thach">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_c_thu_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_challenge_thuthach">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_c_thu_c2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_challenge_thuthach">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 9. FlashcardViewController to FlashcardManager -->
+        <mxCell id="edge_flashcard_mgr" style="endArrow=open;endSize=8;endFill=0;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="class_flashcard_vc" target="class_flashcard_mgr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_f_mgr_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_flashcard_mgr">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_f_mgr_c2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_flashcard_mgr">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 10. FlashcardManager to FlashcardTopic -->
+        <mxCell id="edge_flashcard_topic_comp" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;startArrow=diamond;startSize=12;startFill=1;" edge="1" parent="1" source="class_flashcard_mgr" target="class_flashcard_topic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_f_top_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_flashcard_topic_comp">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_f_top_c2" value="*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_flashcard_topic_comp">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- 11. FlashcardTopic to FlashcardItem -->
+        <mxCell id="edge_topic_item_comp" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;startArrow=diamond;startSize=12;startFill=1;" edge="1" parent="1" source="class_flashcard_topic" target="class_flashcard_item">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_f_item_c1" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_topic_item_comp">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_f_item_c2" value="1..*" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_topic_item_comp">
+          <mxGeometry x="0.8" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

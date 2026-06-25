@@ -20,72 +20,87 @@
         <!-- === SWIMLANES BODIES === -->
         <!-- Body: Quản trị viên lane -->
         <mxCell id="body_user" value="" style="fillColor=none;strokeColor=#cccccc;strokeWidth=1;connectable=0;" parent="1" vertex="1">
-          <mxGeometry x="50" y="80" width="270" height="780" as="geometry" />
+          <mxGeometry x="50" y="80" width="270" height="860" as="geometry" />
         </mxCell>
 
         <!-- Body: Hệ thống lane -->
         <mxCell id="body_system" value="" style="fillColor=none;strokeColor=#cccccc;strokeWidth=1;connectable=0;" parent="1" vertex="1">
-          <mxGeometry x="320" y="80" width="270" height="780" as="geometry" />
+          <mxGeometry x="320" y="80" width="270" height="860" as="geometry" />
         </mxCell>
 
         <!-- === NODES === -->
-        <!-- Start Node (Hệ thống) -->
+        <!-- Start Node (Quản trị viên) -->
         <mxCell id="start_node" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=none;" parent="1" vertex="1">
-          <mxGeometry x="445" y="90" width="20" height="20" as="geometry" />
+          <mxGeometry x="175" y="90" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Step 0 (Quản trị viên): Chọn chức năng -->
+        <mxCell id="step0" value="Quản trị viên chọn chức năng &quot;Thêm mới thẻ ghi nhớ&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="140" width="210" height="50" as="geometry" />
         </mxCell>
 
         <!-- Step 1 (Hệ thống): Hiển thị giao diện thêm -->
         <mxCell id="step1" value="Hệ thống hiển thị giao diện thêm mới&#xa;thẻ ghi nhớ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="350" y="150" width="210" height="55" as="geometry" />
+          <mxGeometry x="350" y="210" width="210" height="55" as="geometry" />
         </mxCell>
 
         <!-- Step 2 (Quản trị viên): Nhập dữ liệu -->
         <mxCell id="step2" value="Quản trị viên nhập thông tin thẻ ghi nhớ mới&#xa;(tiếng Anh, tiếng Việt, chọn ảnh minh họa)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="80" y="235" width="210" height="65" as="geometry" />
+          <mxGeometry x="80" y="295" width="210" height="65" as="geometry" />
         </mxCell>
 
         <!-- Step 3 (Quản trị viên): Nhấn lưu -->
         <mxCell id="step3" value="Quản trị viên nhấn nút Lưu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="80" y="340" width="210" height="50" as="geometry" />
+          <mxGeometry x="80" y="390" width="210" height="50" as="geometry" />
         </mxCell>
 
         <!-- Step 4 (Hệ thống): Kiểm tra nghiệp vụ -->
         <mxCell id="step4" value="Hệ thống kiểm tra thông tin và xác nhận&#xa;tính hợp lệ của dữ liệu" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="350" y="425" width="210" height="55" as="geometry" />
+          <mxGeometry x="350" y="475" width="210" height="55" as="geometry" />
         </mxCell>
 
         <!-- Decision 1 (Hệ thống): Dữ liệu hợp lệ? -->
         <mxCell id="decision1" value="Dữ liệu&#xa;hợp lệ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="405" y="520" width="100" height="70" as="geometry" />
+          <mxGeometry x="405" y="570" width="100" height="70" as="geometry" />
         </mxCell>
 
         <!-- Step 5 (Hệ thống): Lưu CSDL -->
         <mxCell id="step5" value="Hệ thống lưu tệp ảnh minh họa cục bộ&#xa;và lưu metadata vào CSDL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="350" y="635" width="210" height="55" as="geometry" />
+          <mxGeometry x="350" y="675" width="210" height="55" as="geometry" />
         </mxCell>
 
         <!-- Step 6 (Hệ thống): Thông báo thành công -->
         <mxCell id="step6" value="Hệ thống hiển thị thông báo đã thêm mới&#xa;thẻ ghi nhớ thành công" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="350" y="730" width="210" height="50" as="geometry" />
+          <mxGeometry x="350" y="760" width="210" height="50" as="geometry" />
         </mxCell>
 
         <!-- End Node (Hệ thống) -->
         <mxCell id="end_node" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="445" y="820" width="20" height="20" as="geometry" />
+          <mxGeometry x="445" y="845" width="20" height="20" as="geometry" />
         </mxCell>
 
         <!-- === CONNECTIONS === -->
-        <!-- Start -> Step 1 -->
-        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;" parent="1" source="start_node" target="step1" edge="1">
+        <!-- Start -> Step 0 -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;" parent="1" source="start_node" target="step0" edge="1">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 0 -> Step 1 -->
+        <mxCell id="edge_step0_to_step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" parent="1" source="step0" target="step1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="185" y="200" />
+              <mxPoint x="455" y="200" />
+            </Array>
+          </mxGeometry>
         </mxCell>
 
         <!-- Step 1 -> Step 2 -->
         <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" parent="1" source="step1" target="step2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="455" y="220" />
-              <mxPoint x="185" y="220" />
+              <mxPoint x="455" y="280" />
+              <mxPoint x="185" y="280" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -99,7 +114,7 @@
         <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=0;entryY=0.5;" parent="1" source="step3" target="step4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="185" y="452.5" />
+              <mxPoint x="185" y="502.5" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -113,8 +128,8 @@
         <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=0;entryY=0.5;" parent="1" source="decision1" target="step2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="65" y="555" />
-              <mxPoint x="65" y="267.5" />
+              <mxPoint x="65" y="605" />
+              <mxPoint x="65" y="327.5" />
             </Array>
           </mxGeometry>
         </mxCell>

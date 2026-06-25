@@ -31,10 +31,7 @@
           <mxGeometry x="660" y="195" width="160" height="170" as="geometry" />
         </mxCell>
 
-        <!-- Entity Class: DichVuLuuTruCucBo -->
-        <mxCell id="class_db" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;DichVuLuuTruCucBo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;- pathDatabaseCucBo&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ docDanhSachThe()&lt;br&gt;+ ghiTienTrinhHoc()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
-          <mxGeometry x="660" y="390" width="160" height="120" as="geometry" />
-        </mxCell>
+
 
         <!-- Connections -->
         <!-- User -> UI -->
@@ -61,12 +58,7 @@
           </mxGeometry>
         </mxCell>
 
-        <!-- Control -> Entity (DichVuLuuTruCucBo) -->
-        <mxCell id="conn5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_control" target="class_db" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array points="500, 450" />
-          </mxGeometry>
-        </mxCell>
+
 
       </root>
     </mxGraphModel>
