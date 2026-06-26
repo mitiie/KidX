@@ -48,7 +48,7 @@ final class BannerCollectionViewCell: UICollectionViewCell {
         containerCard.layer.shadowOffset = CGSize(width: 0, height: 8)
         
         // Fonts
-        titleLabel.font = UIFont.custom(24, .cherryBombRegular)
+        titleLabel.font = UIFont.custom(24, .semiBold)
         subtitleLabel.font = UIFont.custom(14, .regular)
         
         // Start button shadow & fonts

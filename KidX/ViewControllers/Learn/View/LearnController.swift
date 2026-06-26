@@ -123,7 +123,7 @@ class LearnController: BaseController {
     }
 
     private func setupMainLabels() {
-        heroTitleLabel.font = UIFont.custom(28, .cherryBombRegular)
+        heroTitleLabel.font = UIFont.custom(28, .semiBold)
         heroTitleLabel.textColor = AppColor.text.color
         heroTitleLabel.numberOfLines = 2
         

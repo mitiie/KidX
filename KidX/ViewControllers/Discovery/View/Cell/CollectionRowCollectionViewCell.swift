@@ -31,7 +31,7 @@ final class CollectionRowCollectionViewCell: UICollectionViewCell, UICollectionV
     
     // MARK: - Setup UI
     private func setupUI() {
-        titleLabel.font = UIFont.custom(19, .cherryBombRegular)
+        titleLabel.font = UIFont.custom(19, .semiBold)
         viewAllButton.titleLabel?.font = UIFont.custom(14, .semiBold)
         
         // Nested horizontal CollectionView config

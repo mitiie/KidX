@@ -48,7 +48,7 @@ final class GameCollectionViewCell: UICollectionViewCell {
     // MARK: - Setup UI
     private func setupUI() {
         // Sections & card
-        titleLabel.font = UIFont.custom(20, .cherryBombRegular)
+        titleLabel.font = UIFont.custom(20, .semiBold)
         missionCard.layer.cornerRadius = 32
         missionCard.clipsToBounds = true
         
@@ -66,7 +66,7 @@ final class GameCollectionViewCell: UICollectionViewCell {
         badgeLabel.font = UIFont.custom(12, .semiBold)
         
         // Labels
-        missionTitleLabel.font = UIFont.custom(22, .cherryBombRegular)
+        missionTitleLabel.font = UIFont.custom(22, .semiBold)
         progressTitleLabel.font = UIFont.custom(13, .regular)
         progressValueLabel.font = UIFont.custom(14, .semiBold)
         

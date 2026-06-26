@@ -26,7 +26,7 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="weight" value="cherryBombRegular"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="weight" value="semiBold"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
