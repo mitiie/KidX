@@ -1,4 +1,5 @@
 @startuml SD_ThemMoiTheGhiNho
+
 skinparam defaultFontName Arial
 skinparam defaultFontSize 18
 skinparam shadowing false
@@ -18,44 +19,66 @@ skinparam sequence {
 }
 
 actor "Quản trị viên" as Admin
-boundary "Giao diện thêm mới thẻ" as UI
-control "Hệ thống" as Controller
-entity "Cơ sở dữ liệu" as CSDL
+boundary "GiaoDienThemMoiTheGhiNho" as UI
+control "HeThong" as Controller
+entity "TheGhiNho" as TheGhiNho
+entity "ChuDeHocTap" as ChuDeHocTap
 
-Admin -> UI : 1. Nhập thông tin thẻ và nhấn "Lưu"
+Admin -> UI : 1. Chọn chức năng\nThêm mới thẻ ghi nhớ
 activate UI
 
-UI -> Controller : 2. Gửi yêu cầu thêm mới thẻ ghi nhớ
+UI --> Admin : 2. Hiển thị giao diện thêm mới thẻ
+
+Admin -> UI : 3. Nhập từ tiếng Anh,\ntừ tiếng Việt, ảnh minh họa\nvà nhấn Lưu
+
+UI -> Controller : 4. Gửi yêu cầu thêm mới thẻ ghi nhớ
 activate Controller
 
-Controller -> Controller : 3. Kiểm tra thông tin hợp lệ
+Controller -> Controller : 5. Kiểm tra thông tin hợp lệ
 
-alt Lỗi thiếu dữ liệu (Ngoại lệ 1)
-  Controller --[#red]> UI : 4. Trả thông báo thiếu dữ liệu
-  UI --[#red]> Admin : 5. Cảnh báo lỗi thiếu thông tin
+alt Thiếu thông tin hoặc ảnh minh họa
+    Controller --[#red]> UI : 6. Thông báo lỗi thiếu thông tin
+    UI --[#red]> Admin : 7. Yêu cầu bổ sung dữ liệu
 
 else Thông tin hợp lệ
-  Controller -> CSDL : 4. Kiểm tra trùng lặp & lưu thẻ mới
-  activate CSDL
-  
-  alt Trùng từ vựng (Ngoại lệ 2)
-    CSDL --[#red]> Controller : 5. Báo trùng lặp
-    Controller --[#red]> UI : 6. Trả thông báo trùng từ vựng
-    UI --[#red]> Admin : 7. Cảnh báo từ vựng đã tồn tại
-    
-  else Lỗi lưu trữ (Ngoại lệ 3)
-    CSDL --[#red]> Controller : 5. Báo lỗi lưu trữ
-    Controller --[#red]> UI : 6. Trả thông báo lưu thất bại
-    UI --[#red]> Admin : 7. Thông báo lỗi & quay lui trạng thái
-    
-  else Lưu thành công (Luồng chính)
-    CSDL --> Controller : 5. Xác nhận lưu thành công
-    deactivate CSDL
-    Controller --> UI : 6. Trả kết quả thêm thành công
-    deactivate Controller
-    UI --> Admin : 7. Hiển thị thông báo thành công
-  end
+    Controller -> TheGhiNho : 6. Kiểm tra thẻ ghi nhớ đã tồn tại
+    activate TheGhiNho
+
+    alt Thẻ ghi nhớ đã tồn tại
+        TheGhiNho --[#red]> Controller : 7. Trả kết quả trùng lặp
+        deactivate TheGhiNho
+
+        Controller --[#red]> UI : 8. Thông báo lỗi trùng từ vựng
+        UI --[#red]> Admin : 9. Yêu cầu chỉnh sửa thông tin
+
+    else Thẻ ghi nhớ chưa tồn tại
+        Controller -> TheGhiNho : 8. Tạo thẻ ghi nhớ mới
+        TheGhiNho --> Controller : 9. Xác nhận tạo thẻ thành công
+        deactivate TheGhiNho
+
+        Controller -> ChuDeHocTap : 10. Cập nhật số lượng thẻ trong chủ đề
+        activate ChuDeHocTap
+
+        alt Cập nhật chủ đề thất bại
+            ChuDeHocTap --[#red]> Controller : 11. Báo lỗi cập nhật
+
+            deactivate ChuDeHocTap
+
+            Controller --[#red]> UI : 12. Thông báo thêm mới thất bại
+            UI --[#red]> Admin : 13. Quay lui trạng thái trước
+
+        else Cập nhật thành công
+            ChuDeHocTap --> Controller : 11. Xác nhận cập nhật thành công
+            deactivate ChuDeHocTap
+
+            Controller --> UI : 12. Trả kết quả thêm mới thành công
+            deactivate Controller
+
+            UI --> Admin : 13. Hiển thị thông báo thành công
+        end
+    end
 end
 
 deactivate UI
+
 @enduml

@@ -84,15 +84,15 @@
 
 
 
-        <!-- Entity AI -->
-        <mxCell id="entity_ai"
-          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;MoHinhAI&lt;/b&gt;&lt;/p&gt;
+        <!-- Control Service AI -->
+        <mxCell id="service_ai"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;BoNhanDangMNIST&lt;/b&gt;&lt;/p&gt;
 &lt;hr&gt;
-- modelCNN
+- modelMNIST: mnistCNN
 &lt;hr&gt;
-+ nhanDangChuSo(image)&lt;br&gt;
-+ tinhDoTinCay()"
++ nhanDangNetVe(image: UIImage): Int&lt;br&gt;
++ tinhDoTinCay(): Float"
           style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
           vertex="1"
           parent="1">
@@ -140,10 +140,10 @@
 
 
 
-        <!-- Control -> Entity AI -->
+        <!-- Control -> Service AI -->
         <mxCell id="edge4"
           source="control"
-          target="entity_ai"
+          target="service_ai"
           edge="1"
           parent="1"
           style="endArrow=none;">

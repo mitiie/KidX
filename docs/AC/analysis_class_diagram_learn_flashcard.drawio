@@ -31,8 +31,6 @@
           <mxGeometry x="660" y="195" width="160" height="170" as="geometry" />
         </mxCell>
 
-
-
         <!-- Connections -->
         <!-- User -> UI -->
         <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="actor_user" target="class_ui" edge="1">
@@ -57,8 +55,6 @@
             <Array points="500, 280" />
           </mxGeometry>
         </mxCell>
-
-
 
       </root>
     </mxGraphModel>

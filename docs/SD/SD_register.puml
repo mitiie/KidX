@@ -1,0 +1,91 @@
+@startuml
+
+actor "Người dùng" as User
+
+boundary "GiaoDienDangKy" as UI
+
+control "HeThongDangKy" as System
+
+entity "TaiKhoan" as Account
+
+
+User -> UI : Chọn nút "Đăng ký"
+
+UI -> User : Hiển thị form đăng ký\nEmail, Mật khẩu,\nXác nhận mật khẩu
+
+
+User -> UI : Nhập thông tin\nvà nhấn "Đăng ký"
+
+
+UI -> System : kiemTraThongTinDangKy(email,password)
+
+
+alt Thông tin hợp lệ
+
+    System -> System : kiemTraEmailTonTai()
+
+
+    alt Email chưa tồn tại
+
+        System -> Account : taoTaiKhoan(email,password)
+
+        Account --> System : Tạo tài khoản thành công
+
+
+        System -> Account : luuTaiKhoan()
+
+
+        System -> System : guiEmailXacMinh(email)
+
+        System --> User : Gửi email xác minh
+
+
+        User -> System : xacNhanEmail(token)
+
+
+        System -> Account : xacNhanEmail()
+
+
+        Account --> System : Cập nhật trạng thái xác minh
+
+
+        System --> UI : hienThiDangKyThanhCong()
+
+
+        UI --> User : Hiển thị thông báo thành công
+
+
+        User -> UI : Bấm xác nhận
+
+
+        UI -> System : quayVeDangNhap()
+
+
+
+    else Email đã tồn tại
+
+
+        System --> UI : hienThiThongBaoLoi("Email đã tồn tại")
+
+        UI --> User : Yêu cầu nhập email khác
+
+
+
+    end
+
+
+
+else Thông tin không hợp lệ
+
+
+    System --> UI : hienThiThongBaoLoi()
+
+
+    UI --> User : Hiển thị lỗi\n- Thiếu thông tin\n- Sai định dạng\n- Mật khẩu không khớp
+
+
+
+end
+
+
+@enduml

@@ -1,4 +1,5 @@
 @startuml SD_SuaThuThach
+
 skinparam defaultFontName Arial
 skinparam defaultFontSize 18
 skinparam shadowing false
@@ -18,39 +19,92 @@ skinparam sequence {
 }
 
 actor "Quản trị viên" as Admin
-boundary "Giao diện sửa thử thách" as UI
-control "Hệ thống" as Controller
-entity "Cơ sở dữ liệu" as CSDL
+boundary "GiaoDienSuaThuThach" as UI
+control "HeThong" as Controller
+entity "ThuThach" as ThuThach
 
-Admin -> UI : 1. Thay đổi thông tin thử thách và nhấn "Lưu"
+
+Admin -> UI : 1. Chọn thử thách cần sửa\nvà nhấn "Sửa"
 activate UI
 
-UI -> Controller : 2. Gửi yêu cầu cập nhật thử thách
+UI -> Controller : 2. Gửi yêu cầu lấy\nthông tin thử thách
 activate Controller
 
-Controller -> Controller : 3. Kiểm tra thông tin hợp lệ
 
-alt Lỗi thiếu dữ liệu (Ngoại lệ 1)
-  Controller --[#red]> UI : 4. Trả thông báo thiếu dữ liệu (Ngoại lệ 1)
-  UI --[#red]> Admin : 5. Cảnh báo lỗi thiếu thông tin
+Controller -> ThuThach : 3. Lấy thông tin thử thách hiện tại
+activate ThuThach
+
+ThuThach --> Controller : 4. Trả thông tin thử thách
+
+deactivate ThuThach
+
+
+Controller --> UI : 5. Hiển thị dữ liệu hiện tại\ncủa thử thách
+
+deactivate Controller
+
+
+UI --> Admin : 6. Hiển thị giao diện chỉnh sửa
+
+
+Admin -> UI : 7. Chỉnh sửa tiêu đề,\nmô tả, mã màu,\ntừ khóa AI
+
+Admin -> UI : 8. Nhấn nút Lưu
+
+
+UI -> Controller : 9. Gửi yêu cầu cập nhật thử thách
+activate Controller
+
+
+Controller -> Controller : 10. Kiểm tra dữ liệu hợp lệ
+
+
+alt Thiếu thông tin bắt buộc
+
+    Controller --[#red]> UI : 11. Thông báo lỗi thiếu thông tin
+
+    UI --[#red]> Admin : 12. Yêu cầu bổ sung dữ liệu
+
 
 else Dữ liệu hợp lệ
-  Controller -> CSDL : 4. Cập nhật dữ liệu thay đổi vào CSDL
-  activate CSDL
-  
-  alt Lỗi lưu trữ (Ngoại lệ 2)
-    CSDL --[#red]> Controller : 5. Báo lỗi lưu trữ
-    Controller --[#red]> UI : 6. Trả thông báo cập nhật thất bại
-    UI --[#red]> Admin : 7. Thông báo lỗi & khôi phục trạng thái
-    
-  else Cập nhật thành công (Luồng chính)
-    CSDL --> Controller : 5. Xác nhận cập nhật thành công
-    deactivate CSDL
-    Controller --> UI : 6. Trả kết quả cập nhật thành công
-    deactivate Controller
-    UI --> Admin : 7. Hiển thị thông báo thành công
-  end
+
+
+    Controller -> ThuThach : 11. Cập nhật thông tin thử thách
+    activate ThuThach
+
+
+    alt Ghi dữ liệu thất bại
+
+        ThuThach --[#red]> Controller : 12. Báo lỗi cập nhật dữ liệu
+
+        deactivate ThuThach
+
+
+        Controller --[#red]> UI : 13. Thông báo cập nhật thất bại
+
+        UI --[#red]> Admin : 14. Khôi phục dữ liệu cũ\nvà quay lại trạng thái trước
+
+
+    else Cập nhật thành công
+
+
+        ThuThach --> Controller : 12. Xác nhận cập nhật thành công
+
+        deactivate ThuThach
+
+
+        Controller --> UI : 13. Trả kết quả cập nhật thành công
+
+        deactivate Controller
+
+
+        UI --> Admin : 14. Hiển thị thông báo\nsửa thử thách thành công
+
+    end
+
 end
 
+
 deactivate UI
+
 @enduml

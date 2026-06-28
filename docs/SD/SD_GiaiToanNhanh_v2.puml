@@ -1,0 +1,98 @@
+@startuml SD_GiaiToanNhanh
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 15
+skinparam BoxPadding 10
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "GiaoDienThuThachGiaiToan" as UI
+control "DieuKhienGiaiToanNhanh" as Controller
+entity "CaculateChallenge" as Challenge
+entity "DigitRecognitionService" as MNIST
+
+User -> UI : 1. chonCheDoThuThach()
+activate UI
+||20||
+
+UI -> Controller : 2. taiDanhSachThuThach(difficulty)
+activate Controller
+Controller -> Challenge : 3. generateChallenges(difficulty)
+Challenge --> Controller : 4. Danh sách 10 phép tính
+Controller --> UI : 5. Hiển thị phép tính,\ncấp độ, bảng vẽ
+deactivate Controller
+||20||
+
+alt Chế độ Nâng cao
+  UI -> UI : 6. hienThiHetGio()\nBắt đầu đếm ngược
+end
+||20||
+
+loop 10 cấp độ
+  User -> UI : 7. Vẽ đáp án lên bảng
+  UI -> UI : 8. hienThiKetQua(prediction)\nHiển thị nét vẽ realtime
+  ||20||
+
+  alt Bảng vẽ trống
+    User -> UI : clickKiemTra()
+    UI --> User : Thông báo\n"Bé hãy vẽ câu trả lời\ntrước khi kiểm tra!"
+  else Có nét vẽ
+    User -> UI : 9. clickKiemTra()
+    UI -> Controller : 10. kiemTraKetQua(pixelBuffer)
+    activate Controller
+    Controller -> MNIST : 11. predict(pixelBuffer)
+    MNIST --> Controller : 12. Kết quả nhận dạng
+    ||20||
+
+    alt Đáp án đúng
+      Controller -> Challenge : 13a. setCompleted()
+      Controller --> UI : 14a. hienThiHoanThanh()\nHiện nút "Tiếp theo"
+      User -> UI : 15a. clickTiepTheo()
+      UI -> Controller : 16a. chuyenThuThachKeTiep()
+      Controller --> UI : 17a. Phép tính mới,\nxóa bảng vẽ
+    else Đáp án sai
+      Controller --> UI : 13b. xoaKetQua()\nHiện đáp án sai,\nxóa bảng vẽ
+    end
+    deactivate Controller
+  end
+end
+||20||
+
+Controller -> Controller : recordMathChallengeCompleted()
+Controller --> UI : hienThiHoanThanh()\nThông báo hoàn thành
+User -> UI : quayLaiTrangTruoc()
+UI --> User : Về màn hình chính
+deactivate UI
+||20||
+
+alt Ngoại lệ: Hết giờ (Chế độ Nâng cao)
+  UI -> UI : Timer về 0
+  UI -> Controller : resetTienTrinh()
+  activate Controller
+  Controller --> UI : Lưu trạng thái
+  deactivate Controller
+  UI --> User : "Hết giờ rồi!\nBé hãy thử lại nhé!"
+  User -> UI : Xác nhận
+  UI -> Controller : quayVeManHinhChinh()
+  activate Controller
+  Controller --> UI : Điều hướng
+  deactivate Controller
+  UI --> User : Về màn hình chính
+end
+
+@enduml

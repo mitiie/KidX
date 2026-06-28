@@ -99,13 +99,15 @@
 
 
 
-        <!-- Entity AI -->
-        <mxCell id="class_entity_ai"
-          value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
-&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;MoHinhNhanDangDoVat&lt;/b&gt;&lt;/p&gt;
+        <!-- Control Service AI -->
+        <mxCell id="class_service_ai"
+          value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;BoNhanDangMobileNet&lt;/b&gt;&lt;/p&gt;
 &lt;hr&gt;
-+ nhanDangVatThe(image)&lt;br&gt;
-+ tinhDoTinCay()"
+- modelMobileNet: MobileNetV2
+&lt;hr&gt;
++ nhanDangVatThe(image: UIImage): [String]&lt;br&gt;
++ tinhDoTinCay(): Float"
           style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;"
           vertex="1"
           parent="1">
@@ -121,15 +123,17 @@
           value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
 &lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;SavedObjectItem&lt;/b&gt;&lt;/p&gt;
 &lt;hr&gt;
-- objectName&lt;br&gt;
-- image&lt;br&gt;
-- createdDate
+- name: String&lt;br&gt;
+- filename: String&lt;br&gt;
+- timestamp: Date
 &lt;hr&gt;
-+ luuVatThe()"
++ create()&lt;br&gt;
++ delete()&lt;br&gt;
++ select()"
           style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;"
           vertex="1"
           parent="1">
-          <mxGeometry x="760" y="430" width="200" height="140" as="geometry"/>
+          <mxGeometry x="760" y="420" width="200" height="170" as="geometry"/>
         </mxCell>
 
 
@@ -193,7 +197,7 @@
           edge="1"
           parent="1"
           source="class_control"
-          target="class_entity_ai">
+          target="class_service_ai">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
 

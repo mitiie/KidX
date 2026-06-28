@@ -1,4 +1,5 @@
 @startuml SD_TapVietChuSo
+
 skinparam defaultFontName Arial
 skinparam defaultFontSize 24
 skinparam shadowing false
@@ -20,67 +21,143 @@ skinparam sequence {
   ActivationBackgroundColor #EEEEEE
 }
 
+
 actor "Người dùng" as User
-boundary "Giao diện tập viết" as UI
-control "Hệ thống" as Controller
-entity "Mô hình AI (mnistCNN)" as AI
+
+boundary "GiaoDienTapVietSo\n<<Boundary>>" as UI
+
+control "DieuKhienTapVietSo\n<<Control>>" as Controller
+
+entity "DuLieuTapViet\n<<Entity>>" as Data
+
+control "BoNhanDangMNIST\n<<Control>>" as AI
+
+
 
 User -> UI : 1. Chọn thẻ\n"Luyện Viết Chữ Số"
 activate UI
+
 ||20||
 
-UI -> UI : 2. Khởi tạo giao diện mặc định\n(Bảng vẽ trống, chọn số 0)
+UI -> Controller : 2. Khởi tạo chức năng tập viết
+activate Controller
+
+Controller -> Data : 3. Lấy dữ liệu mặc định\n(chọn số 0, trạng thái bảng)
+activate Data
+
+Data --> Controller : 4. Trả thông tin bài tập
+deactivate Data
+
+Controller --> UI : 5. Hiển thị giao diện\nbảng vẽ + danh sách số 0-9
+deactivate Controller
+
+
 ||20||
 
-loop Tương tác luyện viết số
-  alt Chọn số hoặc Xóa bảng vẽ
-    User -> UI : 3a. Chạm chọn số mới (0-9)\nhoặc nhấn Clear
-    ||20||
-    UI -> UI : 4a. Cập nhật số chọn, làm sạch\nbảng vẽ và ẩn kết quả
-    ||20||
-  
-  else Thực hiện nét vẽ
-    User -> UI : 3b. Di chuyển ngón tay\ntrên bảng vẽ
-    ||20||
-    UI -> UI : 4b. Nhận dạng và hiển thị\nnét vẽ thời gian thực
-    ||20||
-  
-  else Kiểm tra nhận diện chữ số
-    User -> UI : 3c. Chạm nút "Kiểm tra"
-    ||20||
-    UI -> Controller : 4c. Gửi yêu cầu nhận diện\nnét vẽ (pixel buffer)
-    activate Controller
-    ||20||
-    
-    Controller -> AI : 5. Dự đoán chữ số\ntừ ảnh nét vẽ
-    activate AI
-    ||20||
-    AI --> Controller : 6. Trả về kết quả\n(số dự đoán, độ tin cậy)
-    deactivate AI
-    ||20||
-    
-    alt Nhận diện không tin cậy (Ngoại lệ)
-      Controller --> UI : 7a. Báo kết quả\nkhông tin cậy (Unreliable)
-      ||20||
-      UI --> User : 8a. Hiển thị cảnh báo\n"Không thể nhận dạng" & viết lại
-      ||20||
-      
-    else Nhận diện thành công
-      Controller --> UI : 7b. Trả về chữ số dự đoán
-      deactivate Controller
-      ||20||
-      UI -> UI : 8b. So khớp chữ số\ndự đoán với số đã chọn
-      ||20||
-      UI --> User : 9b. Hiển thị kết quả\ntương ứng (Đúng / Sai)
-      ||20||
+
+loop Người dùng luyện viết số
+
+    alt Chọn chữ số mới
+
+        User -> UI : 6a. Chọn chữ số cần luyện (0-9)
+
+        UI -> Controller : 7a. Gửi yêu cầu đổi chữ số
+        activate Controller
+
+        Controller -> Data : 8a. Cập nhật chữ số mẫu
+
+        Data --> Controller : 9a. Xác nhận cập nhật
+
+        Controller -> UI : 10a. Reset bảng vẽ\nhiển thị số mẫu mới
+
+        deactivate Controller
+
+
+    else Viết chữ số trên bảng
+
+        User -> UI : 6b. Vẽ nét trên bảng
+
+        UI -> Controller : 7b. Gửi nét vẽ mới
+
+        Controller -> Data : 8b. Lưu nét vẽ
+
+        Data --> Controller : 9b. Xác nhận lưu
+
+        Controller --> UI : 10b. Hiển thị nét vẽ realtime
+
+
+    else Kiểm tra chữ số
+
+
+        User -> UI : 6c. Nhấn "Kiểm tra"
+
+
+        UI -> Controller : 7c. Yêu cầu nhận dạng\n(danh sách nét vẽ)
+
+        activate Controller
+
+
+        Controller -> Data : 8c. Lấy dữ liệu nét vẽ
+
+        Data --> Controller : 9c. Trả dữ liệu ảnh
+
+
+        Controller -> AI : 10. nhanDangNetVe(image)
+
+        activate AI
+
+        AI --> Controller : 11. Trả kết quả\n(chữ số + độ tin cậy)
+
+        deactivate AI
+
+
+
+        alt Độ tin cậy thấp\n(Không thể nhận dạng)
+
+            Controller --> UI : 12a. Thông báo lỗi nhận dạng
+
+            UI --> User : 13a. Hiển thị\n"Không thể nhận dạng"\nCho phép viết lại
+
+
+        else Nhận dạng thành công
+
+
+            Controller --> UI : 12b. Trả kết quả nhận dạng
+
+            UI -> UI : 13b. So sánh\nvới chữ số đã chọn
+
+
+            alt Kết quả đúng
+
+                UI --> User : 14a. Hiển thị\n"Chúc mừng"
+
+            else Kết quả sai
+
+                UI --> User : 14b. Hiển thị\n"Chưa đúng, thử lại"
+
+            end
+
+        end
+
+        deactivate Controller
+
     end
-  end
+
 end
 
-User -> UI : 10. Chạm chọn nút\n"Quay lại"
-||20||
-UI -> UI : 11. Giải phóng tài nguyên\nvà đóng màn hình
-||20||
-UI --> User : 12. Trở về màn hình\nhọc tập chính
+
+
+User -> UI : 15. Chọn "Quay lại"
+
+activate UI
+
+UI -> Controller : 16. Đóng chức năng tập viết
+
+Controller --> UI : 17. Giải phóng dữ liệu
+
+UI --> User : 18. Quay về màn hình học tập
+
 deactivate UI
+
+
 @enduml

@@ -1,11 +1,9 @@
-@startuml SD_TruyTimDoVat
-
+@startuml SD_SanLungVatThe
 skinparam defaultFontName Arial
 skinparam defaultFontSize 24
 skinparam shadowing false
 skinparam ParticipantPadding 10
 skinparam BoxPadding 5
-
 skinparam sequence {
   ParticipantBorderColor Black
   ParticipantBackgroundColor White
@@ -21,129 +19,53 @@ skinparam sequence {
   ActivationBackgroundColor #EEEEEE
 }
 
-
 actor "Người dùng" as User
-
-boundary "Giao diện nhiệm vụ" as UI
-
-boundary "Giao diện kết quả nhận dạng" as ResultUI
-
-control "Điều khiển truy tìm đồ vật" as Controller
-
-entity "Mô hình AI (MobileNet)" as AI
-
+boundary "GiaoDienDanhSachThuThach" as UI
+boundary "GiaoDienKetQuaNhanDang" as ResultUI
+control "DieuKhienSanLungVatThe" as Controller
+control "BoNhanDangMobileNet" as AI
 entity "MissionData" as Mission
 
-entity "SavedObjectItem" as Saved
-
-
-
-User -> UI : 1. Chọn thẻ\n"Game truy tìm kho báu"
-
+User -> UI : 1. Chọn thẻ\n"Game săn lùng vật thể"
 activate UI
-
 ||20||
-
-UI -> Controller : 2. Yêu cầu tải danh sách thử thách
-
+UI -> Controller : 2. layDanhSachThuThach()
 activate Controller
-
-Controller -> Mission : 3. Lấy dữ liệu thử thách
-
+Controller -> Mission : 3. layThongTinThuThach()
 Mission --> Controller : 4. Trả danh sách nhiệm vụ
-
-Controller --> UI : 5. Hiển thị danh sách\nvà tiến trình
-
+Controller --> UI : 5. hienThiDanhSachThuThach()\ncapNhatTienTrinh()
 deactivate Controller
-
 ||20||
-
-
 
 loop Thực hiện thử thách
-
-  User -> UI : 6. Chọn nhiệm vụ\nchưa hoàn thành
-
-  UI -> UI : 7. Hiển thị lựa chọn\nChụp ảnh / Thư viện
-
-
+  User -> UI : 6. clickThucHienThuThach()
+  UI -> UI : 7. hienThiLuaChonAnh()
   User -> UI : 8. Nạp ảnh vật thể
-
-
-  UI -> Controller : 9. Gửi ảnh cần nhận dạng
-
+  UI -> Controller : 9. xuLyChonThuThach()\nguiAnh()
   activate Controller
-
-
-  Controller -> AI : 10. Nhận dạng vật thể
-
+  Controller -> AI : 10. nhanDangVatThe(image)
   activate AI
-
-  AI --> Controller : 11. Trả kết quả\nvật thể + độ tin cậy
-
+  AI --> Controller : 11. tinhDoTinCay()\nTrả kết quả + độ tin cậy
   deactivate AI
-
-
-  Controller -> Controller : 12. So khớp\nvới yêu cầu thử thách
-
-
-
+  Controller -> Controller : 12. kiemTraKetQua()
   alt Nhận dạng chính xác
-
-
-    Controller --> ResultUI : 13a. Hiển thị kết quả đúng
-
+    Controller --> ResultUI : 13a. hienThiThanhCong()
     ResultUI --> User : 14a. Thông báo\nHoàn thành thử thách
-
-
-    User -> ResultUI : 15a. Chọn\n"Lưu bộ sưu tập"
-
-
-    ResultUI -> Controller : 16a. Yêu cầu lưu vật thể
-
-
-    Controller -> Saved : 17a. Lưu ảnh\nvà thông tin vật thể
-
-    Saved --> Controller : 18a. Lưu thành công
-
-
-    Controller -> Mission : 19a. Cập nhật\ntrạng thái hoàn thành
-
-
-    Controller --> ResultUI : 20a. Cập nhật kết quả
-
-
-
+    Controller -> Mission : 15a. capNhatTrangThai()
+    Mission --> Controller : 16a. capNhatTrangThaiHoanThanh()
+    Controller --> UI : 17a. capNhatTienTrinh()
   else Nhận dạng sai
-
-
-    Controller --> ResultUI : 13b. Trả kết quả sai
-
-    ResultUI --> User : 14b. Hiển thị thông báo\nvà gợi ý thử lại
-
-
+    Controller --> ResultUI : 13b. hienThiThatBai()
+    ResultUI --> User : 14b. hienThiGoiYThuLai()
   end
-
-
   deactivate Controller
 
+  User -> ResultUI : clickDong()
+  ResultUI --> UI : Quay lại danh sách
 end
 
-
-
-User -> UI : 21. Chọn "Quay lại"
-
-
-UI -> Controller : 22. Đóng chức năng
-
-
-Controller --> UI : 23. Hoàn tất
-
-
-UI --> User : 24. Về màn hình khám phá
-
-
+User -> UI : clickQuayLai()
+UI --> User : Về màn hình khám phá
 deactivate UI
-
 
 @enduml

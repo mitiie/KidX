@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="diagram_manage_collection" name="Activity Diagram Manage Collection">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="header_user" value="Người dùng" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="50" y="40" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="header_system" value="Hệ thống" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="350" y="40" width="300" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="start_node" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="190" y="100" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step1" value="Chọn &quot;Khám phá thế giới&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="95" y="150" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step2" value="Hiển thị hộp thoại nạp ảnh" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="395" y="150" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step3" value="Người dùng chụp/chọn ảnh" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="95" y="220" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step4" value="Nhận diện bằng AI &amp; Trả kết quả" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="395" y="220" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step5" value="Nhấn &quot;Lưu bộ sưu tập&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="95" y="290" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="decision1" value="Thông tin hợp lệ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="450" y="280" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step6" value="Lưu vào CSDL" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="395" y="370" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="decision2" value="Lưu thành công?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="450" y="440" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="step7" value="Thông báo thành công" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="395" y="530" width="210" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="end_node" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="490" y="610" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" edge="1" parent="1" source="start_node" target="step1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="step1" target="step2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="step2" target="step3"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="step3" target="step4"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="step4" target="step5"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="step5" target="decision1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="decision1" target="step6"><mxGeometry relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry></mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="step6" target="decision2"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="decision2" target="step7"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="step7" target="end_node"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,192 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net" agent="5.0">
   <diagram id="KidX_ERD_Diagram" name="KidX ERD Diagram">
-    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        
-        <!-- User Entity and Attributes -->
+
+        <!-- ==================== USER ENTITY ==================== -->
         <mxCell id="ent_user" value="User" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
-          <mxGeometry x="150" y="250" width="120" height="60" as="geometry" />
+          <mxGeometry x="120" y="300" width="120" height="60" as="geometry" />
         </mxCell>
-        
+
         <mxCell id="attr_u_id" value="userId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="150" width="100" height="50" as="geometry" />
+          <mxGeometry x="130" y="200" width="100" height="50" as="geometry" />
         </mxCell>
-        
+
         <mxCell id="attr_u_email" value="email" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="40" y="200" width="100" height="50" as="geometry" />
+          <mxGeometry x="10" y="240" width="100" height="50" as="geometry" />
         </mxCell>
-        
+
         <mxCell id="attr_u_display" value="displayName" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="30" y="280" width="110" height="50" as="geometry" />
+          <mxGeometry x="10" y="320" width="100" height="50" as="geometry" />
         </mxCell>
-        
+
         <mxCell id="attr_u_avatar" value="avatarUrl" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="40" y="360" width="100" height="50" as="geometry" />
+          <mxGeometry x="10" y="400" width="100" height="50" as="geometry" />
         </mxCell>
-        
-        <!-- StudyLog Entity and Attributes -->
-        <mxCell id="ent_studylog" value="StudyLog" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
-          <mxGeometry x="480" y="100" width="120" height="60" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_l_id" value="logId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="490" y="10" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_l_date" value="date" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="380" y="40" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_l_time" value="totalStudyTime" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="600" y="40" width="110" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_l_cards" value="cardsLearned" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="620" y="110" width="120" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_l_objects" value="objectsFound" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="620" y="180" width="110" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_l_maths" value="mathsSolved" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="490" y="180" width="110" height="50" as="geometry" />
-        </mxCell>
-        
-        <!-- SavedObject Entity and Attributes -->
-        <mxCell id="ent_saved" value="SavedObject" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
-          <mxGeometry x="150" y="550" width="120" height="60" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_s_id" value="savedId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="160" y="660" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_s_name" value="objectName" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="40" y="500" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_s_path" value="imagePath" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="30" y="580" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_s_time" value="createdAt" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="40" y="660" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <!-- Mission Entity and Attributes -->
-        <mxCell id="ent_mission" value="Mission" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
-          <mxGeometry x="480" y="550" width="120" height="60" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_m_id" value="missionId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="490" y="650" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_m_title_en" value="titleEn" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="380" y="470" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_m_title_vi" value="titleVi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="380" y="630" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_m_desc_en" value="descriptionEn" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="610" y="500" width="110" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_m_desc_vi" value="descriptionVi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="610" y="580" width="110" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_m_icon" value="iconSymbol" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="610" y="660" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <!-- Topic Entity and Attributes -->
-        <mxCell id="ent_topic" value="Topic" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
-          <mxGeometry x="850" y="250" width="120" height="60" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_t_id" value="topicId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="860" y="160" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_t_name" value="topicName" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="970" y="200" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_t_icon" value="topicIcon" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="970" y="290" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <!-- Flashcard Entity and Attributes -->
-        <mxCell id="ent_flashcard" value="Flashcard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
-          <mxGeometry x="850" y="450" width="120" height="60" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_f_id" value="cardId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="860" y="550" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_f_en" value="wordEn" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="980" y="410" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_f_vi" value="wordVi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="980" y="490" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_f_path" value="imagePath" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="980" y="570" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <!-- MathLevel Entity and Attributes -->
-        <mxCell id="ent_math" value="MathLevel" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
-          <mxGeometry x="480" y="330" width="120" height="60" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_mt_id" value="levelId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="490" y="250" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_mt_op1" value="operand1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="370" y="330" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_mt_op2" value="operand2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="610" y="330" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_mt_op" value="operation" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="370" y="400" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="attr_mt_res" value="result" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="610" y="400" width="100" height="50" as="geometry" />
-        </mxCell>
-        
-        <!-- Relationships -->
-        <mxCell id="rel_contains_log" value="contains" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="340" y="155" width="80" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="rel_collects" value="collects" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="170" y="380" width="80" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="rel_instances" value="instances" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="340" y="555" width="80" height="50" as="geometry" />
-        </mxCell>
-        
-        <mxCell id="rel_has_cards" value="has_cards" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="870" y="360" width="80" height="50" as="geometry" />
-        </mxCell>
-        
-        <!-- Attribute Connectors -->
+
+        <!-- User attribute connectors -->
         <mxCell id="conn_u_id" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_user" target="attr_u_id">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -199,7 +40,41 @@
         <mxCell id="conn_u_avatar" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_user" target="attr_u_avatar">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
+
+        <!-- ==================== STUDYLOG ENTITY ==================== -->
+        <mxCell id="ent_studylog" value="StudyLog" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="450" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_l_id" value="logId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="10" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_l_date" value="date" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="40" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_l_time" value="totalStudyTime" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="570" y="10" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_l_cards" value="cardsLearned" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="590" y="80" width="120" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_l_objects" value="objectsFound" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="590" y="150" width="110" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_l_maths" value="mathsSolved" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="130" width="110" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_l_userId" value="userId (FK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="190" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- StudyLog attribute connectors -->
         <mxCell id="conn_l_id" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_studylog" target="attr_l_id">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -218,7 +93,32 @@
         <mxCell id="conn_l_maths" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_studylog" target="attr_l_maths">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
+        <mxCell id="conn_l_userId" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_studylog" target="attr_l_userId">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== SAVEDOBJECT ENTITY ==================== -->
+        <mxCell id="ent_saved" value="SavedObject" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="120" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_s_id" value="savedId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="700" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_s_name" value="objectName" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="10" y="550" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_s_path" value="imagePath" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="10" y="630" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_s_time" value="createdAt" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="10" y="710" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- SavedObject attribute connectors -->
         <mxCell id="conn_s_id" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_saved" target="attr_s_id">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -231,7 +131,41 @@
         <mxCell id="conn_s_time" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_saved" target="attr_s_time">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
+
+        <!-- ==================== MISSION ENTITY ==================== -->
+        <mxCell id="ent_mission" value="Mission" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="450" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_m_id" value="missionId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="700" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_m_title_en" value="titleEn" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="540" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_m_title_vi" value="titleVi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="680" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_m_desc_en" value="descriptionEn" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="580" y="540" width="110" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_m_desc_vi" value="descriptionVi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="580" y="620" width="110" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_m_icon" value="iconSymbol" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="580" y="700" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_m_keywords" value="keywords" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="350" y="750" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Mission attribute connectors -->
         <mxCell id="conn_m_id" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_mission" target="attr_m_id">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -250,7 +184,28 @@
         <mxCell id="conn_m_icon" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_mission" target="attr_m_icon">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
+        <mxCell id="conn_m_keywords" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_mission" target="attr_m_keywords">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== TOPIC ENTITY ==================== -->
+        <mxCell id="ent_topic" value="Topic" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="850" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_t_id" value="topicId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="180" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_t_name" value="topicName" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="220" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_t_icon" value="topicIMG" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="310" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Topic attribute connectors -->
         <mxCell id="conn_t_id" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_topic" target="attr_t_id">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -260,7 +215,33 @@
         <mxCell id="conn_t_icon" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_topic" target="attr_t_icon">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
+
+        <!-- ==================== FLASHCARD ENTITY ==================== -->
+        <mxCell id="ent_flashcard" value="Flashcard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="850" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_f_id" value="cardId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="590" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_f_en" value="wordEn" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="440" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_f_vi" value="wordVi" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="520" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_f_path" value="imagePath" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="600" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_f_topicId" value="topicId (FK)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="860" y="670" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Flashcard attribute connectors -->
         <mxCell id="conn_f_id" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_flashcard" target="attr_f_id">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -273,7 +254,36 @@
         <mxCell id="conn_f_path" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_flashcard" target="attr_f_path">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
+        <mxCell id="conn_f_topicId" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_flashcard" target="attr_f_topicId">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== MATHLEVEL ENTITY ==================== -->
+        <mxCell id="ent_math" value="MathLevel" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontColor=#000000;fontSize=14;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_mt_id" value="levelId" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="10" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_mt_op1" value="operand1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="50" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_mt_op2" value="operand2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="130" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_mt_op" value="operation" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="190" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="attr_mt_res" value="result" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="210" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- MathLevel attribute connectors -->
         <mxCell id="conn_mt_id" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_math" target="attr_mt_id">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -289,36 +299,77 @@
         <mxCell id="conn_mt_res" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_math" target="attr_mt_res">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <!-- Relationship Connectors (1 to Many) -->
-        <mxCell id="conn_u_contains" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_user" target="rel_contains_log">
+
+        <!-- ================================================================ -->
+        <!-- ==================== RELATIONSHIPS (Direct Lines) ==================== -->
+        <!-- ================================================================ -->
+
+        <!-- R1: User ——1————N——> StudyLog -->
+        <mxCell id="rel_user_studylog" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_studylog">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="conn_contains_l" style="endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="rel_contains_log" target="ent_studylog">
+        <mxCell id="lbl_user_studylog_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_studylog">
+          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="-5" y="-15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_user_studylog_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_studylog">
+          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="-15" y="-15" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- R2: User ——1————N——> SavedObject -->
+        <mxCell id="rel_user_saved" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_saved">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <mxCell id="conn_u_collects" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_user" target="rel_collects">
+        <mxCell id="lbl_user_saved_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_saved">
+          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="15" y="0" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_user_saved_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_saved">
+          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="15" y="0" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- R3: Mission ——1————N——> SavedObject -->
+        <mxCell id="rel_mission_saved" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_mission" target="ent_saved">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="conn_collects_s" style="endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="rel_collects" target="ent_saved">
+        <mxCell id="lbl_mission_saved_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_mission_saved">
+          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="15" y="-15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_mission_saved_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_mission_saved">
+          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="-15" y="-15" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- R4: Topic ——1————N——> Flashcard -->
+        <mxCell id="rel_topic_flashcard" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_topic" target="ent_flashcard">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <mxCell id="conn_m_instances" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_mission" target="rel_instances">
+        <mxCell id="lbl_topic_flashcard_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_topic_flashcard">
+          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="15" y="0" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_topic_flashcard_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_topic_flashcard">
+          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="15" y="0" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- R5: User ——1————N——> MathLevel (user hoàn thành nhiều thử thách toán) -->
+        <mxCell id="rel_user_math" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_math">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="conn_instances_s" style="endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="rel_instances" target="ent_saved">
+        <mxCell id="lbl_user_math_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_math">
+          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="-5" y="-15" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_user_math_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_math">
+          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="-15" y="-15" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- R6: User ——1————N——> Flashcard (user ghi nhớ nhiều thẻ từ vựng) -->
+        <mxCell id="rel_user_flashcard" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_flashcard">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        
-        <mxCell id="conn_t_has" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="ent_topic" target="rel_has_cards">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="lbl_user_flashcard_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_flashcard">
+          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="15" y="-15" as="offset" /></mxGeometry>
         </mxCell>
-        <mxCell id="conn_has_f" style="endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;" edge="1" parent="1" source="rel_has_cards" target="ent_flashcard">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="lbl_user_flashcard_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_flashcard">
+          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="-15" y="-15" as="offset" /></mxGeometry>
         </mxCell>
-        
+
       </root>
     </mxGraphModel>
   </diagram>

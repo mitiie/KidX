@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-06-26T00:00:00.000Z" agent="Mozilla/5.0" version="21.6.8" type="device">
+  <diagram id="ad_login" name="Activity Diagram Login">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- === SWIMLANES HEADERS === -->
+        <mxCell id="header_user" value="Người dùng" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="50" y="40" width="370" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="header_system" value="Hệ thống" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="420" y="40" width="370" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- === SWIMLANES BODIES === -->
+        <mxCell id="lane_user" value="" style="fillColor=none;strokeColor=#cccccc;strokeWidth=1;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="80" width="370" height="1120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lane_system" value="" style="fillColor=none;strokeColor=#cccccc;strokeWidth=1;connectable=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="80" width="370" height="1120" as="geometry" />
+        </mxCell>
+
+        <!-- === NODES === -->
+        <!-- Start Node -->
+        <mxCell id="start" value="" style="ellipse;fillColor=#000000;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="240" y="90" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- select_login -->
+        <mxCell id="select_login" value="Người dùng chọn&#10;&quot;Đăng nhập&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="135" y="140" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- show_form -->
+        <mxCell id="show_form" value="Hiển thị giao diện Đăng nhập&#10;(Email, Mật khẩu, Google,&#10;Quên mật khẩu, Đăng ký)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="137.5" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- input -->
+        <mxCell id="input" value="Nhập Email, Mật khẩu&#10;và bấm Đăng nhập" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="135" y="230" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- validate -->
+        <mxCell id="validate" value="Xác thực tính hợp lệ&#10;của dữ liệu đầu vào" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="227.5" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- check_valid -->
+        <mxCell id="check_valid" value="Dữ liệu hợp lệ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="320" width="110" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- error_invalid -->
+        <mxCell id="error_invalid" value="Hiển thị thông báo lỗi&#10;(thiếu thông tin, sai định dạng)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="430" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- firebase_auth -->
+        <mxCell id="firebase_auth" value="Gửi yêu cầu đăng nhập&#10;lên Firebase Auth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="530" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- check_auth -->
+        <mxCell id="check_auth" value="Xác thực thành công?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="620" width="110" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- error_auth -->
+        <mxCell id="error_auth" value="Hiển thị thông báo lỗi&#10;&quot;Email hoặc mật khẩu&#10;không chính xác&quot;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="730" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- check_verified -->
+        <mxCell id="check_verified" value="Email đã xác thực?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="550" y="830" width="110" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- error_verified -->
+        <mxCell id="error_verified" value="Đăng xuất và thông báo lỗi,&#10;hỗ trợ gửi lại email xác minh" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="940" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- login_success -->
+        <mxCell id="login_success" value="Chuyển hướng người dùng&#10;tới màn hình chính" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="1030" width="200" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- End Node -->
+        <mxCell id="end" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="595" y="1120" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- === CONNECTIONS === -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="start" target="select_login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="select_login" target="show_form">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="235" y="215" />
+              <mxPoint x="410" y="215" />
+              <mxPoint x="410" y="165" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="show_form" target="input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="605" y="215" />
+              <mxPoint x="410" y="215" />
+              <mxPoint x="410" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="input" target="validate">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="235" y="305" />
+              <mxPoint x="410" y="305" />
+              <mxPoint x="410" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="validate" target="check_valid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Invalid Input Path -->
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#cc0000;strokeWidth=1.5;dashed=1;" edge="1" parent="1" source="check_valid" target="error_invalid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l_e6" value="Không" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#cc0000;" vertex="1" connectable="0" parent="e6">
+          <mxGeometry x="-0.3" relative="1" as="geometry">
+            <mxPoint x="15" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e6_loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="error_invalid" target="input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="605" y="505" />
+              <mxPoint x="90" y="505" />
+              <mxPoint x="90" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Valid Input -> Firebase Auth -->
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="check_valid" target="firebase_auth">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="357.5" />
+              <mxPoint x="410" y="557.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_e7" value="Có" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e7">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="firebase_auth" target="check_auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Auth Failed Path -->
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#cc0000;strokeWidth=1.5;dashed=1;" edge="1" parent="1" source="check_auth" target="error_auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l_e9" value="Không" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#cc0000;" vertex="1" connectable="0" parent="e9">
+          <mxGeometry x="-0.3" relative="1" as="geometry">
+            <mxPoint x="15" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e9_loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="error_auth" target="input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="605" y="805" />
+              <mxPoint x="90" y="805" />
+              <mxPoint x="90" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Auth Success -> Check Verified -->
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="check_auth" target="check_verified">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="657.5" />
+              <mxPoint x="410" y="867.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_e10" value="Có" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e10">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Email Not Verified Path -->
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#cc0000;strokeWidth=1.5;dashed=1;" edge="1" parent="1" source="check_verified" target="error_verified">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l_e11" value="Không" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#cc0000;" vertex="1" connectable="0" parent="e11">
+          <mxGeometry x="-0.3" relative="1" as="geometry">
+            <mxPoint x="15" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e11_loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="error_verified" target="input">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="605" y="1015" />
+              <mxPoint x="90" y="1015" />
+              <mxPoint x="90" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Verified Success -> Main Screen -->
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="check_verified" target="login_success">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="867.5" />
+              <mxPoint x="410" y="1057.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l_e12" value="Có" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="e12">
+          <mxGeometry x="-0.8" relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;" edge="1" parent="1" source="login_success" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

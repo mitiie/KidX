@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="diagram_acd_collection_bce" name="Analysis Class Diagram Collection BCE">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ACTOR -->
+        <mxCell id="actor_user" value="Người dùng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#333333;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="30" y="220" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== BOUNDARY ===================== -->
+        <mxCell id="class_ui_collection" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;GiaoDienBoSuuTap&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ hienThiLuaChonNhapAnh()&lt;br&gt;+ hienThiDanhSachBoSuuTap()&lt;br&gt;+ hienThiKetQuaNhanDien()&lt;br&gt;+ hienThiThongBaoLuu()&lt;br&gt;+ hienThiThongBaoXoa()&lt;/p&gt;" 
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="130" y="150" width="220" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== CONTROL ===================== -->
+        <mxCell id="class_control_system" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;HeThongBoSuuTap&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ xuLyNhapAnh()&lt;br&gt;+ nhanDienAI()&lt;br&gt;+ taoTheGhiNho()&lt;br&gt;+ luuVaoCSDL()&lt;br&gt;+ layDanhSachThe()&lt;br&gt;+ xoaThe()&lt;/p&gt;" 
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="390" y="140" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== ENTITY ===================== -->
+        <mxCell id="class_entity_the" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;TheGhiNho&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;- id&lt;br&gt;- anh&lt;br&gt;- nhan&lt;br&gt;- thoiGianLuu&lt;br&gt;- urlAnh&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ create()&lt;br&gt;+ delete()&lt;/p&gt;" 
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="130" width="170" height="170" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class_entity_ai" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;AIModelNhanDien&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;- modelVersion&lt;br&gt;- accuracy&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ predict(image)&lt;/p&gt;" 
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="650" y="330" width="170" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== CONNECTIONS ===================== -->
+
+        <!-- Actor -> Boundary -->
+        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="actor_user" target="class_ui_collection" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Boundary -> Control -->
+        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_ui_collection" target="class_control_system" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Control -> Entity (AI Model) -->
+        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_control_system" target="class_entity_ai" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Control -> Entity (TheGhiNho) -->
+        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_control_system" target="class_entity_the" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
