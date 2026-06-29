@@ -305,69 +305,33 @@
         <!-- ================================================================ -->
 
         <!-- R1: User ——1————N——> StudyLog -->
-        <mxCell id="rel_user_studylog" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_studylog">
+        <mxCell id="rel_user_studylog" style="startArrow=ERmandOne;endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_studylog">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_user_studylog_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_studylog">
-          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="-5" y="-15" as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="lbl_user_studylog_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_studylog">
-          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="-15" y="-15" as="offset" /></mxGeometry>
         </mxCell>
 
         <!-- R2: User ——1————N——> SavedObject -->
-        <mxCell id="rel_user_saved" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_saved">
+        <mxCell id="rel_user_saved" style="startArrow=ERmandOne;endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_saved">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_user_saved_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_saved">
-          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="15" y="0" as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="lbl_user_saved_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_saved">
-          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="15" y="0" as="offset" /></mxGeometry>
         </mxCell>
 
         <!-- R3: Mission ——1————N——> SavedObject -->
-        <mxCell id="rel_mission_saved" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_mission" target="ent_saved">
+        <mxCell id="rel_mission_saved" style="startArrow=ERmandOne;endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_mission" target="ent_saved">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_mission_saved_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_mission_saved">
-          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="15" y="-15" as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="lbl_mission_saved_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_mission_saved">
-          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="-15" y="-15" as="offset" /></mxGeometry>
         </mxCell>
 
         <!-- R4: Topic ——1————N——> Flashcard -->
-        <mxCell id="rel_topic_flashcard" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_topic" target="ent_flashcard">
+        <mxCell id="rel_topic_flashcard" style="startArrow=ERmandOne;endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_topic" target="ent_flashcard">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_topic_flashcard_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_topic_flashcard">
-          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="15" y="0" as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="lbl_topic_flashcard_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_topic_flashcard">
-          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="15" y="0" as="offset" /></mxGeometry>
         </mxCell>
 
         <!-- R5: User ——1————N——> MathLevel (user hoàn thành nhiều thử thách toán) -->
-        <mxCell id="rel_user_math" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_math">
+        <mxCell id="rel_user_math" style="startArrow=ERmandOne;endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_math">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_user_math_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_math">
-          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="-5" y="-15" as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="lbl_user_math_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_math">
-          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="-15" y="-15" as="offset" /></mxGeometry>
         </mxCell>
 
         <!-- R6: User ——1————N——> Flashcard (user ghi nhớ nhiều thẻ từ vựng) -->
-        <mxCell id="rel_user_flashcard" style="endArrow=none;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_flashcard">
+        <mxCell id="rel_user_flashcard" style="startArrow=ERmandOne;endArrow=ERmany;html=1;strokeColor=#000000;edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ent_user" target="ent_flashcard">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="lbl_user_flashcard_1" value="1" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_flashcard">
-          <mxGeometry x="-0.85" relative="1" as="geometry"><mxPoint x="15" y="-15" as="offset" /></mxGeometry>
-        </mxCell>
-        <mxCell id="lbl_user_flashcard_n" value="N" style="edgeLabel;html=1;fontSize=18;fontColor=#000000;fontStyle=1;" vertex="1" connectable="0" parent="rel_user_flashcard">
-          <mxGeometry x="0.85" relative="1" as="geometry"><mxPoint x="-15" y="-15" as="offset" /></mxGeometry>
         </mxCell>
 
       </root>
