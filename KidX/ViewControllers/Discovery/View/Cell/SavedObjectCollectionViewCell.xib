@@ -21,7 +21,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mGz-bg-img">
                                 <rect key="frame" x="12" y="12" width="126" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="img-height"/>
+                                    <constraint firstAttribute="width" secondItem="mGz-bg-img" secondAttribute="height" multiplier="126:100" id="img-ratio"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quả Táo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-bg-title">
@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vừa mới tìm thấy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGz-bg-sub">
-                                <rect key="frame" x="12" y="140" width="126" height="13.333333333333343"/>
+                                <rect key="frame" x="12" y="144" width="126" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" red="0.30196078431372547" green="0.41176470588235292" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -42,10 +42,10 @@
                             <constraint firstItem="mGz-bg-img" firstAttribute="top" secondItem="hG1-jH-12D" secondAttribute="top" constant="12" id="c1"/>
                             <constraint firstItem="mGz-bg-img" firstAttribute="leading" secondItem="hG1-jH-12D" secondAttribute="leading" constant="12" id="c2"/>
                             <constraint firstAttribute="trailing" secondItem="mGz-bg-img" secondAttribute="trailing" constant="12" id="c3"/>
-                            <constraint firstItem="aGz-bg-title" firstAttribute="top" secondItem="mGz-bg-img" secondAttribute="bottom" constant="8" id="c4"/>
+                            <constraint firstItem="aGz-bg-title" firstAttribute="top" secondItem="mGz-bg-img" secondAttribute="bottom" constant="12" id="c4"/>
                             <constraint firstItem="aGz-bg-title" firstAttribute="leading" secondItem="hG1-jH-12D" secondAttribute="leading" constant="12" id="c5"/>
                             <constraint firstAttribute="trailing" secondItem="aGz-bg-title" secondAttribute="trailing" constant="12" id="c6"/>
-                            <constraint firstItem="aGz-bg-sub" firstAttribute="top" secondItem="aGz-bg-title" secondAttribute="bottom" constant="2" id="c7"/>
+                            <constraint firstItem="aGz-bg-sub" firstAttribute="top" secondItem="aGz-bg-title" secondAttribute="bottom" constant="6" id="c7"/>
                             <constraint firstItem="aGz-bg-sub" firstAttribute="leading" secondItem="hG1-jH-12D" secondAttribute="leading" constant="12" id="c8"/>
                             <constraint firstAttribute="trailing" secondItem="aGz-bg-sub" secondAttribute="trailing" constant="12" id="c9"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aGz-bg-sub" secondAttribute="bottom" constant="12" id="c10"/>

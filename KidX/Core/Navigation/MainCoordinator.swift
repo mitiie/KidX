@@ -62,6 +62,9 @@ final class MainCoordinator: NavigationStateDelegate {
         case .caculate(let viewModel):
             push(CaculateController(viewModel: viewModel), animated: animated)
 
+        case .savedCollection:
+            push(makeSavedCollectionController(), animated: animated)
+
         default:
             break
         }
@@ -91,6 +94,11 @@ final class MainCoordinator: NavigationStateDelegate {
     private func makeListFlashCardBasicController(category: BasicFlashCardCategory) -> UIViewController {
         let viewModel = ListFlashCardBasicViewModel(navigation: navigationState, category: category)
         return ListFlashCardBasicController(viewModel: viewModel)
+    }
+
+    private func makeSavedCollectionController() -> UIViewController {
+        let viewModel = SavedCollectionViewModel(navigation: navigationState)
+        return SavedCollectionController(viewModel: viewModel)
     }
 
     private func makeAchieveController() -> UIViewController {

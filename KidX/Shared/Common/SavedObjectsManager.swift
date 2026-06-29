@@ -49,6 +49,33 @@ final class SavedObjectsManager {
         NotificationCenter.default.post(name: NSNotification.Name("ReloadSavedObjects"), object: nil)
     }
     
+    func deleteObject(imageFilename: String) {
+        if imageFilename == "apple_demo" || imageFilename == "cat_demo" {
+            var deletedDefaults = UserDefaults.standard.stringArray(forKey: "kidx_deleted_default_objects") ?? []
+            if !deletedDefaults.contains(imageFilename) {
+                deletedDefaults.append(imageFilename)
+                UserDefaults.standard.set(deletedDefaults, forKey: "kidx_deleted_default_objects")
+            }
+        } else {
+            var list = getMetadataList()
+            if let index = list.firstIndex(where: { $0.filename == imageFilename }) {
+                let metadata = list[index]
+                list.remove(at: index)
+                
+                // Delete the image file from disk
+                let fileURL = getDocumentsDirectory().appendingPathComponent(metadata.filename)
+                try? FileManager.default.removeItem(at: fileURL)
+                
+                if let encoded = try? JSONEncoder().encode(list) {
+                    UserDefaults.standard.set(encoded, forKey: metadataKey)
+                }
+            }
+        }
+        
+        // Post a notification to reload the collection view
+        NotificationCenter.default.post(name: NSNotification.Name("ReloadSavedObjects"), object: nil)
+    }
+    
     func loadObjects() -> [SavedObjectItem] {
         let savedMetadataList = getMetadataList()
         
@@ -67,22 +94,28 @@ final class SavedObjectsManager {
             }
         }
         
-        // 2. Prepend or append default demo items so they are always visible
-        let defaultApple = SavedObjectItem(
-            name: "Quả Táo",
-            image: UIImage(named: "apple_demo") ?? UIImage(),
-            imageFilename: "apple_demo",
-            dateText: "Vừa mới tìm thấy"
-        )
-        let defaultCat = SavedObjectItem(
-            name: "Con Mèo",
-            image: UIImage(named: "cat_demo") ?? UIImage(),
-            imageFilename: "cat_demo",
-            dateText: "2 giờ trước"
-        )
+        // 2. Prepend or append default demo items so they are always visible (if not deleted)
+        let deletedDefaults = UserDefaults.standard.stringArray(forKey: "kidx_deleted_default_objects") ?? []
         
-        items.append(defaultApple)
-        items.append(defaultCat)
+        if !deletedDefaults.contains("apple_demo") {
+            let defaultApple = SavedObjectItem(
+                name: "Quả Táo",
+                image: UIImage(named: "apple_demo") ?? UIImage(),
+                imageFilename: "apple_demo",
+                dateText: "Vừa mới tìm thấy"
+            )
+            items.append(defaultApple)
+        }
+        
+        if !deletedDefaults.contains("cat_demo") {
+            let defaultCat = SavedObjectItem(
+                name: "Con Mèo",
+                image: UIImage(named: "cat_demo") ?? UIImage(),
+                imageFilename: "cat_demo",
+                dateText: "2 giờ trước"
+            )
+            items.append(defaultCat)
+        }
         
         return items
     }

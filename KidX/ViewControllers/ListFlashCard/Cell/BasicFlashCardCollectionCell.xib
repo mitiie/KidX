@@ -53,7 +53,7 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
                                 <real key="value" value="27"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="string" keyPath="weight" value="cherryBombRegular"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="weight" value="bold"/>
                             <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
                         </userDefinedRuntimeAttributes>
                     </label>

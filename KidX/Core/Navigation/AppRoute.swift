@@ -46,4 +46,5 @@ enum MainRoute {
     case drawLetter(AlphabetLetter)
     case listGame(ListGameViewModel)
     case caculate(CaculateViewModel)
+    case savedCollection
 }

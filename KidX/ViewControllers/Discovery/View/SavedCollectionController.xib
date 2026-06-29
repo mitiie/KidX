@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SavedCollectionController" customModule="KidX" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="TDF-7H-gYX" id="iFL-Fn-j7w"/>
+                <outlet property="selectButton" destination="Sel-Bt-N1" id="iFL-Fn-j7x"/>
+                <outlet property="titleLabel" destination="gYt-vW-wTj" id="HMe-YA-I1t"/>
+                <outlet property="subtitleLabel" destination="pDf-WV-9dS" id="3su-wu-5Fp"/>
+                <outlet property="collectionView" destination="m9M-pY-o7r" id="Wfd-kF-0Kn"/>
+                <outlet property="deleteBarView" destination="Del-Bar-Vw" id="Wfd-kF-0Ko"/>
+                <outlet property="deleteButton" destination="Del-Btn-Ac" id="Wfd-kF-0Kp"/>
+                <outlet property="deleteBarBottomConstraint" destination="Del-Bar-Btm" id="Wfd-kF-0Kq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDF-7H-gYX">
+                    <rect key="frame" x="16" y="52" width="44" height="44"/>
+                    <color key="tintColor" red="0.1215686275" green="0.1764705882" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="MlF-QI-QWN"/>
+                        <constraint firstAttribute="height" constant="44" id="b6f-3j-LKq"/>
+                    </constraints>
+                    <connections>
+                        <action selector="handleBack:" destination="-1" eventType="touchUpInside" id="wAT-Ln-P7w"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sel-Bt-N1">
+                    <rect key="frame" x="299" y="52" width="60" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Sel-Wd-1"/>
+                        <constraint firstAttribute="height" constant="44" id="Sel-Ht-1"/>
+                    </constraints>
+                    <state key="normal" title="Edit"/>
+                    <connections>
+                        <action selector="handleSelectTapped:" destination="-1" eventType="touchUpInside" id="Sel-Ac-1"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bộ Sưu Tập Của Bé" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYt-vW-wTj" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
+                    <rect key="frame" x="20" y="106" width="335" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="weight" value="semiBold"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Những vật thể mà bé đã khám phá được" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDf-WV-9dS" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
+                    <rect key="frame" x="20" y="143" width="335" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="14"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="weight" value="regular"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="color" value="grey"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="m9M-pY-o7r">
+                    <rect key="frame" x="0.0" y="182" width="375" height="485"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="12" id="WnF-YP-fOn">
+                        <size key="itemSize" width="150" height="180"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="20" minY="10" maxX="20" maxY="110"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Del-Bar-Vw" userLabel="Delete Bar View">
+                    <rect key="frame" x="0.0" y="567" width="375" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Del-Btn-Ac">
+                            <rect key="frame" x="24" y="16" width="327" height="48"/>
+                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="Del-Btn-Ht"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <state key="normal" title="Delete"/>
+                            <connections>
+                                <action selector="handleDeleteSelectedTapped:" destination="-1" eventType="touchUpInside" id="Del-Btn-Act"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Del-Bar-Ht"/>
+                        <constraint firstItem="Del-Btn-Ac" firstAttribute="top" secondItem="Del-Bar-Vw" secondAttribute="top" constant="16" id="Del-Btn-Tp"/>
+                        <constraint firstItem="Del-Btn-Ac" firstAttribute="leading" secondItem="Del-Bar-Vw" secondAttribute="leading" constant="24" id="Del-Btn-Ld"/>
+                        <constraint firstAttribute="trailing" secondItem="Del-Btn-Ac" secondAttribute="trailing" constant="24" id="Del-Btn-Tr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="TDF-7H-gYX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="02f-6K-tqw"/>
+                <constraint firstItem="TDF-7H-gYX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="1jp-Bn-LCP"/>
+                <constraint firstItem="Sel-Bt-N1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="Sel-Top"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sel-Bt-N1" secondAttribute="trailing" constant="16" id="Sel-Trail"/>
+                <constraint firstItem="gYt-vW-wTj" firstAttribute="top" secondItem="TDF-7H-gYX" secondAttribute="bottom" constant="10" id="BY6-DH-UTs"/>
+                <constraint firstItem="gYt-vW-wTj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="G07-4H-8QA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gYt-vW-wTj" secondAttribute="trailing" constant="20" id="NDr-E6-kwf"/>
+                <constraint firstItem="pDf-WV-9dS" firstAttribute="top" secondItem="gYt-vW-wTj" secondAttribute="bottom" constant="8" id="Ttg-pM-G4x"/>
+                <constraint firstItem="pDf-WV-9dS" firstAttribute="leading" secondItem="gYt-vW-wTj" secondAttribute="leading" id="cxP-JY-OCR"/>
+                <constraint firstItem="pDf-WV-9dS" firstAttribute="trailing" secondItem="gYt-vW-wTj" secondAttribute="trailing" id="eEo-xS-ah1"/>
+                <constraint firstItem="m9M-pY-o7r" firstAttribute="top" secondItem="pDf-WV-9dS" secondAttribute="bottom" constant="22" id="f8K-cW-nmR"/>
+                <constraint firstItem="m9M-pY-o7r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fxM-rZ-xtY"/>
+                <constraint firstAttribute="trailing" secondItem="m9M-pY-o7r" secondAttribute="trailing" id="jKX-UJ-TYd"/>
+                <constraint firstAttribute="bottom" secondItem="m9M-pY-o7r" secondAttribute="bottom" id="wpp-rg-zJw"/>
+                <constraint firstItem="Del-Bar-Vw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Del-Bar-Ld"/>
+                <constraint firstAttribute="trailing" secondItem="Del-Bar-Vw" secondAttribute="trailing" id="Del-Bar-Tr"/>
+                <constraint firstAttribute="bottom" secondItem="Del-Bar-Vw" secondAttribute="bottom" id="Del-Bar-Btm"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1.0" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
