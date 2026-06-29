@@ -10,6 +10,7 @@ import UIKit
 struct SavedObjectItem {
     let name: String
     let image: UIImage
+    let imageFilename: String
     let dateText: String
 }
 
@@ -60,6 +61,7 @@ final class SavedObjectsManager {
                 items.append(SavedObjectItem(
                     name: metadata.name,
                     image: image,
+                    imageFilename: metadata.filename,
                     dateText: timeAgoString(from: metadata.timestamp)
                 ))
             }
@@ -69,11 +71,13 @@ final class SavedObjectsManager {
         let defaultApple = SavedObjectItem(
             name: "Quả Táo",
             image: UIImage(named: "apple_demo") ?? UIImage(),
+            imageFilename: "apple_demo",
             dateText: "Vừa mới tìm thấy"
         )
         let defaultCat = SavedObjectItem(
             name: "Con Mèo",
             image: UIImage(named: "cat_demo") ?? UIImage(),
+            imageFilename: "cat_demo",
             dateText: "2 giờ trước"
         )
         

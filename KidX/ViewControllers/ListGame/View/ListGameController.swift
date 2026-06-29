@@ -181,6 +181,12 @@ class ListGameController: BaseController, XibLoadable, UIImagePickerControllerDe
             return
         }
         
+        // Kiểm tra độ tin cậy của nhận dạng (ngưỡng 70%)
+        guard bestPrediction.confidence >= 0.70 else {
+            showFailurePopup(detected: "hình ảnh không rõ ràng".localize())
+            return
+        }
+        
         let detectedRawLabel = bestPrediction.classification.lowercased()
         
         // Check if any keyword matches the detected text

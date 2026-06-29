@@ -32,6 +32,7 @@ final class ImagePredictor: @unchecked Sendable {
     struct Prediction {
         let classification: String
         let confidencePercentage: String
+        let confidence: Float
     }
 
     typealias ImagePredictionHandler = (_ predictions: [Prediction]?) -> Void
@@ -85,7 +86,8 @@ final class ImagePredictor: @unchecked Sendable {
         predictions = observations.map { observation in
             Prediction(
                 classification: observation.identifier,
-                confidencePercentage: observation.confidencePercentageString
+                confidencePercentage: observation.confidencePercentageString,
+                confidence: observation.confidence
             )
         }
     }

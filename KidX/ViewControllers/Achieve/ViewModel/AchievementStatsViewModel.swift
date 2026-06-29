@@ -16,7 +16,7 @@ final class AchievementStatsViewModel {
     init(navigation: NavigationState<MainRoute>, service: AchievementStatsService = .shared) {
         self.navigation = navigation
         self.service = service
-        self.snapshot = service.loadSnapshot()
+        self.snapshot = service.loadSnapshotFromCache()
     }
 
     var summary: AchievementStatsSummary {
@@ -39,11 +39,15 @@ final class AchievementStatsViewModel {
         selectedRange = range
     }
 
-    func reload() {
-        snapshot = service.loadSnapshot()
+    func reload(completion: @escaping () -> Void) {
+        service.loadSnapshot { [weak self] freshSnapshot in
+            self?.snapshot = freshSnapshot
+            completion()
+        }
     }
 
     func navigateBack() {
         navigation.pop()
     }
 }
+

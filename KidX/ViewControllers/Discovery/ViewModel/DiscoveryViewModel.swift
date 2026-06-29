@@ -25,6 +25,28 @@ final class DiscoveryViewModel {
         navigation.push(.listGame(listGameVM))
     }
 
+    func navigateToSavedCollection() {
+        let savedItems = SavedObjectsManager.shared.loadObjects()
+        let basicItems = savedItems.map { 
+            BasicFlashCardItem(
+                vietnameseText: $0.name,
+                englishText: $0.name,
+                imageFilename: $0.imageFilename
+            )
+        }
+
+        let category = BasicFlashCardCategory(
+            id: "saved_collection",
+            titleVi: "Bộ sưu tập của bé",
+            titleEn: "Baby's Collection",
+            descriptionVi: "Những vật thể mà bé đã khám phá được",
+            descriptionEn: "Objects discovered by the baby",
+            items: basicItems
+        )
+
+        navigation.push(.listFlashCardBasic(category))
+    }
+
     func importPhoto(from rootView: UIView,
                      presenter: UIViewController,
                      imagePickerDelegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)?,

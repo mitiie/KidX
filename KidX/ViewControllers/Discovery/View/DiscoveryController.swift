@@ -205,7 +205,7 @@ extension DiscoveryController: UICollectionViewDelegate, UICollectionViewDataSou
             let cell: CollectionRowCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
             cell.items = savedItems
             cell.onViewAllTapped = { [weak self] in
-                self?.showAlert(title: "Collection".localize(), message: "Under development!".localize())
+                self?.viewModel.navigateToSavedCollection()
             }
             return cell
             

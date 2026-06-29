@@ -119,6 +119,13 @@ class CaculateViewModel {
         
         do {
             let prediction = try predictor.predict(from: pixelBuffer)
+            
+            // Kiểm tra độ tin cậy tối thiểu 70% (0.7)
+            guard prediction.confidence >= 0.7 else {
+                completion(false, "?")
+                return
+            }
+            
             let isCorrect = (prediction.digit == String(challenge.result))
             
             if isCorrect {

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DrawLetterController" customModule="KidX" customModuleProvider="target">
             <connections>
+                <outlet property="audioButton" destination="BTN-aud-001" id="OT-aud-001"/>
                 <outlet property="backButton" destination="BTN-bk-001" id="OT-bk-001"/>
                 <outlet property="caseSegmentedControl" destination="SEG-case-001" id="OT-seg-001"/>
                 <outlet property="clearButton" destination="BTN-clear-001" id="OT-clear-001"/>
@@ -41,6 +42,17 @@
                     <state key="normal" title=""/>
                     <connections>
                         <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="ACT-bk-001"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-aud-001" userLabel="audioButton">
+                    <rect key="frame" x="337" y="115.33333333333331" width="38" height="38"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="H-aud-001"/>
+                        <constraint firstAttribute="width" constant="38" id="W-aud-001"/>
+                    </constraints>
+                    <state key="normal" title=""/>
+                    <connections>
+                        <action selector="handleAudioTap" destination="-1" eventType="touchUpInside" id="ACT-aud-001"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color the Letter" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-tt-001" userLabel="titleLabel">
@@ -198,6 +210,8 @@
             <constraints>
                 <constraint firstItem="BTN-bk-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="C-bk-l"/>
                 <constraint firstItem="BTN-bk-001" firstAttribute="centerY" secondItem="LBL-tt-001" secondAttribute="centerY" id="C-bk-y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BTN-aud-001" secondAttribute="trailing" constant="18" id="C-aud-r"/>
+                <constraint firstItem="BTN-aud-001" firstAttribute="centerY" secondItem="LBL-tt-001" secondAttribute="centerY" id="C-aud-y"/>
                 <constraint firstItem="CLR-vw-001" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C-clr-l"/>
                 <constraint firstAttribute="trailing" secondItem="CLR-vw-001" secondAttribute="trailing" id="C-clr-r"/>
                 <constraint firstItem="CLR-vw-001" firstAttribute="top" secondItem="SEG-case-001" secondAttribute="bottom" constant="8" id="C-clr-t"/>

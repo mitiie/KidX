@@ -8,15 +8,30 @@
 import UIKit
 
 struct PopularFlashCardCategory: Codable {
-    let category: String
+    let categoryVi: String
+    let categoryEn: String
     let imageName: String
     let items: [FlashCardItem]
+
+    var category: String {
+        LocalizeHelper.shared.isVietnameseSelected ? categoryVi : categoryEn
+    }
 }
 
 struct FlashCardItem: Codable, Equatable {
-    let title: String
+    let titleVi: String
+    let titleEn: String
     let imageName: String
-    let description: String
+    let descriptionVi: String
+    let descriptionEn: String
+
+    var title: String {
+        LocalizeHelper.shared.isVietnameseSelected ? titleVi : titleEn
+    }
+
+    var description: String {
+        LocalizeHelper.shared.isVietnameseSelected ? descriptionVi : descriptionEn
+    }
 }
 
 struct BasicFlashCardCategory: Codable {
@@ -31,6 +46,7 @@ struct BasicFlashCardCategory: Codable {
 struct BasicFlashCardItem: Codable, Equatable {
     let vietnameseText: String
     let englishText: String
+    let imageFilename: String?
 }
 
 extension FlashCardItem {

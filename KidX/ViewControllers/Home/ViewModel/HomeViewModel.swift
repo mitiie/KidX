@@ -12,9 +12,14 @@ final class HomeViewModel {
 
     private(set) var popularCategories: [PopularFlashCardCategory] = []
     private(set) var basicCategories: [BasicFlashCardCategory] = []
-    private(set) var statsSummary: AchievementStatsSummary = AchievementStatsService.shared.loadSnapshot().summary
+    private(set) var statsSummary: AchievementStatsSummary = AchievementStatsSummary(
+        level: 1, weeklyCompletionPercent: 0, completedChallengesText: ""
+    )
     private(set) var itemList: [FlashCardItem] = []
     private(set) var titleText: String = ""
+
+    /// Callback khi dữ liệu async đã load xong
+    var onDataLoaded: (() -> Void)?
 
     private let navigation: NavigationState<MainRoute>
 
@@ -23,9 +28,20 @@ final class HomeViewModel {
     }
 
     func loadData() {
+        // Popular categories vẫn load từ local bundle (sync)
         popularCategories = PopularFlashCardService.loadCategories()
-        basicCategories = BasicFlashCardService.loadCategories()
-        statsSummary = AchievementStatsService.shared.loadSnapshot().summary
+
+        // Basic categories load từ Firebase (async)
+        BasicFlashCardService.loadCategories { [weak self] categories in
+            self?.basicCategories = categories
+            self?.onDataLoaded?()
+        }
+
+        // Achievement stats load từ Firebase (async)
+        AchievementStatsService.shared.loadSnapshot { [weak self] snapshot in
+            self?.statsSummary = snapshot.summary
+            self?.onDataLoaded?()
+        }
     }
 
     func selectCategory(_ category: PopularFlashCardCategory) {
@@ -52,6 +68,7 @@ final class HomeViewModel {
         do {
             try Auth.auth().signOut()
             GIDSignIn.sharedInstance.signOut()
+            BasicFlashCardService.clearCache()
             print("✅ Logout successful")
             completion(nil)
         } catch {
@@ -90,3 +107,4 @@ final class HomeViewModel {
         navigation.pop()
     }
 }
+

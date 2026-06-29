@@ -53,8 +53,11 @@ final class AchieveController: BaseController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.reload()
-        render()
+        Common.showLoading()
+        viewModel.reload { [weak self] in
+            Common.hideLoading()
+            self?.render()
+        }
     }
 
     override func viewDidLayoutSubviews() {

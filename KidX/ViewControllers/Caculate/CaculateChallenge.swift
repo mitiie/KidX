@@ -93,7 +93,7 @@ struct CaculateChallenge: Codable {
             completed.append(id)
             let key = difficulty == .basic ? "completed_caculate_challenges_basic" : "completed_caculate_challenges_advanced"
             UserDefaults.standard.set(completed, forKey: key)
-            AchievementStatsService.shared.recordMathChallengeCompleted()
+            AchievementStatsService.shared.recordMathChallengeCompleted(isAdvanced: difficulty == .advanced)
         }
     }
     

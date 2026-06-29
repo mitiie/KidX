@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 final class DrawLetterController: BaseController {
     @IBOutlet private weak var backButton: UIButton!
@@ -18,6 +19,8 @@ final class DrawLetterController: BaseController {
     @IBOutlet private var widthButtons: [UIButton]!
 
     private let viewModel: DrawLetterViewModel
+    @IBOutlet private weak var audioButton: UIButton!
+    private static let speechSynthesizer = AVSpeechSynthesizer()
     private let colors: [UIColor] = [
         UIColor(hex: 0xF8A23A),
         UIColor(hex: 0xEF6BA2),
@@ -57,6 +60,16 @@ final class DrawLetterController: BaseController {
             .font: UIFont.custom(16, .semiBold),
             .foregroundColor: AppColor.text.color
         ], for: .normal)
+
+        // Cấu hình nút audio được kéo từ XIB
+        audioButton.setImage(UIImage(systemName: "speaker.wave.3.fill"), for: .normal)
+        audioButton.tintColor = AppColor.text.color
+        audioButton.backgroundColor = UIColor(hex: 0xFFF3E0)
+        audioButton.layer.cornerRadius = 19
+        audioButton.layer.shadowColor = UIColor(hex: 0x00264D).cgColor
+        audioButton.layer.shadowOpacity = 0.08
+        audioButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        audioButton.layer.shadowRadius = 8
     }
 
     private func setupColoringView() {
@@ -130,5 +143,31 @@ final class DrawLetterController: BaseController {
 
     @IBAction private func clearTapped(_ sender: UIButton) {
         coloringView.clear()
+    }
+
+    @objc private func handleAudioTap() {
+        if Self.speechSynthesizer.isSpeaking {
+            Self.speechSynthesizer.stopSpeaking(at: .immediate)
+        }
+
+        let isVietnamese = LocalizeHelper.shared.isVietnameseSelected
+        let letterChar = caseSegmentedControl.selectedSegmentIndex == 0 ? viewModel.letter.uppercase : viewModel.letter.lowercase
+
+        let text: String
+        let languageCode: String
+
+        if isVietnamese {
+            text = "Đây là chữ \(letterChar)"
+            languageCode = "vi-VN"
+        } else {
+            // Chuyển về chữ viết thường khi đọc Tiếng Anh để tránh iOS phát âm từ "capital" trước chữ cái.
+            text = letterChar.lowercased()
+            languageCode = "en-US"
+        }
+
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: languageCode)
+        utterance.rate = 0.45
+        Self.speechSynthesizer.speak(utterance)
     }
 }

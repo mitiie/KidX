@@ -31,6 +31,9 @@ class HomeController: BaseController {
     }
 
     override func setupUI() {
+        viewModel.onDataLoaded = { [weak self] in
+            self?.tableView.reloadData()
+        }
         viewModel.loadData()
         setupTableView()
     }

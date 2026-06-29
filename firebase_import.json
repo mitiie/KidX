@@ -1,14 +1,14 @@
 {
-  "missions": {
-    "1": {
+  "missions": [
+    null,
+    {
       "id": "1",
-      "titleEn": "Find the Table",
       "titleVi": "Tìm cái Bàn",
-      "descriptionEn": "Where you usually sit to study or draw!",
+      "titleEn": "Find the Table",
       "descriptionVi": "Nơi con thường ngồi học hoặc vẽ tranh đó!",
+      "descriptionEn": "Where you usually sit to study or draw!",
       "iconSymbol": "tablecells.fill",
       "iconBgColorHex": "35ADFF",
-      "buttonColorHex": null,
       "keywords": [
         "desk",
         "table",
@@ -16,31 +16,31 @@
         "board"
       ]
     },
-    "2": {
+    {
       "id": "2",
-      "titleEn": "Find the Chair",
       "titleVi": "Tìm cái Ghế",
-      "descriptionEn": "The most comfortable chair in your house.",
+      "titleEn": "Find the Chair",
       "descriptionVi": "Một cái ghế êm ái nhất trong nhà con.",
+      "descriptionEn": "The most comfortable chair in your house.",
       "iconSymbol": "couch.fill",
       "iconBgColorHex": "FFCB00",
-      "buttonColorHex": "FFCB00",
       "keywords": [
         "chair",
         "folding chair",
         "rocking chair, rocker",
-        "barber chair"
+        "barber chair",
+        "armchair",
+        "studio couch"
       ]
     },
-    "3": {
+    {
       "id": "3",
-      "titleEn": "Find the Phone",
       "titleVi": "Tìm Điện Thoại",
-      "descriptionEn": "Mom or dad is holding it to take your picture!",
+      "titleEn": "Find the Phone",
       "descriptionVi": "Ba hoặc mẹ đang cầm nó để chụp ảnh con nè!",
+      "descriptionEn": "Mom or dad is holding it to take your picture!",
       "iconSymbol": "iphone",
       "iconBgColorHex": "FF972D",
-      "buttonColorHex": null,
       "keywords": [
         "cellular telephone",
         "handheld computer",
@@ -48,19 +48,559 @@
         "cellular phone"
       ]
     },
-    "4": {
+    {
       "id": "4",
-      "titleEn": "Find the Apple",
       "titleVi": "Tìm Quả Táo",
-      "descriptionEn": "A red, crunchy, and very sweet fruit.",
+      "titleEn": "Find the Apple",
       "descriptionVi": "Một loại quả màu đỏ, giòn và rất ngọt.",
+      "descriptionEn": "A red, crunchy, and very sweet fruit.",
       "iconSymbol": "leaf.fill",
       "iconBgColorHex": "FB5151",
-      "buttonColorHex": null,
       "keywords": [
         "apple",
         "pomegranate"
       ]
+    },
+    {
+      "id": "5",
+      "titleVi": "Tìm Quyển Sách",
+      "titleEn": "Find a Book",
+      "descriptionVi": "Chứa đầy các câu chuyện, hình ảnh và kiến thức kỳ thú!",
+      "descriptionEn": "Full of stories, pictures, and amazing knowledge!",
+      "iconSymbol": "book.fill",
+      "iconBgColorHex": "9C27B0",
+      "keywords": [
+        "book",
+        "comic book",
+        "binder",
+        "booklet"
+      ]
+    },
+    {
+      "id": "6",
+      "titleVi": "Tìm Bút Chì",
+      "titleEn": "Find a Pencil",
+      "descriptionVi": "Con dùng nó để viết, vẽ hoặc phác họa hình ảnh.",
+      "descriptionEn": "You use it to write, sketch, or draw figures.",
+      "iconSymbol": "pencil",
+      "iconBgColorHex": "4CAF50",
+      "keywords": [
+        "pencil",
+        "ballpoint, ballpoint pen",
+        "fountain pen"
+      ]
+    },
+    {
+      "id": "7",
+      "titleVi": "Tìm Cái Cốc",
+      "titleEn": "Find a Cup",
+      "descriptionVi": "Dùng để đựng sữa ấm, nước lọc hoặc nước trái cây.",
+      "descriptionEn": "Holds your favorite warm milk, water, or juice.",
+      "iconSymbol": "cup.and.saucer.fill",
+      "iconBgColorHex": "00BCD4",
+      "keywords": [
+        "cup",
+        "mug",
+        "measuring cup",
+        "coffeepot"
+      ]
+    },
+    {
+      "id": "8",
+      "titleVi": "Tìm Xe Hơi",
+      "titleEn": "Find a Car",
+      "descriptionVi": "Có bốn bánh xe và đưa cả gia đình đi khắp mọi nơi.",
+      "descriptionEn": "Has four wheels and takes your family everywhere.",
+      "iconSymbol": "car.fill",
+      "iconBgColorHex": "E91E63",
+      "keywords": [
+        "car",
+        "cab, hack, taxi",
+        "sports car, sport car",
+        "limousine, limo",
+        "minivan"
+      ]
+    },
+    {
+      "id": "9",
+      "titleVi": "Tìm Đồng Hồ",
+      "titleEn": "Find a Clock",
+      "descriptionVi": "Chỉ giờ giấc cho con để con không bao giờ bị muộn.",
+      "descriptionEn": "Shows you what time it is so you're never late.",
+      "iconSymbol": "clock.fill",
+      "iconBgColorHex": "FF5722",
+      "keywords": [
+        "clock",
+        "wall clock",
+        "analog clock",
+        "digital clock"
+      ]
+    },
+    {
+      "id": "10",
+      "titleVi": "Tìm Ba Lô",
+      "titleEn": "Find a Backpack",
+      "descriptionVi": "Đựng sách vở, hộp bút và bữa trưa của con đi học.",
+      "descriptionEn": "Keeps your textbooks, pencil case, and lunch safe.",
+      "iconSymbol": "backpack.fill",
+      "iconBgColorHex": "3F51B5",
+      "keywords": [
+        "backpack",
+        "pack",
+        "mailbag",
+        "satchel"
+      ]
+    },
+    {
+      "id": "11",
+      "titleVi": "Tìm Ti Vi",
+      "titleEn": "Find a TV",
+      "descriptionVi": "Một chiếc màn hình chiếu phim hoạt hình và các chương trình bổ ích.",
+      "descriptionEn": "A screen showing cartoons, movies, and animations.",
+      "iconSymbol": "tv.fill",
+      "iconBgColorHex": "607D8B",
+      "keywords": [
+        "television, television system",
+        "monitor",
+        "screen, crt screen"
+      ]
+    },
+    {
+      "id": "12",
+      "titleVi": "Tìm Chìa Khóa",
+      "titleEn": "Find a Key",
+      "descriptionVi": "Đồ vật nhỏ bằng kim loại dùng để mở khóa các cánh cửa.",
+      "descriptionEn": "A small metal object used to open locked doors.",
+      "iconSymbol": "key.fill",
+      "iconBgColorHex": "FF9800",
+      "keywords": [
+        "key"
+      ]
+    },
+    {
+      "id": "13",
+      "titleVi": "Tìm Cái Ô",
+      "titleEn": "Find an Umbrella",
+      "descriptionVi": "Giúp con che mưa hoặc che nắng khi đi ra ngoài đường.",
+      "descriptionEn": "Helps protect you from rain or sunshine outdoors.",
+      "iconSymbol": "umbrella.fill",
+      "iconBgColorHex": "9C27B0",
+      "keywords": [
+        "umbrella"
+      ]
+    },
+    {
+      "id": "14",
+      "titleVi": "Tìm Cái Kéo",
+      "titleEn": "Find Scissors",
+      "descriptionVi": "Dùng để cắt giấy làm thủ công hoặc cắt các vật dụng khác.",
+      "descriptionEn": "Used to cut paper for crafts or other lightweight items.",
+      "iconSymbol": "scissors",
+      "iconBgColorHex": "E91E63",
+      "keywords": [
+        "scissors"
+      ]
+    },
+    {
+      "id": "15",
+      "titleVi": "Tìm Cái Giường",
+      "titleEn": "Find a Bed",
+      "descriptionVi": "Nơi êm ái nhất để con nằm ngủ và mơ những giấc mơ đẹp.",
+      "descriptionEn": "The coziest place where you sleep and have sweet dreams.",
+      "iconSymbol": "bed.double.fill",
+      "iconBgColorHex": "3F51B5",
+      "keywords": [
+        "bed",
+        "studio couch"
+      ]
+    },
+    {
+      "id": "16",
+      "titleVi": "Tìm Kính Mắt",
+      "titleEn": "Find Glasses",
+      "descriptionVi": "Đeo trên mắt giúp con nhìn rõ hơn hoặc chống bụi bẩn.",
+      "descriptionEn": "Worn on the face to help people see better or shield light.",
+      "iconSymbol": "eyeglasses",
+      "iconBgColorHex": "4CAF50",
+      "keywords": [
+        "sunglasses",
+        "sunglass",
+        "spectacles",
+        "specs",
+        "eyeglasses"
+      ]
+    },
+    {
+      "id": "17",
+      "titleVi": "Tìm Quả Bóng",
+      "titleEn": "Find a Ball",
+      "descriptionVi": "Hình tròn, nảy tốt và con dùng để chơi đá bóng hoặc bóng rổ.",
+      "descriptionEn": "Round, bouncy, and used for playing soccer or basketball.",
+      "iconSymbol": "soccerball",
+      "iconBgColorHex": "FFC107",
+      "keywords": [
+        "soccer ball",
+        "basketball",
+        "tennis ball",
+        "croquet ball"
+      ]
     }
-  }
+  ],
+  "basicFlashCards": [
+    {
+      "id": "animals",
+      "titleVi": "Động vật",
+      "titleEn": "Animals",
+      "descriptionVi": "Những con vật quen thuộc quanh bé.",
+      "descriptionEn": "Common animals children often see.",
+      "items": [
+        { "vietnameseText": "con chó", "englishText": "dog" },
+        { "vietnameseText": "con mèo", "englishText": "cat" },
+        { "vietnameseText": "con chim", "englishText": "bird" },
+        { "vietnameseText": "con cá", "englishText": "fish" },
+        { "vietnameseText": "con gà", "englishText": "chicken" },
+        { "vietnameseText": "con vịt", "englishText": "duck" },
+        { "vietnameseText": "con bò", "englishText": "cow" },
+        { "vietnameseText": "con heo", "englishText": "pig" },
+        { "vietnameseText": "con ngựa", "englishText": "horse" },
+        { "vietnameseText": "con thỏ", "englishText": "rabbit" },
+        { "vietnameseText": "con voi", "englishText": "elephant" },
+        { "vietnameseText": "con khỉ", "englishText": "monkey" },
+        { "vietnameseText": "sư tử", "englishText": "lion" },
+        { "vietnameseText": "con hổ", "englishText": "tiger" },
+        { "vietnameseText": "con gấu", "englishText": "bear" },
+        { "vietnameseText": "con hươu", "englishText": "deer" },
+        { "vietnameseText": "con chuột", "englishText": "mouse" },
+        { "vietnameseText": "con cừu", "englishText": "sheep" },
+        { "vietnameseText": "con dê", "englishText": "goat" },
+        { "vietnameseText": "rùa", "englishText": "turtle" },
+        { "vietnameseText": "con ếch", "englishText": "frog" },
+        { "vietnameseText": "con rắn", "englishText": "snake" },
+        { "vietnameseText": "con ong", "englishText": "bee" },
+        { "vietnameseText": "con bướm", "englishText": "butterfly" }
+      ]
+    },
+    {
+      "id": "plants",
+      "titleVi": "Cây cối",
+      "titleEn": "Plants",
+      "descriptionVi": "Cây, hoa và trái cây bé hay gặp.",
+      "descriptionEn": "Plants, flowers, and fruits children know.",
+      "items": [
+        { "vietnameseText": "cây", "englishText": "tree" },
+        { "vietnameseText": "lá cây", "englishText": "leaf" },
+        { "vietnameseText": "hoa", "englishText": "flower" },
+        { "vietnameseText": "cỏ", "englishText": "grass" },
+        { "vietnameseText": "quả táo", "englishText": "apple" },
+        { "vietnameseText": "quả chuối", "englishText": "banana" },
+        { "vietnameseText": "quả cam", "englishText": "orange" },
+        { "vietnameseText": "quả xoài", "englishText": "mango" },
+        { "vietnameseText": "quả dâu", "englishText": "strawberry" },
+        { "vietnameseText": "quả dưa hấu", "englishText": "watermelon" },
+        { "vietnameseText": "quả nho", "englishText": "grape" },
+        { "vietnameseText": "quả dừa", "englishText": "coconut" },
+        { "vietnameseText": "quả dứa", "englishText": "pineapple" },
+        { "vietnameseText": "hoa hồng", "englishText": "rose" },
+        { "vietnameseText": "hoa hướng dương", "englishText": "sunflower" },
+        { "vietnameseText": "quả chanh", "englishText": "lemon" },
+        { "vietnameseText": "quả đào", "englishText": "peach" },
+        { "vietnameseText": "củ cà rốt", "englishText": "carrot" },
+        { "vietnameseText": "củ khoai tây", "englishText": "potato" },
+        { "vietnameseText": "quả cà chua", "englishText": "tomato" }
+      ]
+    },
+    {
+      "id": "home_items",
+      "titleVi": "Vật dụng trong nhà",
+      "titleEn": "Home Items",
+      "descriptionVi": "Đồ vật bé nhìn thấy hằng ngày ở nhà.",
+      "descriptionEn": "Everyday objects at home.",
+      "items": [
+        { "vietnameseText": "cái bàn", "englishText": "table" },
+        { "vietnameseText": "cái ghế", "englishText": "chair" },
+        { "vietnameseText": "cái giường", "englishText": "bed" },
+        { "vietnameseText": "cái cửa", "englishText": "door" },
+        { "vietnameseText": "cửa sổ", "englishText": "window" },
+        { "vietnameseText": "đèn", "englishText": "lamp" },
+        { "vietnameseText": "cái cốc", "englishText": "cup" },
+        { "vietnameseText": "cái bát", "englishText": "bowl" },
+        { "vietnameseText": "cái thìa", "englishText": "spoon" },
+        { "vietnameseText": "cái tủ", "englishText": "cabinet" },
+        { "vietnameseText": "điện thoại", "englishText": "phone" },
+        { "vietnameseText": "tivi", "englishText": "television" },
+        { "vietnameseText": "đồng hồ", "englishText": "clock" },
+        { "vietnameseText": "gối", "englishText": "pillow" },
+        { "vietnameseText": "chăn", "englishText": "blanket" },
+        { "vietnameseText": "gương", "englishText": "mirror" },
+        { "vietnameseText": "chìa khóa", "englishText": "key" },
+        { "vietnameseText": "cái quạt", "englishText": "fan" },
+        { "vietnameseText": "thảm", "englishText": "rug" }
+      ]
+    },
+    {
+      "id": "school",
+      "titleVi": "Đồ dùng học tập",
+      "titleEn": "School Supplies",
+      "descriptionVi": "Những đồ dùng bé mang tới lớp.",
+      "descriptionEn": "Things children use at school.",
+      "items": [
+        { "vietnameseText": "quyển sách", "englishText": "book" },
+        { "vietnameseText": "quyển vở", "englishText": "notebook" },
+        { "vietnameseText": "bút chì", "englishText": "pencil" },
+        { "vietnameseText": "bút mực", "englishText": "pen" },
+        { "vietnameseText": "cục tẩy", "englishText": "eraser" },
+        { "vietnameseText": "thước kẻ", "englishText": "ruler" },
+        { "vietnameseText": "ba lô", "englishText": "backpack" },
+        { "vietnameseText": "hộp bút", "englishText": "pencil case" },
+        { "vietnameseText": "kéo", "englishText": "scissors" },
+        { "vietnameseText": "bảng", "englishText": "board" },
+        { "vietnameseText": "sáp màu", "englishText": "crayon" },
+        { "vietnameseText": "giấy", "englishText": "paper" },
+        { "vietnameseText": "keo dán", "englishText": "glue" },
+        { "vietnameseText": "kẹp giấy", "englishText": "paperclip" }
+      ]
+    },
+    {
+      "id": "food",
+      "titleVi": "Đồ ăn",
+      "titleEn": "Food",
+      "descriptionVi": "Các món ăn và thức uống đơn giản.",
+      "descriptionEn": "Simple foods and drinks.",
+      "items": [
+        { "vietnameseText": "cơm", "englishText": "rice" },
+        { "vietnameseText": "bánh mì", "englishText": "bread" },
+        { "vietnameseText": "sữa", "englishText": "milk" },
+        { "vietnameseText": "nước", "englishText": "water" },
+        { "vietnameseText": "trứng", "englishText": "egg" },
+        { "vietnameseText": "thịt gà", "englishText": "chicken" },
+        { "vietnameseText": "cá", "englishText": "fish" },
+        { "vietnameseText": "rau", "englishText": "vegetable" },
+        { "vietnameseText": "phô mai", "englishText": "cheese" },
+        { "vietnameseText": "kem", "englishText": "ice cream" },
+        { "vietnameseText": "bánh ngọt", "englishText": "cake" },
+        { "vietnameseText": "kẹo", "englishText": "candy" },
+        { "vietnameseText": "nước cam", "englishText": "juice" },
+        { "vietnameseText": "súp", "englishText": "soup" },
+        { "vietnameseText": "bơ", "englishText": "butter" },
+        { "vietnameseText": "mật ong", "englishText": "honey" }
+      ]
+    },
+    {
+      "id": "colors",
+      "titleVi": "Màu sắc",
+      "titleEn": "Colors",
+      "descriptionVi": "Những màu cơ bản cho bé nhận biết.",
+      "descriptionEn": "Basic colors for early learning.",
+      "items": [
+        { "vietnameseText": "màu đỏ", "englishText": "red" },
+        { "vietnameseText": "màu xanh dương", "englishText": "blue" },
+        { "vietnameseText": "màu xanh lá", "englishText": "green" },
+        { "vietnameseText": "màu vàng", "englishText": "yellow" },
+        { "vietnameseText": "màu cam", "englishText": "orange" },
+        { "vietnameseText": "màu hồng", "englishText": "pink" },
+        { "vietnameseText": "màu tím", "englishText": "purple" },
+        { "vietnameseText": "màu đen", "englishText": "black" },
+        { "vietnameseText": "màu trắng", "englishText": "white" },
+        { "vietnameseText": "màu nâu", "englishText": "brown" },
+        { "vietnameseText": "màu xám", "englishText": "gray" }
+      ]
+    },
+    {
+      "id": "numbers",
+      "titleVi": "Số đếm",
+      "titleEn": "Numbers",
+      "descriptionVi": "Đếm từ một đến mười lăm bằng tiếng Anh.",
+      "descriptionEn": "Counting from one to fifteen.",
+      "items": [
+        { "vietnameseText": "một", "englishText": "one" },
+        { "vietnameseText": "hai", "englishText": "two" },
+        { "vietnameseText": "ba", "englishText": "three" },
+        { "vietnameseText": "bốn", "englishText": "four" },
+        { "vietnameseText": "năm", "englishText": "five" },
+        { "vietnameseText": "sáu", "englishText": "six" },
+        { "vietnameseText": "bảy", "englishText": "seven" },
+        { "vietnameseText": "tám", "englishText": "eight" },
+        { "vietnameseText": "chín", "englishText": "nine" },
+        { "vietnameseText": "mười", "englishText": "ten" },
+        { "vietnameseText": "mười một", "englishText": "eleven" },
+        { "vietnameseText": "mười hai", "englishText": "twelve" },
+        { "vietnameseText": "mười ba", "englishText": "thirteen" },
+        { "vietnameseText": "mười bốn", "englishText": "fourteen" },
+        { "vietnameseText": "mười lăm", "englishText": "fifteen" }
+      ]
+    },
+    {
+      "id": "body",
+      "titleVi": "Cơ thể",
+      "titleEn": "Body",
+      "descriptionVi": "Các bộ phận cơ thể quen thuộc.",
+      "descriptionEn": "Common body parts.",
+      "items": [
+        { "vietnameseText": "đầu", "englishText": "head" },
+        { "vietnameseText": "mắt", "englishText": "eye" },
+        { "vietnameseText": "tai", "englishText": "ear" },
+        { "vietnameseText": "mũi", "englishText": "nose" },
+        { "vietnameseText": "miệng", "englishText": "mouth" },
+        { "vietnameseText": "tay", "englishText": "hand" },
+        { "vietnameseText": "chân", "englishText": "leg" },
+        { "vietnameseText": "bàn chân", "englishText": "foot" },
+        { "vietnameseText": "tóc", "englishText": "hair" },
+        { "vietnameseText": "răng", "englishText": "tooth" },
+        { "vietnameseText": "mặt", "englishText": "face" },
+        { "vietnameseText": "ngón tay", "englishText": "finger" },
+        { "vietnameseText": "ngón chân", "englishText": "toe" }
+      ]
+    },
+    {
+      "id": "vehicles",
+      "titleVi": "Phương tiện",
+      "titleEn": "Vehicles",
+      "descriptionVi": "Các phương tiện di chuyển gần gũi.",
+      "descriptionEn": "Common ways to travel.",
+      "items": [
+        { "vietnameseText": "xe đạp", "englishText": "bicycle" },
+        { "vietnameseText": "xe máy", "englishText": "motorbike" },
+        { "vietnameseText": "xe hơi", "englishText": "car" },
+        { "vietnameseText": "xe buýt", "englishText": "bus" },
+        { "vietnameseText": "tàu hỏa", "englishText": "train" },
+        { "vietnameseText": "máy bay", "englishText": "airplane" },
+        { "vietnameseText": "thuyền", "englishText": "boat" },
+        { "vietnameseText": "xe tải", "englishText": "truck" },
+        { "vietnameseText": "taxi", "englishText": "taxi" },
+        { "vietnameseText": "trực thăng", "englishText": "helicopter" },
+        { "vietnameseText": "tàu thủy", "englishText": "ship" },
+        { "vietnameseText": "xe cứu thương", "englishText": "ambulance" }
+      ]
+    },
+    {
+      "id": "toys",
+      "titleVi": "Đồ chơi",
+      "titleEn": "Toys",
+      "descriptionVi": "Những món đồ chơi yêu thích của bé.",
+      "descriptionEn": "Favorite toys of children.",
+      "items": [
+        { "vietnameseText": "búp bê", "englishText": "doll" },
+        { "vietnameseText": "quả bóng", "englishText": "ball" },
+        { "vietnameseText": "con diều", "englishText": "kite" },
+        { "vietnameseText": "xe đồ chơi", "englishText": "toy car" },
+        { "vietnameseText": "gấu bông", "englishText": "teddy bear" },
+        { "vietnameseText": "khối lắp ráp", "englishText": "building block" },
+        { "vietnameseText": "con quay", "englishText": "spinning top" },
+        { "vietnameseText": "bong bóng", "englishText": "balloon" },
+        { "vietnameseText": "robot", "englishText": "robot" },
+        { "vietnameseText": "xếp hình", "englishText": "puzzle" }
+      ]
+    },
+    {
+      "id": "shapes",
+      "titleVi": "Hình khối",
+      "titleEn": "Shapes",
+      "descriptionVi": "Các hình dạng cơ bản bé học nhận biết.",
+      "descriptionEn": "Basic shapes for children to recognize.",
+      "items": [
+        { "vietnameseText": "hình tròn", "englishText": "circle" },
+        { "vietnameseText": "hình vuông", "englishText": "square" },
+        { "vietnameseText": "hình tam giác", "englishText": "triangle" },
+        { "vietnameseText": "hình chữ nhật", "englishText": "rectangle" },
+        { "vietnameseText": "hình ngôi sao", "englishText": "star" },
+        { "vietnameseText": "hình trái tim", "englishText": "heart" },
+        { "vietnameseText": "hình thoi", "englishText": "diamond" },
+        { "vietnameseText": "hình bầu dục", "englishText": "oval" }
+      ]
+    },
+    {
+      "id": "clothing",
+      "titleVi": "Quần áo",
+      "titleEn": "Clothing",
+      "descriptionVi": "Trang phục bé mặc hằng ngày.",
+      "descriptionEn": "Clothes children wear every day.",
+      "items": [
+        { "vietnameseText": "áo thun", "englishText": "t-shirt" },
+        { "vietnameseText": "quần đùi", "englishText": "shorts" },
+        { "vietnameseText": "quần dài", "englishText": "pants" },
+        { "vietnameseText": "váy", "englishText": "dress" },
+        { "vietnameseText": "mũ", "englishText": "hat" },
+        { "vietnameseText": "giày", "englishText": "shoes" },
+        { "vietnameseText": "tất", "englishText": "socks" },
+        { "vietnameseText": "áo khoác", "englishText": "jacket" },
+        { "vietnameseText": "áo sơ mi", "englishText": "shirt" },
+        { "vietnameseText": "găng tay", "englishText": "gloves" }
+      ]
+    },
+    {
+      "id": "family",
+      "titleVi": "Gia đình",
+      "titleEn": "Family",
+      "descriptionVi": "Những người thân yêu thương trong gia đình bé.",
+      "descriptionEn": "Beloved family members around the child.",
+      "items": [
+        { "vietnameseText": "bố", "englishText": "father" },
+        { "vietnameseText": "mẹ", "englishText": "mother" },
+        { "vietnameseText": "anh trai", "englishText": "older brother" },
+        { "vietnameseText": "chị gái", "englishText": "older sister" },
+        { "vietnameseText": "em trai", "englishText": "younger brother" },
+        { "vietnameseText": "em gái", "englishText": "younger sister" },
+        { "vietnameseText": "ông nội", "englishText": "grandfather" },
+        { "vietnameseText": "bà nội", "englishText": "grandmother" },
+        { "vietnameseText": "em bé", "englishText": "baby" },
+        { "vietnameseText": "chú", "englishText": "uncle" },
+        { "vietnameseText": "cô", "englishText": "aunt" }
+      ]
+    },
+    {
+      "id": "weather",
+      "titleVi": "Thời tiết",
+      "titleEn": "Weather",
+      "descriptionVi": "Các hiện tượng tự nhiên bé thấy mỗi ngày.",
+      "descriptionEn": "Natural phenomena children see daily.",
+      "items": [
+        { "vietnameseText": "mặt trời", "englishText": "sun" },
+        { "vietnameseText": "mây", "englishText": "cloud" },
+        { "vietnameseText": "mưa", "englishText": "rain" },
+        { "vietnameseText": "gió", "englishText": "wind" },
+        { "vietnameseText": "tuyết", "englishText": "snow" },
+        { "vietnameseText": "cầu vồng", "englishText": "rainbow" },
+        { "vietnameseText": "sấm sét", "englishText": "lightning" },
+        { "vietnameseText": "mặt trăng", "englishText": "moon" },
+        { "vietnameseText": "ngôi sao", "englishText": "star" },
+        { "vietnameseText": "bão", "englishText": "storm" }
+      ]
+    },
+    {
+      "id": "sports",
+      "titleVi": "Thể thao",
+      "titleEn": "Sports",
+      "descriptionVi": "Các trò chơi vận động khỏe mạnh.",
+      "descriptionEn": "Healthy physical activities and games.",
+      "items": [
+        { "vietnameseText": "bóng đá", "englishText": "soccer" },
+        { "vietnameseText": "bóng rổ", "englishText": "basketball" },
+        { "vietnameseText": "cầu lông", "englishText": "badminton" },
+        { "vietnameseText": "bơi lội", "englishText": "swimming" },
+        { "vietnameseText": "chạy bộ", "englishText": "running" },
+        { "vietnameseText": "đạp xe", "englishText": "cycling" },
+        { "vietnameseText": "quần vợt", "englishText": "tennis" },
+        { "vietnameseText": "bóng bàn", "englishText": "table tennis" }
+      ]
+    },
+    {
+      "id": "jobs",
+      "titleVi": "Nghề nghiệp",
+      "titleEn": "Jobs",
+      "descriptionVi": "Các công việc ý nghĩa của người lớn.",
+      "descriptionEn": "Meaningful work adults do.",
+      "items": [
+        { "vietnameseText": "bác sĩ", "englishText": "doctor" },
+        { "vietnameseText": "giáo viên", "englishText": "teacher" },
+        { "vietnameseText": "cảnh sát", "englishText": "police officer" },
+        { "vietnameseText": "lính cứu hỏa", "englishText": "firefighter" },
+        { "vietnameseText": "phi công", "englishText": "pilot" },
+        { "vietnameseText": "ca sĩ", "englishText": "singer" },
+        { "vietnameseText": "họa sĩ", "englishText": "artist" },
+        { "vietnameseText": "đầu bếp", "englishText": "chef" },
+        { "vietnameseText": "nông dân", "englishText": "farmer" },
+        { "vietnameseText": "nha sĩ", "englishText": "dentist" }
+      ]
+    }
+  ]
 }
