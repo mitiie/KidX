@@ -161,6 +161,7 @@
 "Bắt đầu  ▷" = "Start  ▷";
 "Congratulations! You found the %@!" = "Congratulations! You found the %@!";
 "Oops! This looks like %@. Try again!" = "Oops! This looks like %@. Try again!";
+"Image is unclear. Please try again!" = "Image is unclear. Please try again!";
 
 /* Math Challenges Screen */
 "Write answer here" = "Write answer here";

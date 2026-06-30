@@ -181,9 +181,9 @@ class ListGameController: BaseController, XibLoadable, UIImagePickerControllerDe
             return
         }
         
-        // Kiểm tra độ tin cậy của nhận dạng (ngưỡng 70%)
-        guard bestPrediction.confidence >= 0.70 else {
-            showFailurePopup(detected: "hình ảnh không rõ ràng".localize())
+        // Kiểm tra độ tin cậy của nhận dạng (ngưỡng 92%)
+        guard bestPrediction.confidence >= 0.92 else {
+            showFailurePopup(detected: "", isUnclear: true)
             return
         }
         
@@ -233,7 +233,31 @@ class ListGameController: BaseController, XibLoadable, UIImagePickerControllerDe
     }
     
     private func showSuccessPopup(for mission: MissionData) {
-        let msg = String(format: "Congratulations! You found the %@!".localize(), mission.title)
+        var cleanTitle = mission.title
+        
+        let isVietnamese = LocalizeHelper.shared.isVietnameseSelected
+        if isVietnamese {
+            if cleanTitle.lowercased().hasPrefix("tìm ") {
+                cleanTitle = String(cleanTitle.dropFirst(4))
+            }
+        } else {
+            if cleanTitle.lowercased().hasPrefix("find the ") {
+                cleanTitle = String(cleanTitle.dropFirst(9))
+            } else if cleanTitle.lowercased().hasPrefix("find a ") {
+                cleanTitle = String(cleanTitle.dropFirst(7))
+            } else if cleanTitle.lowercased().hasPrefix("find an ") {
+                cleanTitle = String(cleanTitle.dropFirst(8))
+            } else if cleanTitle.lowercased().hasPrefix("find ") {
+                cleanTitle = String(cleanTitle.dropFirst(5))
+            }
+        }
+        
+        let isAllUppercase = cleanTitle.allSatisfy { !$0.isLetter || $0.isUppercase }
+        if !isAllUppercase {
+            cleanTitle = cleanTitle.lowercased()
+        }
+        
+        let msg = String(format: "Congratulations! You found the %@!".localize(), cleanTitle)
         
         let resultView = DetectResultView(frame: self.view.bounds)
         resultView.showForMission(
@@ -247,8 +271,13 @@ class ListGameController: BaseController, XibLoadable, UIImagePickerControllerDe
         }
     }
     
-    private func showFailurePopup(detected: String) {
-        let msg = String(format: "Oops! This looks like %@. Try again!".localize(), detected)
+    private func showFailurePopup(detected: String, isUnclear: Bool = false) {
+        let msg: String
+        if isUnclear {
+            msg = "Image is unclear. Please try again!".localize()
+        } else {
+            msg = String(format: "Oops! This looks like %@. Try again!".localize(), detected)
+        }
         
         let resultView = DetectResultView(frame: self.view.bounds)
         resultView.showForMission(

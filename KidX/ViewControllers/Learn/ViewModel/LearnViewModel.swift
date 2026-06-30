@@ -51,8 +51,8 @@ class LearnViewModel {
         do {
             let output = try predictor.predict(from: pixelBuffer)
             
-            // Nếu độ tin cậy thấp (< 70%), coi như không nhận diện được
-            if output.confidence < 0.7 {
+            // Nếu độ tin cậy thấp (< 96%), coi như không nhận diện được
+            if output.confidence < 0.96 {
                 onUnreliableResult?()
             } else {
                 lastPrediction = output.digit

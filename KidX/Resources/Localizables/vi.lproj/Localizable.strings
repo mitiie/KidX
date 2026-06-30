@@ -155,6 +155,7 @@
 "Bắt đầu  ▷" = "Bắt đầu  ▷";
 "Congratulations! You found the %@!" = "Chúc mừng! Con đã tìm thấy %@!";
 "Oops! This looks like %@. Try again!" = "Tiếc quá! Đây là %@. Bé hãy thử lại nhé!";
+"Image is unclear. Please try again!" = "Hình ảnh chưa rõ ràng, bé hãy chụp lại nhé!";
 
 /* Math Challenges Screen */
 "Write answer here" = "Viết đáp án vào đây";
