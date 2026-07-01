@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListAlphabetController" customModule="KidX" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="BTN-bk-001" id="OT-bk-001"/>
+                <outlet property="collectionView" destination="CLV-lt-001" id="OT-clv-001"/>
+                <outlet property="subtitleLabel" destination="LBL-st-001" id="OT-st-001"/>
+                <outlet property="titleLabel" destination="LBL-tt-001" id="OT-tt-001"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-bk-001" userLabel="backButton">
+                    <rect key="frame" x="18" y="123" width="36" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="H-bk-001"/>
+                        <constraint firstAttribute="width" constant="36" id="W-bk-001"/>
+                    </constraints>
+                    <state key="normal" title=""/>
+                    <connections>
+                        <action selector="backTapped:" destination="-1" eventType="touchUpInside" id="ACT-bk-001"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a Letter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-tt-001" userLabel="titleLabel">
+                    <rect key="frame" x="68" y="124.00000000000001" width="191" height="33.666666666666671"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a letter to color inside the lines." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-st-001" userLabel="subtitleLabel">
+                    <rect key="frame" x="24" y="167.66666666666666" width="345" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.43137254899999999" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="CLV-lt-001" userLabel="collectionView">
+                    <rect key="frame" x="24" y="202.66666666666669" width="345" height="547.33333333333326"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="14" id="FLW-lt-001">
+                        <size key="itemSize" width="78" height="72"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BTN-bk-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="C-bk-l"/>
+                <constraint firstItem="BTN-bk-001" firstAttribute="centerY" secondItem="LBL-tt-001" secondAttribute="centerY" id="C-bk-y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CLV-lt-001" secondAttribute="bottom" constant="34" id="C-clv-b"/>
+                <constraint firstItem="CLV-lt-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="C-clv-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CLV-lt-001" secondAttribute="trailing" constant="24" id="C-clv-r"/>
+                <constraint firstItem="CLV-lt-001" firstAttribute="top" secondItem="LBL-st-001" secondAttribute="bottom" constant="18" id="C-clv-t"/>
+                <constraint firstItem="LBL-st-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="C-st-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LBL-st-001" secondAttribute="trailing" constant="24" id="C-st-r"/>
+                <constraint firstItem="LBL-st-001" firstAttribute="top" secondItem="LBL-tt-001" secondAttribute="bottom" constant="10" id="C-st-t"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="leading" secondItem="BTN-bk-001" secondAttribute="trailing" constant="14" id="C-tt-l"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="6" id="C-tt-t"/>
+            </constraints>
+            <point key="canvasLocation" x="126" y="125"/>
+        </view>
+    </objects>
+</document>

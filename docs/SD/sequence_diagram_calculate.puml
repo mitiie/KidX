@@ -1,0 +1,103 @@
+@startuml SD_GiaiToanNhanh
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 15
+skinparam BoxPadding 10
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "GiaoDienThuThachGiaiToan\n<<Boundary>>" as UI
+control "DieuKhienGiaiToanNhanh\n<<Control>>" as Controller
+entity "CaculateChallenge\n<<Entity>>" as Challenge
+control "DigitRecognitionService\n<<Control>>" as Predictor
+control "AchievementStatsService\n<<Control>>" as StatsService
+
+User -> UI : 1. Chọn thử thách "Giải toán"
+activate UI
+
+UI -> Controller : 2. chonCheDoThuThach(difficulty)
+activate Controller
+
+Controller -> Challenge : 3. generateChallenges(difficulty)
+activate Challenge
+Challenge --> Controller : 4. Trả về danh sách thử thách
+deactivate Challenge
+
+Controller -> Controller : 5. Tìm thử thách tiếp theo
+
+Controller --> UI : 6. hienThiKetQua(chuSoMau)
+deactivate Controller
+
+UI -> UI : 7. Cập nhật màn hình
+
+alt Chế độ nâng cao (Advanced Mode)
+  UI -> UI : 8. startTimer()
+end
+
+loop Tương tác giải toán (10 cấp độ)
+  User -> UI : 9. Vẽ nét đáp án & clickKiemTra()
+  UI -> UI : 10. Hiển thị HUD
+  
+  UI -> Controller : 11. kiemTraKetQua(pixelBuffer)
+  activate Controller
+  
+  Controller -> Predictor : 12. predict(pixelBuffer)
+  activate Predictor
+  Predictor --> Controller : 13. Trả về số dự đoán (prediction)
+  deactivate Predictor
+  
+  Controller -> Controller : 14. So khớp kết quả
+  
+  alt Đáp án Đúng (isCorrect = true)
+    Controller -> StatsService : 15a. recordMathChallengeCompleted()
+    activate StatsService
+    StatsService --> Controller : 16a. Xác nhận ghi thành tích
+    deactivate StatsService
+    
+    Controller -> Challenge : 17a. setCompleted()
+    activate Challenge
+    Challenge --> Controller : 18a. Xác nhận lưu
+    deactivate Challenge
+    
+    Controller --> UI : 19a. Trả về kết quả Đúng
+    UI -> UI : 20a. Hiện nút "Kế tiếp"
+    
+    User -> UI : 21a. clickTiepTheo()
+    UI -> Controller : 22a. chuyenThuThachKeTiep()
+    activate Controller
+    Controller --> UI : 23a. Trả về câu hỏi mới
+    deactivate Controller
+    UI -> UI : 24a. Tải câu hỏi mới & Clear bảng vẽ
+    
+  else Đáp án Sai (isCorrect = false)
+    Controller --> UI : 15b. Trả về kết quả Sai
+    deactivate Controller
+    UI -> UI : 16b. Yêu cầu thử lại
+  end
+end
+
+UI -> UI : 25. hienThiHoanThanh()
+
+User -> UI : 26. clickQuayLai()
+UI -> Controller : 27. quayVeManHinhChinh()
+activate Controller
+Controller --> UI : 28. Xác nhận
+deactivate Controller
+UI --> User : 29. Về màn hình chính
+deactivate UI
+@enduml

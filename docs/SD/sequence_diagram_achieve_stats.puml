@@ -1,0 +1,98 @@
+@startuml SD_XemThongKeTienDo
+skinparam defaultFontName Arial
+skinparam defaultFontSize 18
+skinparam shadowing false
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor #555555
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "GiaoDienThongKeTienDo" as UI
+control "DieuKhienThongKeTienDo" as Controller
+entity "StudyLog" as Log
+entity "LearningStats" as Stats
+
+User -> UI : clickXemThanhTich()
+activate UI
+||20||
+
+UI -> Controller : taiThongKeTienDo(period)
+activate Controller
+||20||
+
+Controller -> Log : getStudyLogs(period)
+activate Log
+||20||
+Log --> Controller : logs
+deactivate Log
+||20||
+
+Controller -> Controller : tinhToanChiSo(logs)
+||20||
+
+alt logs rỗng
+  Controller --> UI : stats rỗng
+  deactivate Controller
+  ||20||
+  UI -> UI : hienThiTrangThaiTrong()
+  ||20||
+  UI --> User : hiển thị trạng thái trống
+  ||20||
+
+else có dữ liệu
+  Controller -> Stats : buildStats(logs)
+  activate Stats
+  ||20||
+  Stats --> Controller : stats
+  deactivate Stats
+  ||20||
+  Controller --> UI : hienThiThongKe(stats)
+  deactivate Controller
+  ||20||
+  UI --> User : hiển thị thống kê + biểu đồ
+  ||20||
+end
+
+loop đổi bộ lọc
+  User -> UI : clickChuyenBoLoc(period)
+  ||20||
+  UI -> Controller : taiThongKeTienDo(period)
+  activate Controller
+  ||20||
+  Controller -> Log : getStudyLogs(period)
+  activate Log
+  ||20||
+  Log --> Controller : logs
+  deactivate Log
+  ||20||
+  Controller -> Controller : tinhToanChiSo(logs)
+  ||20||
+  Controller --> UI : hienThiThongKe(stats)
+  deactivate Controller
+  ||20||
+  UI --> User : cập nhật UI
+  ||20||
+end
+
+User -> UI : clickQuayLai()
+||20||
+UI -> Controller : quayVeManHinhTruoc()
+activate Controller
+||20||
+Controller --> UI : confirm
+deactivate Controller
+||20||
+UI --> User : back
+deactivate UI
+@enduml

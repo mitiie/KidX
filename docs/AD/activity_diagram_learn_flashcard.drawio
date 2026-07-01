@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="diagram_learn_flashcard_ad" name="Activity Diagram Learn Flashcard">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- === SWIMLANES HEADERS === -->
+        <!-- Header: Người dùng -->
+        <mxCell id="header_user" value="Người dùng" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="50" y="40" width="270" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Header: Hệ thống -->
+        <mxCell id="header_system" value="Hệ thống" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="320" y="40" width="270" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- === SWIMLANES BODIES === -->
+        <!-- Body: Người dùng lane -->
+        <mxCell id="body_user" value="" style="fillColor=none;strokeColor=#cccccc;strokeWidth=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="50" y="80" width="270" height="760" as="geometry" />
+        </mxCell>
+
+        <!-- Body: Hệ thống lane -->
+        <mxCell id="body_system" value="" style="fillColor=none;strokeColor=#cccccc;strokeWidth=1;connectable=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="80" width="270" height="760" as="geometry" />
+        </mxCell>
+
+        <!-- === NODES === -->
+        <!-- Start Node (Người dùng) -->
+        <mxCell id="start_node" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="175" y="95" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Step 0 (Người dùng): Chọn chủ đề -->
+        <mxCell id="step0" value="Người dùng chọn chủ đề học tập" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="140" width="210" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Step 1 (Hệ thống): Hiển thị thẻ đầu tiên -->
+        <mxCell id="step1" value="Hệ thống hiển thị giao diện học với thẻ&#xa;đầu tiên (hình ảnh + tiếng Anh)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="210" width="210" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2 (Người dùng): Tương tác học tập -->
+        <mxCell id="step2" value="Người dùng tương tác học tập với thẻ ghi nhớ&#xa;(Lật thẻ xem khái niệm, nghe phát âm thanh)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="295" width="210" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3 (Người dùng): Vuốt đánh dấu ghi nhớ -->
+        <mxCell id="step3" value="Người dùng vuốt thẻ (trái/phải) để&#xa;đánh dấu trạng thái ghi nhớ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="80" y="390" width="210" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Step 4 (Hệ thống): Ghi nhận kết quả -->
+        <mxCell id="step4" value="Hệ thống ghi nhận kết quả ghi nhớ&#xa;của thẻ hiện tại" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="465" width="210" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Decision 1 (Hệ thống): Đã hết chủ đề? -->
+        <mxCell id="decision1" value="Đã học hết&#xa;chủ đề?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="400" y="545" width="110" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- Step Next (Hệ thống): Hiển thị thẻ tiếp theo -->
+        <mxCell id="step_next" value="Hệ thống hiển thị thẻ tiếp theo&#xa;trong danh sách" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="640" width="210" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Step 5 (Hệ thống): Báo cáo kết quả và lưu -->
+        <mxCell id="step5" value="Hệ thống hiển thị báo cáo kết quả lượt học&#xa;và lưu tiến trình học tập" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="350" y="715" width="210" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- End Node (Hệ thống) -->
+        <mxCell id="end_node" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="445" y="795" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- === CONNECTIONS === -->
+        <!-- Start -> Step 0 -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;" parent="1" source="start_node" target="step0" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 0 -> Step 1 -->
+        <mxCell id="edge_step0_to_step1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" parent="1" source="step0" target="step1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="185" y="200" />
+              <mxPoint x="455" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Step 1 -> Step 2 -->
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=0.5;entryY=0;" parent="1" source="step1" target="step2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="455" y="280" />
+              <mxPoint x="185" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Step 2 -> Step 3 -->
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;" parent="1" source="step2" target="step3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3 -> Step 4 -->
+        <mxCell id="edge4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=0;entryY=0.5;" parent="1" source="step3" target="step4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="185" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Step 4 -> Decision 1 -->
+        <mxCell id="edge5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;" parent="1" source="step4" target="decision1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Decision 1 -> Step Next (Không) -->
+        <mxCell id="edge_no" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;" parent="1" source="decision1" target="step_next" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_no" value="Không" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_no">
+          <mxGeometry x="-0.3" relative="1" as="geometry">
+            <mxPoint x="-20" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Step Next -> Step 2 (Loop) -->
+        <mxCell id="edge_loop" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=0;entryY=0.5;" parent="1" source="step_next" target="step2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="65" y="665" />
+              <mxPoint x="65" y="327.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Decision 1 -> Step 5 (Có) -->
+        <mxCell id="edge_yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;entryX=1;entryY=0.5;" parent="1" source="decision1" target="step5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="582.5" />
+              <mxPoint x="580" y="742.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_yes" value="Có" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" connectable="0" parent="edge_yes">
+          <mxGeometry x="-0.7" relative="1" as="geometry">
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Step 5 -> End State -->
+        <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=classic;" parent="1" source="step5" target="end_node" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

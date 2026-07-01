@@ -1,0 +1,71 @@
+@startuml SD_SanLungVatThe
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "GiaoDienDanhSachThuThach" as UI
+boundary "GiaoDienKetQuaNhanDang" as ResultUI
+control "DieuKhienSanLungVatThe" as Controller
+control "BoNhanDangMobileNet" as AI
+entity "MissionData" as Mission
+
+User -> UI : 1. Chọn thẻ\n"Game săn lùng vật thể"
+activate UI
+||20||
+UI -> Controller : 2. layDanhSachThuThach()
+activate Controller
+Controller -> Mission : 3. layThongTinThuThach()
+Mission --> Controller : 4. Trả danh sách nhiệm vụ
+Controller --> UI : 5. hienThiDanhSachThuThach()\ncapNhatTienTrinh()
+deactivate Controller
+||20||
+
+loop Thực hiện thử thách
+  User -> UI : 6. clickThucHienThuThach()
+  UI -> UI : 7. hienThiLuaChonAnh()
+  User -> UI : 8. Nạp ảnh vật thể
+  UI -> Controller : 9. xuLyChonThuThach()\nguiAnh()
+  activate Controller
+  Controller -> AI : 10. nhanDangVatThe(image)
+  activate AI
+  AI --> Controller : 11. tinhDoTinCay()\nTrả kết quả + độ tin cậy
+  deactivate AI
+  Controller -> Controller : 12. kiemTraKetQua()
+  alt Nhận dạng chính xác
+    Controller --> ResultUI : 13a. hienThiThanhCong()
+    ResultUI --> User : 14a. Thông báo\nHoàn thành thử thách
+    Controller -> Mission : 15a. capNhatTrangThai()
+    Mission --> Controller : 16a. capNhatTrangThaiHoanThanh()
+    Controller --> UI : 17a. capNhatTienTrinh()
+  else Nhận dạng sai
+    Controller --> ResultUI : 13b. hienThiThatBai()
+    ResultUI --> User : 14b. hienThiGoiYThuLai()
+  end
+  deactivate Controller
+
+  User -> ResultUI : clickDong()
+  ResultUI --> UI : Quay lại danh sách
+end
+
+User -> UI : clickQuayLai()
+UI --> User : Về màn hình khám phá
+deactivate UI
+
+@enduml

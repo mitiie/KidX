@@ -56,6 +56,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
+    func changeRootToMain() {
+        let navVC = UINavigationController()
+        navVC.setNavigationBarHidden(true, animated: false)
+        
+        let coordinator = AuthCoordinator(navigationController: navVC)
+        self.coordinator = coordinator
+        coordinator.onPush(.main, isReplaceTop: false, animated: false)
+        
+        window?.rootViewController = navVC
+        window?.makeKeyAndVisible()
+    }
 }
 

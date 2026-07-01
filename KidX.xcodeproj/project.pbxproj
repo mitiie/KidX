@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052330C02FDC89A700BE407A /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 052330BF2FDC89A700BE407A /* MBProgressHUD */; };
+		0523368C2FDD210C00BE407A /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 0523368B2FDD210C00BE407A /* DGCharts */; };
 		0525D2212F82B2270065E83E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0525D2202F82B2270065E83E /* Lottie */; };
 		052766472F73004400D46095 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 052766462F73004400D46095 /* FirebaseAuthCombine-Community */; };
+		052766492F73004400D46095 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 052766482F73004400D46095 /* FirebaseDatabase */; };
 		05276A162F74602A00D46095 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 05276A152F74602A00D46095 /* GoogleSignIn */; };
 		05276A182F74602A00D46095 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 05276A172F74602A00D46095 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
@@ -43,9 +46,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				052330C02FDC89A700BE407A /* MBProgressHUD in Frameworks */,
 				05276A182F74602A00D46095 /* GoogleSignInSwift in Frameworks */,
 				052766472F73004400D46095 /* FirebaseAuthCombine-Community in Frameworks */,
+				052766492F73004400D46095 /* FirebaseDatabase in Frameworks */,
 				05276A162F74602A00D46095 /* GoogleSignIn in Frameworks */,
+				0523368C2FDD210C00BE407A /* DGCharts in Frameworks */,
 				0525D2212F82B2270065E83E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,9 +104,12 @@
 			name = KidX;
 			packageProductDependencies = (
 				052766462F73004400D46095 /* FirebaseAuthCombine-Community */,
+				052766482F73004400D46095 /* FirebaseDatabase */,
 				05276A152F74602A00D46095 /* GoogleSignIn */,
 				05276A172F74602A00D46095 /* GoogleSignInSwift */,
 				0525D2202F82B2270065E83E /* Lottie */,
+				052330BF2FDC89A700BE407A /* MBProgressHUD */,
+				0523368B2FDD210C00BE407A /* DGCharts */,
 			);
 			productName = KidX;
 			productReference = 05275B252F69C99500D46095 /* KidX.app */;
@@ -127,6 +136,25 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				ar,
+				ja,
+				in,
+				"en-CA",
+				"en-GB",
+				es,
+				"en-PH",
+				ko,
+				"af-ZA",
+				"pt-BR",
+				vi,
+				ru,
+				fr,
+				nl,
+				pt,
+				bn,
+				hi,
+				zh,
 			);
 			mainGroup = 05275B1C2F69C99500D46095;
 			minimizedProjectReferenceProxies = 1;
@@ -134,6 +162,8 @@
 				052766422F72FF5600D46095 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				05276A142F74602A00D46095 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				0525D21F2F82B2270065E83E /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				052330BE2FDC89A700BE407A /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+				0523368A2FDD210C00BE407A /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 05275B262F69C99500D46095 /* Products */;
@@ -377,6 +407,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		052330BE2FDC89A700BE407A /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+		0523368A2FDD210C00BE407A /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		0525D21F2F82B2270065E83E /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -404,6 +450,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		052330BF2FDC89A700BE407A /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 052330BE2FDC89A700BE407A /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+		0523368B2FDD210C00BE407A /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0523368A2FDD210C00BE407A /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
 		0525D2202F82B2270065E83E /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0525D21F2F82B2270065E83E /* XCRemoteSwiftPackageReference "lottie-spm" */;
@@ -413,6 +469,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 052766422F72FF5600D46095 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAuthCombine-Community";
+		};
+		052766482F73004400D46095 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 052766422F72FF5600D46095 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 		05276A152F74602A00D46095 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,0 +1,95 @@
+@startuml SD_XoaTheGhiNho
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 18
+skinparam shadowing false
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor #555555
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Quản trị viên" as Admin
+boundary "GiaoDienXoaTheGhiNho" as UI
+control "HeThong" as Controller
+entity "TheGhiNho" as TheGhiNho
+entity "ChuDeHocTap" as ChuDeHocTap
+
+
+Admin -> UI : 1. Chọn chức năng xóa thẻ ghi nhớ
+activate UI
+
+UI -> UI : 2. Hiển thị hộp thoại xác nhận xóa
+
+
+alt Hủy yêu cầu xóa
+
+    Admin -> UI : 3. Chọn "Hủy"
+
+    UI -> UI : 4. Đóng hộp thoại\nvà giữ nguyên dữ liệu
+
+
+else Xác nhận xóa
+
+    Admin -> UI : 3. Chọn "Xác nhận"
+
+    UI -> Controller : 4. Gửi yêu cầu xóa thẻ
+    activate Controller
+
+
+    Controller -> TheGhiNho : 5. Kiểm tra và xóa thẻ ghi nhớ
+    activate TheGhiNho
+
+
+    alt Xóa thất bại
+
+        TheGhiNho --[#red]> Controller : 6. Báo lỗi xóa thẻ
+
+        deactivate TheGhiNho
+
+        Controller --[#red]> UI : 7. Trả thông báo xóa thất bại
+
+        UI --[#red]> Admin : 8. Hiển thị lỗi\nvà giữ nguyên dữ liệu
+
+
+    else Xóa thành công
+
+        TheGhiNho --> Controller : 6. Xác nhận xóa thành công
+
+        deactivate TheGhiNho
+
+
+        Controller -> ChuDeHocTap : 7. Cập nhật lại số lượng thẻ
+
+        activate ChuDeHocTap
+
+
+        ChuDeHocTap --> Controller : 8. Xác nhận cập nhật
+
+        deactivate ChuDeHocTap
+
+
+        Controller --> UI : 9. Trả kết quả xóa thành công
+
+        deactivate Controller
+
+
+        UI --> Admin : 10. Hiển thị thông báo thành công\nvà cập nhật danh sách thẻ
+
+    end
+
+end
+
+
+deactivate UI
+
+@enduml

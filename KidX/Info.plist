@@ -7,7 +7,14 @@
         <string>Lexend-SemiBold.ttf</string>
         <string>Lexend-Regular.ttf</string>
         <string>Lexend-Medium.ttf</string>
+        <string>CherryBombOne-Regular.ttf</string>
     </array>
+    <key>NSCameraUsageDescription</key>
+    <string>KidX needs camera access so you can take photos to import into your learning content.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>KidX needs photo library access so you can choose images to import into your learning content.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>KidX may save generated or edited learning images to your photo library.</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>

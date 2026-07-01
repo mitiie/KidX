@@ -29,10 +29,9 @@ class RegisterController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
     }
 
-    private func setupUI() {
+    override func setupUI() {
         btnCreate.titleLabel?.font = UIFont.custom(20, .medium)
         btnLogin.titleLabel?.font = UIFont.custom(16, .semiBold)
         [emailTF, passwordTF, confirmPasswordTF].forEach {
@@ -56,27 +55,27 @@ class RegisterController: BaseController {
         let confirmPassword = confirmPasswordTF.text ?? ""
 
         if let error = viewModel.validate(email: email, password: password, confirmPassword: confirmPassword) {
-            showAlert(title: "Notice", message: error.message)
+            showAlert(title: "Notice".localize(), message: error.message)
             return
         }
 
-        Utils.showLoading()
+        Common.showLoading()
 
         viewModel.register(email: email, password: password) { [weak self] result in
             guard let self else { return }
-            Utils.hideLoading()
+            Common.hideLoading()
 
             switch result {
             case .success:
                 self.showAlert(
-                    title: "Account Created",
-                    message: "Your account has been created successfully. Please check your inbox to verify your email.",
+                    title: "Account Created".localize(),
+                    message: "Your account has been created successfully. Please check your inbox to verify your email.".localize(),
                     confirmHandler: {
                         self.viewModel.navigateBack()
                     }
                 )
             case .failure(let error):
-                self.showAlert(title: "Notice", message: error.message)
+                self.showAlert(title: "Notice".localize(), message: error.message)
             }
         }
     }

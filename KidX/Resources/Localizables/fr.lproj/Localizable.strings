@@ -1,0 +1,140 @@
+"Save" = "Enregistrer";
+"Next" = "Suivant";
+"Get Started" = "Démarrer";
+"Language" = "Langue";
+"OK" = "OK";
+"Nothing to Restore. No previous purchase were found" = "Rien à restaurer. Aucun achat précédent trouvé";
+"loading_ads" = "Préparation de la pub pour vous\nVeuillez patienter...";
+"New Update Available" = "Nouvelle mise à jour disponible";
+"new_update_desc" = "Performances améliorées, corrections d'erreurs et nouvelles fonctionnalités.\nMettez à jour pour une expérience plus fluide !";
+"Later" = "Plus tard";
+"Update Now" = "Mettre à jour";
+"Setting" = "Réglages";
+"No Internet" = "Pas d'internet";
+"Please connect to the network to use the app" = "Connectez-vous au réseau pour utiliser l'app";
+"Catch the newest trend in seconds!" = "Suivez la nouvelle tendance en quelques secondes !";
+"Let us bring your loved ones closer to you although you have a busy life!" = "Rapprochez vos proches de vous malgré votre vie chargée !";
+"Turn your real-life moments into cinematic videos!" = "Transformez vos moments réels en vidéos cinématiques !";
+"Let our AI turn your photo to trending video." = "Laissez notre IA transformer votre photo en vidéo tendance.";
+"Capture all unforgettable moments." = "Capturez tous les moments inoubliables.";
+"Make your life become more vivid." = "Rendez votre vie plus vivante.";
+"Discover now" = "Découvrir";
+"Continue" = "Continuer";
+"Welcome to Pixo AI" = "Bienvenue sur Pixo AI";
+"What can Pixo AI do for you?" = "Que peut faire Pixo AI pour vous ?";
+"Choose a Dance Style" = "Choisir un style de danse";
+"Try Now" = "Essayer";
+"Generate" = "Générer";
+"Detecting Faces..." = "Détection des visages...";
+"Together Under Fireworks" = "Ensemble sous les feux d'artifice";
+"Tap here to upload a photo to make it come alive." = "Touchez ici pour importer une photo\net lui donner vie.";
+"Camera" = "Appareil photo";
+"Gallery" = "Galerie";
+"Select to upload your photo" = "Sélectionnez pour importer votre photo";
+
+// Home
+"PRO" = "PRO";
+"See all" = "Tout voir";
+"Video Maker" = "Créateur vidéo";
+"Please wait, AI is generating..." = "Veuillez patienter, l'IA génère...";
+
+
+// Video Maker
+"Prompt" = "Prompt";
+"Turn your imagination into realistic videos with detailed descriptions" = "Transformez votre imagination en vidéos réalistes avec des descriptions détaillées";
+"AI Model" = "Modèle IA";
+"Create" = "Créer";
+"Get Inspired" = "S'inspirer";
+"Get Prompt" = "Obtenir le prompt";
+"Apply" = "Appliquer";
+"AI Models" = "Modèles IA";
+"AI Video" = "Vidéo IA";
+"Use Prompt" = "Utiliser prompt";
+"Copy Prompt" = "Copier prompt";
+"Enrich Prompt" = "Enrichir prompt";
+"Random Pick" = "Choix aléatoire";
+"Upload Photo" = "Importer photo";
+
+// My Profile
+"My profile" = "Mon profil";
+"Get 1250+ templates" = "Obtenez 1250+ modèles";
+"Weekly update collection" = "Collection mise à jour chaque semaine";
+"Upgrade" = "Mettre à niveau";
+"Your Gallery" = "Votre galerie";
+"Pick a trending style, let the AI work its magic, and your video will land right here in your Library." = "Choisissez un style tendance, laissez l'IA faire sa magie, et votre vidéo apparaîtra ici dans votre Bibliothèque.";
+"Create now" = "Créer maintenant";
+"Your video" = "Votre vidéo";
+"Select" = "Sélectionner";
+"Done" = "Terminé";
+"Generating..." = "Génération...";
+"Generation failed" = "Échec de génération";
+"Try again" = "Réessayer";
+"Select all" = "Tout sélectionner";
+"Delete" = "Supprimer";
+"Cancel" = "Annuler";
+"Recreate" = "Recréer";
+"Are you sure you want to delete?" = "Voulez-vous vraiment supprimer ?";
+
+// Upload Photo
+"Face not recognized" = "Visage non reconnu";
+"Multiple faces detected" = "Plusieurs visages détectés";
+"Copied to clipboard" = "Copié dans le presse-papiers";
+"Run in background" = "Exécuter en arrière-plan";
+"AI is generating" = "L'IA génère";
+"Do you want to leave? The data will be lost" = "Voulez-vous quitter ? Les données seront perdues";
+"Stay here" = "Rester ici";
+"Leave anyway" = "Quitter quand même";
+"Auto hide in" = "Masquer dans";
+"seconds" = "secondes";
+"You can freely purchase credits to discover more without waiting" = "Vous pouvez acheter des crédits pour découvrir plus sans attendre";
+"Your credits will be refilled after 1 week, and your balance will be 2000 credits" = "Vos crédits seront rechargés après 1 semaine et votre solde sera de 2000 crédits";
+
+
+"Back to home" = "Accueil";
+"Saved successfully" = "Enregistré avec succès";
+"Something went wrong. Please try again." = "Une erreur s'est produite. Réessayez.";
+"Error" = "Erreur";
+"Not found" = "Introuvable";
+
+// IAP
+"Cancel anytime" = "Annulez à tout moment";
+"week" = "semaine";
+"year" = "an";
+
+// Setting
+"Restore purchase successfully" = "Achat restauré avec succès";
+"Feedback" = "Commentaires";
+"Rate us" = "Notez-nous";
+"Term of service" = "Conditions d'utilisation";
+"Privacy policy" = "Politique de confidentialité";
+"Restore purchase" = "Restaurer l'achat";
+"Delete all infomation" = "Supprimer toutes les informations";
+"Result" = "Résultat";
+"Share" = "Partager";
+"*Save this item before it is deleted in 14 days" = "*Enregistrez cet élément avant qu'il ne soit supprimé dans 14 jours";
+"Best Offer" = "Meilleure offre";
+
+// IAP
+"Unlock full access" = "Débloquez l'accès complet";
+"Create videos with your idea" = "Créez des vidéos avec votre idée";
+"Enjoy ultra HD 4K AI videos" = "Profitez de vidéos IA en ultra HD 4K";
+"Claim 2,000 coins to start" = "Obtenez 2 000 pièces pour commencer";
+"Access unlimited templates" = "Accédez à des modèles illimités";
+"No commitment, cancel anytime" = "Sans engagement, annulez à tout moment";
+"Terms of Use" = "Conditions";
+"Privacy Policy" = "Confidentialité";
+"Restore" = "Restaurer";
+"You have" = "Vous avez";
+"Select a reason below" = "Sélectionnez une raison ci-dessous";
+"Not really me" = "Pas vraiment moi";
+"Low quality" = "Faible qualité";
+"Too slow" = "Trop lent";
+"Didn’t work" = "N'a pas fonctionné";
+"Look fake/plastic" = "Aspect faux/plastique";
+"Enter your creative edit idea here" = "Saisissez ici votre idée créative de retouche";
+"This action will permanently remove all your data, including generated videos and personal information" = "Cette action supprimera définitivement toutes vos données, y compris les vidéos générées et les informations personnelles";
+"Are you sure?" = "Êtes-vous sûr ?";
+"Just" = "Seulement";
+"Saved" = "Enregistré";
+"Confirm" = "Confirmer";
+"Estimated: 2-3 min" = "Estimation : 2-3 min";

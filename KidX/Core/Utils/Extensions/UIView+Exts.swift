@@ -18,7 +18,7 @@ extension UIView {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.addGestureRecognizer(tap)
         self.isUserInteractionEnabled = true
-        
+
         objc_setAssociatedObject(self, &AssociatedKeys.tapClosure, action, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
     }
 
@@ -32,25 +32,25 @@ extension UIView {
 extension UIView {
     func applyPrimaryGradient() {
         self.layer.sublayers?.filter { $0.name == "primaryGradient" }.forEach { $0.removeFromSuperlayer() }
-        
+
         let gradient = CAGradientLayer()
         gradient.name = "primaryGradient"
-        
+
         gradient.colors = [
             UIColor(hex: 0x8A2387).cgColor,
             UIColor(hex: 0xE94057).cgColor,
             UIColor(hex: 0xF27121).cgColor
         ]
-        
+
         gradient.locations = [0.0, 0.47, 1.0]
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        
+
         gradient.frame = self.bounds
         self.layer.insertSublayer(gradient, at: 0)
         self.clipsToBounds = true
     }
-    
+
     func applyLinearBackground(alpha: CGFloat) {
         self.layer.sublayers?
             .filter { $0 is CAGradientLayer }
@@ -68,12 +68,12 @@ extension UIView {
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
-    
+
     func makeCircle() {
         clipsToBounds = true
         layer.cornerRadius = bounds.height / 2
     }
-    
+
     func makeRounded(radius: CGFloat, borderWidth: CGFloat = 0, borderColor: UIColor = .clear) {
         layer.cornerRadius  = radius
         layer.borderWidth   = borderWidth
@@ -92,7 +92,7 @@ extension UIView {
             layer.cornerRadius = circleCorner ? min(bounds.size.height, bounds.size.width) / 2 : newValue
         }
     }
-    
+
     @IBInspectable
     public var circleCorner: Bool {
         get {
@@ -100,6 +100,16 @@ extension UIView {
         }
         set {
             cornerRadius = newValue ? min(bounds.size.height, bounds.size.width) / 2 : cornerRadius
+        }
+    }
+
+    @IBInspectable public var radius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
         }
     }
 }
@@ -111,8 +121,52 @@ extension CALayer {
         shadowOffset = size
         shadowRadius = blur / 2.0
         masksToBounds = false
-        
+
         let rect = bounds.insetBy(dx: -spread, dy: -spread)
         shadowPath = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).cgPath
+    }
+}
+
+extension UIView {
+    /// Thêm đổ bóng (Shadow) cho UIView
+    /// - Parameters:
+    ///   - color: Màu của bóng (Mặc định là đen)
+    ///   - opacity: Độ đậm nhạt (Mặc định 0.15)
+    ///   - offset: Độ lệch x, y (Mặc định x: 0, y: 4)
+    ///   - radius: Độ nhoè của bóng (Mặc định 6)
+    func addShadow(color: UIColor = .black,
+                   opacity: Float = 0.15,
+                   offset: CGSize = CGSize(width: 0, height: 4),
+                   radius: CGFloat = 6) {
+
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowOffset = offset
+        self.layer.shadowRadius = radius
+        self.layer.masksToBounds = false
+    }
+
+    func removeShadow() {
+        layer.shadowOpacity = 0
+    }
+
+    public func addGradient(_ colors: [CGColor], _ startPoint: CGPoint, _ endPoint: CGPoint, cornerRadius: CGFloat) {
+        if let layers = self.layer.sublayers {
+            for layer in layers {
+                if layer is CAGradientLayer {
+                    layer.removeFromSuperlayer()
+                }
+            }
+        }
+
+        let gradient: CAGradientLayer = CAGradientLayer()
+
+        gradient.colors = colors
+        gradient.startPoint = startPoint
+        gradient.endPoint = endPoint
+        gradient.frame = self.bounds
+        gradient.cornerRadius = cornerRadius
+        self.layer.insertSublayer(gradient, at: 0)
+
     }
 }

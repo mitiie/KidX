@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CaculateController" customModule="KidX" customModuleProvider="target">
+            <connections>
+                <outlet property="answerLabel" destination="ANS-lb-001" id="OT-ans-lb"/>
+                <outlet property="backButton" destination="BTN-bk-001" id="OT-bk"/>
+                <outlet property="canvasContainerView" destination="CNV-cv-001" id="OT-cnv-cv"/>
+                <outlet property="cardContainerView" destination="CRD-cv-001" id="OT-crd-cv"/>
+                <outlet property="checkButton" destination="BTN-dt-001" id="OT-check"/>
+                <outlet property="clearButton" destination="BTN-cl-001" id="OT-clear"/>
+                <outlet property="dashedBox" destination="DSH-bv-001" id="OT-dsh-bx"/>
+                <outlet property="difficultyLabel" destination="DIF-lb-001" id="OT-dif-lb"/>
+                <outlet property="drawView" destination="DRW-vw-001" id="OT-drw-vw"/>
+                <outlet property="equationLabel" destination="EQN-lb-001" id="OT-eqn-lb"/>
+                <outlet property="levelLabel" destination="LVL-lb-001" id="OT-lvl-lb"/>
+                <outlet property="nextButton" destination="BTN-nx-001" id="OT-next"/>
+                <outlet property="timerLabel" destination="TMR-lb-001" id="OT-tmr-lb"/>
+                <outlet property="titleLabel" destination="LBL-tt-001" id="OT-tt"/>
+                <outlet property="todayChallengeLabel" destination="TDY-lb-001" id="OT-tdy-lb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="watermarkImageView" destination="WMR-iv-001" id="OT-wmr-iv"/>
+                <outlet property="writeHintLabel" destination="HNT-lb-001" id="OT-wrt-hnt"/>
+                <outlet property="writePromptLabel" destination="PRM-lb-001" id="OT-wrt-prm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-bk-001" userLabel="backButton">
+                    <rect key="frame" x="16" y="109.33333333333331" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="H-bk-001"/>
+                        <constraint firstAttribute="width" constant="44" id="W-bk-001"/>
+                    </constraints>
+                    <color key="tintColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phép tính vui nhộn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBL-tt-001" userLabel="titleLabel">
+                    <rect key="frame" x="68" y="117.99999999999999" width="257" height="26.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Fun Math Problems"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CRD-cv-001" userLabel="cardContainerView">
+                    <rect key="frame" x="20" y="169.33333333333337" width="353" height="285"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thử thách hôm nay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDY-lb-001" userLabel="todayChallengeLabel">
+                            <rect key="frame" x="20" y="20" width="180" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="W-tdy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Today's Challenge"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cấp độ 1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVL-lb-001" userLabel="levelLabel">
+                            <rect key="frame" x="253" y="20" width="80" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="W-lvl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 + 2 =" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQN-lb-001" userLabel="equationLabel">
+                            <rect key="frame" x="20" y="75" width="313" height="64.666666666666686"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                            <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSH-bv-001" userLabel="dashedBox" customClass="DashedBorderView" customModule="KidX" customModuleProvider="target">
+                            <rect key="frame" x="148.66666666666666" y="151.66666666666666" width="56" height="49.333333333333343"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANS-lb-001" userLabel="answerLabel">
+                                    <rect key="frame" x="16" y="-8" width="24" height="57.333333333333336"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                    <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ANS-lb-001" firstAttribute="leading" secondItem="DSH-bv-001" secondAttribute="leading" constant="16" id="L-ans"/>
+                                <constraint firstItem="ANS-lb-001" firstAttribute="top" secondItem="DSH-bv-001" secondAttribute="top" constant="-8" id="Tp-ans"/>
+                                <constraint firstAttribute="bottom" secondItem="ANS-lb-001" secondAttribute="bottom" id="Zc8-P8-V4I"/>
+                                <constraint firstItem="ANS-lb-001" firstAttribute="centerX" secondItem="DSH-bv-001" secondAttribute="centerX" id="y3z-g9-Gxg"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-nx-001" userLabel="nextButton">
+                            <rect key="frame" x="96.666666666666686" y="216.99999999999997" width="160" height="48.000000000000028"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="H-nxt"/>
+                                <constraint firstAttribute="width" constant="160" id="W-nxt"/>
+                            </constraints>
+                            <state key="normal" title="Tiếp tục  →"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="normalLocalizedTitle" value="Continue  →"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CƠ BẢN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIF-lb-001" userLabel="difficultyLabel">
+                            <rect key="frame" x="20" y="43" width="90" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="H-dif-lbl"/>
+                                <constraint firstAttribute="width" constant="90" id="W-dif-lbl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMR-lb-001" userLabel="timerLabel">
+                            <rect key="frame" x="292" y="43" width="41" height="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="TDY-lb-001" firstAttribute="top" secondItem="CRD-cv-001" secondAttribute="top" constant="20" id="T-crd-1"/>
+                        <constraint firstItem="BTN-nx-001" firstAttribute="top" secondItem="DSH-bv-001" secondAttribute="bottom" constant="16" id="T-crd-10"/>
+                        <constraint firstItem="BTN-nx-001" firstAttribute="centerX" secondItem="CRD-cv-001" secondAttribute="centerX" id="T-crd-11"/>
+                        <constraint firstItem="TDY-lb-001" firstAttribute="leading" secondItem="CRD-cv-001" secondAttribute="leading" constant="20" id="T-crd-2"/>
+                        <constraint firstItem="LVL-lb-001" firstAttribute="top" secondItem="CRD-cv-001" secondAttribute="top" constant="20" id="T-crd-3"/>
+                        <constraint firstAttribute="trailing" secondItem="LVL-lb-001" secondAttribute="trailing" constant="20" id="T-crd-4"/>
+                        <constraint firstItem="EQN-lb-001" firstAttribute="top" secondItem="DIF-lb-001" secondAttribute="bottom" constant="12" id="T-crd-5"/>
+                        <constraint firstItem="EQN-lb-001" firstAttribute="leading" secondItem="CRD-cv-001" secondAttribute="leading" constant="20" id="T-crd-6"/>
+                        <constraint firstAttribute="trailing" secondItem="EQN-lb-001" secondAttribute="trailing" constant="20" id="T-crd-7"/>
+                        <constraint firstItem="DSH-bv-001" firstAttribute="top" secondItem="EQN-lb-001" secondAttribute="bottom" constant="12" id="T-crd-8"/>
+                        <constraint firstItem="DSH-bv-001" firstAttribute="centerX" secondItem="CRD-cv-001" secondAttribute="centerX" id="T-crd-9"/>
+                        <constraint firstItem="DIF-lb-001" firstAttribute="top" secondItem="TDY-lb-001" secondAttribute="bottom" constant="6" id="T-crd-dif-1"/>
+                        <constraint firstItem="DIF-lb-001" firstAttribute="leading" secondItem="CRD-cv-001" secondAttribute="leading" constant="20" id="T-crd-dif-2"/>
+                        <constraint firstItem="TMR-lb-001" firstAttribute="top" secondItem="LVL-lb-001" secondAttribute="bottom" constant="6" id="T-crd-tmr-1"/>
+                        <constraint firstAttribute="trailing" secondItem="TMR-lb-001" secondAttribute="trailing" constant="20" id="T-crd-tmr-2"/>
+                        <constraint firstAttribute="bottom" secondItem="BTN-nx-001" secondAttribute="bottom" constant="20" id="eQq-Ai-Y7T"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viết đáp án vào đây" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRM-lb-001" userLabel="writePromptLabel">
+                    <rect key="frame" x="20" y="478.33333333333331" width="180" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="H-prm"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="W-prm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.2666666667" green="0.36470588240000001" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Write answer here"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sử dụng ngón tay hoặc bút" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNT-lb-001" userLabel="writeHintLabel">
+                    <rect key="frame" x="193" y="478.33333333333331" width="180" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="H-hnt"/>
+                        <constraint firstAttribute="width" constant="180" id="W-hnt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.43137254901960786" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="Use finger or pen"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNV-cv-001" userLabel="canvasContainerView">
+                    <rect key="frame" x="20" y="511.33333333333331" width="353" height="188.66666666666669"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRW-vw-001" customClass="DrawView" customModule="KidX" customModuleProvider="target">
+                            <rect key="frame" x="12" y="12.000000000000057" width="329" height="164.66666666666666"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WMR-iv-001" userLabel="watermarkImageView">
+                                    <rect key="frame" x="265" y="100.66666666666663" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="H-wmr"/>
+                                        <constraint firstAttribute="width" constant="48" id="W-wmr"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="WMR-iv-001" secondAttribute="bottom" constant="16" id="B-wmr"/>
+                                <constraint firstAttribute="trailing" secondItem="WMR-iv-001" secondAttribute="trailing" constant="16" id="R-wmr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92156862745098034" green="0.93725490196078431" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="DRW-vw-001" secondAttribute="bottom" constant="12" id="B-drw"/>
+                        <constraint firstItem="DRW-vw-001" firstAttribute="leading" secondItem="CNV-cv-001" secondAttribute="leading" constant="12" id="L-drw"/>
+                        <constraint firstAttribute="trailing" secondItem="DRW-vw-001" secondAttribute="trailing" constant="12" id="R-drw"/>
+                        <constraint firstItem="DRW-vw-001" firstAttribute="top" secondItem="CNV-cv-001" secondAttribute="top" constant="12" id="T-drw"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="STK-btn-001" userLabel="actionStackView">
+                    <rect key="frame" x="20" y="716" width="353" height="52"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-cl-001" userLabel="clearButton">
+                            <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="52"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="H-cl-btn"/>
+                            </constraints>
+                            <state key="normal" title="Xóa"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="normalLocalizedTitle" value="Clear"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-dt-001" userLabel="checkButton">
+                            <rect key="frame" x="184.66666666666663" y="0.0" width="168.33333333333337" height="52"/>
+                            <color key="backgroundColor" red="0.0" green="0.46666666670000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="H-dt-btn"/>
+                            </constraints>
+                            <state key="normal" title="Kiểm tra"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="normalLocalizedTitle" value="Check"/>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.95686274510000002" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BTN-bk-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="C-bk-l"/>
+                <constraint firstItem="BTN-bk-001" firstAttribute="centerY" secondItem="LBL-tt-001" secondAttribute="centerY" id="C-bk-y"/>
+                <constraint firstItem="CNV-cv-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-cnv-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CNV-cv-001" secondAttribute="trailing" constant="20" id="C-cnv-r"/>
+                <constraint firstItem="CNV-cv-001" firstAttribute="top" secondItem="PRM-lb-001" secondAttribute="bottom" constant="12" id="C-cnv-t"/>
+                <constraint firstItem="CRD-cv-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-crd-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CRD-cv-001" secondAttribute="trailing" constant="20" id="C-crd-r"/>
+                <constraint firstItem="CRD-cv-001" firstAttribute="top" secondItem="BTN-bk-001" secondAttribute="bottom" constant="16" id="C-crd-t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HNT-lb-001" secondAttribute="trailing" constant="20" id="C-hnt-r"/>
+                <constraint firstItem="HNT-lb-001" firstAttribute="top" secondItem="CRD-cv-001" secondAttribute="bottom" constant="24" id="C-hnt-t"/>
+                <constraint firstItem="PRM-lb-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-prm-l"/>
+                <constraint firstItem="PRM-lb-001" firstAttribute="top" secondItem="CRD-cv-001" secondAttribute="bottom" constant="24" id="C-prm-t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="STK-btn-001" secondAttribute="bottom" constant="16" id="C-stk-b"/>
+                <constraint firstItem="STK-btn-001" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="C-stk-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="STK-btn-001" secondAttribute="trailing" constant="20" id="C-stk-r"/>
+                <constraint firstItem="STK-btn-001" firstAttribute="top" secondItem="CNV-cv-001" secondAttribute="bottom" constant="16" id="C-stk-t"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="leading" secondItem="BTN-bk-001" secondAttribute="trailing" constant="8" id="C-tt-l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LBL-tt-001" secondAttribute="trailing" constant="68" id="C-tt-r"/>
+                <constraint firstItem="LBL-tt-001" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="C-tt-t"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="141"/>
+        </view>
+    </objects>
+</document>

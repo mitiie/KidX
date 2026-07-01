@@ -1,0 +1,124 @@
+@startuml SD_QuanLyBoSuuTap
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 18
+skinparam shadowing false
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor #555555
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "GiaoDienBoSuuTap" as UI
+control "HeThongBoSuuTap" as Controller
+control "MoHinhNhanDangDoVat" as AI
+entity "SavedObjectItem" as Item
+
+' ===================== KHỞI ĐỘNG =====================
+User -> UI : 1. Chọn "Khám phá thế giới"
+activate UI
+
+UI -> UI : 2. Hiển thị lựa chọn (Camera / Thư viện)
+
+User -> UI : 3. Chọn ảnh từ camera hoặc thư viện
+
+UI -> Controller : 4. Gửi ảnh để xử lý nhận diện
+activate Controller
+
+Controller -> AI : 5. Gọi mô hình AI nhận diện vật thể
+activate AI
+
+AI --> Controller : 6. Trả kết quả nhận diện (label + confidence)
+deactivate AI
+
+Controller --> UI : 7. Trả kết quả hiển thị
+deactivate Controller
+
+UI --> User : 8. Hiển thị kết quả nhận diện
+
+' ===================== LƯU BỘ SƯU TẬP =====================
+User -> UI : 9. Chọn "Lưu vào bộ sưu tập"
+
+UI -> Controller : 10. Yêu cầu tạo thẻ ghi nhớ
+activate Controller
+
+Controller -> Item : 11. Tạo SavedObjectItem (image, label, createdDate)
+activate Item
+
+alt Lưu thành công
+
+    Item --> Controller : 12. Trả về object đã lưu
+    deactivate Item
+
+    Controller --> UI : 13. Lưu thành công
+    deactivate Controller
+
+    UI --> User : 14. Hiển thị thông báo lưu thành công
+
+else Lưu thất bại
+
+    Item --[#red]> Controller : 12. Lỗi lưu CSDL
+    deactivate Item
+
+    Controller --[#red]> UI : 13. Thông báo lỗi lưu
+    deactivate Controller
+
+    UI --[#red]> User : 14. Hiển thị "Lưu thất bại"
+
+end
+
+' ===================== XEM + XOÁ =====================
+User -> UI : 15. Xem danh sách bộ sưu tập
+UI -> Controller : 16. Lấy danh sách SavedObjectItem
+activate Controller
+
+Controller -> Item : 17. Truy vấn danh sách
+activate Item
+
+Item --> Controller : 18. Trả danh sách item
+deactivate Item
+
+Controller --> UI : 19. Trả danh sách hiển thị
+deactivate Controller
+
+UI --> User : 20. Hiển thị danh sách
+
+User -> UI : 21. Chọn item và nhấn "Xoá"
+
+UI -> Controller : 22. Gửi yêu cầu xoá item
+activate Controller
+
+Controller -> Item : 23. Thực hiện xoá item
+
+alt Xoá thất bại
+
+    Item --[#red]> Controller : 24. Báo lỗi xoá
+
+    Controller --[#red]> UI : 25. Thông báo xoá thất bại
+
+    UI --[#red]> User : 26. Giữ nguyên dữ liệu + báo lỗi
+
+else Xoá thành công
+
+    Item --> Controller : 24. Xác nhận xoá thành công
+
+    Controller --> UI : 25. Cập nhật danh sách sau xoá
+
+    UI --> User : 26. Hiển thị danh sách mới
+
+end
+
+deactivate Controller
+deactivate UI
+
+@enduml

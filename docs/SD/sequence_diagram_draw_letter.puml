@@ -1,0 +1,86 @@
+@startuml SD_TapVietChuCai
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 20
+skinparam shadowing false
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ArrowColor Black
+  LifeLineBorderColor Black
+}
+
+
+actor "Người dùng" as User
+boundary "GiaoDienTapViet" as UI
+control "DieuKhienTapViet" as Controller
+entity "ChuCai" as Letter
+entity "CauHinhBangVe" as Config
+
+
+User -> UI : 1. Chọn chữ cái cần tập viết
+activate UI
+
+UI -> Controller : 2. Yêu cầu tải mẫu chữ
+activate Controller
+
+Controller -> Letter : 3. Lấy thông tin chữ mẫu
+Letter --> Controller : 4. Trả về chữ hoa/thường
+
+
+Controller -> Config : 5. Lấy cấu hình mặc định\n(chữ hoa, màu cam, nét trung bình)
+Config --> Controller : 6. Trả về thiết lập
+
+
+Controller --> UI : 7. Hiển thị giao diện tập viết
+deactivate Controller
+
+UI --> User : 8. Hiển thị chữ mẫu và bảng vẽ
+
+
+loop Tập viết
+
+User -> UI : 9. Thay đổi thiết lập bảng vẽ\n(kiểu chữ, màu, kích thước, xóa nét)
+
+UI -> Controller : 10. Cập nhật cấu hình bảng vẽ
+
+Controller -> Config : 11. Lưu thiết lập mới
+Config --> Controller : 12. Xác nhận cập nhật
+
+Controller --> UI : 13. Áp dụng thiết lập mới
+
+
+User -> UI : 14. Di chuyển tay viết theo mẫu
+
+UI -> Controller : 15. Gửi thao tác nét vẽ
+
+Controller --> UI : 16. Cập nhật nét vẽ realtime
+
+UI --> User : 17. Hiển thị nét viết
+
+
+end
+
+
+User -> UI : 18. Nhấn quay lại
+
+UI -> Controller : 19. Đóng giao diện tập viết
+
+Controller --> UI : 20. Xác nhận đóng
+
+UI --> User : 21. Quay về danh sách chữ cái
+
+
+alt Lỗi tải mẫu chữ
+
+Controller --> UI : Thông báo lỗi tải dữ liệu
+
+UI --> User : Đóng giao diện tập viết
+
+end
+
+
+deactivate UI
+
+@enduml

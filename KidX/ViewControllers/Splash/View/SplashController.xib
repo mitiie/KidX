@@ -18,11 +18,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-ma-6eA">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-ma-6eA" customClass="CommonLabel" customModule="KidX" customModuleProvider="target">
                     <rect key="frame" x="142.33333333333334" y="719.33333333333337" width="108.33333333333334" height="28.666666666666629"/>
                     <fontDescription key="fontDescription" type="italicSystem" pointSize="24"/>
                     <color key="textColor" red="1" green="0.33725490200000002" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
+                            <real key="value" value="18"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="weight" value="cherryBombRegular"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="color" value="primary"/>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVE-Ya-h5b" customClass="GradientProgressView" customModule="KidX" customModuleProvider="target">
                     <rect key="frame" x="78.666666666666671" y="764" width="235.66666666666663" height="20"/>
@@ -32,7 +39,11 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ic-splash" translatesAutoresizingMaskIntoConstraints="NO" id="Xew-FW-hWq">
-                    <rect key="frame" x="25.666666666666657" y="300.33333333333331" width="342" height="406.99999999999994"/>
+                    <rect key="frame" x="25.666666666666657" y="312.33333333333326" width="342" height="407"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ic-splash-top" translatesAutoresizingMaskIntoConstraints="NO" id="w9e-3R-8aX">
+                    <rect key="frame" x="24" y="0.0" width="345" height="341.33333333333331"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
             </subviews>
@@ -43,14 +54,18 @@
                 <constraint firstItem="Xew-FW-hWq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8nd-Mk-3l7"/>
                 <constraint firstItem="bVE-Ya-h5b" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="HR8-ok-F2E"/>
                 <constraint firstItem="DFi-ma-6eA" firstAttribute="centerX" secondItem="bVE-Ya-h5b" secondAttribute="centerX" id="IIR-Ac-aLv"/>
+                <constraint firstItem="Xew-FW-hWq" firstAttribute="bottom" secondItem="DFi-ma-6eA" secondAttribute="top" id="KWN-lO-taF"/>
+                <constraint firstItem="w9e-3R-8aX" firstAttribute="centerX" secondItem="BkA-bn-QKm" secondAttribute="centerX" id="X0Z-VF-qWL"/>
                 <constraint firstItem="bVE-Ya-h5b" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bmt-6I-n3E"/>
-                <constraint firstItem="DFi-ma-6eA" firstAttribute="top" secondItem="Xew-FW-hWq" secondAttribute="bottom" constant="12" id="kxj-8O-DTh"/>
+                <constraint firstItem="w9e-3R-8aX" firstAttribute="leading" secondItem="BkA-bn-QKm" secondAttribute="leading" constant="24" id="l-c-2"/>
                 <constraint firstItem="BkA-bn-QKm" firstAttribute="bottom" secondItem="bVE-Ya-h5b" secondAttribute="bottom" id="lnk-hT-YXE"/>
+                <constraint firstAttribute="top" secondItem="w9e-3R-8aX" secondAttribute="top" id="yx3-CV-BNY"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="153.52112676056339"/>
         </view>
     </objects>
     <resources>
         <image name="ic-splash" width="342" height="407"/>
+        <image name="ic-splash-top" width="341.33334350585938" height="341.33334350585938"/>
     </resources>
 </document>

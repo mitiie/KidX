@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="diagram_class_learn_flashcard" name="Analysis Class Diagram Learn Flashcard">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Actor: Người dùng -->
+        <mxCell id="actor_user" value="Người dùng" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#333333;strokeWidth=1.5;" parent="1" vertex="1">
+          <mxGeometry x="40" y="220" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Boundary Class: GiaoDienHocFlashcard -->
+        <mxCell id="class_ui" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;GiaoDienHocFlashcard&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ hienThiTheGhiNho()&lt;br&gt;+ latTheGhiNho()&lt;br&gt;+ phatAmThanh()&lt;br&gt;+ vuotTraiDanhDauOnTap()&lt;br&gt;+ vuotPhaiDanhDauDaThuoc()&lt;br&gt;+ hienThiBaoCaoKetQua()&lt;br&gt;+ quayLaiTrangChonChuDe()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="140" y="160" width="190" height="180" as="geometry" />
+        </mxCell>
+
+        <!-- Control Class: DieuKhienHocFlashcard -->
+        <mxCell id="class_control" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;DieuKhienHocFlashcard&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ taiDanhSachTheGhiNho()&lt;br&gt;+ ghiNhanTrangThaiGhiNho()&lt;br&gt;+ kiemTraHoanThanhChuDe()&lt;br&gt;+ luuTienTrinhHocTap()&lt;br&gt;+ tongHopKetQuaLuotHoc()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="400" y="175" width="190" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- Entity Class: TheGhiNho -->
+        <mxCell id="class_entity_flashcard" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;TheGhiNho&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;- maThe&lt;br&gt;- tiengAnh&lt;br&gt;- tiengViet&lt;br&gt;- pathAnhMinhHoa&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ layThongTinThe()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="660" y="40" width="160" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- Entity Class: TienTrinhHocTap -->
+        <mxCell id="class_entity_progress" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;TienTrinhHocTap&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;- maNguoiDung&lt;br&gt;- maChuDe&lt;br&gt;- soTuDaThuoc&lt;br&gt;- tongSoTu&lt;br&gt;- lichSuHocTap&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;border-color:#b3b3b3;&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;text-align:left;&quot;&gt;+ luuTienTrinhCucBo()&lt;br&gt;+ dongBoTienTrinh()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" parent="1" vertex="1">
+          <mxGeometry x="660" y="195" width="160" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- Connections -->
+        <!-- User -> UI -->
+        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="actor_user" target="class_ui" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- UI -> Control -->
+        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_ui" target="class_control" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Control -> Entity (TheGhiNho) -->
+        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_control" target="class_entity_flashcard" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array points="500, 115" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Control -> Entity (TienTrinhHocTap) -->
+        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" parent="1" source="class_control" target="class_entity_progress" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array points="500, 280" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

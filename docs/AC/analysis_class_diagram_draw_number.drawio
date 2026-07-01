@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="acd_draw_number_bce" name="ACD BCE Draw Number">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1">
+      <root>
+
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+
+        <!-- Actor -->
+        <mxCell id="actor"
+          value="Người dùng"
+          style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="40" y="250" width="30" height="60" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Boundary -->
+        <mxCell id="boundary"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;GiaoDienTapVietSo&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
++ hienThiDanhSachChuSo()&lt;br&gt;
++ hienThiSoMau()&lt;br&gt;
++ vietSoLenBangDen()&lt;br&gt;
++ xoaNetVe()&lt;br&gt;
++ clickKiemTra()&lt;br&gt;
++ hienThiKetQua()&lt;br&gt;
++ hienThiThongBao()&lt;br&gt;
++ quayLai()"
+          style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="150" y="160" width="230" height="240" as="geometry"/>
+        </mxCell>
+
+
+
+
+        <!-- Control -->
+        <mxCell id="control"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;DieuKhienTapVietSo&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
++ xuLyChonChuSo()&lt;br&gt;
++ capNhatSoMau()&lt;br&gt;
++ resetBangVe()&lt;br&gt;
++ ghiNhanNetVe()&lt;br&gt;
++ yeuCauNhanDang()&lt;br&gt;
++ xuLyKetQua()&lt;br&gt;
++ xuLyNhanDangThatBai()"
+          style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="470" y="180" width="240" height="220" as="geometry"/>
+        </mxCell>
+
+
+
+
+
+        <!-- Entity Data -->
+        <mxCell id="entity_data"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;DuLieuTapViet&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
+- chuSoDuocChon&lt;br&gt;
+- danhSachNetVe&lt;br&gt;
+- trangThaiBaiTap
+&lt;hr&gt;
++ luuNetVe()&lt;br&gt;
++ layChuSoMau()&lt;br&gt;
++ capNhatTrangThai()"
+          style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="820" y="260" width="220" height="180" as="geometry"/>
+        </mxCell>
+
+
+
+
+        <!-- Control Service AI -->
+        <mxCell id="service_ai"
+          value="&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;b&gt;BoNhanDangMNIST&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
+- modelMNIST: mnistCNN
+&lt;hr&gt;
++ nhanDangNetVe(image: UIImage): Int&lt;br&gt;
++ tinhDoTinCay(): Float"
+          style="verticalAlign=top;align=left;html=1;whiteSpace=wrap;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="820" y="80" width="220" height="140" as="geometry"/>
+        </mxCell>
+
+
+
+
+        <!-- Relations -->
+
+        <!-- Actor -> Boundary -->
+        <mxCell id="edge1"
+          source="actor"
+          target="boundary"
+          edge="1"
+          parent="1"
+          style="endArrow=none;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Boundary -> Control -->
+        <mxCell id="edge2"
+          source="boundary"
+          target="control"
+          edge="1"
+          parent="1"
+          style="endArrow=none;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Control -> Entity Data -->
+        <mxCell id="edge3"
+          source="control"
+          target="entity_data"
+          edge="1"
+          parent="1"
+          style="endArrow=none;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Control -> Service AI -->
+        <mxCell id="edge4"
+          source="control"
+          target="service_ai"
+          edge="1"
+          parent="1"
+          style="endArrow=none;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

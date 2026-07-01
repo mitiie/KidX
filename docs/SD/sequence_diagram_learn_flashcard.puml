@@ -1,0 +1,66 @@
+@startuml SD_HocTuVungFlashcard
+skinparam defaultFontName Arial
+skinparam defaultFontSize 18
+skinparam shadowing false
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor #555555
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+actor "Người dùng" as User
+boundary "Giao diện học từ vựng" as UI
+control "Hệ thống" as Controller
+entity "Cơ sở dữ liệu cục bộ" as DB
+
+User -> UI : 1. Chọn chủ đề học từ vựng
+activate UI
+
+UI -> Controller : 2. Yêu cầu tải danh sách thẻ ghi nhớ (maChuDe)
+activate Controller
+
+Controller -> DB : 3. Truy vấn danh sách thẻ ghi nhớ
+activate DB
+DB --> Controller : 4. Trả về danh sách thẻ ghi nhớ
+deactivate DB
+
+Controller --> UI : 5. Truyền thông tin thẻ ghi nhớ đầu tiên
+deactivate Controller
+
+UI --> User : 6. Hiển thị hình ảnh minh họa & từ tiếng Anh
+
+User -> UI : 7. Tương tác lật thẻ và nghe phát âm
+UI --> User : 8. Hiển thị nghĩa tiếng Việt & phát âm thanh
+
+User -> UI : 9. Vuốt thẻ để đánh dấu trạng thái (Đã thuộc / Ôn tập)
+UI -> Controller : 10. Gửi cập nhật trạng thái ghi nhớ
+activate Controller
+
+Controller -> Controller : 11. Kiểm tra đã học hết chủ đề chưa
+
+alt Chưa học hết chủ đề
+  Controller --> UI : 12a. Trả về thông tin thẻ tiếp theo
+  UI --> User : 13a. Hiển thị thẻ ghi nhớ tiếp theo
+
+else Đã học hết chủ đề
+  Controller -> DB : 12b. Lưu tiến trình học tập cục bộ
+  activate DB
+  DB --> Controller : 13b. Xác nhận lưu tiến trình thành công
+  deactivate DB
+  
+  Controller --> UI : 14b. Trả về kết quả lượt học tập
+  deactivate Controller
+  UI --> User : 15b. Hiển thị báo cáo kết quả lượt học
+end
+
+deactivate UI
+@enduml

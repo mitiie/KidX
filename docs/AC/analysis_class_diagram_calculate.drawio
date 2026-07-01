@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="diagram_class_calculate" name="Analysis Class Diagram Calculate">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+
+        <!-- Actor -->
+        <mxCell id="actor_user" value="Người dùng" 
+        style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#333333;strokeWidth=1.5;" 
+        parent="1" vertex="1">
+          <mxGeometry x="40" y="250" width="30" height="60" as="geometry" />
+        </mxCell>
+
+
+
+        <!-- Boundary -->
+
+        <mxCell id="class_ui" 
+
+        value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;
+
+        &lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;GiaoDienThuThachGiaiToan&lt;/b&gt;&lt;/p&gt;
+
+        &lt;hr&gt;
+
+        &lt;p style=&quot;margin-left:4px;text-align:left;&quot;&gt;
+
+        + chonCheDoThuThach()&lt;br&gt;
+
+        + veKetQuaLenBang()&lt;br&gt;
+
+        + xoaKetQua()&lt;br&gt;
+
+        + clickKiemTra()&lt;br&gt;
+
+        + clickTiepTheo()&lt;br&gt;
+
+        + hienThiKetQua(prediction)&lt;br&gt;
+
+        + hienThiHoanThanh()&lt;br&gt;
+
+        + hienThiHetGio()&lt;br&gt;
+
+        + quayLaiTrangTruoc()
+
+        &lt;/p&gt;"
+
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" 
+        parent="1" vertex="1">
+
+          <mxGeometry x="130" y="140" width="230" height="230" as="geometry" />
+
+        </mxCell>
+
+
+
+
+        <!-- Control -->
+
+        <mxCell id="class_control"
+
+        value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+
+        &lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;DieuKhienGiaiToanNhanh&lt;/b&gt;&lt;/p&gt;
+
+        &lt;hr&gt;
+
+        &lt;p style=&quot;margin-left:4px;text-align:left;&quot;&gt;
+
+        + taiDanhSachThuThach(difficulty)&lt;br&gt;
+
+        + kiemTraKetQua(pixelBuffer)&lt;br&gt;
+
+        + chuyenThuThachKeTiep()&lt;br&gt;
+
+        + resetTienTrinh()&lt;br&gt;
+
+        + quayVeManHinhChinh()
+
+        &lt;/p&gt;"
+
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" 
+        parent="1" vertex="1">
+
+          <mxGeometry x="410" y="195" width="220" height="160" as="geometry" />
+
+        </mxCell>
+
+
+
+
+        <!-- Challenge Entity -->
+
+        <mxCell id="class_entity_challenge"
+
+        value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
+
+        &lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;CaculateChallenge&lt;/b&gt;&lt;/p&gt;
+
+        &lt;hr&gt;
+
+        &lt;p style=&quot;margin-left:4px;text-align:left;&quot;&gt;
+
+        - id:String&lt;br&gt;
+
+        - level:Int&lt;br&gt;
+
+        - operand1:Int&lt;br&gt;
+
+        - operand2:Int&lt;br&gt;
+
+        - operation:String&lt;br&gt;
+
+        - result:Int&lt;br&gt;
+
+        - isCompleted:Bool
+
+        &lt;/p&gt;
+
+        &lt;hr&gt;
+
+        &lt;p style=&quot;margin-left:4px;text-align:left;&quot;&gt;
+
+        + generateChallenges(difficulty)&lt;br&gt;
+
+        + randomExpression()&lt;br&gt;
+
+        + getExpression()&lt;br&gt;
+
+        + setCompleted()&lt;br&gt;
+
+        + clearProgress()
+
+        &lt;/p&gt;"
+
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" 
+        parent="1" vertex="1">
+
+          <mxGeometry x="700" y="40" width="230" height="260" as="geometry" />
+
+        </mxCell>
+
+
+
+
+
+        <!-- AI Entity -->
+
+        <mxCell id="class_entity_predictor"
+
+        value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+
+        &lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;DigitRecognitionService&lt;/b&gt;&lt;/p&gt;
+
+        &lt;hr&gt;
+
+        &lt;p style=&quot;margin-left:4px;text-align:left;&quot;&gt;
+
+        - model: mnistCNN
+
+        &lt;/p&gt;
+
+        &lt;hr&gt;
+
+        &lt;p style=&quot;margin-left:4px;text-align:left;&quot;&gt;
+
+        + predict(pixelBuffer)
+
+        &lt;/p&gt;"
+
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" 
+        parent="1" vertex="1">
+
+          <mxGeometry x="700" y="360" width="230" height="120" as="geometry" />
+
+        </mxCell>
+
+
+
+
+
+        <!-- Achievement -->
+
+        <mxCell id="class_entity_achievement"
+
+        value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+
+        &lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;AchievementStatsService&lt;/b&gt;&lt;/p&gt;
+
+        &lt;hr&gt;
+
+        &lt;p style=&quot;margin-left:4px;text-align:left;&quot;&gt;
+
+        + recordMathChallengeCompleted()
+
+        &lt;/p&gt;"
+
+        style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=12;" 
+        parent="1" vertex="1">
+
+          <mxGeometry x="700" y="600" width="230" height="120" as="geometry" />
+
+        </mxCell>
+
+
+
+
+        <!-- Connections -->
+
+        <mxCell id="conn1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" 
+        parent="1" source="actor_user" target="class_ui" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+
+
+        <mxCell id="conn2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" 
+        parent="1" source="class_ui" target="class_control" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+
+
+        <mxCell id="conn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" 
+        parent="1" source="class_control" target="class_entity_challenge" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+
+
+        <mxCell id="conn4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" 
+        parent="1" source="class_control" target="class_entity_predictor" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+
+
+        <mxCell id="conn5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;endArrow=none;" 
+        parent="1" source="class_control" target="class_entity_achievement" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

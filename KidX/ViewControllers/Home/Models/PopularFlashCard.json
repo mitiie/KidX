@@ -1,0 +1,324 @@
+[
+  {
+    "categoryVi": "Đồ dùng học tập",
+    "categoryEn": "School Supplies",
+    "imageName": "school",
+    "items": [
+      {
+        "titleVi": "Lớp học",
+        "titleEn": "Classroom",
+        "imageName": "classroom",
+        "descriptionVi": "Lớp học là không gian học tập trong trường học, nơi các bạn học sinh cùng nhau nghe thầy cô giáo giảng bài.",
+        "descriptionEn": "A classroom is a designated space within a school or educational institution where students gather to receive instruction from a teacher."
+      },
+      {
+        "titleVi": "Cái kéo",
+        "titleEn": "Scissors",
+        "imageName": "scissors",
+        "descriptionVi": "Dụng cụ cầm tay có hai lưỡi sắc bén dùng để cắt giấy, vải hoặc các vật liệu mỏng khác.",
+        "descriptionEn": "A handheld tool with two sharp blades used for cutting paper, fabric, and other thin materials. Essential for everyday tasks at home, school, or the office."
+      },
+      {
+        "titleVi": "Giá sách",
+        "titleEn": "Bookshelf",
+        "imageName": "bookself",
+        "descriptionVi": "Một món đồ nội thất có các ngăn nằm ngang, dùng để cất giữ sách vở và các đồ dùng gọn gàng.",
+        "descriptionEn": "A bookshelf is a piece of furniture with horizontal shelves, used to store books and other items."
+      },
+      {
+        "titleVi": "Quyển vở",
+        "titleEn": "Notebook",
+        "imageName": "notebook",
+        "descriptionVi": "Quyển vở ghi chép có các trang giấy trắng hoặc có kẻ dòng, dùng để viết bài hoặc vẽ.",
+        "descriptionEn": "A notebook is a portable collection of blank or lined pages bound together, used for writing, note-taking, journaling."
+      },
+      {
+        "titleVi": "Bút chì",
+        "titleEn": "Pencil",
+        "imageName": "pencil",
+        "descriptionVi": "Dụng cụ viết vẽ phổ biến có lõi chì đen bọc ngoài bằng gỗ hoặc nhựa.",
+        "descriptionEn": "A pencil is a common writing instrument made of a thin graphite core encased in wood or plastic"
+      },
+      {
+        "titleVi": "Thước cặp",
+        "titleEn": "Calipers",
+        "imageName": "calipers",
+        "descriptionVi": "Thước cặp là công cụ đo lường chính xác dùng để xác định khoảng cách giữa hai mặt đối diện của vật thể.",
+        "descriptionEn": "Calipers are precision measuring tools used to determine the distance between two opposite sides of an object."
+      },
+      {
+        "titleVi": "Mực viết thư pháp",
+        "titleEn": "Calligraphy ink",
+        "imageName": "calligraphyInk",
+        "descriptionVi": "Loại mực nước đặc biệt dùng cho nghệ thuật viết chữ đẹp bằng bút máy hoặc cọ vẽ.",
+        "descriptionEn": "Calligraphy ink is a specialized liquid pigment used for the art of beautiful handwriting and decorative lettering, often applied with dip pens or brushes."
+      },
+      {
+        "titleVi": "Bộ màu acrylic",
+        "titleEn": "Acrylic Paint Set",
+        "imageName": "acrylicPaintSet",
+        "descriptionVi": "Bộ màu vẽ chuyên nghiệp giúp các bạn nhỏ thỏa sức sáng tạo ra những bức tranh rực rỡ sắc màu.",
+        "descriptionEn": "Perfect for beginners and experienced artists alike, this kit encourages creativity and relaxation through art."
+      },
+      {
+        "titleVi": "Gọt bút chì",
+        "titleEn": "Sharpener",
+        "imageName": "sharpener",
+        "descriptionVi": "Dụng cụ nhỏ gọn dùng để gọt nhọn đầu bút chì, giúp bé viết và vẽ dễ dàng hơn.",
+        "descriptionEn": "A sharpener is a small tool used to restore the fine edge of pencils or other writing instruments, making them suitable for precise writing or drawing."
+      },
+      {
+        "titleVi": "Kính lúp tìm kiếm",
+        "titleEn": "Search Magnifier",
+        "imageName": "searchMagnifier",
+        "descriptionVi": "Biểu tượng kính lúp quen thuộc thể hiện tính năng tìm kiếm thông tin trên các thiết bị.",
+        "descriptionEn": "A search magnifier is a common interface symbol representing the search function, typically depicted as a magnifying glass icon."
+      },
+      {
+        "titleVi": "Phòng thí nghiệm",
+        "titleEn": "Lab",
+        "imageName": "lab",
+        "descriptionVi": "Nơi trang bị đầy đủ dụng cụ để các nhà khoa học thực hiện nghiên cứu và thử nghiệm khoa học.",
+        "descriptionEn": "A lab is a specialized facility equipped for scientific research, experiments, and analysis, often used in the fields of space."
+      },
+      {
+        "titleVi": "Bút mực",
+        "titleEn": "Pen",
+        "imageName": "pen",
+        "descriptionVi": "Dụng cụ viết sử dụng mực nước để viết chữ hoặc vẽ tranh lên giấy.",
+        "descriptionEn": "A pen is a common writing instrument used to apply ink to a surface, usually paper, for writing or drawingy."
+      }
+    ]
+  },
+  {
+    "categoryVi": "Thực vật",
+    "categoryEn": "Plants",
+    "imageName": "plants",
+    "items": [
+      {
+        "titleVi": "Nấm",
+        "titleEn": "Mushroom",
+        "imageName": "mushroom",
+        "descriptionVi": "Loại nấm thực phẩm thơm ngon bổ dưỡng mà bé có thể dễ dàng quan sát và trồng tại nhà.",
+        "descriptionEn": "A kit that allows you to grow a variety of gourmet mushrooms at home, perfect for food enthusiasts and home cooks seeking fresh, unique ingredients."
+      },
+      {
+        "titleVi": "Hoa lan",
+        "titleEn": "Orchid",
+        "imageName": "orchid",
+        "descriptionVi": "Loài hoa nhiệt đới thanh cao có màu sắc sặc sỡ và nhiều hình dáng độc đáo đẹp mắt.",
+        "descriptionEn": "A delicate and exotic flowering plant known for its vibrant colors and intricate blooms, often found in tropical regions and prized for its beauty in gardens and floral arrangements."
+      },
+      {
+        "titleVi": "Quả mâm xôi vàng",
+        "titleEn": "CloudBerry",
+        "imageName": "cloudberry",
+        "descriptionVi": "Loại quả mọng màu vàng cam quý hiếm sinh trưởng ở những vùng phương bắc lạnh giá.",
+        "descriptionEn": "Cloudberry is a rare, golden-orange fruit found in cool, northern regions. It grows in boggy, wild landscapes and is prized for its sweet-tart flavor and high vitamin content."
+      },
+      {
+        "titleVi": "Hoa hướng dương",
+        "titleEn": "Sunflower",
+        "imageName": "sunflower",
+        "descriptionVi": "Loài hoa lớn màu vàng rực rỡ luôn hướng về phía mặt trời, tượng trưng cho năng lượng ấm áp.",
+        "descriptionEn": "A tall, bright yellow flowering plant known for its large, round blooms that follow the sun. Sunflowers are commonly found in fields and gardens, symbolizing warmth and positivity."
+      },
+      {
+        "titleVi": "Hoa phượng vĩ",
+        "titleEn": "Flamboyant",
+        "imageName": "flamboyant",
+        "descriptionVi": "Loài hoa học trò màu đỏ rực rỡ nở rộ báo hiệu mùa hè và kỳ nghỉ hè sắp đến.",
+        "descriptionEn": "The Flamboyant, also known as the Royal Poinciana, is a striking tropical tree renowned for its vivid red-orange blossoms and wide, umbrella-like canopy."
+      },
+      {
+        "titleVi": "Rau xà lách",
+        "titleEn": "Lettuce",
+        "imageName": "lettuce",
+        "descriptionVi": "Loại rau ăn lá màu xanh giòn ngọt, thường dùng để làm salad hoặc ăn kèm các món kẹp.",
+        "descriptionEn": "A leafy green vegetable commonly used in salads, sandwiches, and wraps. Lettuce is known for its crisp texture and mild flavor."
+      },
+      {
+        "titleVi": "Dưa hấu",
+        "titleEn": "Watermelon",
+        "imageName": "watermelon",
+        "descriptionVi": "Trái cây mùa hè to tròn, vỏ xanh ruột đỏ ngọt mát và mọng nước.",
+        "descriptionEn": "A large, juicy fruit with a green rind and sweet, red flesh, commonly enjoyed fresh in summer or used in beverages and desserts."
+      },
+      {
+        "titleVi": "Súp lơ xanh",
+        "titleEn": "Broccoli",
+        "imageName": "broccoli",
+        "descriptionVi": "Loại rau màu xanh giàu dinh dưỡng có hình dáng giống như những chiếc cây cổ thụ thu nhỏ.",
+        "descriptionEn": "Broccoli is a green, edible vegetable from the cabbage family, known for its tree-like florets and high nutritional value."
+      },
+      {
+        "titleVi": "Quả mọng hoang dã",
+        "titleEn": "Wild Berry",
+        "imageName": "wildberry",
+        "descriptionVi": "Những quả mọng nhỏ ngọt ngào mọc tự nhiên trong rừng sâu hoặc trên các sườn đồi.",
+        "descriptionEn": "A wild berry is a small, edible fruit that grows naturally in forests, fields, and other outdoor environments."
+      },
+      {
+        "titleVi": "Quả chanh vàng",
+        "titleEn": "Lemon",
+        "imageName": "lemon",
+        "descriptionVi": "Trái cây họ cam quýt màu vàng tươi, có vị chua thanh rực rỡ và chứa nhiều vitamin C.",
+        "descriptionEn": "A lemon is a bright yellow citrus fruit known for its tart, tangy flavor and high vitamin C content."
+      }
+    ]
+  },
+  {
+    "categoryVi": "Các nước trên Trái Đất",
+    "categoryEn": "Countries on Earth",
+    "imageName": "earth",
+    "items": [
+      {
+        "titleVi": "Việt Nam",
+        "titleEn": "VietNam",
+        "imageName": "vietnam",
+        "descriptionVi": "Quốc gia xinh đẹp ở Đông Nam Á với bề dày lịch sử, văn hóa đa dạng cùng phong cảnh thiên nhiên hùng vĩ.",
+        "descriptionEn": "Vietnam is a Southeast Asian country known for its rich history, diverse culture, and scenic landscapes ranging from mountains to coastlines."
+      },
+      {
+        "titleVi": "Ethiopia",
+        "titleEn": "Ethiopia",
+        "imageName": "ethiopia",
+        "descriptionVi": "Quốc gia cổ kính nằm ở vùng Sừng châu Phi, nổi tiếng với lịch sử lâu đời và là nơi phát hiện ra cà phê.",
+        "descriptionEn": "Ethiopia is a landlocked country located in the Horn of Africa. Known for its rich history as one of the oldest nations in the world."
+      },
+      {
+        "titleVi": "Pakistan",
+        "titleEn": "Pakistan",
+        "imageName": "pakistan",
+        "descriptionVi": "Quốc gia ở Nam Á sở hữu cảnh quan núi non hùng vĩ cùng di sản văn hóa truyền thống lâu đời.",
+        "descriptionEn": "Pakistan is a country in South Asia, known for its diverse landscapes, rich history, and cultural heritage."
+      },
+      {
+        "titleVi": "Peru",
+        "titleEn": "Peru",
+        "imageName": "peru",
+        "descriptionVi": "Quốc gia ở Nam Mỹ nổi tiếng với dãy núi Andes và thành phố cổ Machu Picchu của người Inca.",
+        "descriptionEn": "Peru is a country in western South America, known for its rich cultural heritage, the Andes mountains, and the ancient Incan city of Machu Picchu"
+      },
+      {
+        "titleVi": "Bhutan",
+        "titleEn": "Bhutan",
+        "imageName": "bhutan",
+        "descriptionVi": "Vương quốc xinh đẹp trên dãy Himalaya, nổi tiếng với danh hiệu đất nước hạnh phúc nhất thế giới.",
+        "descriptionEn": "Bhutan is a small, landlocked country in the Eastern Himalayas, known for its stunning mountain landscapes, rich Buddhist culture."
+      },
+      {
+        "titleVi": "Ả Rập Xê Út",
+        "titleEn": "Saudi Arabia",
+        "imageName": "saudiArabia",
+        "descriptionVi": "Quốc gia nằm trên bán đảo Ả Rập với những sa mạc cát vàng mênh mông và giàu tài nguyên.",
+        "descriptionEn": "Saudi Arabia is a country located on the Arabian Peninsula in Western Asia. It is known for its vast deserts, rich oil reserves."
+      },
+      {
+        "titleVi": "Ghana",
+        "titleEn": "Ghana",
+        "imageName": "ghana",
+        "descriptionVi": "Quốc gia Tây Phi xinh đẹp nổi tiếng với các khu bảo tồn động vật hoang dã và văn hóa lễ hội sắc màu.",
+        "descriptionEn": "Ghana is a country located along the Gulf of Guinea and the Atlantic Ocean, in West Africa. Known for its diverse wildlife, rich history, and vibrant culture."
+      },
+      {
+        "titleVi": "Honduras",
+        "titleEn": "Honduras",
+        "imageName": "honduras",
+        "descriptionVi": "Quốc gia Trung Mỹ nổi tiếng với rừng mưa nhiệt đới, các bãi biển đẹp và di tích Maya cổ đại.",
+        "descriptionEn": "Honduras is a country in Central America known for its rich cultural heritage, diverse landscapes, and ancient Mayan ruins. It features tropical rainforests, beautiful beaches, and vibrant cities."
+      }
+    ]
+  },
+  {
+    "categoryVi": "Động vật",
+    "categoryEn": "Animals",
+    "imageName": "animals",
+    "items": [
+      {
+        "titleVi": "Chó núi Pyrenees",
+        "titleEn": "Great Pyrenees",
+        "imageName": "greatPyrenees",
+        "descriptionVi": "Giống chó bảo vệ to lớn, có bộ lông trắng muốt dày dặn cùng tính cách rất hiền lành, trung thành.",
+        "descriptionEn": "The Great Pyrenees is a large, majestic dog breed known for its thick white coat and gentle temperament."
+      },
+      {
+        "titleVi": "Con voi",
+        "titleEn": "Elephant",
+        "imageName": "elephant",
+        "descriptionVi": "Loài động vật trên cạn lớn nhất Trái Đất, có trí thông minh cao, đôi tai to và chiếc vòi đa năng.",
+        "descriptionEn": "The elephant is the largest land animal on Earth, known for its intelligence, strong social bonds, and distinctive trunk."
+      },
+      {
+        "titleVi": "Rái cá",
+        "titleEn": "Otter",
+        "imageName": "otter",
+        "descriptionVi": "Loài thú ăn thịt dưới nước nhỏ nhắn, tinh nghịch, có bộ lông mượt chống nước và đôi bàn chân màng vịt.",
+        "descriptionEn": "A small, playful aquatic mammal known for its sleek fur, webbed feet, and habit of sliding on mud or snow."
+      },
+      {
+        "titleVi": "Khủng long ba sừng",
+        "titleEn": "Triceratops",
+        "imageName": "triceratops",
+        "descriptionVi": "Loài khủng long ăn cỏ khổng lồ thời tiền sử, nổi bật với ba chiếc sừng trên mặt và chiếc bờm xương lớn.",
+        "descriptionEn": "Triceratops was a large, herbivorous dinosaur known for its three facial horns and large bony frill."
+      },
+      {
+        "titleVi": "Tê giác",
+        "titleEn": "Rhinoceros",
+        "imageName": "rhinoceros",
+        "descriptionVi": "Loài thú ăn cỏ lớn da dày sống ở châu Phi và châu Á, có một hoặc hai chiếc sừng sừng sững trên mũi.",
+        "descriptionEn": "A large, thick-skinned herbivorous mammal native to Africa and Asia, known for its distinctive horn(s) on the snout."
+      },
+      {
+        "titleVi": "Cáo tai to",
+        "titleEn": "Fennec Fox",
+        "imageName": "fennecFox",
+        "descriptionVi": "Giống cáo nhỏ sống về đêm ở sa mạc Sahara, có đôi tai cực lớn giúp tản nhiệt và thính giác nhạy bén.",
+        "descriptionEn": "The Fennec Fox is a small nocturnal fox native to the Sahara Desert and other parts of North Africa"
+      },
+      {
+        "titleVi": "Gấu trúc",
+        "titleEn": "Panda",
+        "imageName": "panda",
+        "descriptionVi": "Loài động vật to lớn có bộ lông đen trắng đặc trưng, rất thích ăn tre trúc và sống tại Trung Quốc.",
+        "descriptionEn": "A panda or a giant panda is a large animal rather like a bear, which has black and white fur and lives in the bamboo forests of China."
+      },
+      {
+        "titleVi": "Cá heo Irrawaddy",
+        "titleEn": "Irrawaddy Dolphin",
+        "imageName": "irrawaddyDolphin",
+        "descriptionVi": "Loài cá heo nước ngọt quý hiếm ở Đông Nam Á, nổi bật với chiếc đầu tròn trịa không có mỏ dài.",
+        "descriptionEn": "The Irrawaddy Dolphin is a freshwater and coastal dolphin species native to Southeast Asia, known for its rounded forehead and unique appearance."
+      },
+      {
+        "titleVi": "Cá sấu",
+        "titleEn": "Crocodiles",
+        "imageName": "crocodile",
+        "descriptionVi": "Loài bò sát lớn có hàm răng cực khỏe, lớp da giáp dày và khả năng săn mồi ngụy trang dưới nước.",
+        "descriptionEn": "Crocodiles are known for their powerful jaws, armored skin, and stealthy hunting abilities in rivers and wetlands."
+      },
+      {
+        "titleVi": "Đười ươi",
+        "titleEn": "Orangutan",
+        "imageName": "orangutan",
+        "descriptionVi": "Loài linh trưởng lớn thông minh có bộ lông đỏ cam, sinh sống trên các cành cây cao ở rừng nhiệt đới.",
+        "descriptionEn": "The orangutan is a large, intelligent primate native to the rainforests of Borneo and Sumatra."
+      },
+      {
+        "titleVi": "Con gà",
+        "titleEn": "Chicken",
+        "imageName": "chicken",
+        "descriptionVi": "Loài gia cầm quen thuộc được nuôi trong trang trại để cung cấp trứng và thịt cho chúng ta.",
+        "descriptionEn": "The domestic chicken is a common farm bird kept worldwide for its eggs and meat."
+      },
+      {
+        "titleVi": "Linh dương Saiga",
+        "titleEn": "Saiga Antelope",
+        "imageName": "saigaAntelope",
+        "descriptionVi": "Loài linh dương cổ xưa có chiếc mũi phình to độc đáo giúp lọc bụi sa mạc và điều hòa nhiệt độ cơ thể.",
+        "descriptionEn": "The Saiga Antelope is a critically endangered antelope native to the steppes of Central Asia, known for its distinctive bulbous nose that helps filter dust and regulate temperature."
+      }
+    ]
+  }
+]

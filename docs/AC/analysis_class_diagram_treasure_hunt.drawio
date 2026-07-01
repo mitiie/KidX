@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="diagram_class_treasure_hunt" name="Analysis Class Diagram Treasure Hunt">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="950" pageHeight="1100" math="0" shadow="0">
+      <root>
+
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+
+        <!-- Actor -->
+        <mxCell id="actor_user"
+          value="Người dùng"
+          style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#333333;strokeWidth=1.5;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="40" y="260" width="30" height="60" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Boundary: Danh sach thu thach -->
+        <mxCell id="class_ui"
+          value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;GiaoDienDanhSachThuThach&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
++ hienThiDanhSachThuThach()&lt;br&gt;
++ capNhatTienTrinh()&lt;br&gt;
++ hienThiLuaChonAnh()&lt;br&gt;
++ clickThucHienThuThach()&lt;br&gt;
++ clickQuayLai()"
+          style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="140" y="120" width="220" height="190" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Boundary: Ket qua -->
+        <mxCell id="class_ui_result"
+          value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Boundary»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;GiaoDienKetQuaNhanDang&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
++ hienThiThanhCong()&lt;br&gt;
++ hienThiThatBai()&lt;br&gt;
++ hienThiGoiYThuLai()&lt;br&gt;
++ clickThuLai()&lt;br&gt;
++ clickDong()"
+          style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="140" y="370" width="220" height="160" as="geometry"/>
+        </mxCell>
+
+
+
+
+        <!-- Control -->
+        <mxCell id="class_control"
+          value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;DieuKhienTruyTimDoVat&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
++ layDanhSachThuThach()&lt;br&gt;
++ xuLyChonThuThach()&lt;br&gt;
++ xuLyNhanDangAnh()&lt;br&gt;
++ kiemTraKetQua()&lt;br&gt;
++ capNhatTrangThaiHoanThanh()"
+          style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="430" y="230" width="230" height="170" as="geometry"/>
+        </mxCell>
+
+
+
+
+
+        <!-- Entity Mission -->
+        <mxCell id="class_entity_mission"
+          value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;MissionData&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
+- id&lt;br&gt;
+- title&lt;br&gt;
+- description&lt;br&gt;
+- isCompleted&lt;br&gt;
+- keywords
+&lt;hr&gt;
++ capNhatTrangThai()&lt;br&gt;
++ layThongTinThuThach()"
+          style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="760" y="50" width="200" height="170" as="geometry"/>
+        </mxCell>
+
+
+
+
+
+        <!-- Control Service AI -->
+        <mxCell id="class_service_ai"
+          value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Control»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;BoNhanDangMobileNet&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
+- modelMobileNet: MobileNetV2
+&lt;hr&gt;
++ nhanDangVatThe(image: UIImage): [String]&lt;br&gt;
++ tinhDoTinCay(): Float"
+          style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="760" y="260" width="200" height="130" as="geometry"/>
+        </mxCell>
+
+
+
+
+
+        <!-- Entity Saved -->
+        <mxCell id="class_entity_saved"
+          value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;«Entity»&lt;/b&gt;&lt;/p&gt;
+&lt;p style=&quot;margin:0px;margin-top:2px;text-align:center;&quot;&gt;&lt;b&gt;SavedObjectItem&lt;/b&gt;&lt;/p&gt;
+&lt;hr&gt;
+- name: String&lt;br&gt;
+- filename: String&lt;br&gt;
+- timestamp: Date
+&lt;hr&gt;
++ create()&lt;br&gt;
++ delete()&lt;br&gt;
++ select()"
+          style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;strokeColor=#b3b3b3;fontColor=#333333;fontSize=11;"
+          vertex="1"
+          parent="1">
+          <mxGeometry x="760" y="420" width="200" height="170" as="geometry"/>
+        </mxCell>
+
+
+
+
+
+        <!-- Connections -->
+
+        <!-- Actor -> Boundary -->
+        <mxCell id="conn1"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=none;"
+          edge="1"
+          parent="1"
+          source="actor_user"
+          target="class_ui">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Boundary -> Control -->
+        <mxCell id="conn2"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=none;"
+          edge="1"
+          parent="1"
+          source="class_ui"
+          target="class_control">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Result Boundary -> Control -->
+        <mxCell id="conn3"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=none;"
+          edge="1"
+          parent="1"
+          source="class_ui_result"
+          target="class_control">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+
+
+        <!-- Control -> Mission -->
+        <mxCell id="conn4"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=none;"
+          edge="1"
+          parent="1"
+          source="class_control"
+          target="class_entity_mission">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Control -> AI -->
+        <mxCell id="conn5"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=none;"
+          edge="1"
+          parent="1"
+          source="class_control"
+          target="class_service_ai">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+
+        <!-- Control -> Saved -->
+        <mxCell id="conn6"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#333333;endArrow=none;"
+          edge="1"
+          parent="1"
+          source="class_control"
+          target="class_entity_saved">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

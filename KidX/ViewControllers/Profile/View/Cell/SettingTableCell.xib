@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="language"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="weight" value="bold"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="weight" value="medium"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="color" value="text"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="size" value="tl"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fontSize">

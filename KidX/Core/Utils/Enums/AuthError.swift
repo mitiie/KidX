@@ -18,13 +18,13 @@ enum LoginError: Error {
 
     var message: String {
         switch self {
-        case .emptyEmail:           return "Please enter your email"
-        case .invalidEmail:         return "Invalid email address"
-        case .emptyPassword:        return "Please enter your password"
-        case .passwordTooShort:     return "Password must be at least 6 characters"
-        case .emailNotVerified:     return "Please check your inbox and verify your email before signing in."
+        case .emptyEmail:           return "Please enter your email".localize()
+        case .invalidEmail:         return "Invalid email address".localize()
+        case .emptyPassword:        return "Please enter your password".localize()
+        case .passwordTooShort:     return "Password must be at least 6 characters".localize()
+        case .emailNotVerified:     return "Please check your inbox and verify your email before signing in.".localize()
         case .firebase(let code):   return code.loginMessage
-        case .unknown(let msg):     return msg
+        case .unknown(let msg):     return msg.localize()
         }
     }
 }
@@ -51,15 +51,15 @@ extension LoginError: Equatable {
 extension AuthErrorCode {
     var loginMessage: String {
         switch self {
-        case .wrongPassword, .invalidCredential:    return "Incorrect email or password"
-        case .userNotFound:                         return "Account not found"
-        case .userDisabled:                         return "This account has been disabled"
-        case .invalidEmail:                         return "Invalid email address"
-        case .tooManyRequests:                      return "Too many attempts. Please try again later"
-        case .networkError:                         return "Network error. Please check your connection and try again"
-        case .emailAlreadyInUse:                    return "This email is already in use"
-        case .weakPassword:                         return "Password is too weak"
-        default:                                    return "Something went wrong"
+        case .wrongPassword, .invalidCredential:    return "Incorrect email or password".localize()
+        case .userNotFound:                         return "Account not found".localize()
+        case .userDisabled:                         return "This account has been disabled".localize()
+        case .invalidEmail:                         return "Invalid email address".localize()
+        case .tooManyRequests:                      return "Too many attempts. Please try again later".localize()
+        case .networkError:                         return "Network error. Please check your connection and try again".localize()
+        case .emailAlreadyInUse:                    return "This email is already in use".localize()
+        case .weakPassword:                         return "Password is too weak".localize()
+        default:                                    return "Something went wrong".localize()
         }
     }
 }
@@ -76,14 +76,14 @@ enum RegisterError: Error {
 
     var message: String {
         switch self {
-        case .emptyEmail:           return "Please enter your email"
-        case .invalidEmail:         return "Invalid email address"
-        case .emptyPassword:        return "Please enter your password"
-        case .passwordTooShort:     return "Password must be at least 6 characters"
-        case .emptyConfirmPassword: return "Please confirm your password"
-        case .passwordMismatch:     return "Passwords do not match"
+        case .emptyEmail:           return "Please enter your email".localize()
+        case .invalidEmail:         return "Invalid email address".localize()
+        case .emptyPassword:        return "Please enter your password".localize()
+        case .passwordTooShort:     return "Password must be at least 6 characters".localize()
+        case .emptyConfirmPassword: return "Please confirm your password".localize()
+        case .passwordMismatch:     return "Passwords do not match".localize()
         case .firebase(let code):   return code.registerMessage
-        case .unknown(let msg):     return msg
+        case .unknown(let msg):     return msg.localize()
         }
     }
 }
@@ -111,11 +111,11 @@ extension RegisterError: Equatable {
 extension AuthErrorCode {
     var registerMessage: String {
         switch self {
-        case .emailAlreadyInUse:    return "This email is already in use"
-        case .invalidEmail:         return "Invalid email address"
-        case .weakPassword:         return "Password is too weak. Please choose a stronger password"
-        case .networkError:         return "Network error. Please check your connection and try again"
-        default:                    return "Something went wrong"
+        case .emailAlreadyInUse:    return "This email is already in use".localize()
+        case .invalidEmail:         return "Invalid email address".localize()
+        case .weakPassword:         return "Password is too weak. Please choose a stronger password".localize()
+        case .networkError:         return "Network error. Please check your connection and try again".localize()
+        default:                    return "Something went wrong".localize()
         }
     }
 }

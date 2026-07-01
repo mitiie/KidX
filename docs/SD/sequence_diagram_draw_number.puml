@@ -1,0 +1,163 @@
+@startuml SD_TapVietChuSo
+
+skinparam defaultFontName Arial
+skinparam defaultFontSize 24
+skinparam shadowing false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+
+skinparam sequence {
+  ParticipantBorderColor Black
+  ParticipantBackgroundColor White
+  ActorBorderColor Black
+  ActorBackgroundColor White
+  LifeLineBorderColor Black
+  LifeLineBorderThickness 2
+  LifeLineBackgroundColor White
+  ArrowColor Black
+  GroupBorderColor Black
+  GroupBackgroundColor White
+  ActivationBorderColor Black
+  ActivationBackgroundColor #EEEEEE
+}
+
+
+actor "Người dùng" as User
+
+boundary "GiaoDienTapVietSo\n<<Boundary>>" as UI
+
+control "DieuKhienTapVietSo\n<<Control>>" as Controller
+
+entity "DuLieuTapViet\n<<Entity>>" as Data
+
+control "BoNhanDangMNIST\n<<Control>>" as AI
+
+
+
+User -> UI : 1. Chọn thẻ\n"Luyện Viết Chữ Số"
+activate UI
+
+||20||
+
+UI -> Controller : 2. Khởi tạo chức năng tập viết
+activate Controller
+
+Controller -> Data : 3. Lấy dữ liệu mặc định\n(chọn số 0, trạng thái bảng)
+activate Data
+
+Data --> Controller : 4. Trả thông tin bài tập
+deactivate Data
+
+Controller --> UI : 5. Hiển thị giao diện\nbảng vẽ + danh sách số 0-9
+deactivate Controller
+
+
+||20||
+
+
+loop Người dùng luyện viết số
+
+    alt Chọn chữ số mới
+
+        User -> UI : 6a. Chọn chữ số cần luyện (0-9)
+
+        UI -> Controller : 7a. Gửi yêu cầu đổi chữ số
+        activate Controller
+
+        Controller -> Data : 8a. Cập nhật chữ số mẫu
+
+        Data --> Controller : 9a. Xác nhận cập nhật
+
+        Controller -> UI : 10a. Reset bảng vẽ\nhiển thị số mẫu mới
+
+        deactivate Controller
+
+
+    else Viết chữ số trên bảng
+
+        User -> UI : 6b. Vẽ nét trên bảng
+
+        UI -> Controller : 7b. Gửi nét vẽ mới
+
+        Controller -> Data : 8b. Lưu nét vẽ
+
+        Data --> Controller : 9b. Xác nhận lưu
+
+        Controller --> UI : 10b. Hiển thị nét vẽ realtime
+
+
+    else Kiểm tra chữ số
+
+
+        User -> UI : 6c. Nhấn "Kiểm tra"
+
+
+        UI -> Controller : 7c. Yêu cầu nhận dạng\n(danh sách nét vẽ)
+
+        activate Controller
+
+
+        Controller -> Data : 8c. Lấy dữ liệu nét vẽ
+
+        Data --> Controller : 9c. Trả dữ liệu ảnh
+
+
+        Controller -> AI : 10. nhanDangNetVe(image)
+
+        activate AI
+
+        AI --> Controller : 11. Trả kết quả\n(chữ số + độ tin cậy)
+
+        deactivate AI
+
+
+
+        alt Độ tin cậy thấp\n(Không thể nhận dạng)
+
+            Controller --> UI : 12a. Thông báo lỗi nhận dạng
+
+            UI --> User : 13a. Hiển thị\n"Không thể nhận dạng"\nCho phép viết lại
+
+
+        else Nhận dạng thành công
+
+
+            Controller --> UI : 12b. Trả kết quả nhận dạng
+
+            UI -> UI : 13b. So sánh\nvới chữ số đã chọn
+
+
+            alt Kết quả đúng
+
+                UI --> User : 14a. Hiển thị\n"Chúc mừng"
+
+            else Kết quả sai
+
+                UI --> User : 14b. Hiển thị\n"Chưa đúng, thử lại"
+
+            end
+
+        end
+
+        deactivate Controller
+
+    end
+
+end
+
+
+
+User -> UI : 15. Chọn "Quay lại"
+
+activate UI
+
+UI -> Controller : 16. Đóng chức năng tập viết
+
+Controller --> UI : 17. Giải phóng dữ liệu
+
+UI --> User : 18. Quay về màn hình học tập
+
+deactivate UI
+
+
+@enduml

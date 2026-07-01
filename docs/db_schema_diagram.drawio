@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" agent="5.0">
+  <diagram id="KidX_DB_Schema" name="KidX Database Schema">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ==================== ROOT NODE ==================== -->
+        <mxCell id="root_local" value="UserDefaults&#xa;(Local Storage)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=14;fontColor=#000000;arcSize=30;" vertex="1" parent="1">
+          <mxGeometry x="220" y="30" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="root_remote" value="Firebase Realtime&#xa;Database" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=14;fontColor=#000000;arcSize=30;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="30" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LOCAL STORAGE COLLECTIONS ==================== -->
+
+        <!-- dailyStats Collection -->
+        <mxCell id="col_daily" value="dailyStats (Storage)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="30" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- savedObjects Collection -->
+        <mxCell id="col_saved" value="savedObjects (Storage)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="230" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- vocabulary Collection -->
+        <mxCell id="col_vocab" value="vocabulary (JSON Bundle)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="430" y="140" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- mathLevels Collection -->
+        <mxCell id="col_math" value="mathLevels (JSON Bundle)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="650" y="140" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== DOCUMENT NODES ==================== -->
+
+        <!-- dailyStats Document -->
+        <mxCell id="doc_daily" value="YYYY-MM-DD (Document)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="35" y="230" width="170" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- savedObjects Document -->
+        <mxCell id="doc_saved" value="savedObject (Document)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="240" y="230" width="160" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- vocabulary Document -->
+        <mxCell id="doc_vocab" value="category (Document)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="450" y="230" width="160" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- mathLevels Document -->
+        <mxCell id="doc_math" value="challenge (Document)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="665" y="230" width="170" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== FIELD BOXES ==================== -->
+
+        <!-- dailyStats Fields -->
+        <mxCell id="fields_daily" value="Fields:&#xa;• minutes: number&#xa;• stars: number&#xa;• completedTasks: number&#xa;• reviewedFlashcards: number&#xa;• rememberedFlashcards: number&#xa;• discoveredObjects: number&#xa;• completedMathChallenges: number" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000;align=left;spacingLeft=8;spacingTop=4;spacingBottom=4;" vertex="1" parent="1">
+          <mxGeometry x="10" y="310" width="220" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- savedObjects Fields -->
+        <mxCell id="fields_saved" value="Fields:&#xa;• name: string&#xa;• filename: string&#xa;• timestamp: Date" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000;align=left;spacingLeft=8;spacingTop=4;spacingBottom=4;" vertex="1" parent="1">
+          <mxGeometry x="240" y="310" width="160" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- vocabulary Fields -->
+        <mxCell id="fields_vocab" value="Fields:&#xa;• category: string&#xa;• imageName: string" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000;align=left;spacingLeft=8;spacingTop=4;spacingBottom=4;" vertex="1" parent="1">
+          <mxGeometry x="425" y="310" width="160" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- mathLevels Fields -->
+        <mxCell id="fields_math" value="Fields:&#xa;• id: string&#xa;• level: number&#xa;• operand1: number&#xa;• operand2: number&#xa;• operation: string&#xa;• result: number" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000;align=left;spacingLeft=8;spacingTop=4;spacingBottom=4;" vertex="1" parent="1">
+          <mxGeometry x="655" y="310" width="190" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== SUBCOLLECTION: words ==================== -->
+
+        <mxCell id="subcol_words" value="items (Subcollection)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="doc_word" value="flashcard (Document)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="450" y="520" width="160" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fields_word" value="Fields:&#xa;• title: string&#xa;• imageName: string&#xa;• description: string" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000;align=left;spacingLeft=8;spacingTop=4;spacingBottom=4;" vertex="1" parent="1">
+          <mxGeometry x="430" y="595" width="180" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== REMOTE: missions ==================== -->
+
+        <mxCell id="col_missions" value="missions (Collection)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="140" width="180" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="doc_mission" value="missionId (Document)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="230" width="160" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fields_mission" value="Fields:&#xa;• id: string&#xa;• titleEn: string&#xa;• titleVi: string&#xa;• descriptionEn: string&#xa;• descriptionVi: string&#xa;• iconSymbol: string&#xa;• iconBgColorHex: string&#xa;• buttonColorHex: string?&#xa;• keywords: [string]&#xa;• isCompleted: bool" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000;align=left;spacingLeft=8;spacingTop=4;spacingBottom=4;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="310" width="220" height="210" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LOCAL: completedMissions ==================== -->
+
+        <mxCell id="col_completed" value="completedMissions (Storage)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=12;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="890" y="140" width="220" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="doc_completed" value="completed_missions (Key)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="900" y="230" width="200" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fields_completed" value="Fields:&#xa;• [string]: Mảng missionId&#xa;  đã hoàn thành" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontColor=#000000;align=left;spacingLeft=8;spacingTop=4;spacingBottom=4;" vertex="1" parent="1">
+          <mxGeometry x="910" y="310" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== ARROWS: Root → Collections ==================== -->
+
+        <!-- Local root → dailyStats -->
+        <mxCell id="arr_root_daily" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="root_local" target="col_daily">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Local root → savedObjects -->
+        <mxCell id="arr_root_saved" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="root_local" target="col_saved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Local root → vocabulary -->
+        <mxCell id="arr_root_vocab" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="root_local" target="col_vocab">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Local root → mathLevels -->
+        <mxCell id="arr_root_math" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="root_local" target="col_math">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Local root → completedMissions -->
+        <mxCell id="arr_root_completed" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="root_local" target="col_completed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Remote root → missions -->
+        <mxCell id="arr_root_missions" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="root_remote" target="col_missions">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== ARROWS: Collections → Documents ==================== -->
+
+        <mxCell id="arr_daily_doc" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="col_daily" target="doc_daily">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_saved_doc" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="col_saved" target="doc_saved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_vocab_doc" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="col_vocab" target="doc_vocab">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_math_doc" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="col_math" target="doc_math">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_missions_doc" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="col_missions" target="doc_mission">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_completed_doc" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="col_completed" target="doc_completed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== ARROWS: Documents → Fields ==================== -->
+
+        <mxCell id="arr_daily_fields" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="doc_daily" target="fields_daily">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_saved_fields" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="doc_saved" target="fields_saved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_vocab_fields" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="doc_vocab" target="fields_vocab">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_math_fields" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="doc_math" target="fields_math">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_mission_fields" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="doc_mission" target="fields_mission">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="arr_completed_fields" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="doc_completed" target="fields_completed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== ARROWS: Subcollection ==================== -->
+
+        <!-- vocabulary Fields → words Subcollection -->
+        <mxCell id="arr_vocab_subcol" style="endArrow=block;endFill=1;html=1;strokeColor=#6c8ebf;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeWidth=2;" edge="1" parent="1" source="fields_vocab" target="subcol_words">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- words Subcollection → word Document -->
+        <mxCell id="arr_words_doc" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="subcol_words" target="doc_word">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- word Document → word Fields -->
+        <mxCell id="arr_word_fields" style="endArrow=block;endFill=1;html=1;strokeColor=#666666;edgeStyle=orthogonalEdgeStyle;rounded=1;" edge="1" parent="1" source="doc_word" target="fields_word">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LEGEND ==================== -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="580" width="260" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="legend_title" value="Chú thích" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=13;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="585" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_yellow" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="618" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_yellow_txt" value="Nguồn dữ liệu (Database)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="614" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_green" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="648" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_green_txt" value="Collection / Storage" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="644" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_purple" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="678" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_purple_txt" value="Document" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="674" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_red" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="708" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_red_txt" value="Fields (Trường dữ liệu)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="704" width="190" height="26" as="geometry" />
+        </mxCell>
+
+        <mxCell id="leg_blue" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="738" width="30" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_blue_txt" value="Subcollection" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="734" width="190" height="26" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

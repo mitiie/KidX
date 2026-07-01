@@ -1,0 +1,185 @@
+/* Learn Dashboard Screen */
+"Explore the\nworld of numbers" = "Explore the\nworld of numbers";
+"Number Writing Practice" = "Number Writing Practice";
+"Practice writing numbers from 0 to 9 beautifully with Pencil." = "Practice writing numbers from 0 to 9 beautifully with Pencil.";
+"Start now" = "Start now";
+"Fun Math Problems" = "Fun Math Problems";
+"Speedy addition and subtraction challenges with forest friends." = "Speedy addition and subtraction challenges with forest friends.";
+"Play now" = "Play now";
+"Today's Challenge" = "Today's Challenge";
+"View all" = "View all";
+"2 HOURS LEFT" = "2 HOURS LEFT";
+"Solve 10 math problems in 3 minutes!" = "Solve 10 math problems in 3 minutes!";
+"Completed 7/10" = "Completed 7/10";
+
+/* Writing Practice Screen */
+"Number Writing" = "Number Writing";
+"Please write number %d on the canvas!" = "Please write number %d on the canvas!";
+"Check" = "Check";
+"Clear" = "Clear";
+"Correct! You did great! 🎉" = "Correct! You did great! 🎉";
+"Not quite right, try writing it again! 💪" = "Not quite right, try writing it again! 💪";
+"Could Not Recognize" = "Could Not Recognize";
+"The drawing is not clear, please draw again!" = "The drawing is not clear, please draw again!";
+"Draw Again" = "Draw Again";
+"Close" = "Close";
+"This feature will be updated in future lessons!" = "This feature will be updated in future lessons!";
+"OK" = "OK";
+
+/* Auth Screens & Errors */
+"Notice" = "Notice";
+"Email Not Verified" = "Email Not Verified";
+"Resend Email" = "Resend Email";
+"Email Sent" = "Email Sent";
+"Verification email has been resent. Please check your inbox." = "Verification email has been resent. Please check your inbox.";
+"Forgot Password" = "Forgot Password";
+"Please enter a valid email address in the email field to reset your password" = "Please enter a valid email address in the email field to reset your password";
+"Password reset instructions have been sent to %@. Please check your inbox." = "Password reset instructions have been sent to %@. Please check your inbox.";
+"Account Created" = "Account Created";
+"Your account has been created successfully. Please check your inbox to verify your email." = "Your account has been created successfully. Please check your inbox to verify your email.";
+"Please enter your email" = "Please enter your email";
+"Invalid email address" = "Invalid email address";
+"Please enter your password" = "Please enter your password";
+"Password must be at least 6 characters" = "Password must be at least 6 characters";
+"Please check your inbox and verify your email before signing in." = "Please check your inbox and verify your email before signing in.";
+"Incorrect email or password" = "Incorrect email or password";
+"Account not found" = "Account not found";
+"This account has been disabled" = "This account has been disabled";
+"Too many attempts. Please try again later" = "Too many attempts. Please try again later";
+"Network error. Please check your connection and try again" = "Network error. Please check your connection and try again";
+"This email is already in use" = "This email is already in use";
+"Password is too weak" = "Password is too weak";
+"Something went wrong" = "Something went wrong";
+"Please confirm your password" = "Please confirm your password";
+"Passwords do not match" = "Passwords do not match";
+"Password is too weak. Please choose a stronger password" = "Password is too weak. Please choose a stronger password";
+
+/* Home & Flashcard Screens */
+"All cards are remembered!" = "All cards are remembered!";
+"Unremembered" = "Unremembered";
+"Random Learning" = "Random Learning";
+"Random" = "Random";
+"Info" = "Info";
+"School Supplies" = "School Supplies";
+"Plants" = "Plants";
+"Countries on Earth" = "Countries on Earth";
+"Animals" = "Animals";
+
+/* Summary Screen */
+"Remember" = "Remember";
+"Don't Remember" = "Don't Remember";
+"Relearn remembered card" = "Relearn remembered card";
+"Relearn don't remember card" = "Relearn don't remember card";
+"Back to home page" = "Back to home page";
+"There are no cards to review." = "There are no cards to review.";
+
+/* Discovery & Permissions */
+"From your device" = "From your device";
+"GREAT! THIS IS:" = "GREAT! THIS IS:";
+"Save to Collection" = "Save to Collection";
+"Retry" = "Retry";
+"Unable to recognize this image." = "Unable to recognize this image.";
+"Success" = "Success";
+"Saved \"%@\" to collection!" = "Saved \"%@\" to collection!";
+"You just discovered a new object!" = "You just discovered a new object!";
+"Collection" = "Collection";
+"Under development!" = "Under development!";
+"Settings" = "Settings";
+"Cancel" = "Cancel";
+
+/* Discovery XIB Components */
+"Discover the World!" = "Discover the World!";
+"Let's find the wonders around you." = "Let's find the wonders around you.";
+"Start now  →" = "Start now  →";
+"Baby's Collection" = "Baby's Collection";
+"Treasure Hunt Game" = "Treasure Hunt Game";
+"TODAY'S MISSION" = "TODAY'S MISSION";
+"Find a Table!" = "Find a Table!";
+"Exploration Progress" = "Exploration Progress";
+"3/5 Stars" = "3/5 Stars";
+
+
+/* Settings Options */
+"Language" = "Language";
+"New Update Available" = "New Update Available";
+"Feedback" = "Feedback";
+"Rate us" = "Rate us";
+"Term of service" = "Term of service";
+"Privacy policy" = "Privacy policy";
+
+/* Tab Bar & Popular Cell */
+"Discovery" = "Discovery";
+"Learn" = "Learn";
+"Home" = "Home";
+"Achieve" = "Achieve";
+"Profile" = "Profile";
+"Popular Flash Card" = "Popular Flash Card";
+"Basic Bilingual Cards" = "Basic Bilingual Cards";
+"Flip cards: Vietnamese first, English after" = "Flip cards: Vietnamese first, English after";
+"%d cards" = "%d cards";
+"Vietnamese" = "Vietnamese";
+"English" = "English";
+"Tap to flip" = "Tap to flip";
+"Listen" = "Listen";
+"Stats &\nAchievements" = "Stats &\nAchievements";
+"Level %d" = "Level %d";
+"You completed %d%% of this week's challenges!" = "You completed %d%% of this week's challenges!";
+"Achievements" = "Achievements";
+"Today" = "Today";
+"This Week" = "This Week";
+"TIME" = "TIME";
+"STARS" = "STARS";
+"COMPLETED" = "COMPLETED";
+"PROGRESS" = "PROGRESS";
+"Weekly Activity" = "Weekly Activity";
+"Completed exercises" = "Completed exercises";
+"Achievements earned" = "Achievements earned";
+"See all  ›" = "See all  ›";
+"%d min" = "%d min";
+"Math Hero" = "Math Hero";
+"Completed math lessons" = "Completed math lessons";
+"Little Bookworm" = "Little Bookworm";
+"Read 5 stories" = "Read 5 stories";
+"Explorer" = "Explorer";
+"Found new objects" = "Found new objects";
+
+/* Treasure Hunt Game */
+"DAILY CHALLENGES" = "DAILY CHALLENGES";
+"Treasure Hunt" = "Treasure Hunt";
+"Con's Progress" = "Con's Progress";
+"Missions" = "Missions";
+"%d/%d Missions" = "%d/%d Missions";
+"Find the Table" = "Find the Table";
+"Find the Chair" = "Find the Chair";
+"Find the Phone" = "Find the Phone";
+"Find the Apple" = "Find the Apple";
+"Where you usually sit to study or draw!" = "Where you usually sit to study or draw!";
+"The most comfortable chair in your house." = "The most comfortable chair in your house.";
+"Mom or dad is holding it to take your picture!" = "Mom or dad is holding it to take your picture!";
+"A red, crunchy, and very sweet fruit." = "A red, crunchy, and very sweet fruit.";
+"Đã hoàn thành" = "Completed";
+"Bắt đầu  ▷" = "Start  ▷";
+"Congratulations! You found the %@!" = "Congratulations! You found the %@!";
+"Oops! This looks like %@. Try again!" = "Oops! This looks like %@. Try again!";
+"Image is unclear. Please try again!" = "Image is unclear. Please try again!";
+
+/* Math Challenges Screen */
+"Write answer here" = "Write answer here";
+"Use finger or pen" = "Use finger or pen";
+"Continue  →" = "Continue  →";
+"Please draw your answer before checking!" = "Please draw your answer before checking!";
+"Excellent! 🎉" = "Excellent! 🎉";
+"The child successfully completed all math challenges!" = "The child successfully completed all math challenges!";
+"Play again" = "Play again";
+"PHÉP TÍNH CƠ BẢN" = "BASIC MATH PROBLEMS";
+"THỬ THÁCH HÔM NAY" = "TODAY'S CHALLENGE";
+"You have completed today's challenge! Here is your reward! 🏆" = "You have completed today's challenge! Here is your reward! 🏆";
+"Complete all 10 levels to unlock your reward!" = "Complete all 10 levels to unlock your reward!";
+"Basic" = "Basic";
+"Advanced" = "Advanced";
+"Letter Coloring Practice" = "Letter Coloring Practice";
+"Color uppercase and lowercase letters to learn each stroke." = "Color uppercase and lowercase letters to learn each stroke.";
+"Color letters" = "Color letters";
+"Choose a Letter" = "Choose a Letter";
+"Pick a letter to color inside the lines." = "Pick a letter to color inside the lines.";
+"Color the Letter" = "Color the Letter";

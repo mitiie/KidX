@@ -8,12 +8,12 @@
 import UIKit
 
 enum TabBarItem: String, CaseIterable {
-    case discovery, learn, home, achieve, profile
+    case home, discovery, learn, profile
     
     var index: Int { Self.allCases.firstIndex(of: self) ?? 0 }
     
     var title: String {
-        return rawValue.capitalized
+        return rawValue.capitalized.localize()
     }
     
     func image(isSelected: Bool) -> UIImage? {

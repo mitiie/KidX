@@ -9,17 +9,26 @@ import FirebaseAuth
 import GoogleSignIn
 import StoreKit
 
+import UIKit
+
 final class ProfileViewModel {
 
-    private let navigation: NavigationState<ProfileRoute>
+    private let navigation: NavigationState<MainRoute>
+    
+    private(set) var selectedLanguage: LanguageModel? = LocalizeHelper.shared.currentLanguage()
+    
+    var languages: [LanguageModel] {
+        return LocalizeHelper.generateLanguages()
+    }
 
-    init(navigation: NavigationState<ProfileRoute>) {
+    init(navigation: NavigationState<MainRoute>) {
         self.navigation = navigation
     }
-    
+
     func handleAction(_ item: SettingItem) {
         switch item {
-        case .update: Utils.openWebBrowser(AppLinks.APP_STORE)
+        case .language: navigateToLanguage()
+        case .update: Common.openWebBrowser(AppLinks.APP_STORE)
         case .feedback: showFeedback()
         case .rate: showRateApp()
         case .term: openTermOfUse()
@@ -27,21 +36,47 @@ final class ProfileViewModel {
         }
     }
     
+    func navigateToLanguage() {
+        navigation.push(.language(self))
+    }
+    
+    func selectLanguage(_ language: LanguageModel) {
+        self.selectedLanguage = language
+    }
+    
+    func changedLanguageSuccessfully() {
+        if let selectedLanguage = selectedLanguage {
+            LocalizeHelper.shared.setLanguage(selectedLanguage)
+            
+            DispatchQueue.main.async {
+                if let sceneDelegate = UIApplication.shared.connectedScenes
+                    .first(where: { $0.activationState == .foregroundActive })?
+                    .delegate as? SceneDelegate {
+                    sceneDelegate.changeRootToMain()
+                }
+            }
+        }
+    }
+    
+    func goBack() {
+        navigation.pop()
+    }
+
     private func showFeedback() {
 
     }
-    
+
     private func showRateApp() {
         guard let scene = UIApplication.shared.connectedScenes
             .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene else { return }
-        
+
         if #available(iOS 18.0, *) {
             AppStore.requestReview(in: scene)
         } else {
             SKStoreReviewController.requestReview(in: scene)
         }
     }
-    
+
     func openPolicy() {
         openURL(AppLinks.PRIVACY_POLICY)
     }
@@ -49,9 +84,9 @@ final class ProfileViewModel {
     func openTermOfUse() {
         openURL(AppLinks.TERM_OF_USE)
     }
-    
+
     private func openURL(_ urlString: String) {
-        Utils.openWebBrowser(urlString)
+        Common.openWebBrowser(urlString)
     }
 
     func logout(completion: @escaping (Error?) -> Void) {
